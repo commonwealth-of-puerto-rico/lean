@@ -10,7 +10,7 @@ class Agency(models.Model):
         return self.name
 
     def natural_key(self):
-        return (self.name,)
+        return (self.registration,)
 
     class Meta:
         verbose_name = _(u'agency')
