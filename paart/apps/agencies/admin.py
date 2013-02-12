@@ -7,10 +7,7 @@ from .models import Agency
 
 class AgencyAdmin(admin.ModelAdmin):
     model = Agency
-    #list_display = ('user', 'document', 'datetime_accessed')
-    #readonly_fields = ('user', 'document', 'datetime_accessed')
-    #list_filter = ('user',)
-    #date_hierarchy = 'datetime_accessed'
+    list_display = ('registration', 'name')
 
 
 admin.site.register(Agency, AgencyAdmin)
