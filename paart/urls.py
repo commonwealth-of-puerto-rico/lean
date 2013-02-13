@@ -11,11 +11,14 @@ urlpatterns = patterns('',
     (r'^project_setup/', include('project_setup.urls')),
     (r'^project_tools/', include('project_tools.urls')),
     (r'^acls/', include('acls.urls')),
-    (r'^agencies/', include('agencies.urls')),
     (r'^search/', include('dynamic_search.urls')),
     (r'^settings/', include('smart_settings.urls')),
     (r'^permissions/', include('permissions.urls')),
     (r'^user_management/', include('user_management.urls')),
+
+    # Project
+    (r'^agencies/', include('agencies.urls')),
+    (r'^projects/', include('projects.urls')),
 )
 
 

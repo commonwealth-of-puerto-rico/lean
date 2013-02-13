@@ -39,6 +39,7 @@ class IconSet(IconSetBase):
         BUILDING: 'building.png',
         BUILDING_EDIT: 'building_edit.png',
         BUILDING_DELETE: 'building_delete.png',
+        BUILDING_PAGE: ['building.png', 'page.png'],
         BULLET_GO: 'bullet_go.png',
         CAMERA_DELETE: 'camera_delete.png',
         CD_BURN: 'cd_burn.png',
