@@ -89,10 +89,13 @@ STATICFILES_DIRS = (
 
 # List of finder classes that know how to find static files in
 # various locations.
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -140,6 +143,20 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # 3rd party
     'south',
+    'compressor',
+    # Mayan apps
+    'common',
+    'permissions',
+    'navigation',
+    'acls',
+    'icons',
+    'dynamic_search',
+    'project_tools',
+    'project_setup',
+    'smart_settings',
+    'user_management',
+    'web_theme',
+    'main',
     # Project
     'agencies',
     'projects',
@@ -182,6 +199,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
+COMPRESS_ENABLED=False
+COMPRESS_PARSER = 'compressor.parser.HtmlParser'
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
+
 try:
     from settings_local import *
 except ImportError:
@@ -189,7 +210,6 @@ except ImportError:
 
 if DEVELOPMENT:
     INTERNAL_IPS = ('127.0.0.1',)
-
     TEMPLATE_LOADERS = (
         'django.template.loaders.filesystem.Loader',
         'django.template.loaders.app_directories.Loader',

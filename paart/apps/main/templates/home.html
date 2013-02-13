@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load project_tags %}
+{% load i18n %}
+{% block content %}
+    <div class="content tc">
+        <h1>{% project_name %}</h1>
+        <img src="{{ STATIC_URL }}images/logo_paart.png" />
+        <h2>{% trans 'Plan Anual de Administración de los Recursos de Tecnologías' %}</h2><hr>
+    </div>
+{% endblock %}
+{% block footer %}
+    <div id="footer">
+        <div class="block">
+            <p>Copyright &copy; 2013 Roberto Rosario.</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load main_icons_tags %}
+{% get_main_icons %}
+
+<link rel="stylesheet" href="{{ STATIC_URL }}css/override.css" type="text/css" media="screen" />
+    
+<p class="tc">
+    {% trans "Plan Anual de Administración de los Recursos de Tecnologías" %}
+</p>
+<p class="tc">
+    {{ icon_source_code.display_small }}<a href="http://www.github.com/rosarior/paart/">http://www.github.com/rosarior/paart/</a>
+</p>
+<p class="tc">
+    {{ icon_issue_tracker.display_small }}<a href="https://github.com/rosarior/paart/issues">https://github.com/rosarior/paart/issues</a>
+</p>
+<p class="tc">
+    {% trans "Released under the GPL V3 License" %}
+</p>
+<div class="tc">
+    <img src="{{ STATIC_URL }}images/logo_ogp.png"/>
+</div>
+<div class="tc">
+    <img src="{{ STATIC_URL }}images/gplv3-127x51.png"/>
+    <img src="{{ STATIC_URL }}images/djangopowered126x54.gif"/>
+</div>
