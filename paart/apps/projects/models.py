@@ -110,7 +110,7 @@ class Opportunity(models.Model):
 
 class Project(models.Model):
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
-    fiscal_year = models.CharField(max_length=9, verbose_name=_(u'fiscal year'))
+    fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
     purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'))
     purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True)
