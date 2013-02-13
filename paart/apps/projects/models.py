@@ -34,6 +34,18 @@ class Classification(models.Model):
         ordering = ['label']
 
 
+class FiscalYear(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'))
+
+    def __unicode__(self):
+        return self.label
+
+    class Meta:
+        verbose_name = _(u'fiscal year')
+        verbose_name_plural = _(u'fiscal years')
+        ordering = ['label']
+
+
 INFRASTRUCTURE_NEW = 'N'
 INFRASTRUCTURE_OLD = 'O'
 
@@ -48,9 +60,9 @@ class Project(models.Model):
     fiscal_year = models.CharField(max_length=9, verbose_name=_(u'fiscal year'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
     purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'))
-    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), unique=True)
+    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True)
     classification = models.ForeignKey(Classification, verbose_name=_(u'classification'))
-    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), unique=True)
+    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True)
     department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
     email = models.EmailField(verbose_name=_(u'email'))
@@ -82,9 +94,23 @@ class Project(models.Model):
         ordering = ['label']
 
 
+class Stage(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'))
+
+    def __unicode__(self):
+        return self.label
+
+    class Meta:
+        verbose_name = _(u'stage')
+        verbose_name_plural = _(u'stages')
+        ordering = ['label']
+
+
 class Detail(models.Model):
     project = models.ForeignKey(Project, verbose_name=_(u'project'))
-    #start_period = models.CharField(max_length=128, verbose_name=_(u'start period'))
+    start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'))
+    end_period = models.ForeignKey(FiscalYear, related_name='end_period', verbose_name=_(u'end period'))
+    stage = models.ForeignKey(Stage, verbose_name=_(u'stage'))
 
     def __unicode__(self):
         return unicode(self.project)
