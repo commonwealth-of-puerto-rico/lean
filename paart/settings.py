@@ -116,7 +116,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',    
+    'pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'paart.urls'
@@ -144,6 +145,7 @@ INSTALLED_APPS = (
     # 3rd party
     'south',
     'compressor',
+    'pagination',
     # Mayan apps
     'common',
     'permissions',
