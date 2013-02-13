@@ -54,6 +54,7 @@ def agency_project_list(request, agency_pk):
         'object_list': agency.project_set.all(),
         'title': _(u'projects'),
         'hide_object': True,
+        'object': agency,
     }
 
     return render_to_response('generic_list.html', context,
@@ -79,7 +80,12 @@ def project_edit(request, project_pk):
 
     return render_to_response('generic_form.html', {
         'form': form,
-        'object': project,
+        'project': project,
+        'agency': project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
     }, context_instance=RequestContext(request))
 
 
@@ -112,9 +118,14 @@ def project_delete(request, project_pk):
         'delete_view': True,
         'previous': previous,
         'next': next,
-        'object': project,
         'title': _(u'Are you sure you with to delete the project: %s?') % project,
         'form_icon': icon_project_delete,
+        'project': project,
+        'agency': project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
     }
 
     return render_to_response('generic_confirm.html', context,
