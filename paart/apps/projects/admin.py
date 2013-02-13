@@ -22,7 +22,7 @@ class StageAdmin(admin.ModelAdmin):
 
 
 class BenefitAdmin(admin.ModelAdmin):
-    model = Detail
+    model = Benefit
 
 
 class TopicAdmin(admin.ModelAdmin):
@@ -36,15 +36,14 @@ class OpportunityAdmin(admin.ModelAdmin):
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
     list_display = ('label', 'fiscal_year', 'purpose', 'classification', 'department')
+    filter_horizontal = ('opportunity', 'sharing_benefit')
 
 
-
-
-
-
+admin.site.register(FiscalYear, FiscalYearAdmin)
 admin.site.register(Purpose, PurposeAdmin)
 admin.site.register(Classification, ClassificationAdmin)
-admin.site.register(Project, ProjectAdmin)
-admin.site.register(Detail, DetailAdmin)
 admin.site.register(Stage, StageAdmin)
-admin.site.register(FiscalYear, FiscalYearAdmin)
+admin.site.register(Benefit, BenefitAdmin)
+admin.site.register(Topic, TopicAdmin)
+admin.site.register(Opportunity, OpportunityAdmin)
+admin.site.register(Project, ProjectAdmin)
