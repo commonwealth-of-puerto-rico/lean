@@ -11,10 +11,11 @@ from django.utils.translation import ugettext_lazy as _
 from agencies.models import Agency
 from permissions.models import Permission
 
-from .forms import ProjectForm
+from .forms import ProjectForm, ProjectForm_step1, ProjectForm_step2
 from .icons import icon_project_delete
 from .models import Project
 from .permissions import PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE
+from .wizards import ProjectCreateWizard
 
 
 def project_list(request):
@@ -130,3 +131,12 @@ def project_delete(request, project_pk):
 
     return render_to_response('generic_confirm.html', context,
         context_instance=RequestContext(request))
+
+
+def project_create_wizard(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+    #Permission.objects.check_permissions(request.user, [PERMISSION_DOCUMENT_CREATE])
+
+    wizard = ProjectCreateWizard(form_list=[ProjectForm_step1, ProjectForm_step2])
+
+    return wizard(request)
