@@ -17,4 +17,3 @@ class EquipmentForm(forms.ModelForm, ROFormMixin):
 class EquipmentForm_detail(DetailForm):
     class Meta:
         model = Equipment
-        #exclude = ('document', 'document_type', 'page_label', 'content')
