@@ -166,3 +166,21 @@ class FileDisplayForm(forms.Form):
 class LicenseForm(FileDisplayForm):
     FILENAME = u'LICENSE'
     DIRECTORY = [u'..']
+
+
+# I used this instead of lambda expression after scope problems
+def _get_cleaner(form, field):
+    def clean_field():
+         return getattr(form.instance, field, None)
+    return clean_field
+
+
+class ROFormMixin(forms.BaseForm):
+    def __init__(self, *args, **kwargs):
+        super(ROFormMixin, self).__init__(*args, **kwargs)
+        if hasattr(self, 'readonly_fields'):
+            if self.instance and self.instance.pk:
+                for field in self.readonly_fields:
+                    self.fields[field].widget.attrs['readonly'] = True
+                    self.fields[field].widget.attrs['disabled'] = True
+                    setattr(self, 'clean_' + field, _get_cleaner(self, field))
