@@ -13,22 +13,25 @@ from permissions.models import Permission
 from .forms import AgencyForm
 from .icons import icon_agency_delete
 from .models import Agency
-from .permissions import PERMISSION_AGENCY_EDIT, PERMISSION_AGENCY_DELETE
+from .permissions import (PERMISSION_AGENCY_EDIT, PERMISSION_AGENCY_DELETE,
+    PERMISSION_AGENCY_VIEW)
 
 
 def agency_list(request):
-    #try:
-    #    Permission.objects.check_permissions(request.user, [PERMISSION_DOCUMENT_VIEW])
-    #except PermissionDenied:
-    #    # If user doesn't have global permission, get a list of document
-    #    # for which he/she does hace access use it to filter the
-    #    # provided object_list
-    #    final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_DOCUMENT_VIEW, request.user, pre_object_list)
-    #else:
-    #    final_object_list = pre_object_list
+    pre_object_list = Agency.objects.all()
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        # If user doesn't have global permission, get a list of document
+        # for which he/she does hace access use it to filter the
+        # provided object_list
+        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_AGENCY_VIEW, request.user, pre_object_list)
+    else:
+        final_object_list = pre_object_list
 
     context = {
-        'object_list': Agency.objects.all(),
+        'object_list': final_object_list,
         'title': _(u'agencies'),
         'hide_object': True,
     }
