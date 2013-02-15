@@ -163,6 +163,7 @@ INSTALLED_APPS = (
     'agencies',
     'projects',
     'telecomm',
+    'tools',
 )
 
 # A sample logging configuration. The only tangible logging
