@@ -181,6 +181,7 @@ class ROFormMixin(forms.BaseForm):
         if hasattr(self, 'readonly_fields'):
             if self.instance and self.instance.pk:
                 for field in self.readonly_fields:
+                    self.fields[field].required = False
                     self.fields[field].widget.attrs['readonly'] = True
                     self.fields[field].widget.attrs['disabled'] = True
                     setattr(self, 'clean_' + field, _get_cleaner(self, field))
