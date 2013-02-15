@@ -164,6 +164,8 @@ class IconSet(IconSetBase):
         ROUTING_TURNAROUND_RIGHT: 'routing_turnaround_right.png',
         SCRIPT: 'script.png',
         SERVER: 'server.png',
+        SERVER_EDIT: 'server_edit.png',
+        SERVER_DELETE: 'server_delete.png',
         STATISTICS: 'statistics.png',
         STATISTICS_ARROW_RIGHT: ['statistics.png', 'arrow_right.png'],
         STATISTICS_LIGHTNING: ['statistics.png', 'lightning.png'],

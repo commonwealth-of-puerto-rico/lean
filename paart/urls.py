@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     # Project
     (r'^agencies/', include('agencies.urls')),
     (r'^projects/', include('projects.urls')),
+    (r'^telecomm/', include('telecomm.urls')),
 )
 
 
