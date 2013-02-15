@@ -11,48 +11,31 @@ from django.utils.translation import ugettext_lazy as _
 from agencies.models import Agency
 from permissions.models import Permission
 
-from .forms import ProjectForm, ProjectForm_step1, ProjectForm_step2
+from .forms import (ProjectForm, ProjectForm_detail, ProjectForm_step1,
+    ProjectForm_step2)
 from .icons import icon_project_delete
 from .models import Project
-from .permissions import PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE
+from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
+    PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE)
 from .wizards import ProjectCreateWizard
-
-
-def project_list(request):
-    #try:
-    #    Permission.objects.check_permissions(request.user, [PERMISSION_DOCUMENT_VIEW])
-    #except PermissionDenied:
-    #    # If user doesn't have global permission, get a list of document
-    #    # for which he/she does hace access use it to filter the
-    #    # provided object_list
-    #    final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_DOCUMENT_VIEW, request.user, pre_object_list)
-    #else:
-    #    final_object_list = pre_object_list
-
-    context = {
-        'object_list': Project.objects.all(),
-        'title': _(u'projects'),
-        'hide_object': True,
-    }
-
-    return render_to_response('generic_list.html', context,
-        context_instance=RequestContext(request))
 
 
 def agency_project_list(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
-    #try:
-    #    Permission.objects.check_permissions(request.user, [PERMISSION_DOCUMENT_VIEW])
-    #except PermissionDenied:
-    #    # If user doesn't have global permission, get a list of document
-    #    # for which he/she does hace access use it to filter the
-    #    # provided object_list
-    #    final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_DOCUMENT_VIEW, request.user, pre_object_list)
-    #else:
-    #    final_object_list = pre_object_list
+    pre_object_list = agency.project_set.all()
+    
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+    except PermissionDenied:
+        # If user doesn't have global permission, get a list of document
+        # for which he/she does hace access use it to filter the
+        # provided object_list
+        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_PROJECT_VIEW, request.user, pre_object_list)
+    else:
+        final_object_list = pre_object_list
 
     context = {
-        'object_list': agency.project_set.all(),
+        'object_list': final_object_list,
         'title': _(u'projects'),
         'hide_object': True,
         'object': agency,
@@ -75,7 +58,7 @@ def project_edit(request, project_pk):
             form.save()
             messages.success(request, _(u'Project "%s" edited successfully.') % project)
 
-            return HttpResponseRedirect(reverse('project_list'))
+            return HttpResponseRedirect(project.get_absolute_url())
     else:
         form = ProjectForm(instance=project)
 
@@ -98,8 +81,7 @@ def project_delete(request, project_pk):
     except PermissionDenied:
         AccessEntry.objects.check_access(PERMISSION_PROJECT_DELETE, request.user, folder)
 
-    #TODO: fix redirect
-    post_action_redirect = reverse('project_list')
+    post_action_redirect = reverse('agency_project_list', args=[project.agency.pk])
 
     previous = request.POST.get('previous', request.GET.get('previous', request.META.get('HTTP_REFERER', '/')))
     next = request.POST.get('next', request.GET.get('next', post_action_redirect if post_action_redirect else request.META.get('HTTP_REFERER', '/')))
@@ -135,8 +117,35 @@ def project_delete(request, project_pk):
 
 def project_create_wizard(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
-    #Permission.objects.check_permissions(request.user, [PERMISSION_DOCUMENT_CREATE])
 
-    wizard = ProjectCreateWizard(form_list=[ProjectForm_step1, ProjectForm_step2])
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_CREATE])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_CREATE, request.user, agency)
+
+    wizard = ProjectCreateWizard(form_list=[ProjectForm_step1, ProjectForm_step2], view_extra_context={
+        'object': agency,
+    })
 
     return wizard(request)
+
+
+def project_view(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+
+    form = ProjectForm_detail(instance=project)
+
+    return render_to_response('generic_detail.html', {
+        'form': form,
+        'project': project,
+        'agency': project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }, context_instance=RequestContext(request))

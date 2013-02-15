@@ -2,10 +2,14 @@ from __future__ import absolute_import
 
 from django import forms
 
+from common.forms import DetailForm, ROFormMixin
+
 from .models import Project
 
 
-class ProjectForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm, ROFormMixin):
+    readonly_fields = ('agency',)
+
     class Meta:
         model = Project
 
@@ -20,3 +24,8 @@ class ProjectForm_step2(forms.ModelForm):
     class Meta:
         model = Project
         fields = ('infrastructure', 'requirements', 'presumptions', 'limitations', 'risks', 'benefits')
+
+
+class ProjectForm_detail(DetailForm):
+    class Meta:
+        model = Project
