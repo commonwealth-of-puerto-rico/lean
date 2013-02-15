@@ -160,6 +160,10 @@ class Project(models.Model):
     def natural_key(self):
         return (self.label,)
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_view', [self.pk])
+
     class Meta:
         verbose_name = _(u'project')
         verbose_name_plural = _(u'projects')
