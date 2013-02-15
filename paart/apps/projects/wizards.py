@@ -6,9 +6,7 @@ from django.http import HttpResponseRedirect
 from django.utils.http import urlencode
 
 from common.wizard import BoundFormWizard
-#from metadata.forms import MetadataSelectionForm, MetadataFormSet
 
-#from .forms import DocumentTypeSelectForm
 from .icons import icon_wizard_next_step
 
 
@@ -31,6 +29,7 @@ class ProjectCreateWizard(BoundFormWizard):
         return initial
 
     def __init__(self, *args, **kwargs):
+        self.view_extra_context = kwargs.pop('view_extra_context', None)
         self.query_dict = {}
         self.step_titles = kwargs.pop('step_titles', [
             _(u'step 1 of 4: General information'),
@@ -47,6 +46,10 @@ class ProjectCreateWizard(BoundFormWizard):
             'submit_label': _(u'Next step'),
             'submit_icon': icon_wizard_next_step,
         }
+        print 'sad', self.view_extra_context
+        if self.view_extra_context:
+            context.update(self.view_extra_context)
+
         return super(ProjectCreateWizard, self).render_template(
             request, form, previous_fields, step, context
         )
