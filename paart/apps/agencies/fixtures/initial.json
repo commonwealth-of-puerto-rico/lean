@@ -1,0 +1,210 @@
+[
+    {
+        "pk": 16, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Administraci\u00f3n de Asuntos de Energ\u00e9ticos", 
+            "registration": 1433
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Administraci\u00f3n de Vivienda P\u00fablica", 
+            "registration": 1302
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Administraci\u00f3n de la Industria y el Deporte H\u00edpico", 
+            "registration": 1401
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Administraci\u00f3n de los Sistemas de Retiro de los Empleados del Gobierno PR", 
+            "registration": 1404
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Adminitraci\u00f3n de Reglamentos y Permisos", 
+            "registration": 1406
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Centro de Recaudaci\u00f3n de Ingresos Municipale", 
+            "registration": 1464
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Comisi\u00f3n Estatal de Elecciones", 
+            "registration": 1410
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Comisi\u00f3n Industrial de Puerto Rico", 
+            "registration": 1411
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Consejo de Desarrollo Ocupacional y Recursos Humanos", 
+            "registration": 1467
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Departamento de Agricultura", 
+            "registration": 1000
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Departamento de Educaci\u00f3n", 
+            "registration": 1201
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Departamento de Hacienda", 
+            "registration": 1031
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Junta de Calidad Ambiental", 
+            "registration": 1463
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Negociado de Auditor\u00eda Fiscal", 
+            "registration": 1035
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Negociado de la Loter\u00eda de Puerto Rico", 
+            "registration": 1039
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "OGP3", 
+            "registration": 123
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina de Asuntos de la Juventud", 
+            "registration": 1458
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina de Gerencia y Presupuesto", 
+            "registration": 1430
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina de \u00c9tica Gubernamental", 
+            "registration": 1452
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina del Comisionado de Instituciones Financieras", 
+            "registration": 1453
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina del Comisionado de Seguros", 
+            "registration": 1436
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina del Contralor de Puerto Rico", 
+            "registration": 400
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina del Gobernador", 
+            "registration": 1437
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Oficina del Principal Ejecutivo de Informaci\u00f3n del Gobierno de PR", 
+            "registration": 1470
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Polic\u00eda de Puerto Rico", 
+            "registration": 1440
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "agencies.agency", 
+        "fields": {
+            "name": "Sistema de Retiro para Maestros", 
+            "registration": 1429
+        }
+    }
+]

@@ -1,0 +1,348 @@
+[
+    {
+        "pk": 1, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2010-2011"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2011-2012"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2012-2013"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2013-2014"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2014-2015"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2015-2016"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Compromiso Program\u00e1tico del Programa de Gobierno"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Iniciativas"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Ley"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Normas"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Orden Ejecutiva"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Otros"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Pol\u00edticas de TIG"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.purpose", 
+        "fields": {
+            "label": "Reglamentaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Comunicaciones -- Redes"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Financiero"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Mejoras a Infraestructura del Centro de C\u00f3mputos"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Migraci\u00f3n a nuevas versiones"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Otras"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Recursos Humanos"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Seguridad de Estructura y Activos del Gobierno"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Seguridad de Infraestructura"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.classification", 
+        "fields": {
+            "label": "Seguridad del Ciudadano"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "An\u00e1lisis y Dise\u00f1o"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Desarollo"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Implementaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Mantenimiento"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Planificaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Producci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.stage", 
+        "fields": {
+            "label": "Pruebas"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.benefit", 
+        "fields": {
+            "label": "Actualizar el Equipo"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.benefit", 
+        "fields": {
+            "label": "Eliminar Procedimientos Manuales"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.benefit", 
+        "fields": {
+            "label": "Generar Econom\u00edas"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.benefit", 
+        "fields": {
+            "label": "Mejorar Servicios a la Clientela"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.benefit", 
+        "fields": {
+            "label": "Otros"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.topic", 
+        "fields": {
+            "label": "Desarrollo o Mejoras a las Pol\u00edticas de Compra y Arrendamiento"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.topic", 
+        "fields": {
+            "label": "Infraestructura de Comunicaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.topic", 
+        "fields": {
+            "label": "Reclutamiento y Retenci\u00f3n de Personal"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "label": "Compartir Datos"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "label": "Compartir Equipo (Hardware)"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "label": "Compartir Oportunidades de Adiestramiento"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "label": "Compartir Recursos Humanos"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "label": "Compartir Recursos de Programaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.project", 
+        "fields": {
+            "presumptions": "qwe", 
+            "classification": 6, 
+            "sharing_benefit": [
+                1
+            ], 
+            "start_period": 1, 
+            "fiscal_year": 1, 
+            "topic": 3, 
+            "sponsor": "Sponsor", 
+            "purpose_other": "", 
+            "needs": "necesidades", 
+            "requirements": "qwe", 
+            "agency": 1, 
+            "label": "Test project", 
+            "priority": 2, 
+            "methodology": "qwe", 
+            "end_period": 1, 
+            "department": "dept1", 
+            "email": "email@email.com", 
+            "expected_results": "qwe", 
+            "phone_number": "787-555-5555", 
+            "infrastructure": "N", 
+            "explanation": "qwe", 
+            "director": "qwe", 
+            "milestones": "qwe", 
+            "purpose": 1, 
+            "opportunity": [
+                2
+            ], 
+            "topic_other": "qwe", 
+            "stage": 4, 
+            "other_agencies": "qwe", 
+            "classification_other": "", 
+            "benefits": "qwe", 
+            "benefit": 4, 
+            "risks": "qwe", 
+            "benefit_other": "qwe", 
+            "limitations": "qwe", 
+            "goals": "metas"
+        }
+    }
+]
