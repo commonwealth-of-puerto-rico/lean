@@ -36,3 +36,34 @@ def render_widget(request, link):
         })
     else:
         return u''
+
+
+class ButtonNavigationWidget(object):
+    def __init__(self,  link):
+        self.link = link
+
+    def render(self, request, extra_context=None, resolved_object=None):
+        if self.link.permissions:
+            try:
+                Permission.objects.check_permissions(request.user, self.link.permissions)
+                return self.resolve_link(request, extra_context, resolved_object)
+            except PermissionDenied:
+                return u''
+        else:
+            return self.resolve_link(request, extra_context, resolved_object)
+
+    def resolve_link(self, request, extra_context=None, resolved_object=None):
+        context = RequestContext(request)
+        if extra_context:
+            context.update(extra_context)
+        resolved_link = self.link.resolve(context)
+        if resolved_link:
+            return mark_safe(u'<a style="text-decoration:none; margin-right: 10px;" href="%(url)s"><button style="vertical-align: top; padding: 1px; width: 110px; height: 100px; margin: 10px;">%(icon)s<p style="margin: 0px 0px 0px 0px;">%(string)s</p></button></a>' % {
+                'url': resolved_link.url,
+                'icon': getattr(resolved_link, 'icon', icon_error).display_big(),
+                'static_url': settings.STATIC_URL,
+                'string': capfirst(resolved_link.text),
+                'image_alt': _(u'icon'),
+            })
+        else:
+            return u''
