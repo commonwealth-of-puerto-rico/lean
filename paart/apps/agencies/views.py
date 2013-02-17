@@ -8,6 +8,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
+from acls.models import AccessEntry
 from permissions.models import Permission
 
 from .forms import AgencyForm
