@@ -9,8 +9,10 @@ from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
 from acls.models import AccessEntry
+from navigation.widgets import ButtonNavigationWidget
 from permissions.models import Permission
 
+from .classes import AgencyElement
 from .forms import AgencyForm
 from .icons import icon_agency_delete
 from .models import Agency
@@ -98,4 +100,24 @@ def agency_delete(request, agency_pk):
     }
 
     return render_to_response('generic_confirm.html', context,
+        context_instance=RequestContext(request))
+
+
+def agency_details(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, document)
+
+    context = {
+        'object_list': [ButtonNavigationWidget(item.link).render(request, resolved_object=agency, extra_context={'resolved_object': agency}) for item in AgencyElement.get_all()],
+        'title': _(u'agency elements'),
+        'object': agency,
+    }
+
+    # Remove unresolved links form list
+    context['object_list'] = [obj for obj in context['object_list'] if obj]
+
+    return render_to_response('generic_list_horizontal.html', context,
         context_instance=RequestContext(request))
