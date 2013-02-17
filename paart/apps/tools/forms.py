@@ -4,16 +4,16 @@ from django import forms
 
 from common.forms import DetailForm, ROFormMixin
 
-from .models import Equipment
+from .models import ToolsProfile
 
 
-class EquipmentForm(forms.ModelForm, ROFormMixin):
+class ToolsProfileForm(forms.ModelForm, ROFormMixin):
     readonly_fields = ('agency',)
-    
+
     class Meta:
-        model = Equipment
+        model = ToolsProfile
 
 
-class EquipmentForm_detail(DetailForm):
+class ToolsProfileForm_detail(DetailForm):
     class Meta:
-        model = Equipment
+        model = ToolsProfile

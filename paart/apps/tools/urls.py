@@ -3,8 +3,8 @@ from __future__ import absolute_import
 from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('tools.views',
-#    url(r'^(?P<agency_pk>\d+)/list/$', 'agency_equipment_list', (), 'agency_equipment_list'),
-#    url(r'^(?P<equipment_pk>\d+)/edit/$', 'equipment_edit', (), 'equipment_edit'),
-#    url(r'^(?P<equipment_pk>\d+)/delete/$', 'equipment_delete', (), 'equipment_delete'),
-#    url(r'^(?P<equipment_pk>\d+)/$', 'equipment_view', (), 'equipment_view'),
+    url(r'^(?P<agency_pk>\d+)/list/$', 'agency_tools_profile_list', (), 'agency_tools_profile_list'),
+    url(r'^(?P<tools_profile_pk>\d+)/edit/$', 'tools_profile_edit', (), 'tools_profile_edit'),
+    url(r'^(?P<tools_profile_pk>\d+)/delete/$', 'tools_profile_delete', (), 'tools_profile_delete'),
+    url(r'^(?P<tools_profile_pk>\d+)/$', 'tools_profile_view', (), 'tools_profile_view'),
 )

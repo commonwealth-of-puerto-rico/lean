@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 
 from agencies.models import Agency
 
@@ -76,7 +77,7 @@ class ToolsProfile(models.Model):
     servers = models.PositiveIntegerField(verbose_name=_(u'servers'), blank=True, null=True)
 
     def __unicode__(self):
-        return unicode(self.agency)
+        return ugettext(u'tools profile')
 
     #def natural_key(self):
     #    return (self.label,)
