@@ -46,7 +46,6 @@ class ProjectCreateWizard(BoundFormWizard):
             'submit_label': _(u'Next step'),
             'submit_icon': icon_wizard_next_step,
         }
-        print 'sad', self.view_extra_context
         if self.view_extra_context:
             context.update(self.view_extra_context)
 
