@@ -67,6 +67,7 @@ class Antivirus(models.Model):
 
 
 class ToolsProfile(models.Model):
+    datetime_created = models.DateTimeField(verbose_name=_(u'creation date and time'))
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     development = models.ManyToManyField(Development, verbose_name=_(u'development tools'))
     backup = models.ManyToManyField(Backup, verbose_name=_(u'backup tools'))
@@ -77,10 +78,10 @@ class ToolsProfile(models.Model):
     servers = models.PositiveIntegerField(verbose_name=_(u'servers'), blank=True, null=True)
 
     def __unicode__(self):
-        return ugettext(u'tools profile')
+        return unicode(self.datetime_created)
 
-    #def natural_key(self):
-    #    return (self.label,)
+    def natural_key(self):
+        return (self.datetime_created,)
 
     @models.permalink
     def get_absolute_url(self):

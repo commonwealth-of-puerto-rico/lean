@@ -15,7 +15,7 @@ from .models import ToolsProfile
 Link.bind_links([ToolsProfile], [link_tools_profile_view, link_tools_profile_edit, link_tools_profile_delete])
 
 register_model_list_columns(ToolsProfile, [
-    {'name': _(u'name'), 'attribute': 'label'},
+    {'name': _(u'creation date and time'), 'attribute': encapsulate(lambda x: x.datetime_created)},
 ])
 
 AgencyElement(link_agency_tools_profile_list)

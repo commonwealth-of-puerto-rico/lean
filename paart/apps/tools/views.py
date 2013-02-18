@@ -34,7 +34,7 @@ def agency_tools_profile_list(request, agency_pk):
 
     context = {
         'object_list': final_object_list,
-        'title': _(u'tools_profile'),
+        'title': _(u'tools profiles'),
         'hide_object': True,
         'object': agency,
     }
