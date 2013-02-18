@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from agencies.models import Agency
@@ -109,6 +110,7 @@ class Opportunity(models.Model):
 
 
 class Project(models.Model):
+    datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)

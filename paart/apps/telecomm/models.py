@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
 from agencies.models import Agency
@@ -20,6 +21,7 @@ class Provider(models.Model):
 
 
 class Equipment(models.Model):
+    datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
     intranet_connectivity = models.BooleanField(verbose_name=_(u'intranet connectivity?'))

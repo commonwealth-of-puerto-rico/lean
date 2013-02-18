@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 
@@ -67,7 +68,7 @@ class Antivirus(models.Model):
 
 
 class ToolsProfile(models.Model):
-    datetime_created = models.DateTimeField(verbose_name=_(u'creation date and time'))
+    datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     development = models.ManyToManyField(Development, verbose_name=_(u'development tools'))
     backup = models.ManyToManyField(Backup, verbose_name=_(u'backup tools'))
