@@ -2,6 +2,8 @@
 import os
 import sys
 
+from django.core.urlresolvers import reverse_lazy
+
 ugettext = lambda s: s
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), './'))
@@ -112,11 +114,14 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.transaction.TransactionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',    
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'common.middleware.login_required_middleware.LoginRequiredMiddleware',
+    'permissions.middleware.permission_denied_middleware.PermissionDeniedMiddleware',
     'pagination.middleware.PaginationMiddleware',
 )
 
@@ -203,9 +208,33 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
+#-------- Django compressor ----------------
 COMPRESS_ENABLED=False
 COMPRESS_PARSER = 'compressor.parser.HtmlParser'
 COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter', 'compressor.filters.cssmin.CSSMinFilter']
+#--------- Django -------------------
+LOGIN_URL = reverse_lazy('login_view')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+#-------- LoginRequiredMiddleware ----------
+LOGIN_EXEMPT_URLS = (
+    r'^favicon\.ico$',
+    r'^about\.html$',
+    r'^legal/',  # allow the entire /legal/* subsection
+    r'^%s-static/' % PROJECT_NAME,
+    r'^api',
+
+    r'^accounts/register/$',
+    r'^accounts/register/complete/$',
+    r'^accounts/register/closed/$',
+
+    r'^accounts/activate/complete/',
+    r'^accounts/activate/(?P<activation_key>\w+)/$',
+
+    r'^password/reset/$',
+    r'^password/reset/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$',
+    r'^password/reset/complete/$',
+    r'^password/reset/done/$',
+)
 
 try:
     from settings_local import *
@@ -244,4 +273,4 @@ if DEVELOPMENT:
         DEBUG_TOOLBAR_CONFIG = {
             'INTERCEPT_REDIRECTS': False,
         }
-            
+
