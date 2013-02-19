@@ -4,7 +4,7 @@ from django import forms
 
 from common.forms import DetailForm, ROFormMixin
 
-from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails
+from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails, ProjectOpportunities
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
@@ -80,3 +80,27 @@ class ProjectDetailsForm_create(forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectDetails
+
+
+## Opportunities
+
+class ProjectOpportunitiesForm_edit(forms.ModelForm, ROFormMixin):
+    readonly_fields = ('project',)
+
+    class Meta:
+        model = ProjectOpportunities
+        #widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple}
+
+    def __init__(self, *args, **kwargs):
+        super(ProjectOpportunitiesForm_edit, self).__init__(*args, **kwargs)
+        #self.fields['opportunity'].help_text = ''
+
+class ProjectOpportunitiesForm_view(DetailForm):
+    class Meta:
+        model = ProjectOpportunities
+
+
+class ProjectOpportunitiesForm_create(forms.ModelForm):
+    class Meta:
+        exclude = ('project',)
+        model = ProjectOpportunities

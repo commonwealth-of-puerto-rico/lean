@@ -15,10 +15,11 @@ from permissions.models import Permission
 from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
     ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create,
     ProjectBudgetForm_view, ProjectBudgetForm_edit, ProjectBudgetForm_create,
-    ProjectDetailsForm_view, ProjectDetailsForm_edit, ProjectDetailsForm_create)
+    ProjectDetailsForm_view, ProjectDetailsForm_edit, ProjectDetailsForm_create,
+    ProjectOpportunitiesForm_view, ProjectOpportunitiesForm_edit, ProjectOpportunitiesForm_create)
 from .icons import (icon_project_delete, icon_project_info_delete,
-    icon_project_budget_delete, icon_project_details_delete)
-from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails
+    icon_project_budget_delete, icon_project_details_delete, icon_project_opportunities_delete)
+from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails, ProjectOpportunities
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
     PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE)
 from .wizards import ProjectCreateWizard
@@ -602,3 +603,141 @@ def project_details_delete(request, project_details_pk):
 
     return render_to_response('generic_confirm.html', context,
         context_instance=RequestContext(request))
+
+
+## Opportunities
+
+def project_opportunities_view(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+
+    try:
+        project_opportunities = project.projectopportunities
+    except ProjectOpportunities.DoesNotExist:
+        return HttpResponseRedirect(reverse('project_opportunities_create', args=[project.pk]))
+    else:
+        form = ProjectOpportunitiesForm_view(instance=project.projectopportunities)
+
+    return render_to_response('generic_detail.html', {
+        'form': form,
+        'agency': project.agency,
+        'project': project,
+        'project_opportunities': project_opportunities,
+        'title': _(u'opportunities for project: %s') % project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_opportunities'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_opportunities_edit(request, project_opportunities_pk):
+    project_opportunities = get_object_or_404(ProjectOpportunities, pk=project_opportunities_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_opportunities.project.agency)
+
+    if request.method == 'POST':
+        form = ProjectOpportunitiesForm_edit(request.POST, instance=project_opportunities)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _(u'Opportunities for project "%s" edited successfully.') % project_opportunities.project)
+
+            return HttpResponseRedirect(project_opportunities.get_absolute_url())
+    else:
+        form = ProjectOpportunitiesForm_edit(instance=project_opportunities)
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': project_opportunities.project,
+        'project_opportunities': project_opportunities,
+        'agency': project_opportunities.project.agency,
+        'title': _('edit opportunities for project: %s') % project_opportunities.project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_opportunities'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_opportunities_create(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+
+    if request.method == 'POST':
+        form = ProjectOpportunitiesForm_create(request.POST, initial={'project': project})
+        if form.is_valid():
+            project_opportunities = form.save(commit=False)
+            project_opportunities.project = project
+            project_opportunities.save()
+            messages.success(request, _(u'Opportunities for project "%s" saved successfully.') % project)
+
+            return HttpResponseRedirect(project_opportunities.get_absolute_url())
+    else:
+        form = ProjectOpportunitiesForm_create(initial={'project': project})
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': project,
+        'agency': project.agency,
+        'title': _(u'enter opportunities for project: %s') % project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_opportunities_delete(request, project_opportunities_pk):
+    project_opportunities = get_object_or_404(ProjectOpportunities, pk=project_opportunities_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_opportunities.project.agency)
+
+    post_action_redirect = project_opportunities.project.get_absolute_url()
+
+    previous = request.POST.get('previous', request.GET.get('previous', request.META.get('HTTP_REFERER', '/')))
+    next = request.POST.get('next', request.GET.get('next', post_action_redirect if post_action_redirect else request.META.get('HTTP_REFERER', '/')))
+
+    if request.method == 'POST':
+        try:
+            project_opportunities.delete()
+            messages.success(request, _(u'Opportunities for project: %s, deleted successfully.') % project_opportunities.project)
+        except Exception, e:
+            messages.error(request, _(u'Opportunities for project: %(project)s delete error: %(error)s') % {
+                'project': project_opportunities.project, 'error': e})
+
+        return HttpResponseRedirect(next)
+
+    context = {
+        'delete_view': True,
+        'previous': previous,
+        'next': next,
+        'title': _(u'Are you sure you with to delete the opportunities for project: %s?') % project_opportunities.project,
+        'form_icon': icon_project_opportunities_delete,
+        'project': project_opportunities.project,
+        'project_opportunities': project_opportunities,
+        'agency': project_opportunities.project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_opportunities'},
+        ],
+    }
+
+    return render_to_response('generic_confirm.html', context,
+        context_instance=RequestContext(request))
+

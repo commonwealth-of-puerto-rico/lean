@@ -2,7 +2,8 @@ from __future__ import absolute_import
 
 from icons.literals import (ARROW_RIGHT, PAGE, PAGE_ADD, PAGE_EDIT, PAGE_DELETE,
     BUILDING_PAGE, WAND, BUILDING, INFO_RHOMBUS, INFO_RHOMBUS_EDIT, INFO_RHOMBUS_DELETE,
-    MONEY, MONEY_EDIT, MONEY_DELETE, MEASURE, MEASURE_EDIT, MEASURE_DELETE)
+    MONEY, MONEY_EDIT, MONEY_DELETE, MEASURE, MEASURE_EDIT, MEASURE_DELETE,
+    THUMB_UP, THUMB_UP_EDIT, THUMB_UP_DELETE)
 from icons import Icon
 
 icon_projects = Icon(PAGE)
@@ -22,6 +23,10 @@ icon_project_budget_delete = Icon(MONEY_DELETE)
 icon_project_details_edit = Icon(MEASURE_EDIT)
 icon_project_details_view = Icon(MEASURE)
 icon_project_details_delete = Icon(MEASURE_DELETE)
+
+icon_project_opportunities_edit = Icon(THUMB_UP_EDIT)
+icon_project_opportunities_view = Icon(THUMB_UP)
+icon_project_opportunities_delete = Icon(THUMB_UP_DELETE)
 
 icon_agency_projects = Icon(PAGE)
 icon_project_create_wizard = Icon(WAND)

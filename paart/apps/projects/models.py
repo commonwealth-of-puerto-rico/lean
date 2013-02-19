@@ -211,8 +211,8 @@ class ProjectDetails(models.Model):
         verbose_name = _(u'project details')
         verbose_name_plural = _(u'projects details')
 
-"""
-class ProjectOportunities(models.Model):
+
+class ProjectOpportunities(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Oportunidades interagenciales - Paso 4
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
@@ -230,7 +230,7 @@ class ProjectOportunities(models.Model):
     class Meta:
         verbose_name = _(u'project opportunities')
         verbose_name_plural = _(u'projects opportunities')
-"""
+
 
 #class ProjectAdquisition(models.Model):
 #class ProjectCosts(models.Model):

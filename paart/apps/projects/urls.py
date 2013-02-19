@@ -23,6 +23,11 @@ urlpatterns = patterns('projects.views',
     url(r'^(?P<project_pk>\d+)/details/view/$', 'project_details_view', (), 'project_details_view'),
     url(r'^(?P<project_pk>\d+)/details/create/$', 'project_details_create', (), 'project_details_create'),
 
+    url(r'^(?P<project_opportunities_pk>\d+)/opportunities/edit/$', 'project_opportunities_edit', (), 'project_opportunities_edit'),
+    url(r'^(?P<project_opportunities_pk>\d+)/opportunities/delete/$', 'project_opportunities_delete', (), 'project_opportunities_delete'),
+    url(r'^(?P<project_pk>\d+)/opportunities/view/$', 'project_opportunities_view', (), 'project_opportunities_view'),
+    url(r'^(?P<project_pk>\d+)/opportunities/create/$', 'project_opportunities_create', (), 'project_opportunities_create'),
+
     url(r'^agency/(?P<agency_pk>\d+)/list/$', 'agency_project_list', (), 'agency_project_list'),
     #url(r'^agency/(?P<agency_pk>\d+)/create/$', 'project_create_wizard', (), 'project_create_wizard'),
 )
