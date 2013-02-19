@@ -18,6 +18,11 @@ urlpatterns = patterns('projects.views',
     url(r'^(?P<project_pk>\d+)/budget/view/$', 'project_budget_view', (), 'project_budget_view'),
     url(r'^(?P<project_pk>\d+)/budget/create/$', 'project_budget_create', (), 'project_budget_create'),
 
+    url(r'^(?P<project_details_pk>\d+)/details/edit/$', 'project_details_edit', (), 'project_details_edit'),
+    url(r'^(?P<project_details_pk>\d+)/details/delete/$', 'project_details_delete', (), 'project_details_delete'),
+    url(r'^(?P<project_pk>\d+)/details/view/$', 'project_details_view', (), 'project_details_view'),
+    url(r'^(?P<project_pk>\d+)/details/create/$', 'project_details_create', (), 'project_details_create'),
+
     url(r'^agency/(?P<agency_pk>\d+)/list/$', 'agency_project_list', (), 'agency_project_list'),
     #url(r'^agency/(?P<agency_pk>\d+)/create/$', 'project_create_wizard', (), 'project_create_wizard'),
 )

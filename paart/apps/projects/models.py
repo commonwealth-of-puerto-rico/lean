@@ -183,10 +183,8 @@ class ProjectBudget(models.Model):
         verbose_name_plural = _(u'projects budgets')
 
 
-#class ProjectAdquisition(models.Model):
-#class ProjectCosts(models.Model):
-
-'''
+class ProjectDetails(models.Model):
+    project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Detalle del Proyecto - Paso 3 ##
     # 1. Fecha de comienzo
     start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'))
@@ -201,9 +199,38 @@ class ProjectBudget(models.Model):
     priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'))
     topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
     topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
+
+    def __unicode__(self):
+        return ugettext(u'project details')
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_details_view', [self.project.pk])
+
+    class Meta:
+        verbose_name = _(u'project details')
+        verbose_name_plural = _(u'projects details')
+
+"""
+class ProjectOportunities(models.Model):
+    project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Oportunidades interagenciales - Paso 4
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
     explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'))
     other_agencies = models.TextField(verbose_name=_('other agencies or involved agencies'))
-'''
+
+    def __unicode__(self):
+        return ugettext(u'project opportunities')
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_opportunities_view', [self.project.pk])
+
+    class Meta:
+        verbose_name = _(u'project opportunities')
+        verbose_name_plural = _(u'projects opportunities')
+"""
+
+#class ProjectAdquisition(models.Model):
+#class ProjectCosts(models.Model):
