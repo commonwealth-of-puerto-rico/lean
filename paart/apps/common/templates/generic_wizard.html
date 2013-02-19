@@ -2,16 +2,71 @@
 {% load i18n %}
 {% load styling %}
 {% add_classes_to_form form %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
+
 {% block content %}
-    {% with step_title as title %}
-    {% with previous_fields as hidden_fields %}
-        {% if form.management_form %}
-            {% with "true" as form_display_mode_table %}
-                {% include "generic_form_subtemplate.html" %}
-            {% endwith %}
+{% load common_default_icons_tags %}
+{% default_icons %}
+
+{% if side_bar %}
+    <div class="block">
+    <h3>
+{% else %}
+    <div class="content">
+    <h2 class="title">
+{% endif %}
+
+Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}: {{ step_title }}
+
+{% if side_bar %}
+    </h3>
+    <div class="content">
+        <p>
+{% else %}
+    </h2>
+    <div class="inner">
+{% endif %}
+
+{% if form.is_multipart %}
+    <form name="{{ form.prefix }}" enctype="multipart/form-data" method="{{ submit_method|default:'post' }}" action="{{ form_action }}" class="form">
+{% else %}
+    <form name="{{ form.prefix }}" method="{{ submit_method|default:'post' }}" action="{{ form_action }}" class="form">
+{% endif %}
+{% csrf_token %}
+    <table>
+        {{ wizard.management_form }}
+        {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+                {{ form }}
+            {% endfor %}
         {% else %}
-            {% include "generic_form_subtemplate.html" %}
+        {% with wizard.form as form %}
+            {% include "generic_form_instance.html" %}
+        {% endwith %}
         {% endif %}
-    {% endwith %}
-    {% endwith %}
+    </table>
+    {% if wizard.steps.prev %}
+        <button class="button" type="submit" name="wizard_goto_step" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
+        <button class="button" type="submit" name="wizard_goto_step" value="{{ wizard.steps.first }}">{% trans "previous step" %}</button>
+    {% endif %}
+    <button class="button" type="submit" value="{% trans 'submit' %}"/>
+        {% if submit_icon %}
+            {{ submit_icon.display_small }}
+        {% else %}
+            {{ icon_submit_default.display_small }}
+        {% endif %}
+
+        {% if submit_label %}{{ submit_label }}{% else %}{% if object %}{% trans "Save" %}{% else %}{% trans "Submit" %}{% endif %}{% endif %}
+    </button>
+</form>
+{% if side_bar %}
+    </p></div><!--end content--></div><!--end block-->
+{% else %}
+    </div></div>
+{% endif %}
+
 {% endblock %}
