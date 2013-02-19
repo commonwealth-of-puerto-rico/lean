@@ -222,6 +222,8 @@ class IconSet(IconSetBase):
         WORLD: 'world.png',
         WORLD_GO: 'world_go.png',
         WRENCH: 'wrench.png',
+        WRENCH_EDIT: ['wrench.png', 'pencil.png'],
+        WRENCH_DELETE: ['wrench.png', 'delete.png'],
         XHTML: 'xhtml.png',
         XHTML_GO: 'xhtml_go.png',
         XHTML_ADD: 'xhtml_add.png',
