@@ -112,6 +112,7 @@ class Opportunity(models.Model):
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
+    ## Informacion general - Paso 1  ##
     fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
     purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'))
@@ -127,6 +128,7 @@ class Project(models.Model):
     expected_results = models.TextField(verbose_name=_('expected results'))
     methodology = models.TextField(verbose_name=_('methodology'))
     milestones = models.TextField(verbose_name=_(u'milestones'))
+    ## Presupuesto - Paso 2 ##
     infrastructure = models.CharField(max_length=1, choices=INFRASTRUCTURE_CHOICES, verbose_name=_(u'infrastructure needs'))
     requirements = models.TextField(verbose_name=_(u'project critical requirements'))
     presumptions = models.TextField(verbose_name=_(u'presumptions'))
@@ -136,7 +138,7 @@ class Project(models.Model):
     # TODO: Adquisition
     director = models.TextField(verbose_name=_(u'project director'))
     # TODO: Costs
-    ## Detalle del Proyecto ##
+    ## Detalle del Proyecto - Paso 3 ##
     # 1. Fecha de comienzo
     start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'))
     # 2. Fecha de terminacion
@@ -146,11 +148,11 @@ class Project(models.Model):
     # 4. Beneficios de Implementacion
     benefit = models.ForeignKey(Benefit, verbose_name=_(u'implementation benefit'))
     # 5. Otro beneficio
-    benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'))
+    benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'), blank=True)
     priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'))
     topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
-    topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'))
-    ## Oportunidades interagenciales ##
+    topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
+    ## Oportunidades interagenciales - Paso 4
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
     explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'))
