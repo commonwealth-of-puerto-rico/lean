@@ -7,25 +7,38 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
-"Report-Msgid-Bugs-To: http://github.com/rosarior/mayan/issues\n"
-"POT-Creation-Date: 2012-12-12 01:49-0400\n"
-"PO-Revision-Date: 2012-12-12 06:06+0000\n"
-"Last-Translator: Roberto Rosario <roberto.rosario.gonzalez@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
+"PO-Revision-Date: 2013-02-18 21:44\n"
+"Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+#: classes.py:23
+msgid "Unnamed link"
+msgstr "Enlace sin nombre"
 
 #: forms.py:14
 msgid "Multi item action"
 msgstr "Acción para multiple artículos"
 
-#: widgets.py:48
+#: registry.py:8
+msgid "Navigation"
+msgstr "Navegación"
+
+#: registry.py:9
+msgid "Handles UI navigation, menus and links."
+msgstr "Maneja navegación del interface, menús y enlaces."
+
+#: widgets.py:35 widgets.py:66
 msgid "icon"
 msgstr "emblema"
 
-#: templatetags/navigation_tags.py:282
+#: templatetags/navigation_tags.py:101
 msgid "Selected item actions:"
 msgstr "Acciones para el artículo seleccionado:"

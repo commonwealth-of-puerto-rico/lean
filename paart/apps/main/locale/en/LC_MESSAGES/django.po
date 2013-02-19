@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-12 03:19-0400\n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:33
-msgid "maintenance"
-msgstr ""
-
-#: __init__.py:34
-msgid "statistics"
-msgstr ""
-
-#: __init__.py:35
-msgid "diagnostics"
-msgstr ""
-
-#: __init__.py:36
-msgid "sentry"
-msgstr ""
-
-#: __init__.py:37
-msgid "admin site"
-msgstr ""
-
-#: __init__.py:40
+#: links.py:9
 msgid "home"
 msgstr ""
 
-#: __init__.py:42
-msgid "search"
-msgstr ""
-
-#: views.py:43
-msgid "maintenance menu"
-msgstr ""
-
-#: views.py:56
-msgid "Statistics"
-msgstr ""
-
-#: views.py:66
-msgid "Diagnostics"
-msgstr ""
-
-#: conf/settings.py:12
+#: settings.py:13
 msgid ""
 "Controls whether the search functionality is provided by a sidebar widget or "
 "by a menu entry."
@@ -71,76 +35,56 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: templates/base.html:28
+#: templates/base.html:27
 msgid "(DEBUG)"
 msgstr ""
 
-#: templates/base.html:193
+#: templates/base.html:244
 msgid "User"
 msgstr ""
 
-#: templates/base.html:195
+#: templates/base.html:246
 msgid "Anonymous"
 msgstr ""
 
-#: templates/base.html:198
+#: templates/base.html:248
 msgid "User details"
 msgstr ""
 
-#: templates/base.html:215
+#: templates/base.html:265
 msgid "Login"
 msgstr ""
 
-#: templates/base.html:215
+#: templates/base.html:265
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:295
+#: templates/base.html:310
 msgid "Secondary menu"
 msgstr ""
 
-#: templates/base.html:311
+#: templates/base.html:329
 #, python-format
-msgid "Actions for %(name)s: %(navigation_object)s"
+msgid "Actions for %(name)s: %(object_reference)s"
 msgstr ""
 
-#: templates/base.html:313 templates/base.html.py:345
+#: templates/base.html:331
 #, python-format
-msgid "Actions for: %(navigation_object)s"
+msgid "Actions for: %(object_reference)s"
 msgstr ""
 
-#: templates/base.html:316
+#: templates/base.html:334
 msgid "Available actions"
 msgstr ""
 
-#: templates/base.html:328 templates/base.html.py:360
-msgid "Related actions"
-msgstr ""
-
-#: templates/base.html:343
-#, python-format
-msgid "Actions for %(object_name)s: %(navigation_object)s"
-msgstr ""
-
-#: templates/base.html:348
-msgid "Actions"
-msgstr ""
-
-#: templates/base.html:373
+#: templates/base.html:350
 msgid "Other available actions"
 msgstr ""
 
-#: templates/home.html:8
-msgid "Django based open source document management system"
+#: templates/home.html:8 templates/project_description.html:8
+msgid "Plan Anual de Administración de los Recursos de Tecnologías"
 msgstr ""
 
-#: templates/project_description.html:6
-msgid ""
-"Open source, Django based electronic document manager with custom metadata, "
-"indexing, tagging, file serving integration, digital signature support and "
-"OCR capabilities"
-msgstr ""
-
-#: templates/project_description.html:21
+#: templates/project_description.html:17
 msgid "Released under the GPL V3 License"
 msgstr ""

@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:18
+msgid "name"
+msgstr ""
+
+#: links.py:12
+msgid "edit"
+msgstr ""
+
+#: links.py:13
+msgid "delete"
+msgstr ""
+
+#: links.py:14
+msgid "details"
+msgstr ""
+
+#: links.py:15 views.py:37 views.py:99
+msgid "equipment"
+msgstr ""
+
+#: models.py:9 models.py:26
+msgid "label"
+msgstr ""
+
+#: models.py:18
+msgid "provider"
+msgstr ""
+
+#: models.py:19
+msgid "providers"
+msgstr ""
+
+#: models.py:24
+msgid "creation date and time"
+msgstr ""
+
+#: models.py:25
+msgid "agency"
+msgstr ""
+
+#: models.py:27
+msgid "intranet connectivity?"
+msgstr ""
+
+#: models.py:29
+msgid "purpose"
+msgstr ""
+
+#: models.py:30
+msgid "internet connectivity?"
+msgstr ""
+
+#: models.py:31
+msgid "internet provider"
+msgstr ""
+
+#: models.py:32
+msgid "internet costs"
+msgstr ""
+
+#: models.py:33
+msgid "uses OGP antenna?"
+msgstr ""
+
+#: models.py:34
+msgid "uses WIFI?"
+msgstr ""
+
+#: models.py:35
+msgid "WIFI provider"
+msgstr ""
+
+#: models.py:36
+msgid "WIFI costs"
+msgstr ""
+
+#: models.py:37
+msgid "internet employees?"
+msgstr ""
+
+#: models.py:50 models.py:51
+msgid "telecomm equipment"
+msgstr ""
+
+#: permissions.py:7
+msgid "Telecomm"
+msgstr ""
+
+#: permissions.py:9
+msgid "Create equipments"
+msgstr ""
+
+#: permissions.py:10
+msgid "Edit equipments"
+msgstr ""
+
+#: permissions.py:11
+msgid "Delete equipments"
+msgstr ""
+
+#: permissions.py:12
+msgid "View equipments"
+msgstr ""
+
+#: permissions.py:14
+msgid "Create providers"
+msgstr ""
+
+#: permissions.py:15
+msgid "Edit providers"
+msgstr ""
+
+#: permissions.py:16
+msgid "Delete providers"
+msgstr ""
+
+#: permissions.py:17
+msgid "View providers"
+msgstr ""
+
+#: views.py:57
+#, python-format
+msgid "Equipment \"%s\" edited successfully."
+msgstr ""
+
+#: views.py:91
+#, python-format
+msgid "Equipment: %s deleted successfully."
+msgstr ""
+
+#: views.py:93
+#, python-format
+msgid "Equipment: %(equipment)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:103
+#, python-format
+msgid "Are you sure you with to delete the equipment: %s?"
+msgstr ""

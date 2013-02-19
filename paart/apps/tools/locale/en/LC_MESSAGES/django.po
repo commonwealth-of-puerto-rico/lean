@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:18 models.py:71
+msgid "creation date and time"
+msgstr ""
+
+#: links.py:12
+msgid "edit"
+msgstr ""
+
+#: links.py:13
+msgid "delete"
+msgstr ""
+
+#: links.py:14
+msgid "details"
+msgstr ""
+
+#: links.py:15
+msgid "tools profile"
+msgstr ""
+
+#: models.py:10 models.py:25 models.py:41 models.py:56
+msgid "label"
+msgstr ""
+
+#: models.py:19
+msgid "development tool"
+msgstr ""
+
+#: models.py:20 models.py:73
+msgid "development tools"
+msgstr ""
+
+#: models.py:34
+msgid "backup tool"
+msgstr ""
+
+#: models.py:35 models.py:74
+msgid "backup tools"
+msgstr ""
+
+#: models.py:50
+msgid "firewall tool"
+msgstr ""
+
+#: models.py:51 models.py:75
+msgid "firewall tools"
+msgstr ""
+
+#: models.py:65
+msgid "antivirus tool"
+msgstr ""
+
+#: models.py:66 models.py:76
+msgid "antivirus tools"
+msgstr ""
+
+#: models.py:72
+msgid "agency"
+msgstr ""
+
+#: models.py:77
+msgid "notebooks"
+msgstr ""
+
+#: models.py:78
+msgid "desktops"
+msgstr ""
+
+#: models.py:79
+msgid "servers"
+msgstr ""
+
+#: models.py:92
+msgid "tool profile"
+msgstr ""
+
+#: models.py:93
+msgid "tool profiles"
+msgstr ""
+
+#: permissions.py:7
+msgid "Tools"
+msgstr ""
+
+#: permissions.py:9
+msgid "Create tool_profiles"
+msgstr ""
+
+#: permissions.py:10
+msgid "Edit tool_profiles"
+msgstr ""
+
+#: permissions.py:11
+msgid "Delete tool_profiles"
+msgstr ""
+
+#: permissions.py:12
+msgid "View tool_profiles"
+msgstr ""
+
+#: views.py:37
+msgid "tools profiles"
+msgstr ""
+
+#: views.py:57
+#, python-format
+msgid "ToolsProfile \"%s\" edited successfully."
+msgstr ""
+
+#: views.py:91
+#, python-format
+msgid "ToolsProfile: %s deleted successfully."
+msgstr ""
+
+#: views.py:93
+#, python-format
+msgid "ToolsProfile: %(tools_profile)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:99
+msgid "tools_profile"
+msgstr ""
+
+#: views.py:103
+#, python-format
+msgid "Are you sure you with to delete the tools_profile: %s?"
+msgstr ""

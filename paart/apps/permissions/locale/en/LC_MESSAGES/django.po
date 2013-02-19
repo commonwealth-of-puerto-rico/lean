@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-12 03:19-0400\n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:17 models.py:214 views.py:40
+#: links.py:13 models.py:218 views.py:40
 msgid "roles"
 msgstr ""
 
-#: __init__.py:18
+#: links.py:14
 msgid "create new role"
 msgstr ""
 
-#: __init__.py:19
+#: links.py:15
 msgid "edit"
 msgstr ""
 
-#: __init__.py:20
+#: links.py:16
 msgid "members"
 msgstr ""
 
-#: __init__.py:21
+#: links.py:17
 msgid "role permissions"
 msgstr ""
 
-#: __init__.py:22
+#: links.py:18
 msgid "delete"
 msgstr ""
 
-#: __init__.py:24
+#: links.py:20
 msgid "grant"
 msgstr ""
 
-#: __init__.py:25
+#: links.py:21
 msgid "revoke"
 msgstr ""
 
@@ -53,44 +53,44 @@ msgstr ""
 msgid "Insufficient permissions."
 msgstr ""
 
-#: models.py:127 views.py:60
+#: models.py:126 views.py:60
 msgid "namespace"
 msgstr ""
 
-#: models.py:128 views.py:61
+#: models.py:127 views.py:61
 msgid "name"
 msgstr ""
 
-#: models.py:135 models.py:192 views.py:152 views.py:215
+#: models.py:134 models.py:196 views.py:154 views.py:217
 msgid "permission"
 msgstr ""
 
-#: models.py:136 views.py:57 views.py:154 views.py:217
+#: models.py:135 views.py:57 views.py:156 views.py:219
 msgid "permissions"
 msgstr ""
 
-#: models.py:200
+#: models.py:204
 msgid "permission holder"
 msgstr ""
 
-#: models.py:201
+#: models.py:205
 msgid "permission holders"
 msgstr ""
 
-#: models.py:209
+#: models.py:213
 msgid "label"
 msgstr ""
 
-#: models.py:213 models.py:244 views.py:76 views.py:93 views.py:117
-#: views.py:334
+#: models.py:217 models.py:248 views.py:76 views.py:93 views.py:119
+#: views.py:336
 msgid "role"
 msgstr ""
 
-#: models.py:260
+#: models.py:264
 msgid "role member"
 msgstr ""
 
-#: models.py:261
+#: models.py:265
 msgid "role members"
 msgstr ""
 
@@ -122,83 +122,75 @@ msgstr ""
 msgid "Revoke permissions"
 msgstr ""
 
+#: settings.py:10
+msgid ""
+"A list of existing roles that are automatically assigned to newly created "
+"users"
+msgstr ""
+
 #: views.py:63
 msgid "has permission"
 msgstr ""
 
-#: views.py:149 views.py:212
+#: views.py:151 views.py:214
 msgid " and "
 msgstr ""
 
-#: views.py:149 views.py:212
+#: views.py:151 views.py:214
 #, python-format
 msgid "%(permissions)s to %(requester)s"
 msgstr ""
 
-#: views.py:159
+#: views.py:161
 #, python-format
 msgid "Permission \"%(permission)s\" granted to: %(requester)s."
 msgstr ""
 
-#: views.py:162
+#: views.py:164
 #, python-format
 msgid "%(requester)s, already had the permission \"%(permission)s\" granted."
 msgstr ""
 
-#: views.py:173
+#: views.py:175
 #, python-format
 msgid ""
 "Are you sure you wish to grant the %(permissions_label)s %(title_suffix)s?"
 msgstr ""
 
-#: views.py:222
+#: views.py:224
 #, python-format
 msgid "Permission \"%(permission)s\" revoked from: %(requester)s."
 msgstr ""
 
-#: views.py:225
+#: views.py:227
 #, python-format
 msgid "%(requester)s, doesn't have the permission \"%(permission)s\" granted."
 msgstr ""
 
-#: views.py:236
+#: views.py:238
 #, python-format
 msgid ""
 "Are you sure you wish to revoke the %(permissions_label)s %(title_suffix)s?"
 msgstr ""
 
-#: views.py:271 views.py:295
+#: views.py:273 views.py:297
 msgid "Users"
 msgstr ""
 
-#: views.py:274 views.py:298
+#: views.py:276 views.py:300
 msgid "Groups"
 msgstr ""
 
-#: views.py:277 views.py:301
+#: views.py:279 views.py:303
 msgid "Special"
 msgstr ""
 
-#: views.py:330
+#: views.py:332
 #, python-format
 msgid "non members of role: %s"
 msgstr ""
 
-#: views.py:331
+#: views.py:333
 #, python-format
 msgid "members of role: %s"
-msgstr ""
-
-#: widgets.py:16
-msgid "Revoke"
-msgstr ""
-
-#: widgets.py:21
-msgid "Grant"
-msgstr ""
-
-#: conf/settings.py:10
-msgid ""
-"A list of existing roles that are automatically assigned to newly created "
-"users"
 msgstr ""

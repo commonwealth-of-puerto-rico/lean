@@ -7,62 +7,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
-"Report-Msgid-Bugs-To: http://github.com/rosarior/mayan/issues\n"
-"POT-Creation-Date: 2012-12-12 01:49-0400\n"
-"PO-Revision-Date: 2012-12-12 06:15+0000\n"
-"Last-Translator: Roberto Rosario <roberto.rosario.gonzalez@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
+"PO-Revision-Date: 2013-02-18 21:43\n"
+"Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:33
-msgid "maintenance"
-msgstr "mantenimiento"
-
-#: __init__.py:34
-msgid "statistics"
-msgstr "estadísticas"
-
-#: __init__.py:35
-msgid "diagnostics"
-msgstr "diagnósticos"
-
-#: __init__.py:36
-msgid "sentry"
-msgstr "sentry"
-
-#: __init__.py:37
-msgid "admin site"
-msgstr "sitio administrativo"
-
-#: __init__.py:40
+#: links.py:9
 msgid "home"
 msgstr "inicio"
 
-#: __init__.py:42
-msgid "search"
-msgstr "búsqueda"
-
-#: views.py:43
-msgid "maintenance menu"
-msgstr "menú de mantenimiento"
-
-#: views.py:56
-msgid "Statistics"
-msgstr "Estadísticas"
-
-#: views.py:66
-msgid "Diagnostics"
-msgstr "Diagnósticos"
-
-#: conf/settings.py:12
+#: settings.py:13
 msgid ""
 "Controls whether the search functionality is provided by a sidebar widget or"
 " by a menu entry."
-msgstr "Controla si la funcionalidad de búsqueda es proporcionada por una barra lateral o por una entrada de menú."
+msgstr ""
+"Controla si la funcionalidad de búsqueda es proporcionada por una barra "
+"lateral o por una entrada de menú."
 
 #: templates/about.html:5
 msgid "About this program"
@@ -72,76 +39,104 @@ msgstr "Acerca de este programa"
 msgid "Version"
 msgstr "Versión"
 
-#: templates/base.html:28
+#: templates/base.html:27
 msgid "(DEBUG)"
 msgstr "(DEBUG)"
 
-#: templates/base.html:193
+#: templates/base.html:244
 msgid "User"
 msgstr "Usuario"
 
-#: templates/base.html:195
+#: templates/base.html:246
 msgid "Anonymous"
 msgstr "Anónimo"
 
-#: templates/base.html:198
+#: templates/base.html:248
 msgid "User details"
 msgstr "Detalles de usuario"
 
-#: templates/base.html:215
+#: templates/base.html:265
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: templates/base.html:215
+#: templates/base.html:265
 msgid "Logout"
 msgstr "Desconectarse"
 
-#: templates/base.html:295
+#: templates/base.html:310
 msgid "Secondary menu"
 msgstr "Menú secundario"
 
-#: templates/base.html:311
-#, python-format
-msgid "Actions for %(name)s: %(navigation_object)s"
+#: templates/base.html:329
+#, fuzzy, python-format
+msgid "Actions for %(name)s: %(object_reference)s"
 msgstr "Acciones para %(name)s: %(navigation_object)s "
 
-#: templates/base.html:313 templates/base.html.py:345
-#, python-format
-msgid "Actions for: %(navigation_object)s"
+#: templates/base.html:331
+#, fuzzy, python-format
+msgid "Actions for: %(object_reference)s"
 msgstr "Acciones para: %(navigation_object)s "
 
-#: templates/base.html:316
+#: templates/base.html:334
 msgid "Available actions"
 msgstr "Acciones disponibles"
 
-#: templates/base.html:328 templates/base.html.py:360
-msgid "Related actions"
-msgstr "Acciones relacionadas"
-
-#: templates/base.html:343
-#, python-format
-msgid "Actions for %(object_name)s: %(navigation_object)s"
-msgstr "Acciones para %(object_name)s: %(navigation_object)s "
-
-#: templates/base.html:348
-msgid "Actions"
-msgstr "Acciones"
-
-#: templates/base.html:373
+#: templates/base.html:350
 msgid "Other available actions"
 msgstr "Otras acciones disponibles"
 
-#: templates/home.html:8
-msgid "Django based open source document management system"
-msgstr "Sistema de manejo de documentos de código abierto basado en Django"
+#: templates/home.html:8 templates/project_description.html:8
+msgid "Plan Anual de Administración de los Recursos de Tecnologías"
+msgstr "Plan Anual de Administración de los Recursos de Tecnologías"
 
-#: templates/project_description.html:6
-msgid ""
-"Open source, Django based electronic document manager with custom metadata, "
-"indexing, tagging, file serving integration, digital signature support and "
-"OCR capabilities"
-msgstr "Gestor documental libre y de código abierto, basado en Django con metadatos personalizados, indexación, etiquetado, integración de servicio de archivos, apoyo de firmas digitales y capacidades de OCR"
-
-#: templates/project_description.html:21
+#: templates/project_description.html:17
 msgid "Released under the GPL V3 License"
 msgstr "Publicado bajo la licencia GPL v3"
+
+#~ msgid "maintenance"
+#~ msgstr "mantenimiento"
+
+#~ msgid "statistics"
+#~ msgstr "estadísticas"
+
+#~ msgid "diagnostics"
+#~ msgstr "diagnósticos"
+
+#~ msgid "sentry"
+#~ msgstr "sentry"
+
+#~ msgid "admin site"
+#~ msgstr "sitio administrativo"
+
+#~ msgid "search"
+#~ msgstr "búsqueda"
+
+#~ msgid "maintenance menu"
+#~ msgstr "menú de mantenimiento"
+
+#~ msgid "Statistics"
+#~ msgstr "Estadísticas"
+
+#~ msgid "Diagnostics"
+#~ msgstr "Diagnósticos"
+
+#~ msgid "Related actions"
+#~ msgstr "Acciones relacionadas"
+
+#~ msgid "Actions for %(object_name)s: %(navigation_object)s"
+#~ msgstr "Acciones para %(object_name)s: %(navigation_object)s "
+
+#~ msgid "Actions"
+#~ msgstr "Acciones"
+
+#~ msgid "Django based open source document management system"
+#~ msgstr "Sistema de manejo de documentos de código abierto basado en Django"
+
+#~ msgid ""
+#~ "Open source, Django based electronic document manager with custom metadata, "
+#~ "indexing, tagging, file serving integration, digital signature support and "
+#~ "OCR capabilities"
+#~ msgstr ""
+#~ "Gestor documental libre y de código abierto, basado en Django con metadatos "
+#~ "personalizados, indexación, etiquetado, integración de servicio de archivos,"
+#~ " apoyo de firmas digitales y capacidades de OCR"

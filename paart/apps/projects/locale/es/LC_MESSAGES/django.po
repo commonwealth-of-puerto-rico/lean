@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-18 21:35-0400\n"
+"PO-Revision-Date: 2013-02-18 21:41\n"
+"Last-Translator:   <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+#: __init__.py:18
+msgid "name"
+msgstr "nombre"
+
+#: __init__.py:19 models.py:17 models.py:116
+msgid "fiscal year"
+msgstr "año fiscal"
+
+#: __init__.py:20 models.py:32 models.py:118
+msgid "purpose"
+msgstr "proposito"
+
+#: __init__.py:21 models.py:47 models.py:120
+msgid "classification"
+msgstr "clasificación"
+
+#: links.py:12 links.py:17 models.py:173 views.py:39
+msgid "projects"
+msgstr "proyectos"
+
+#: links.py:13
+msgid "edit"
+msgstr "editar"
+
+#: links.py:14
+msgid "delete"
+msgstr "borrar"
+
+#: links.py:15
+msgid "details"
+msgstr "detalles"
+
+#: links.py:18
+msgid "create project"
+msgstr "crear proyecto"
+
+#: literals.py:7
+msgid "New"
+msgstr "Nueva"
+
+#: literals.py:8
+msgid "Old"
+msgstr "Existente"
+
+#: literals.py:18
+msgid "Priority 1 (Very low)"
+msgstr "Prioridad 1 (Muy baja)"
+
+#: literals.py:19
+msgid "Priority 1 (Low)"
+msgstr "Prioridad 2 (Baja)"
+
+#: literals.py:20
+msgid "Priority 1 (Medium)"
+msgstr "Prioridad 3 (Mediana)"
+
+#: literals.py:21
+msgid "Priority 1 (High)"
+msgstr "Prioridad 4 (Alta)"
+
+#: literals.py:22
+msgid "Priority 1 (Very high)"
+msgstr "Prioridad 5 (Muy alta)"
+
+#: models.py:11 models.py:23 models.py:38 models.py:56 models.py:68
+#: models.py:83 models.py:98 models.py:117
+msgid "label"
+msgstr "etiqueta"
+
+#: models.py:18
+msgid "fiscal years"
+msgstr "años fiscales"
+
+#: models.py:33
+msgid "purposes"
+msgstr "propositos"
+
+#: models.py:48
+msgid "classifications"
+msgstr "clasificaciones"
+
+#: models.py:62 models.py:147
+msgid "stage"
+msgstr "etapa"
+
+#: models.py:63
+msgid "stages"
+msgstr "etapas"
+
+#: models.py:77
+msgid "benefit"
+msgstr "beneficio"
+
+#: models.py:78 models.py:137
+msgid "benefits"
+msgstr "beneficios"
+
+#: models.py:92 models.py:153
+msgid "topic"
+msgstr "tópico"
+
+#: models.py:93
+msgid "topics"
+msgstr "tópicos"
+
+#: models.py:107
+msgid "oportunity"
+msgstr "oportunidad"
+
+#: models.py:108
+msgid "oportunities"
+msgstr "oportunidades"
+
+#: models.py:113
+msgid "creation date and time"
+msgstr ""
+
+#: models.py:114
+msgid "agency"
+msgstr "agencia"
+
+#: models.py:119
+msgid "other purpose"
+msgstr ""
+
+#: models.py:121
+msgid "other classification"
+msgstr ""
+
+#: models.py:122
+msgid "department/work unit"
+msgstr ""
+
+#: models.py:123
+msgid "sponsor"
+msgstr ""
+
+#: models.py:124
+msgid "email"
+msgstr "email"
+
+#: models.py:125
+msgid "phone number"
+msgstr "número de teléfono"
+
+#: models.py:126
+msgid "goals/objectives"
+msgstr ""
+
+#: models.py:127
+msgid "project needs"
+msgstr ""
+
+#: models.py:128
+msgid "expected results"
+msgstr ""
+
+#: models.py:129
+msgid "methodology"
+msgstr ""
+
+#: models.py:130
+msgid "milestones"
+msgstr ""
+
+#: models.py:132
+msgid "infrastructure needs"
+msgstr ""
+
+#: models.py:133
+msgid "project critical requirements"
+msgstr ""
+
+#: models.py:134
+msgid "presumptions"
+msgstr ""
+
+#: models.py:135
+msgid "limitations"
+msgstr ""
+
+#: models.py:136
+msgid "risks"
+msgstr ""
+
+#: models.py:139
+msgid "project director"
+msgstr ""
+
+#: models.py:143
+msgid "start period"
+msgstr ""
+
+#: models.py:145
+msgid "end period"
+msgstr ""
+
+#: models.py:149
+msgid "implementation benefit"
+msgstr ""
+
+#: models.py:151
+msgid "other benefit"
+msgstr ""
+
+#: models.py:152
+msgid "priority"
+msgstr ""
+
+#: models.py:154
+msgid "other topic"
+msgstr ""
+
+#: models.py:156
+msgid "opportunity"
+msgstr ""
+
+#: models.py:157
+msgid "sharing benefits"
+msgstr ""
+
+#: models.py:158
+msgid "short explanation (50 words or less)"
+msgstr ""
+
+#: models.py:159
+msgid "other agencies or involved agencies"
+msgstr ""
+
+#: models.py:172 views.py:100
+msgid "project"
+msgstr ""
+
+#: permissions.py:7
+msgid "Project"
+msgstr ""
+
+#: permissions.py:9
+msgid "Create projects"
+msgstr ""
+
+#: permissions.py:10
+msgid "Edit projects"
+msgstr ""
+
+#: permissions.py:11
+msgid "Delete projects"
+msgstr ""
+
+#: permissions.py:12
+msgid "View projects"
+msgstr ""
+
+#: views.py:59
+#, python-format
+msgid "Project \"%s\" edited successfully."
+msgstr ""
+
+#: views.py:92
+#, python-format
+msgid "Project: %s deleted successfully."
+msgstr ""
+
+#: views.py:94
+#, python-format
+msgid "Project: %(project)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:104
+#, python-format
+msgid "Are you sure you with to delete the project: %s?"
+msgstr ""
+
+#: views.py:129
+msgid "General information"
+msgstr ""
+
+#: views.py:130
+msgid "Budget"
+msgstr ""
+
+#: views.py:131
+msgid "Equipment"
+msgstr ""
+
+#: views.py:132
+msgid "Timeframe"
+msgstr ""
+
+#: wizards.py:35
+msgid "step 1 of 4: General information"
+msgstr ""
+
+#: wizards.py:36
+msgid "step 2 of 4: Budget"
+msgstr ""
+
+#: wizards.py:37
+msgid "step 3 of 4: Equipment"
+msgstr ""
+
+#: wizards.py:38
+msgid "step 4 of 4: Timeframe"
+msgstr ""
+
+#: wizards.py:46 wizards.py:111
+msgid "Next step"
+msgstr ""
