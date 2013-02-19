@@ -5,12 +5,10 @@ import optparse
 
 import sh
 
-APP_LIST = ('acls', 'checkouts', 'common', 'converter', 'django_gpg', 'documents',
-    'document_comments', 'document_indexing', 'document_signatures', 'dynamic_search',
-    'folders', 'history', 'installation', 'linking', 'main', 'metadata', 'navigation',
-    'ocr', 'permissions', 'project_setup', 'project_tools', 'scheduler', 'smart_settings',
-    'sources', 'tags', 'user_management', 'web_theme', 'bootstrap', 'registration')
-LANGUAGE_LIST = ('ar', 'bg', 'de_DE', 'en', 'es', 'fr', 'it', 'nl_NL', 'pl', 'pt', 'pt_BR', 'ru', 'vi_VN')
+APP_LIST = ('acls', 'common', 'dynamic_search', 'main', 'navigation',
+    'permissions', 'projects', 'project_setup', 'project_tools', 'smart_settings',
+    'telecomm', 'tools', 'user_management', 'web_theme')
+LANGUAGE_LIST = ('en', 'es')
 
 makemessages = sh.Command('django-admin.py')
 makemessages = makemessages.bake('makemessages')
@@ -20,7 +18,7 @@ compilemessages = compilemessages.bake('compilemessages')
 
 if hasattr(sys, 'real_prefix'):
     # We are inside a virtual env
-    BASE_DIR = os.path.join(os.environ['VIRTUAL_ENV'], '..', 'mayan')
+    BASE_DIR = os.path.join(os.environ['VIRTUAL_ENV'], '..', 'paart')
 else:
     BASE_DIR = os.getcwd()
 
@@ -47,7 +45,7 @@ if __name__ == '__main__':
     parser.add_option('-a', '--app', help='specify which app to process', dest='app', action='store', metavar='appname')
     parser.add_option('-l', '--lang', help='specify which language to process', dest='lang', action='store', metavar='language')
     (opts, args) = parser.parse_args()
-    
+
     if not opts.make and not opts.compile:
         parser.print_help()
 
