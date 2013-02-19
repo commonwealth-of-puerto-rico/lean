@@ -158,10 +158,6 @@ class ProjectInfo(models.Model):
         verbose_name_plural = _(u'projects details')
 
 
-#class ProjectAdquisition(models.Model):
-#class ProjectCosts(models.Model):
-
-
 class ProjectBudget(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Presupuesto - Paso 2 ##
@@ -175,13 +171,20 @@ class ProjectBudget(models.Model):
     director = models.TextField(verbose_name=_(u'project director'))
     # TODO: Costs
 
-    #@models.permalink
-    #def get_absolute_url(self):
-    #    return ('project_view', [self.pk])
+    def __unicode__(self):
+        return ugettext(u'project budget')
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_budget_view', [self.project.pk])
 
     class Meta:
         verbose_name = _(u'project budget')
         verbose_name_plural = _(u'projects budgets')
+
+
+#class ProjectAdquisition(models.Model):
+#class ProjectCosts(models.Model):
 
 '''
     ## Detalle del Proyecto - Paso 3 ##

@@ -13,9 +13,10 @@ from agencies.permissions import PERMISSION_AGENCY_EDIT, PERMISSION_AGENCY_VIEW
 from permissions.models import Permission
 
 from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
-    ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create)
-from .icons import icon_project_delete, icon_project_info_delete
-from .models import Project, ProjectInfo
+    ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create,
+    ProjectBudgetForm_view, ProjectBudgetForm_edit, ProjectBudgetForm_create)
+from .icons import icon_project_delete, icon_project_info_delete, icon_project_budget_delete
+from .models import Project, ProjectInfo, ProjectBudget
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
     PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE)
 from .wizards import ProjectCreateWizard
@@ -269,7 +270,7 @@ def project_info_create(request, project_pk):
             project_info.save()
             messages.success(request, _(u'Details for project "%s" saved successfully.') % project)
 
-            return HttpResponseRedirect(project.get_absolute_url())
+            return HttpResponseRedirect(project_info.get_absolute_url())
     else:
         form = ProjectInfoForm_create(initial={'project': project})
 
@@ -321,6 +322,142 @@ def project_info_delete(request, project_info_pk):
             {'object': 'agency'},
             {'object': 'project'},
             {'object': 'project_info'},
+        ],
+    }
+
+    return render_to_response('generic_confirm.html', context,
+        context_instance=RequestContext(request))
+
+### Budget
+
+def project_budget_view(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+
+    try:
+        project_budget = project.projectbudget
+    except ProjectBudget.DoesNotExist:
+        return HttpResponseRedirect(reverse('project_budget_create', args=[project.pk]))
+    else:
+        form = ProjectBudgetForm_view(instance=project.projectbudget)
+
+    return render_to_response('generic_detail.html', {
+        'form': form,
+        'agency': project.agency,
+        'project': project,
+        'project_budget': project_budget,
+        'title': _(u'budget for project: %s') % project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_budget'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_budget_edit(request, project_budget_pk):
+    project_budget = get_object_or_404(ProjectBudget, pk=project_budget_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_budget.project.agency)
+
+    if request.method == 'POST':
+        form = ProjectBudgetForm_edit(request.POST, instance=project_budget)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _(u'Budget for project "%s" edited successfully.') % project_budget.project)
+
+            return HttpResponseRedirect(project_budget.get_absolute_url())
+    else:
+        form = ProjectBudgetForm_edit(instance=project_budget)
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': project_budget.project,
+        'project_budget': project_budget,
+        'agency': project_budget.project.agency,
+        'title': _('edit budget for project: %s') % project_budget.project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_budget'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_budget_create(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+
+    if request.method == 'POST':
+        form = ProjectBudgetForm_create(request.POST, initial={'project': project})
+        if form.is_valid():
+            project_budget = form.save(commit=False)
+            project_budget.project = project
+            project_budget.save()
+            messages.success(request, _(u'Details for project "%s" saved successfully.') % project)
+
+            return HttpResponseRedirect(project_budget.get_absolute_url())
+    else:
+        form = ProjectBudgetForm_create(initial={'project': project})
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': project,
+        'agency': project.agency,
+        'title': _(u'enter budget for project: %s') % project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }, context_instance=RequestContext(request))
+
+
+def project_budget_delete(request, project_budget_pk):
+    project_budget = get_object_or_404(ProjectBudget, pk=project_budget_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_budget.project.agency)
+
+    post_action_redirect = project_budget.project.get_absolute_url()
+
+    previous = request.POST.get('previous', request.GET.get('previous', request.META.get('HTTP_REFERER', '/')))
+    next = request.POST.get('next', request.GET.get('next', post_action_redirect if post_action_redirect else request.META.get('HTTP_REFERER', '/')))
+
+    if request.method == 'POST':
+        try:
+            project_budget.delete()
+            messages.success(request, _(u'Budget for project: %s, deleted successfully.') % project_budget.project)
+        except Exception, e:
+            messages.error(request, _(u'Budget for project: %(project)s delete error: %(error)s') % {
+                'project': project_budget.project, 'error': e})
+
+        return HttpResponseRedirect(next)
+
+    context = {
+        'delete_view': True,
+        'previous': previous,
+        'next': next,
+        'title': _(u'Are you sure you with to delete the budget for project: %s?') % project_budget.project,
+        'form_icon': icon_project_budget_delete,
+        'project': project_budget.project,
+        'project_budget': project_budget,
+        'agency': project_budget.project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_budget'},
         ],
     }
 

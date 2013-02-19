@@ -4,7 +4,7 @@ from django import forms
 
 from common.forms import DetailForm, ROFormMixin
 
-from .models import Project, ProjectInfo
+from .models import Project, ProjectInfo, ProjectBudget
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
@@ -41,3 +41,22 @@ class ProjectInfoForm_create(forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectInfo
+
+## Budget
+
+class ProjectBudgetForm_edit(forms.ModelForm, ROFormMixin):
+    readonly_fields = ('project',)
+
+    class Meta:
+        model = ProjectBudget
+
+
+class ProjectBudgetForm_view(DetailForm):
+    class Meta:
+        model = ProjectBudget
+
+
+class ProjectBudgetForm_create(forms.ModelForm):
+    class Meta:
+        exclude = ('project',)
+        model = ProjectBudget

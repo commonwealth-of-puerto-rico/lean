@@ -9,15 +9,17 @@ from navigation.classes import Link
 
 from .links import (link_projects, link_project_edit, link_project_view,
     link_project_delete, link_project_create, link_agency_project_list,
-    link_project_info_view, link_project_info_edit, link_project_info_delete)
-from .models import Project, ProjectInfo
+    link_project_info_view, link_project_info_edit, link_project_info_delete,
+    link_project_budget_view, link_project_budget_edit, link_project_budget_delete)
+from .models import Project, ProjectInfo, ProjectBudget
 
 Link.bind_links(['agency_project_list', 'project_create'], [link_project_create], menu_name='sidebar')
 Link.bind_links([Project], [link_project_edit, link_project_delete])
 Link.bind_links([Project], [link_project_view], menu_name='form_header')
-Link.bind_links([Project], [link_project_info_view], menu_name='form_header')
+Link.bind_links([Project], [link_project_info_view, link_project_budget_view], menu_name='form_header')
 
 Link.bind_links([ProjectInfo], [link_project_info_edit, link_project_info_delete])
+Link.bind_links([ProjectBudget], [link_project_budget_edit, link_project_budget_delete])
 
 #register_model_list_columns(Project, [
 #    {'name': _(u'name'), 'attribute': 'label'},
