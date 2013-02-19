@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-18 21:35-0400\n"
-"PO-Revision-Date: 2013-02-18 21:44\n"
+"POT-Creation-Date: 2013-02-19 04:16-0400\n"
+"PO-Revision-Date: 2013-02-19 04:25\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgid "delete"
 msgstr "borrar"
 
 #: links.py:14
-msgid "details"
-msgstr "detalles"
+msgid "view"
+msgstr "ver"
 
 #: links.py:15 views.py:37 views.py:99
 msgid "equipment"
@@ -53,7 +53,7 @@ msgstr "proveedores"
 
 #: models.py:24
 msgid "creation date and time"
-msgstr ""
+msgstr "fecha y hora de creación"
 
 #: models.py:25
 msgid "agency"
@@ -81,11 +81,11 @@ msgstr "costos de internet"
 
 #: models.py:33
 msgid "uses OGP antenna?"
-msgstr ""
+msgstr "¿Usa antena de OGP?"
 
 #: models.py:34
 msgid "uses WIFI?"
-msgstr ""
+msgstr "¿Usa WIFI?"
 
 #: models.py:35
 msgid "WIFI provider"
@@ -158,3 +158,6 @@ msgstr ""
 #, python-format
 msgid "Are you sure you with to delete the equipment: %s?"
 msgstr ""
+
+#~ msgid "details"
+#~ msgstr "detalles"

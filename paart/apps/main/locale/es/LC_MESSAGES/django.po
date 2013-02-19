@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-18 21:35-0400\n"
-"PO-Revision-Date: 2013-02-18 21:43\n"
+"POT-Creation-Date: 2013-02-19 04:16-0400\n"
+"PO-Revision-Date: 2013-02-19 04:21\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -68,14 +68,14 @@ msgid "Secondary menu"
 msgstr "Menú secundario"
 
 #: templates/base.html:329
-#, fuzzy, python-format
+#, python-format
 msgid "Actions for %(name)s: %(object_reference)s"
-msgstr "Acciones para %(name)s: %(navigation_object)s "
+msgstr "Acciones para %(name)s: %(object_reference)s "
 
 #: templates/base.html:331
-#, fuzzy, python-format
+#, python-format
 msgid "Actions for: %(object_reference)s"
-msgstr "Acciones para: %(navigation_object)s "
+msgstr "Acciones para: %(object_reference)s "
 
 #: templates/base.html:334
 msgid "Available actions"

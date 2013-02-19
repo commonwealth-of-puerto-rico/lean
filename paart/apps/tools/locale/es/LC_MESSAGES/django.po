@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-18 21:35-0400\n"
-"PO-Revision-Date: 2013-02-18 21:43\n"
+"POT-Creation-Date: 2013-02-19 04:16-0400\n"
+"PO-Revision-Date: 2013-02-19 04:21\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "perfiles de herramienta"
 
 #: permissions.py:7
 msgid "Tools"
-msgstr ""
+msgstr "Herramientas"
 
 #: permissions.py:9
 msgid "Create tool_profiles"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: views.py:37
 msgid "tools profiles"
-msgstr ""
+msgstr "perfiles de herramientas"
 
 #: views.py:57
 #, python-format
