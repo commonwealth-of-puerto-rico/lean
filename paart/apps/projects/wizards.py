@@ -10,7 +10,7 @@ from common.wizard import BoundFormWizard
 from .icons import icon_wizard_next_step
 
 
-class ProjectCreateWizard(BoundFormWizard):
+class ProjectCreateWizard_old(BoundFormWizard):
     def generate_metadata_initial_values(self):
         initial = []
         for metadata_type in self.metadata_types:
@@ -56,7 +56,9 @@ class ProjectCreateWizard(BoundFormWizard):
     def parse_params(self, request, *args, **kwargs):
         self.extra_context = {'step_titles': self.step_titles}
 
-    #def process_step(self, request, form, step):
+    def process_step(self, request, form, step):
+        step_data = self.get_step_data(step)
+
         #if isinstance(form, DocumentTypeSelectForm):
         #    self.document_type = form.cleaned_data['document_type']
         #    self.initial = {1: {'document_type': self.document_type}}
@@ -81,6 +83,50 @@ class ProjectCreateWizard(BoundFormWizard):
     def done(self, request, form_list):
         #if self.document_type:
         #    self.query_dict['document_type_id'] = self.document_type.pk
-
         url = '?'.join(['/', urlencode(self.query_dict, doseq=True)])
         return HttpResponseRedirect(url)
+
+
+from django.contrib.formtools.wizard.views import SessionWizardView
+from django.utils.decorators import classonlymethod
+
+from .forms import ProjectForm_detail
+
+
+class ProjectCreateWizard(SessionWizardView):
+    @classonlymethod
+    def as_view(cls, *args, **kwargs):
+        cls.view_extra_context = kwargs.pop('view_extra_context', None)
+        cls.agency = kwargs.pop('agency', None)
+        cls.model = kwargs.pop('model', None)
+        cls.step_titles = kwargs.pop('step_titles', None)
+
+        return super(ProjectCreateWizard, cls).as_view(*args, **kwargs)
+
+    def get_context_data(self, form, **kwargs):
+        context = super(ProjectCreateWizard, self).get_context_data(form=form, **kwargs)
+
+        context.update({
+            'step_title': self.step_titles[int(self.steps.current)],
+            'submit_label': _(u'Next step'),
+            'submit_icon': icon_wizard_next_step,
+        })
+        if self.view_extra_context:
+            context.update(self.view_extra_context)
+
+        return context
+
+    def get_template_names(self):
+        return 'generic_wizard.html'
+
+    def done(self, form_list, **kwargs):
+        form_data = {}
+
+        for form in form_list:
+            form_data.update(form.cleaned_data)
+
+        print 'form_data', form_data
+        instance = self.__class__.model(agency=self.__class__.agency, **form_data)
+        instance.save(commit=False)
+
+        #return HttpResponseRedirect('/page-to-redirect-to-when-done/')

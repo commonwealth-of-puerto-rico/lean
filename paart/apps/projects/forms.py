@@ -23,7 +23,19 @@ class ProjectForm_step1(forms.ModelForm):
 class ProjectForm_step2(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ('infrastructure', 'requirements', 'presumptions', 'limitations', 'risks', 'benefits')
+        fields = ('infrastructure', 'requirements', 'presumptions', 'limitations', 'risks', 'benefits', 'director')
+
+
+class ProjectForm_step3(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ('start_period', 'end_period', 'stage', 'benefit', 'benefit_other', 'priority', 'topic', 'topic_other')
+
+
+class ProjectForm_step4(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ('opportunity', 'sharing_benefit', 'explanation', 'other_agencies')
 
 
 class ProjectForm_detail(DetailForm):

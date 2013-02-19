@@ -12,7 +12,7 @@ from agencies.models import Agency
 from permissions.models import Permission
 
 from .forms import (ProjectForm, ProjectForm_detail, ProjectForm_step1,
-    ProjectForm_step2)
+    ProjectForm_step2, ProjectForm_step3, ProjectForm_step4)
 from .icons import icon_project_delete
 from .models import Project
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
@@ -23,7 +23,7 @@ from .wizards import ProjectCreateWizard
 def agency_project_list(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
     pre_object_list = agency.project_set.all()
-    
+
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
@@ -123,10 +123,20 @@ def project_create_wizard(request, agency_pk):
     except PermissionDenied:
         AccessEntry.objects.check_access(PERMISSION_PROJECT_CREATE, request.user, agency)
 
-    wizard = ProjectCreateWizard(form_list=[ProjectForm_step1, ProjectForm_step2], view_extra_context={
-        'object': agency,
-    })
-
+    wizard = ProjectCreateWizard.as_view(
+        form_list=[ProjectForm_step1, ProjectForm_step2, ProjectForm_step3, ProjectForm_step4],
+        step_titles=[
+            _(u'General information'),
+            _(u'Budget'),
+            _(u'Equipment'),
+            _(u'Timeframe'),
+        ],
+        view_extra_context={
+            'object': agency,
+        },
+        agency=agency,
+        model=Project
+    )
     return wizard(request)
 
 
