@@ -90,8 +90,6 @@ class ProjectCreateWizard_old(BoundFormWizard):
 from django.contrib.formtools.wizard.views import SessionWizardView
 from django.utils.decorators import classonlymethod
 
-from .forms import ProjectForm_detail
-
 
 class ProjectCreateWizard(SessionWizardView):
     @classonlymethod

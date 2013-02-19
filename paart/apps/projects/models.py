@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 
 from agencies.models import Agency
 
@@ -112,9 +113,25 @@ class Opportunity(models.Model):
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+
+    def __unicode__(self):
+        return self.label
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_view', [self.pk])
+
+    class Meta:
+        verbose_name = _(u'project')
+        verbose_name_plural = _(u'projects')
+        ordering = ['label']
+
+
+class ProjectInfo(models.Model):
+    project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Informacion general - Paso 1  ##
     fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'))
-    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
     purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'))
     purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True)
     classification = models.ForeignKey(Classification, verbose_name=_(u'classification'))
@@ -128,6 +145,25 @@ class Project(models.Model):
     expected_results = models.TextField(verbose_name=_('expected results'))
     methodology = models.TextField(verbose_name=_('methodology'))
     milestones = models.TextField(verbose_name=_(u'milestones'))
+
+    def __unicode__(self):
+        return ugettext(u'project information')
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_info_view', [self.project.pk])
+
+    class Meta:
+        verbose_name = _(u'project details')
+        verbose_name_plural = _(u'projects details')
+
+
+#class ProjectAdquisition(models.Model):
+#class ProjectCosts(models.Model):
+
+
+class ProjectBudget(models.Model):
+    project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Presupuesto - Paso 2 ##
     infrastructure = models.CharField(max_length=1, choices=INFRASTRUCTURE_CHOICES, verbose_name=_(u'infrastructure needs'))
     requirements = models.TextField(verbose_name=_(u'project critical requirements'))
@@ -138,6 +174,16 @@ class Project(models.Model):
     # TODO: Adquisition
     director = models.TextField(verbose_name=_(u'project director'))
     # TODO: Costs
+
+    #@models.permalink
+    #def get_absolute_url(self):
+    #    return ('project_view', [self.pk])
+
+    class Meta:
+        verbose_name = _(u'project budget')
+        verbose_name_plural = _(u'projects budgets')
+
+'''
     ## Detalle del Proyecto - Paso 3 ##
     # 1. Fecha de comienzo
     start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'))
@@ -157,18 +203,4 @@ class Project(models.Model):
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
     explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'))
     other_agencies = models.TextField(verbose_name=_('other agencies or involved agencies'))
-
-    def __unicode__(self):
-        return self.label
-
-    def natural_key(self):
-        return (self.label,)
-
-    @models.permalink
-    def get_absolute_url(self):
-        return ('project_view', [self.pk])
-
-    class Meta:
-        verbose_name = _(u'project')
-        verbose_name_plural = _(u'projects')
-        ordering = ['label']
+'''

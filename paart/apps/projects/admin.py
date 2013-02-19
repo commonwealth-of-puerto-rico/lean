@@ -2,7 +2,8 @@ from __future__ import absolute_import
 
 from django.contrib import admin
 
-from .models import FiscalYear, Purpose, Classification, Stage, Benefit, Topic, Opportunity, Project
+from .models import (FiscalYear, Purpose, Classification, Stage, Benefit,
+    Topic, Opportunity, Project, ProjectInfo)
 
 
 class FiscalYearAdmin(admin.ModelAdmin):
@@ -35,8 +36,14 @@ class OpportunityAdmin(admin.ModelAdmin):
 
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
-    list_display = ('label', 'fiscal_year', 'purpose', 'classification', 'department')
-    filter_horizontal = ('opportunity', 'sharing_benefit')
+    #list_display = ('label', 'fiscal_year', 'purpose', 'classification', 'department')
+    #filter_horizontal = ('opportunity', 'sharing_benefit')
+
+
+class ProjectProjectInfoAdmin(admin.ModelAdmin):
+    model = ProjectInfo
+    #list_display = ('fiscal_year', 'purpose', 'classification', 'department')
+    #filter_horizontal = ('opportunity', 'sharing_benefit')
 
 
 admin.site.register(FiscalYear, FiscalYearAdmin)
@@ -47,3 +54,4 @@ admin.site.register(Benefit, BenefitAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(Opportunity, OpportunityAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(ProjectInfo, ProjectProjectInfoAdmin)
