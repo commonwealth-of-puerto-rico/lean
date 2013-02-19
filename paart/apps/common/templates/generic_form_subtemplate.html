@@ -1,12 +1,12 @@
 {% load i18n %}
 {% load common_default_icons_tags %}
 {% default_icons %}
-  
+
 {% if side_bar %}
     <div class="block">
     <h3>
 {% else %}
-    <div class="content">    
+    <div class="content">
     <h2 class="title">
 {% endif %}
 
@@ -28,14 +28,14 @@
         {% if step_field %}
             <input type="hidden" name="{{ step_field }}" value="{{ step0 }}" />
         {% endif %}
-        
+
         {% if submit_method != "GET" and submit_method != "get" %}
             {% csrf_token %}
         {% endif %}
-        
+
         {% if next %}
             <input name="next" type="hidden" value="{{ next }}" />
-        {% endif %}          
+        {% endif %}
 
         {% if previous %}
             <input name="previous" type="hidden" value="{{ previous }}" />
@@ -44,7 +44,7 @@
         {% for hidden_field in hidden_fields %}
            {{ hidden_field.as_hidden }}
         {% endfor %}
-                   
+
         {% if form.management_form %}
             {% with form as formset %}
                 {{ formset.management_form }}
@@ -58,10 +58,10 @@
                                     {{ field.label_tag }}{% if field.field.required and not read_only %} ({% trans "required" %}){% endif %}
                                 </th>
                             {#{% if field.help_text %}<span class="description">{{ field.help_text }}</span>{% endif %}#}
-                            {% endfor %} 
+                            {% endfor %}
                         </tr>
                 {% endif %}
-                
+
                 {% for form in formset.forms %}
                     {% include "generic_form_instance.html" %}
                 {% endfor %}
@@ -81,7 +81,7 @@
                 {% else %}
                     {{ icon_submit_default.display_small }}
                 {% endif %}
-                
+
                 {% if submit_label %}{{ submit_label }}{% else %}{% if object %}{% trans "Save" %}{% else %}{% trans "Submit" %}{% endif %}{% endif %}
             </button>
 
@@ -92,7 +92,7 @@
                     {% else %}
                         {{ icon_cancel_default.display_small }}
                     {% endif %}
-                      
+
                     {% if cancel_label %}{{ cancel_label }}{% else %}{% trans "Cancel" %}{% endif %}
                   </a>
               {% endif %}
