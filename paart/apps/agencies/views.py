@@ -13,7 +13,7 @@ from navigation.widgets import ButtonNavigationWidget
 from permissions.models import Permission
 
 from .classes import AgencyElement
-from .forms import AgencyForm
+from .forms import AgencyForm, AgencyForm_view
 from .icons import icon_agency_delete
 from .models import Agency
 from .permissions import (PERMISSION_AGENCY_EDIT, PERMISSION_AGENCY_DELETE,
@@ -48,7 +48,7 @@ def agency_edit(request, agency_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, document)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, agency)
 
     if request.method == 'POST':
         form = AgencyForm(request.POST, instance=agency)
@@ -72,7 +72,7 @@ def agency_delete(request, agency_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_DELETE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_DELETE, request.user, folder)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_DELETE, request.user, agency)
 
     post_action_redirect = reverse('agency_list')
 
@@ -108,7 +108,7 @@ def agency_details(request, agency_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, document)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, agency)
 
     context = {
         'object_list': [ButtonNavigationWidget(item.link).render(request, resolved_object=agency, extra_context={'resolved_object': agency}) for item in AgencyElement.get_all()],
@@ -121,3 +121,18 @@ def agency_details(request, agency_pk):
 
     return render_to_response('generic_list_horizontal.html', context,
         context_instance=RequestContext(request))
+
+
+def agency_view(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, agency)
+
+    form = AgencyForm_view(instance=agency)
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'object': agency,
+    }, context_instance=RequestContext(request))
