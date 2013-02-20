@@ -4,7 +4,8 @@ from django import forms
 
 from common.forms import DetailForm, ROFormMixin
 
-from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails, ProjectOpportunities
+from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
+    ProjectOpportunities, ProjectFile)
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
@@ -104,3 +105,13 @@ class ProjectOpportunitiesForm_create(forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectOpportunities
+
+
+## Project files
+
+class ProjectFileForm_create(forms.ModelForm):
+    class Meta:
+        exclude = ('project',)
+        #widgets = {'project': forms.widgets.HiddenInput}
+        model = ProjectFile
+

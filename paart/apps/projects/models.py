@@ -234,3 +234,19 @@ class ProjectOpportunities(models.Model):
 
 #class ProjectAdquisition(models.Model):
 #class ProjectCosts(models.Model):
+
+class ProjectFile(models.Model):
+    project = models.ForeignKey(Project, verbose_name=_(u'project'))
+    file = models.FileField(upload_to='project_files', verbose_name=_(u'file'))
+    label = models.CharField(max_length=128, verbose_name=_(u'label'))
+
+    def __unicode__(self):
+        return self.label
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('project_file_list', [self.project.pk])
+
+    class Meta:
+        verbose_name = _(u'project file')
+        verbose_name_plural = _(u'projects files')

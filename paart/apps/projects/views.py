@@ -16,7 +16,8 @@ from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
     ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create,
     ProjectBudgetForm_view, ProjectBudgetForm_edit, ProjectBudgetForm_create,
     ProjectDetailsForm_view, ProjectDetailsForm_edit, ProjectDetailsForm_create,
-    ProjectOpportunitiesForm_view, ProjectOpportunitiesForm_edit, ProjectOpportunitiesForm_create)
+    ProjectOpportunitiesForm_view, ProjectOpportunitiesForm_edit, ProjectOpportunitiesForm_create,
+    ProjectFileForm_create)
 from .icons import (icon_project_delete, icon_project_info_delete,
     icon_project_budget_delete, icon_project_details_delete, icon_project_opportunities_delete)
 from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails, ProjectOpportunities
@@ -741,3 +742,57 @@ def project_opportunities_delete(request, project_opportunities_pk):
     return render_to_response('generic_confirm.html', context,
         context_instance=RequestContext(request))
 
+
+def project_file_list(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, project.agency)
+
+    context = {
+        'object_list': project.projectfile_set.all(),
+        'title': _(u'project files'),
+        'project': project,
+        'hide_object': True,
+        'agency': project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }
+
+    return render_to_response('generic_list.html', context,
+        context_instance=RequestContext(request))
+
+
+def project_file_upload(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+
+    if request.method == 'POST':
+        form = ProjectFileForm_create(data=request.POST, files=request.FILES, initial={'project': project})
+        if form.is_valid():
+            project_file = form.save(commit=False)
+            project_file.project = project
+            project_file.save()
+            messages.success(request, _(u'File for project "%s" uploaded successfully.') % project)
+
+            return HttpResponseRedirect(project_file.get_absolute_url())
+    else:
+        form = ProjectFileForm_create(initial={'project': project})
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': project,
+        'agency': project.agency,
+        'title': _(u'upload file for project: %s') % project,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }, context_instance=RequestContext(request))
