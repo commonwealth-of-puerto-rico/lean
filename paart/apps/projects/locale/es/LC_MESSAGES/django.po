@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-20 17:58-0400\n"
-"PO-Revision-Date: 2013-02-20 18:06\n"
+"POT-Creation-Date: 2013-02-20 18:34-0400\n"
+"PO-Revision-Date: 2013-02-20 18:39\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,13 +153,44 @@ msgstr "fecha y hora de creación"
 msgid "agency"
 msgstr "agencia"
 
+#: models.py:134
+msgid "FISCAL_YEAR"
+msgstr ""
+"El Legado Estratégico Anual Normalizado se llena anualmente.  En este "
+"encasillado vas a escoger el año fiscal que vas a llenar el LEAN."
+
+#: models.py:135
+msgid "PURPOSE"
+msgstr ""
+"El propósito es describir la razón por la cual la Agencia inicia este "
+"proyecto.  Cual es la necesidad de la agencia versus el resultado esperado "
+"al finalizar el proyecto."
+
 #: models.py:136
 msgid "other purpose"
 msgstr "otro proposito"
 
+#: models.py:136
+msgid "PURPOSE_OTHER"
+msgstr ""
+"Debes especificar lo más breve posible el otro propósito que no aparece en "
+"la lista."
+
+#: models.py:137
+msgid "CLASSIFICATION"
+msgstr ""
+"La clasificación es para especificar la clase de proyecto y donde pertenece "
+"el proyecto."
+
 #: models.py:138
 msgid "other classification"
 msgstr "otra clasificación"
+
+#: models.py:138
+msgid "CLASSIFICATION_OTHER"
+msgstr ""
+"Debes especificar lo mas breve posible la otra clasificación que no aparece "
+"en la lista."
 
 #: models.py:139
 msgid "department/work unit"

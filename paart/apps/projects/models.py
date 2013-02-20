@@ -131,11 +131,11 @@ class Project(models.Model):
 class ProjectInfo(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Informacion general - Paso 1  ##
-    fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'))
-    purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'))
-    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True)
-    classification = models.ForeignKey(Classification, verbose_name=_(u'classification'))
-    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True)
+    fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'), help_text=_(u'FISCAL_YEAR'))
+    purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'), help_text=_(u'PURPOSE'))
+    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'PURPOSE_OTHER'))
+    classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'CLASSIFICATION'))
+    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'CLASSIFICATION_OTHER'))
     department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
     email = models.EmailField(verbose_name=_(u'email'))

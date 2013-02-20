@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-20 17:58-0400\n"
+"POT-Creation-Date: 2013-02-20 18:34-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,12 +151,32 @@ msgstr ""
 msgid "agency"
 msgstr ""
 
+#: models.py:134
+msgid "FISCAL_YEAR"
+msgstr ""
+
+#: models.py:135
+msgid "PURPOSE"
+msgstr ""
+
 #: models.py:136
 msgid "other purpose"
 msgstr ""
 
+#: models.py:136
+msgid "PURPOSE_OTHER"
+msgstr ""
+
+#: models.py:137
+msgid "CLASSIFICATION"
+msgstr ""
+
 #: models.py:138
 msgid "other classification"
+msgstr ""
+
+#: models.py:138
+msgid "CLASSIFICATION_OTHER"
 msgstr ""
 
 #: models.py:139
