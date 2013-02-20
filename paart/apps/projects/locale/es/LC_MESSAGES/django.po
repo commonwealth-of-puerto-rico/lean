@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 04:16-0400\n"
-"PO-Revision-Date: 2013-02-19 04:24\n"
+"POT-Creation-Date: 2013-02-20 17:58-0400\n"
+"PO-Revision-Date: 2013-02-20 18:06\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -307,12 +307,12 @@ msgstr "Borrar proyectos"
 
 #: permissions.py:12
 msgid "View projects"
-msgstr ""
+msgstr "Ver proyectos"
 
 #: views.py:64
 #, python-format
 msgid "Project \"%s\" edited successfully."
-msgstr ""
+msgstr "Proyecto \"%s\" edited exitosamente."
 
 #: views.py:73
 #, python-format
@@ -322,7 +322,7 @@ msgstr "editar proyecto: %s"
 #: views.py:98
 #, python-format
 msgid "Project: %s deleted successfully."
-msgstr ""
+msgstr "Proyecto: %s borrado exitosamente."
 
 #: views.py:100
 #, python-format
@@ -342,7 +342,7 @@ msgstr "proyecto: %s"
 #: views.py:160
 #, python-format
 msgid "Project \"%s\" saved successfully."
-msgstr ""
+msgstr "Proyecto \"%s\" grabado exitosamente."
 
 #: views.py:169
 #, python-format
@@ -357,22 +357,22 @@ msgstr "información para proyecto: %s"
 #: views.py:241
 #, python-format
 msgid "Information for project \"%s\" edited successfully."
-msgstr ""
+msgstr "Información para proyecto \"%s\" editada exitosamente."
 
 #: views.py:252
 #, python-format
 msgid "edit information for project: %s"
-msgstr ""
+msgstr "editar información para proyecto: %s"
 
 #: views.py:274 views.py:410 views.py:547
 #, python-format
 msgid "Details for project \"%s\" saved successfully."
-msgstr ""
+msgstr "Detalles para proyecto \"%s\" grabados exitosamente."
 
 #: views.py:284
 #, python-format
 msgid "enter information for project: %s"
-msgstr ""
+msgstr "entre información para proyecto: %s"
 
 #: views.py:308
 #, python-format
@@ -402,12 +402,12 @@ msgstr ""
 #: views.py:388
 #, python-format
 msgid "edit budget for project: %s"
-msgstr ""
+msgstr "editar presupuesto para proyecto: %s"
 
 #: views.py:420
 #, python-format
 msgid "enter budget for project: %s"
-msgstr ""
+msgstr "entre presupuesto para proyecto: %s"
 
 #: views.py:444
 #, python-format
@@ -437,12 +437,12 @@ msgstr ""
 #: views.py:525
 #, python-format
 msgid "edit details for project: %s"
-msgstr ""
+msgstr "editar detalles para proyecto: %s"
 
 #: views.py:557
 #, python-format
 msgid "enter details for project: %s"
-msgstr ""
+msgstr "entre detalles para proyecto: %s"
 
 #: views.py:581
 #, python-format
@@ -462,7 +462,7 @@ msgstr ""
 #: views.py:630
 #, python-format
 msgid "opportunities for project: %s"
-msgstr ""
+msgstr "oportunidades para proyecto: %s"
 
 #: views.py:651
 #, python-format
@@ -472,7 +472,7 @@ msgstr ""
 #: views.py:662
 #, python-format
 msgid "edit opportunities for project: %s"
-msgstr ""
+msgstr "editar oportunidades para proyecto: %s"
 
 #: views.py:684
 #, python-format
@@ -482,7 +482,7 @@ msgstr ""
 #: views.py:694
 #, python-format
 msgid "enter opportunities for project: %s"
-msgstr ""
+msgstr "entre oportunidades para proyecto: %s"
 
 #: views.py:718
 #, python-format

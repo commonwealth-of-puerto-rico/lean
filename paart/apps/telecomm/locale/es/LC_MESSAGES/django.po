@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 04:16-0400\n"
-"PO-Revision-Date: 2013-02-19 04:25\n"
+"POT-Creation-Date: 2013-02-20 17:58-0400\n"
+"PO-Revision-Date: 2013-02-20 18:08\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "agencia"
 
 #: models.py:27
 msgid "intranet connectivity?"
-msgstr ""
+msgstr "¿Conectividad de intranet?"
 
 #: models.py:29
 msgid "purpose"
@@ -69,7 +69,7 @@ msgstr "proposito"
 
 #: models.py:30
 msgid "internet connectivity?"
-msgstr ""
+msgstr "¿Conectividad de Internet?"
 
 #: models.py:31
 msgid "internet provider"
@@ -89,60 +89,60 @@ msgstr "¿Usa WIFI?"
 
 #: models.py:35
 msgid "WIFI provider"
-msgstr ""
+msgstr "proveedor de WIFI"
 
 #: models.py:36
 msgid "WIFI costs"
-msgstr ""
+msgstr "costos de WIFI"
 
 #: models.py:37
 msgid "internet employees?"
-msgstr ""
+msgstr "¿Empleados con Internet?"
 
 #: models.py:50 models.py:51
 msgid "telecomm equipment"
-msgstr ""
+msgstr "equipo de telecomunicaciones"
 
 #: permissions.py:7
 msgid "Telecomm"
-msgstr ""
+msgstr "Telecomunicaciones"
 
 #: permissions.py:9
 msgid "Create equipments"
-msgstr ""
+msgstr "Crear equipos"
 
 #: permissions.py:10
 msgid "Edit equipments"
-msgstr ""
+msgstr "Editar equipos"
 
 #: permissions.py:11
 msgid "Delete equipments"
-msgstr ""
+msgstr "Borrar equipos"
 
 #: permissions.py:12
 msgid "View equipments"
-msgstr ""
+msgstr "Ver equipos"
 
 #: permissions.py:14
 msgid "Create providers"
-msgstr ""
+msgstr "Crear proveedores"
 
 #: permissions.py:15
 msgid "Edit providers"
-msgstr ""
+msgstr "Editar proveedores"
 
 #: permissions.py:16
 msgid "Delete providers"
-msgstr ""
+msgstr "Borrar proveedores"
 
 #: permissions.py:17
 msgid "View providers"
-msgstr ""
+msgstr "Ver proveedores"
 
 #: views.py:57
 #, python-format
 msgid "Equipment \"%s\" edited successfully."
-msgstr ""
+msgstr "Equipo \"%s\" editados exitosamente."
 
 #: views.py:91
 #, python-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 04:16-0400\n"
-"PO-Revision-Date: 2013-02-19 04:21\n"
+"POT-Creation-Date: 2013-02-20 17:58-0400\n"
+"PO-Revision-Date: 2013-02-20 17:59\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -86,12 +86,15 @@ msgid "Other available actions"
 msgstr "Otras acciones disponibles"
 
 #: templates/home.html:8 templates/project_description.html:8
-msgid "Plan Anual de Administración de los Recursos de Tecnologías"
-msgstr "Plan Anual de Administración de los Recursos de Tecnologías"
+msgid "Normalized Annual Strategic Legacy"
+msgstr "Legado Estratégico Anual Normalizado"
 
 #: templates/project_description.html:17
 msgid "Released under the GPL V3 License"
 msgstr "Publicado bajo la licencia GPL v3"
+
+#~ msgid "Plan Anual de Administración de los Recursos de Tecnologías"
+#~ msgstr "Plan Anual de Administración de los Recursos de Tecnologías"
 
 #~ msgid "maintenance"
 #~ msgstr "mantenimiento"

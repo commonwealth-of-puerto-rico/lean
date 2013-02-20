@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 04:16-0400\n"
-"PO-Revision-Date: 2013-02-19 04:21\n"
+"POT-Creation-Date: 2013-02-20 17:58-0400\n"
+"PO-Revision-Date: 2013-02-20 18:09\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: __init__.py:18 models.py:71
 msgid "creation date and time"
-msgstr ""
+msgstr "fecha y hora de creación"
 
 #: links.py:12
 msgid "edit"
@@ -61,19 +61,19 @@ msgstr "herramientas de resguardo"
 
 #: models.py:50
 msgid "firewall tool"
-msgstr ""
+msgstr "herramienta de firewall"
 
 #: models.py:51 models.py:75
 msgid "firewall tools"
-msgstr ""
+msgstr "herramientas de firewall"
 
 #: models.py:65
 msgid "antivirus tool"
-msgstr ""
+msgstr "herramienta de antivirus"
 
 #: models.py:66 models.py:76
 msgid "antivirus tools"
-msgstr ""
+msgstr "herramientas de antivirus"
 
 #: models.py:72
 msgid "agency"
