@@ -85,6 +85,7 @@ class IconSet(IconSetBase):
         FOLDER_MAGNIFY: 'folder_magnify.png',
         FOLDER_PAGE: 'folder_page.png',
         FOLDER_USER: 'folder_user.png',
+        FORM: 'form.png',
         GROUP: 'group.png',
         GROUP_ADD: 'group_add.png',
         GROUP_EDIT: 'group_edit.png',

@@ -112,7 +112,7 @@ def agency_details(request, agency_pk):
 
     context = {
         'object_list': [ButtonNavigationWidget(item.link).render(request, resolved_object=agency, extra_context={'resolved_object': agency}) for item in AgencyElement.get_all()],
-        'title': _(u'agency elements'),
+        'title': _(u'agency forms'),
         'object': agency,
     }
 
@@ -132,7 +132,7 @@ def agency_view(request, agency_pk):
 
     form = AgencyForm_view(instance=agency)
 
-    return render_to_response('generic_form.html', {
+    return render_to_response('generic_detail.html', {
         'form': form,
         'object': agency,
     }, context_instance=RequestContext(request))
