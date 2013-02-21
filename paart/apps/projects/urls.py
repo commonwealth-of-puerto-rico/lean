@@ -30,6 +30,7 @@ urlpatterns = patterns('projects.views',
 
     url(r'^(?P<project_pk>\d+)/files/list/$', 'project_file_list', (), 'project_file_list'),
     url(r'^(?P<project_pk>\d+)/files/upload/$', 'project_file_upload', (), 'project_file_upload'),
+    url(r'^file/(?P<project_file_pk>\d+)/delete/$', 'project_file_delete', (), 'project_file_delete'),
 
     url(r'^agency/(?P<agency_pk>\d+)/list/$', 'agency_project_list', (), 'agency_project_list'),
     #url(r'^agency/(?P<agency_pk>\d+)/create/$', 'project_create_wizard', (), 'project_create_wizard'),

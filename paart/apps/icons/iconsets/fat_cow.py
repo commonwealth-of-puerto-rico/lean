@@ -64,6 +64,8 @@ class IconSet(IconSetBase):
         DATABASE_LIGHTNING: 'database_lightning.png',
         DELETE: 'delete.png',
         DISK: 'disk.png',
+        DISK_ARROW_UP: ['disk.png', 'arrow_up.png'],
+        DISK_DELETE: ['disk.png', 'delete.png'],
         DRAW_AIRBRUSH: 'draw_airbrush.png',
         DRIVE: 'drive.png',
         DRIVE_NETWORK: 'drive_network.png',

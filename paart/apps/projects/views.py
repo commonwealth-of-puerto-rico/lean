@@ -19,8 +19,10 @@ from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
     ProjectOpportunitiesForm_view, ProjectOpportunitiesForm_edit, ProjectOpportunitiesForm_create,
     ProjectFileForm_create)
 from .icons import (icon_project_delete, icon_project_info_delete,
-    icon_project_budget_delete, icon_project_details_delete, icon_project_opportunities_delete)
-from .models import Project, ProjectInfo, ProjectBudget, ProjectDetails, ProjectOpportunities
+    icon_project_budget_delete, icon_project_details_delete, icon_project_opportunities_delete,
+    icon_project_file_delete)
+from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
+    ProjectOpportunities, ProjectFile)
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
     PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE)
 from .wizards import ProjectCreateWizard
@@ -796,3 +798,47 @@ def project_file_upload(request, project_pk):
             {'object': 'project'},
         ],
     }, context_instance=RequestContext(request))
+
+
+def project_file_delete(request, project_file_pk):
+    project_file = get_object_or_404(ProjectFile, pk=project_file_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_file.project.agency)
+
+    post_action_redirect = reverse('project_file_list', args=[project_file.project.pk])
+
+    previous = request.POST.get('previous', request.GET.get('previous', request.META.get('HTTP_REFERER', '/')))
+    next = request.POST.get('next', request.GET.get('next', post_action_redirect if post_action_redirect else request.META.get('HTTP_REFERER', '/')))
+
+    if request.method == 'POST':
+        try:
+            project_file.file.delete()
+            project_file.delete()
+            messages.success(request, _(u'Project file: %s, deleted successfully.') % project_file)
+        except Exception, e:
+            messages.error(request, _(u'Project file: %(project)s delete error: %(error)s') % {
+                'project': project_file, 'error': e})
+
+        return HttpResponseRedirect(next)
+
+    context = {
+        'delete_view': True,
+        'previous': previous,
+        'next': next,
+        'title': _(u'Are you sure you with to delete the project file: %s?') % project_file,
+        'form_icon': icon_project_file_delete,
+        'project': project_file.project,
+        'project_file': project_file,
+        'agency': project_file.project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'project_file'},
+        ],
+    }
+
+    return render_to_response('generic_confirm.html', context,
+        context_instance=RequestContext(request))
