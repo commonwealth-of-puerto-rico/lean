@@ -73,8 +73,8 @@ class WorkflowTypeState(models.Model):
 
 
 class WorkflowTypeRelation(models.Model):
-    workflow_type = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow type'))
     content_type = models.ForeignKey(ContentType)
+    workflow_type = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow type'))
 
     class Meta:
         verbose_name = _(u'workflow type relation')
@@ -87,25 +87,26 @@ class WorkflowTypeRelation(models.Model):
 
 class WorkflowInstance(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
-    workflow_type = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow type'))
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')
-    #def __unicode__(self):
-    #    return self.label
+    workflow_type = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow type'))
+
+    def __unicode__(self):
+        return '%s - %s - %s' % (unicode(self.workflow_type), unicode(self.content_object), unicode(self.datetime_created))
 
     #@models.permalink
     #def get_absolute_url(self):
     #    return ('project_file_list', [self.project.pk])
 
     class Meta:
-        verbose_name = _(u'workflow type state')
-        verbose_name_plural = _(u'workflow types states')
+        verbose_name = _(u'workflow instance')
+        verbose_name_plural = _(u'workflow instances')
 
 
 class WorkflowInstanceHistory(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
-    workflow_instance = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow instance'))
+    workflow_instance = models.ForeignKey(WorkflowInstance, verbose_name=_(u'workflow instance'))
     workflow_type_action = models.ForeignKey(WorkflowTypeAction, verbose_name=_(u'workflow type action'))
     comments = models.TextField(verbose_name=_(u'comments'), blank=True)
 
@@ -122,7 +123,7 @@ class WorkflowInstanceHistory(models.Model):
 
 
 class WorkflowInstanceState(models.Model):
-    workflow_instance = models.OneToOneField(WorkflowInstance, verbose_name=_(u'workflow instance'))
+    workflow_instance = models.ForeignKey(WorkflowInstance, verbose_name=_(u'workflow instance'))
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     workflow_state = models.ForeignKey(WorkflowTypeState, verbose_name=_(u'workflow type state'))
 

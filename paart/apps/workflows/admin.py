@@ -2,20 +2,19 @@ from __future__ import absolute_import
 
 from django.contrib import admin
 
-from .models import WorkflowType, WorkflowTypeAction, WorkflowTypeState
+from .models import (WorkflowType, WorkflowTypeAction, WorkflowTypeState,
+    WorkflowTypeRelation, WorkflowInstance, WorkflowInstanceHistory, 
+    WorkflowInstanceState)
 
 
 class WorkflowTypeStateInline(admin.StackedInline):
     model = WorkflowTypeState
-    #list_display = ('label', 'state', 'auto_assignee_user', 'auto_assignee_group', 'allow_runtime_assignee_user', 'allow_runtime_assignee_group')
-    #filter_horizontal = ('connections',)
 
 
 class WorkflowTypeAdmin(admin.ModelAdmin):
     model = WorkflowType
     inlines = (WorkflowTypeStateInline,)
     list_display = ('label', 'initial_state', 'initial_action')
-    #filter_horizontal = ('opportunity', 'sharing_benefit')
 
 
 class WorkflowTypeActionAdmin(admin.ModelAdmin):
@@ -24,5 +23,33 @@ class WorkflowTypeActionAdmin(admin.ModelAdmin):
     filter_horizontal = ('connections',)
 
 
+class WorkflowTypeRelationAdmin(admin.ModelAdmin):
+    model = WorkflowTypeRelation
+    list_display = ('content_type', 'workflow_type')
+
+
+##  Instances
+
+
+class WorkflowInstanceAdmin(admin.ModelAdmin):
+    model = WorkflowInstance
+    list_display = ('content_object', 'workflow_type', 'datetime_created')
+
+
+class WorkflowInstanceHistoryAdmin(admin.ModelAdmin):
+    model = WorkflowInstanceHistory
+    list_display = ('workflow_instance', 'datetime_created', 'workflow_type_action', 'comments')
+
+
+class WorkflowInstanceStateAdmin(admin.ModelAdmin):
+    model = WorkflowInstanceState
+    list_display = ('workflow_instance', 'datetime_created', 'workflow_state')
+
+
 admin.site.register(WorkflowType, WorkflowTypeAdmin)
 admin.site.register(WorkflowTypeAction, WorkflowTypeActionAdmin)
+admin.site.register(WorkflowTypeRelation, WorkflowTypeRelationAdmin)
+
+admin.site.register(WorkflowInstance, WorkflowInstanceAdmin)
+admin.site.register(WorkflowInstanceHistory, WorkflowInstanceHistoryAdmin)
+admin.site.register(WorkflowInstanceState, WorkflowInstanceStateAdmin)
