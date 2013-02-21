@@ -18,7 +18,7 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
     ProjectOpportunities, ProjectFile)
 
 Link.bind_links(['agency_project_list', 'project_create'], [link_project_create], menu_name='sidebar')
-Link.bind_links([Project], [link_project_edit, link_project_delete])
+Link.bind_links([Project], [link_project_view, link_project_edit, link_project_delete])
 Link.bind_links([Project], [link_project_view], menu_name='form_header')
 Link.bind_links([Project], [link_project_info_view, link_project_budget_view, link_project_details_view, link_project_opportunities_view, link_project_file_list], menu_name='form_header')
 
@@ -29,12 +29,12 @@ Link.bind_links([ProjectOpportunities], [link_project_opportunities_edit, link_p
 Link.bind_links([ProjectFile, 'project_file_upload', 'project_file_list'], [link_project_file_upload], menu_name='sidebar')
 Link.bind_links([ProjectFile], [link_project_file_delete])
 
-#register_model_list_columns(Project, [
-#    {'name': _(u'name'), 'attribute': 'label'},
+register_model_list_columns(Project, [
+    {'name': _(u'name'), 'attribute': 'label'},
 #    {'name': _(u'fiscal year'), 'attribute': 'fiscal_year'},
 #    {'name': _(u'purpose'), 'attribute': 'purpose'},
 #    {'name': _(u'classification'), 'attribute': 'classification'},
-#])
+])
 
 register_model_list_columns(ProjectFile, [
     {'name': _(u'label'), 'attribute': 'label'},
