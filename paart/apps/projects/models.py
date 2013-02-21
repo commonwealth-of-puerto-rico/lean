@@ -237,11 +237,14 @@ class ProjectOpportunities(models.Model):
 
 class ProjectFile(models.Model):
     project = models.ForeignKey(Project, verbose_name=_(u'project'))
-    file = models.FileField(upload_to='project_files', verbose_name=_(u'file'))
     label = models.CharField(max_length=128, verbose_name=_(u'label'))
+    file = models.FileField(upload_to='project_files', verbose_name=_(u'file'))
 
     def __unicode__(self):
         return self.label
+
+    def get_base_filename(self):
+        return self.file.name.split('/')[1]
 
     @models.permalink
     def get_absolute_url(self):

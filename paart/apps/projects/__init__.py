@@ -38,7 +38,7 @@ Link.bind_links([ProjectFile], [link_project_file_delete])
 
 register_model_list_columns(ProjectFile, [
     {'name': _(u'label'), 'attribute': 'label'},
-    {'name': _(u'file'), 'attribute': 'file'},
+    {'name': _(u'file'), 'attribute': 'get_base_filename'},
 ])
 
 AgencyElement(link_agency_project_list)
