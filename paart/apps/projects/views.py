@@ -1,7 +1,10 @@
 from __future__ import absolute_import
 
+import mimetypes
+
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
+from django.core.servers.basehttp import FileWrapper
 from django.core.urlresolvers import reverse, resolve
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
@@ -842,3 +845,38 @@ def project_file_delete(request, project_file_pk):
 
     return render_to_response('generic_confirm.html', context,
         context_instance=RequestContext(request))
+
+
+def project_file_download(request, project_file_pk):
+    project_file = get_object_or_404(ProjectFile, pk=project_file_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_file.project.agency)
+
+    filename = project_file.file.name                            
+    wrapper = FileWrapper(project_file.file)
+    mime_type, encoding = mimetypes.guess_type(filename)
+    if mime_type is None:
+        mime_type = 'application/octet-stream'
+
+    response = HttpResponse(wrapper, content_type=mime_type)
+    response['Content-Length'] = project_file.file.size
+    if encoding is not None:
+        response['Content-Encoding'] = encoding
+
+    # To inspect details for the below code, see http://greenbytes.de/tech/tc2231/
+    if u'WebKit' in request.META['HTTP_USER_AGENT']:
+        # Safari 3.0 and Chrome 2.0 accepts UTF-8 encoded string directly.
+        filename_header = 'filename=%s' % filename.encode('utf-8')
+    elif u'MSIE' in request.META['HTTP_USER_AGENT']:
+        # IE does not support internationalized filename at all.
+        # It can only recognize internationalized URL, so we do the trick via routing rules.
+        filename_header = ''
+    else:
+        # For others like Firefox, we follow RFC2231 (encoding extension in HTTP headers).
+        filename_header = 'filename*=UTF-8\'\'%s' % urllib.quote(filename.encode('utf-8'))
+    response['Content-Disposition'] = 'attachment; ' + filename_header
+
+    return response

@@ -13,7 +13,7 @@ from .links import (link_projects, link_project_edit, link_project_view,
     link_project_budget_view, link_project_view_basic, link_project_budget_edit, link_project_budget_delete,
     link_project_details_view, link_project_details_edit, link_project_details_delete,
     link_project_opportunities_view, link_project_opportunities_edit, link_project_opportunities_delete,
-    link_project_file_list, link_project_file_upload, link_project_file_delete)
+    link_project_file_list, link_project_file_upload, link_project_file_delete, link_project_file_download)
 from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
     ProjectOpportunities, ProjectFile)
 
@@ -26,7 +26,7 @@ Link.bind_links([ProjectBudget], [link_project_budget_edit, link_project_budget_
 Link.bind_links([ProjectDetails], [link_project_details_edit, link_project_details_delete])
 Link.bind_links([ProjectOpportunities], [link_project_opportunities_edit, link_project_opportunities_delete])
 Link.bind_links([ProjectFile, 'project_file_upload', 'project_file_list'], [link_project_file_upload], menu_name='sidebar')
-Link.bind_links([ProjectFile], [link_project_file_delete])
+Link.bind_links([ProjectFile], [link_project_file_download, link_project_file_delete])
 
 register_model_list_columns(Project, [
     {'name': _(u'name'), 'attribute': 'label'},

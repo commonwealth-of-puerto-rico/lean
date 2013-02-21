@@ -65,6 +65,7 @@ class IconSet(IconSetBase):
         DELETE: 'delete.png',
         DISK: 'disk.png',
         DISK_ARROW_UP: ['disk.png', 'arrow_up.png'],
+        DISK_ARROW_DOWN: ['disk.png', 'arrow_down.png'],
         DISK_DELETE: ['disk.png', 'delete.png'],
         DRAW_AIRBRUSH: 'draw_airbrush.png',
         DRIVE: 'drive.png',
