@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 import mimetypes
+import urllib
 
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
