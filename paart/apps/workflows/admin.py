@@ -19,7 +19,7 @@ class WorkflowTypeAdmin(admin.ModelAdmin):
 
 class WorkflowTypeActionAdmin(admin.ModelAdmin):
     model = WorkflowTypeAction
-    list_display = ('workflow_type', 'label', 'get_connections_as_string', 'state', 'auto_assignee_user', 'auto_assignee_group', 'allow_runtime_assignee_user', 'allow_runtime_assignee_group')
+    list_display = ('workflow_type', 'label', 'required_permission', 'get_connections_as_string', 'state', 'auto_assignee_user', 'auto_assignee_group', 'allow_runtime_assignee_user', 'allow_runtime_assignee_group')
     filter_horizontal = ('connections',)
 
 

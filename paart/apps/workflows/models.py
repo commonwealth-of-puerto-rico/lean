@@ -1,9 +1,15 @@
+from __future__ import absolute_import
+
 from django.contrib.auth.models import User, Group
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
+
+from permissions.models import StoredPermission
+
+from .managers import WorkflowInstanceManager
 
 
 class WorkflowType(models.Model):
@@ -14,6 +20,9 @@ class WorkflowType(models.Model):
 
     def __unicode__(self):
         return self.label
+
+    def get_actions(self):
+        return self.workflowtypeaction_set.all()
 
     #@models.permalink
     #def get_absolute_url(self):
@@ -35,6 +44,7 @@ class WorkflowTypeAction(models.Model):
     auto_assignee_group = models.ForeignKey(Group, verbose_name=_(u'auto assignee group'), blank=True, null=True)
     allow_runtime_assignee_user = models.BooleanField(verbose_name=_(u'allow runtime assignee user'))
     allow_runtime_assignee_group = models.BooleanField(verbose_name=_(u'allow runtime assignee group'))
+    required_permission = models.ForeignKey(StoredPermission, verbose_name=_(u'required permission'), help_text=_(u'Will be checked globally or in relation to the workflow instance\'s content object.'), blank=True, null=True)
 
     def __unicode__(self):
         return self.label
@@ -92,8 +102,35 @@ class WorkflowInstance(models.Model):
     content_object = generic.GenericForeignKey('content_type', 'object_id')
     workflow_type = models.ForeignKey(WorkflowType, verbose_name=_(u'workflow type'))
 
+    objects = WorkflowInstanceManager()
+
     def __unicode__(self):
-        return '%s - %s - %s' % (unicode(self.workflow_type), unicode(self.content_object), unicode(self.datetime_created))
+        #return '%s - %s - %s' % (unicode(self.workflow_type), unicode(self.content_object), unicode(self.datetime_created))
+        return unicode(self.workflow_type)
+
+    def get_history(self):
+        return self.workflowinstancehistory_set.all()
+
+    def get_latest_action(self):
+        try:
+            return self.get_history().order_by('-datetime_created')[0]
+        except IndexError:
+            return None
+
+    def get_states(self):
+        return self.workflowinstancestate_set.all()
+
+    def get_latest_state(self):
+        try:
+            return self.get_states().order_by('-datetime_created')[0]
+        except IndexError:
+            return None
+
+    def get_actions(self):
+        return self.get_latest_action().workflow_type_action.connections.all()
+
+    def commit(self, action, user, comments=None, assignee_group=None, assignee_user=None):
+        WorkflowInstanceHistory.objects.create(workflow_instance=self, workflow_type_action=action, user=user, comments=comments, assignee_group=assignee_group, assignee_user=assignee_user)
 
     #@models.permalink
     #def get_absolute_url(self):
@@ -108,10 +145,18 @@ class WorkflowInstanceHistory(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     workflow_instance = models.ForeignKey(WorkflowInstance, verbose_name=_(u'workflow instance'))
     workflow_type_action = models.ForeignKey(WorkflowTypeAction, verbose_name=_(u'workflow type action'))
+    user = models.ForeignKey(User, related_name='user', verbose_name=_(u'user'))
     comments = models.TextField(verbose_name=_(u'comments'), blank=True)
+    assignee_user = models.ForeignKey(User, verbose_name=_(u'assignee user'), blank=True, null=True)
+    assignee_group = models.ForeignKey(Group, verbose_name=_(u'assignee group'), blank=True, null=True)
 
-    #def __unicode__(self):
-    #    return self.label
+    def __unicode__(self):
+        return unicode(self.workflow_type_action)
+
+    def save(self, *args, **kwargs):
+        super(WorkflowInstanceHistory, self).save(*args, **kwargs)
+        if self.workflow_type_action.state:
+            WorkflowInstanceState.objects.create(workflow_instance=self.workflow_instance, workflow_state=self.workflow_type_action.state)
 
     #@models.permalink
     #def get_absolute_url(self):
@@ -120,12 +165,16 @@ class WorkflowInstanceHistory(models.Model):
     class Meta:
         verbose_name = _(u'workflow instance history')
         verbose_name_plural = _(u'workflow instance history')
+        ordering = ['datetime_created']
 
 
 class WorkflowInstanceState(models.Model):
     workflow_instance = models.ForeignKey(WorkflowInstance, verbose_name=_(u'workflow instance'))
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     workflow_state = models.ForeignKey(WorkflowTypeState, verbose_name=_(u'workflow type state'))
+
+    def __unicode__(self):
+        return unicode(self.workflow_state)
 
     class Meta:
         verbose_name = _(u'workflow instance state')
