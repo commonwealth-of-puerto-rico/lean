@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-21 20:38-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:17 models.py:6
+msgid "registration"
+msgstr ""
+
+#: __init__.py:18 models.py:7
+msgid "name"
+msgstr ""
+
+#: links.py:12
+msgid "all agencies"
+msgstr ""
+
+#: links.py:13 models.py:20 views.py:38
+msgid "agencies"
+msgstr ""
+
+#: links.py:14
+msgid "edit"
+msgstr ""
+
+#: links.py:15
+msgid "delete"
+msgstr ""
+
+#: links.py:16
+msgid "forms"
+msgstr ""
+
+#: links.py:17
+msgid "view"
+msgstr ""
+
+#: models.py:8
+msgid "director"
+msgstr ""
+
+#: models.py:9
+msgid "physical address"
+msgstr ""
+
+#: models.py:10
+msgid "postal address"
+msgstr ""
+
+#: models.py:19 views.py:93
+msgid "agency"
+msgstr ""
+
+#: permissions.py:7
+msgid "Agencies"
+msgstr ""
+
+#: permissions.py:9
+msgid "Create agencies"
+msgstr ""
+
+#: permissions.py:10
+msgid "Edit agencies"
+msgstr ""
+
+#: permissions.py:11
+msgid "Delete agencies"
+msgstr ""
+
+#: permissions.py:12
+msgid "View agencies"
+msgstr ""
+
+#: views.py:57
+#, python-format
+msgid "Agency \"%s\" edited successfully."
+msgstr ""
+
+#: views.py:85
+#, python-format
+msgid "Agency: %s deleted successfully."
+msgstr ""
+
+#: views.py:87
+#, python-format
+msgid "Agency: %(agency)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:98
+#, python-format
+msgid "Are you sure you with to delete the agency: %s?"
+msgstr ""
+
+#: views.py:115
+msgid "agency forms"
+msgstr ""

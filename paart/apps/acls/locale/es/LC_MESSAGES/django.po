@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-20 18:34-0400\n"
-"PO-Revision-Date: 2012-02-12 00:16+0000\n"
-"Last-Translator: Roberto Rosario <roberto.rosario.gonzalez@gmail.com>\n"
+"POT-Creation-Date: 2013-02-21 20:38-0400\n"
+"PO-Revision-Date: 2013-02-21 20:36\n"
+"Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/"
 "language/es/)\n"
 "Language: es\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
 
 #: forms.py:21 links.py:24
 msgid "New holder"
@@ -56,9 +57,8 @@ msgid "revoke"
 msgstr "revocar"
 
 #: links.py:18 links.py:56
-#, fuzzy
 msgid "new holder"
-msgstr "Nuevo titular"
+msgstr "nuevo titular"
 
 #: links.py:20
 msgid "Default ACLs"
