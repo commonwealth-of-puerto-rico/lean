@@ -51,7 +51,7 @@ def agency_project_list(request, agency_pk):
 
     context = {
         'object_list': final_object_list,
-        'title': _(u'projects'),
+        'title': _(u'projects of: %s') % agency,
         'hide_object': True,
         'object': agency,
     }
