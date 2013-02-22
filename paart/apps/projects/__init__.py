@@ -2,7 +2,8 @@ from __future__ import absolute_import
 
 from django.utils.translation import ugettext_lazy as _
 
-from agencies.classes import AgencyElement
+#from agencies.classes import AgencyElement
+from agencies.models import Agency
 from common.utils import encapsulate
 from navigation.api import register_top_menu, register_model_list_columns
 from navigation.classes import Link
@@ -21,6 +22,8 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
     ProjectOpportunities, ProjectFile)
 # prime workflow permissions
 from .permissions import PERMISSION_PROJECT_SUBMIT
+
+Link.bind_links([Agency], [link_agency_project_list])
 
 Link.bind_links(['agency_project_list', 'project_create'], [link_project_create], menu_name='sidebar')
 Link.bind_links([Project], [link_project_view, link_project_edit, link_project_delete])
@@ -47,4 +50,4 @@ register_model_list_columns(ProjectFile, [
     {'name': _(u'file'), 'attribute': 'get_base_filename'},
 ])
 
-AgencyElement(link_agency_project_list)
+#AgencyElement(link_agency_project_list)
