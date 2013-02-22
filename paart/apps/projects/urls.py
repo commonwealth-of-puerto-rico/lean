@@ -33,6 +33,10 @@ urlpatterns = patterns('projects.views',
     url(r'^file/(?P<project_file_pk>\d+)/delete/$', 'project_file_delete', (), 'project_file_delete'),
     url(r'^file/(?P<project_file_pk>\d+)/download/$', 'project_file_download', (), 'project_file_download'),
 
+    url(r'^(?P<project_pk>\d+)/workflow/instance/list/$', 'project_workflow_instance_list', (), 'project_workflow_instance_list'),
+    url(r'^workflow/instance/(?P<workflow_instance_pk>\d+)/history/list/$', 'project_workflow_instance_history_list', (), 'project_workflow_instance_history_list'),
+    url(r'^workflow/instance/(?P<workflow_instance_pk>\d+)/action/create/$', 'project_workflow_instance_action_submit', (), 'project_workflow_instance_action_submit'),
+
     url(r'^agency/(?P<agency_pk>\d+)/list/$', 'agency_project_list', (), 'agency_project_list'),
     #url(r'^agency/(?P<agency_pk>\d+)/create/$', 'project_create_wizard', (), 'project_create_wizard'),
 )

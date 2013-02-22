@@ -10,3 +10,5 @@ PERMISSION_PROJECT_CREATE = Permission.objects.register(namespace, 'project_crea
 PERMISSION_PROJECT_EDIT = Permission.objects.register(namespace, 'project_edit', _(u'Edit projects'))
 PERMISSION_PROJECT_DELETE = Permission.objects.register(namespace, 'project_delete', _(u'Delete projects'))
 PERMISSION_PROJECT_VIEW = Permission.objects.register(namespace, 'project_view', _(u'View projects'))
+
+PERMISSION_PROJECT_SUBMIT = Permission.objects.register(namespace, 'project_submit', _(u'Submit projects'))

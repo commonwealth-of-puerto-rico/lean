@@ -12,9 +12,12 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
+from acls.models import AccessEntry
 from agencies.models import Agency
 from agencies.permissions import PERMISSION_AGENCY_EDIT, PERMISSION_AGENCY_VIEW
 from permissions.models import Permission
+from workflows.forms import WorkflowActionSubmitForm
+from workflows.models import WorkflowInstance
 
 from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
     ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create,
@@ -881,3 +884,86 @@ def project_file_download(request, project_file_pk):
     response['Content-Disposition'] = 'attachment; ' + filename_header
 
     return response
+
+### Workflows
+
+def project_workflow_instance_list(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, project.agency)
+
+    context = {
+        'object_list': WorkflowInstance.objects.get_for(project),
+        'title': _(u'project workflow instances'),
+        'project': project,
+        'hide_object': True,
+        'agency': project.agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+        ],
+    }
+
+    return render_to_response('generic_list.html', context,
+        context_instance=RequestContext(request))
+
+
+def project_workflow_instance_history_list(request, workflow_instance_pk):
+    workflow_instance = get_object_or_404(WorkflowInstance, pk=workflow_instance_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, workflow_instance.content_object.agency)
+
+    context = {
+        'object_list': workflow_instance.get_history().order_by('-datetime_created'),
+        'title': _(u'project workflow instance history'),
+        'project': workflow_instance.content_object,
+        'hide_object': True,
+        'agency': workflow_instance.content_object.agency,
+        'workflow_instance': workflow_instance,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'workflow_instance'},
+        ],
+    }
+
+    return render_to_response('generic_list.html', context,
+        context_instance=RequestContext(request))
+
+
+def project_workflow_instance_action_submit(request, workflow_instance_pk):
+    workflow_instance = get_object_or_404(WorkflowInstance, pk=workflow_instance_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, workflow_instance.content_object.agency)
+
+    if request.method == 'POST':
+        form = WorkflowActionSubmitForm(data=request.POST, workflow_instance=workflow_instance)
+        if form.is_valid():
+            workflow_instance.commit(action=form.cleaned_data['action'], comments=form.cleaned_data['comments'], user=request.user)
+            messages.success(request, _(u'Details for project "%s" saved successfully.') % workflow_instance.content_object)
+
+            return HttpResponseRedirect(reverse('project_workflow_instance_history_list', args=[workflow_instance.pk]))
+    else:
+        form = WorkflowActionSubmitForm(workflow_instance=workflow_instance)
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'project': workflow_instance.content_object,
+        'agency': workflow_instance.content_object.agency,
+        'title': _(u'submit action for workflow instance for: %s') % workflow_instance.content_object,
+        'workflow_instance': workflow_instance,
+        'navigation_object_list': [
+            {'object': 'agency'},
+            {'object': 'project'},
+            {'object': 'workflow_instance'},
+        ],
+    }, context_instance=RequestContext(request))
