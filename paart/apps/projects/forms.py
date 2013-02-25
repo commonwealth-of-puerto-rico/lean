@@ -11,11 +11,19 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
     readonly_fields = ('agency',)
 
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['agency'].queryset = self.fields['agency'].queryset.active()
+
     class Meta:
         model = Project
 
 
 class ProjectForm_create(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['agency'].queryset = self.fields['agency'].queryset.active()
+
     class Meta:
         exclude = ('agency',)
         model = Project
@@ -29,6 +37,11 @@ class ProjectForm_view(DetailForm):
 class ProjectInfoForm_edit(forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
+        self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+
     class Meta:
         model = ProjectInfo
 
@@ -39,6 +52,11 @@ class ProjectInfoForm_view(DetailForm):
 
 
 class ProjectInfoForm_create(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
+        self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+
     class Meta:
         exclude = ('project',)
         model = ProjectInfo
@@ -68,6 +86,12 @@ class ProjectBudgetForm_create(forms.ModelForm):
 class ProjectDetailsForm_edit(forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['stage'].queryset = self.fields['stage'].queryset.active()
+        self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
+        self.fields['topic'].queryset = self.fields['topic'].queryset.active()
+
     class Meta:
         model = ProjectDetails
 
@@ -78,6 +102,12 @@ class ProjectDetailsForm_view(DetailForm):
 
 
 class ProjectDetailsForm_create(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        self.fields['stage'].queryset = self.fields['stage'].queryset.active()
+        self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
+        self.fields['topic'].queryset = self.fields['topic'].queryset.active()
+
     class Meta:
         exclude = ('project',)
         model = ProjectDetails

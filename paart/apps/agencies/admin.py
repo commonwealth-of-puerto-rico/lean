@@ -7,7 +7,7 @@ from .models import Agency
 
 class AgencyAdmin(admin.ModelAdmin):
     model = Agency
-    list_display = ('registration', 'name')
+    list_display = ('enabled', 'registration', 'name')
 
 
 admin.site.register(Agency, AgencyAdmin)

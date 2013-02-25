@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext
 
 from agencies.models import Agency
+from common.managers import OmitDisabledManager
 
 from .literals import INFRASTRUCTURE_CHOICES, PRIORITY_CHOICES
 
@@ -24,6 +25,9 @@ class FiscalYear(models.Model):
 
 class Purpose(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
@@ -39,6 +43,9 @@ class Purpose(models.Model):
 
 class Classification(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
@@ -57,6 +64,9 @@ class Stage(models.Model):
     Model to hold different stages a project can be in.  A project state.
     """
     label = models.CharField(max_length=128, verbose_name=_(u'label'))
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
@@ -69,6 +79,9 @@ class Stage(models.Model):
 
 class Benefit(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
@@ -84,6 +97,9 @@ class Benefit(models.Model):
 
 class Topic(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
@@ -99,6 +115,9 @@ class Topic(models.Model):
 
 class Opportunity(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label

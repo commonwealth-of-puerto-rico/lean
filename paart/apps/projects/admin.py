@@ -12,26 +12,32 @@ class FiscalYearAdmin(admin.ModelAdmin):
 
 class PurposeAdmin(admin.ModelAdmin):
     model = Purpose
+    list_display = ('label', 'enabled')
 
 
 class ClassificationAdmin(admin.ModelAdmin):
     model = Classification
+    list_display = ('label', 'enabled')
 
 
 class StageAdmin(admin.ModelAdmin):
     model = Stage
+    list_display = ('label', 'enabled')
 
 
 class BenefitAdmin(admin.ModelAdmin):
     model = Benefit
+    list_display = ('label', 'enabled')
 
 
 class TopicAdmin(admin.ModelAdmin):
     model = Topic
+    list_display = ('label', 'enabled')
 
 
 class OpportunityAdmin(admin.ModelAdmin):
     model = Opportunity
+    list_display = ('label', 'enabled')
 
 
 class ProjectAdmin(admin.ModelAdmin):
