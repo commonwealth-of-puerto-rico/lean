@@ -18,6 +18,7 @@ urlpatterns = patterns('acls.views',
     url(r'^class/multiple/revoke/$', 'acl_class_multiple_revoke', (), 'acl_class_multiple_revoke'),
 
     url(r'^object/(?P<app_label>\w+)/(?P<module_name>\w+)/(?P<object_pk>\d+)/acl/list/$', 'acl_list', (), 'acl_list'),
+
     #url(r'^object/(?P<app_label>\w+)/(?P<module_name>\w+)/(?P<object_pk>\d+)/transformation/create/$', 'transformation_create', (), 'transformation_create'),
     #url(r'^transformation/(?P<transformation_pk>\d+)/edit/$', 'transformation_edit', (), 'transformation_edit'),
     #url(r'^transformation/(?P<transformation_pk>\d+)/delete/$', 'transformation_delete', (), 'transformation_delete'),

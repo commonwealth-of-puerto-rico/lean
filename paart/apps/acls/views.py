@@ -67,7 +67,18 @@ def acl_list(request, app_label, module_name, object_pk):
         context_instance=RequestContext(request))
 
 
-def acl_detail(request, actor, obj):
+def acl_detail(request, access_object_gid, holder_object_gid):
+    try:
+        holder = AccessHolder.get(gid=holder_object_gid)
+        access_object = AccessObject.get(gid=access_object_gid)
+    except ObjectDoesNotExist:
+        raise Http404
+
+    #return acl_detail_for(request, holder.source_object, access_object.source_object)
+    return acl_detail_for(request, holder, access_object)
+
+
+def acl_detail_for(request, actor, obj):
     try:
         Permission.objects.check_permissions(request.user, [ACLS_VIEW_ACL])
     except PermissionDenied:
@@ -157,17 +168,9 @@ def acl_list(request, app_label, model_name, object_id):
     return acl_list_for(request, obj)
 '''
 
-def acl_detail_old(request, access_object_gid, holder_object_gid):
-    try:
-        holder = AccessHolder.get(gid=holder_object_gid)
-        access_object = AccessObject.get(gid=access_object_gid)
-    except ObjectDoesNotExist:
-        raise Http404
-
-    #return acl_detail_for(request, holder.source_object, access_object.source_object)
-    return acl_detail_for(request, holder, access_object)
 
 
+"""
 def acl_detail_for_old(request, actor, obj):
     try:
         Permission.objects.check_permissions(request.user, [ACLS_VIEW_ACL])
@@ -220,7 +223,7 @@ def acl_detail_for_old(request, actor, obj):
         context,
         context_instance=RequestContext(request)
     )
-
+"""
 
 def acl_grant(request):
     items_property_list = loads(request.GET.get('items_property_list', []))
