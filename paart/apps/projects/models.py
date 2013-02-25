@@ -131,6 +131,24 @@ class Opportunity(models.Model):
         ordering = ['label']
 
 
+class Department(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
+
+    def __unicode__(self):
+        return self.label
+
+    def natural_key(self):
+        return (self.label,)
+
+    class Meta:
+        verbose_name = _(u'department')
+        verbose_name_plural = _(u'department')
+        ordering = ['label']
+        
+
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
@@ -157,7 +175,8 @@ class ProjectInfo(models.Model):
     purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'PURPOSE_OTHER'))
     classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'CLASSIFICATION'))
     classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'CLASSIFICATION_OTHER'))
-    department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
+    #department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
+    department = models.ForeignKey(Department, verbose_name=_(u'department/work unit'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
     # Remove email of sponsor as per Giancarlo's recommendations
     # email = models.EmailField(verbose_name=_(u'email'))

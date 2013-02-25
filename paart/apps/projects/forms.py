@@ -43,6 +43,7 @@ class ProjectInfoForm_edit(forms.ModelForm, ROFormMixin):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+        self.fields['department'].queryset = self.fields['department'].queryset.active()
 
     class Meta:
         model = ProjectInfo
@@ -58,6 +59,7 @@ class ProjectInfoForm_create(forms.ModelForm):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+        self.fields['department'].queryset = self.fields['department'].queryset.active()
 
         # Determine the current fiscal year in string form
         init_year = datetime.datetime.now().year
