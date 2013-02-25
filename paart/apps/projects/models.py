@@ -159,7 +159,8 @@ class ProjectInfo(models.Model):
     classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'CLASSIFICATION_OTHER'))
     department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
-    email = models.EmailField(verbose_name=_(u'email'))
+    # Remove email of sponsor as per Giancarlo's recommendations
+    # email = models.EmailField(verbose_name=_(u'email'))
     phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
     goals = models.TextField(verbose_name=_(u'goals/objectives'))
     needs = models.TextField(verbose_name=_(u'project needs'))
