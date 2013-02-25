@@ -13,19 +13,11 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
     readonly_fields = ('agency',)
 
-    def __init__(self, *args, **kwargs):
-        super(self.__class__, self).__init__(*args, **kwargs)
-        self.fields['agency'].queryset = self.fields['agency'].queryset.active()
-
     class Meta:
         model = Project
 
 
 class ProjectForm_create(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(self.__class__, self).__init__(*args, **kwargs)
-        self.fields['agency'].queryset = self.fields['agency'].queryset.active()
-
     class Meta:
         exclude = ('agency',)
         model = Project
@@ -138,14 +130,18 @@ class ProjectDetailsForm_create(forms.ModelForm):
 class ProjectOpportunitiesForm_edit(forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
-    class Meta:
-        model = ProjectOpportunities
-        #widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple}
-
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
-        #self.fields['opportunity'].help_text = ''
+        self.fields['other_agencies'].help_text = ''
+        self.fields['opportunity'].help_text = ''
+        self.fields['sharing_benefit'].help_text = ''
         self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
+
+    class Meta:
+        model = ProjectOpportunities
+        widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple,
+            'sharing_benefit': forms.widgets.CheckboxSelectMultiple,
+            'other_agencies': forms.widgets.CheckboxSelectMultiple}
 
 
 class ProjectOpportunitiesForm_view(DetailForm):
@@ -156,14 +152,17 @@ class ProjectOpportunitiesForm_view(DetailForm):
 class ProjectOpportunitiesForm_create(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
-        #self.fields['opportunity'].help_text = ''
+        self.fields['other_agencies'].help_text = ''
+        self.fields['opportunity'].help_text = ''
+        self.fields['sharing_benefit'].help_text = ''
         self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
 
     class Meta:
         exclude = ('project',)
         model = ProjectOpportunities
         widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple,
-            'sharing_benefit': forms.widgets.CheckboxSelectMultiple}
+            'sharing_benefit': forms.widgets.CheckboxSelectMultiple,
+            'other_agencies': forms.widgets.CheckboxSelectMultiple}
 
 
 ## Project files
