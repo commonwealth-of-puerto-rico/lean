@@ -66,7 +66,7 @@ class ProjectInfoForm_create(forms.ModelForm):
         
         try:
             # do a lookup for the fiscal year label
-            fiscal_year = self.fields['fiscal_year'].queryset.get(label='%s-%s' % (init_year, init_year + 1))
+            fiscal_year = self.fields['fiscal_year'].queryset.get(label='%s-%s' % (init_year + 1, init_year + 2))
         except self.fields['fiscal_year'].queryset.model.DoesNotExist:
             pass
         else:
