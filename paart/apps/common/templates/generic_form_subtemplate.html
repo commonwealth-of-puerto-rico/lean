@@ -55,7 +55,7 @@
                         <tr>
                             {% for field in formset.forms.0.visible_fields %}
                                 <th>
-                                    {{ field.label_tag }}{% if field.field.required and not read_only %} ({% trans "required" %}){% endif %}
+                                    {{ field.label_tag }}{% if field.field.required and not read_only %} *{% endif %}
                                 </th>
                             {#{% if field.help_text %}<span class="description">{{ field.help_text }}</span>{% endif %}#}
                             {% endfor %}
