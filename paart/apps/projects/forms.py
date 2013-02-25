@@ -1,5 +1,7 @@
 from __future__ import absolute_import
 
+import datetime
+
 from django import forms
 
 from common.forms import DetailForm, ROFormMixin
@@ -56,6 +58,19 @@ class ProjectInfoForm_create(forms.ModelForm):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+
+        # Determine the current fiscal year in string form
+        init_year = datetime.datetime.now().year
+        if datetime.datetime.now().month < 7:
+            init_year -= 1
+        
+        try:
+            # do a lookup for the fiscal year label
+            fiscal_year = self.fields['fiscal_year'].queryset.get(label='%s-%s' % (init_year, init_year + 1))
+        except self.fields['fiscal_year'].queryset.model.DoesNotExist:
+            pass
+        else:
+            self.fields['fiscal_year'].initial = fiscal_year
 
     class Meta:
         exclude = ('project',)
