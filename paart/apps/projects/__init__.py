@@ -2,6 +2,7 @@ from __future__ import absolute_import
 
 from django.utils.translation import ugettext_lazy as _
 
+from acls.api import class_permissions
 #from agencies.classes import AgencyElement
 from agencies.models import Agency
 from common.utils import encapsulate
@@ -22,6 +23,8 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
     ProjectOpportunities, ProjectFile)
 # prime workflow permissions
 from .permissions import PERMISSION_PROJECT_SUBMIT
+from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
+        PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE)
 
 Link.bind_links([Agency], [link_agency_project_list])
 
@@ -51,3 +54,9 @@ register_model_list_columns(ProjectFile, [
 ])
 
 #AgencyElement(link_agency_project_list)
+
+class_permissions(Agency, [
+        PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
+        PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE
+    ]
+)

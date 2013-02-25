@@ -45,7 +45,7 @@ def agency_project_list(request, agency_pk):
         # If user doesn't have global permission, get a list of document
         # for which he/she does hace access use it to filter the
         # provided object_list
-        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_PROJECT_VIEW, request.user, pre_object_list)
+        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_PROJECT_VIEW, request.user, pre_object_list, related='agency')
     else:
         final_object_list = pre_object_list
 
@@ -63,9 +63,9 @@ def agency_project_list(request, agency_pk):
 def project_edit(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectForm_edit(request.POST, instance=project)
@@ -93,9 +93,9 @@ def project_delete(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_DELETE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_DELETE, request.user, project.agency)
 
     post_action_redirect = reverse('agency_project_list', args=[project.agency.pk])
 
@@ -135,9 +135,9 @@ def project_view(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     form = ProjectForm_view(instance=project)
 
@@ -157,9 +157,9 @@ def project_create(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_CREATE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_CREATE, request.user, agency)
 
     if request.method == 'POST':
         form = ProjectForm_create(data=request.POST, initial={'agency': agency})
@@ -213,7 +213,7 @@ def project_info_view(request, project_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     try:
         project_info = project.projectinfo
@@ -240,9 +240,9 @@ def project_info_edit(request, project_info_pk):
     project_info = get_object_or_404(ProjectInfo, pk=project_info_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_info.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_info.project.agency)
 
     if request.method == 'POST':
         form = ProjectInfoForm_edit(request.POST, instance=project_info)
@@ -271,9 +271,9 @@ def project_info_edit(request, project_info_pk):
 def project_info_create(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectInfoForm_create(request.POST, initial={'project': project})
@@ -303,9 +303,9 @@ def project_info_delete(request, project_info_pk):
     project_info = get_object_or_404(ProjectInfo, pk=project_info_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_info.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_info.project.agency)
 
     post_action_redirect = project_info.project.get_absolute_url()
 
@@ -349,7 +349,7 @@ def project_budget_view(request, project_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     try:
         project_budget = project.projectbudget
@@ -376,9 +376,9 @@ def project_budget_edit(request, project_budget_pk):
     project_budget = get_object_or_404(ProjectBudget, pk=project_budget_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_budget.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_budget.project.agency)
 
     if request.method == 'POST':
         form = ProjectBudgetForm_edit(request.POST, instance=project_budget)
@@ -407,9 +407,9 @@ def project_budget_edit(request, project_budget_pk):
 def project_budget_create(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectBudgetForm_create(request.POST, initial={'project': project})
@@ -439,9 +439,9 @@ def project_budget_delete(request, project_budget_pk):
     project_budget = get_object_or_404(ProjectBudget, pk=project_budget_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_budget.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_budget.project.agency)
 
     post_action_redirect = project_budget.project.get_absolute_url()
 
@@ -486,7 +486,7 @@ def project_details_view(request, project_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     try:
         project_details = project.projectdetails
@@ -513,9 +513,9 @@ def project_details_edit(request, project_details_pk):
     project_details = get_object_or_404(ProjectDetails, pk=project_details_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_details.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_details.project.agency)
 
     if request.method == 'POST':
         form = ProjectDetailsForm_edit(request.POST, instance=project_details)
@@ -544,9 +544,9 @@ def project_details_edit(request, project_details_pk):
 def project_details_create(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectDetailsForm_create(request.POST, initial={'project': project})
@@ -576,9 +576,9 @@ def project_details_delete(request, project_details_pk):
     project_details = get_object_or_404(ProjectDetails, pk=project_details_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_details.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_details.project.agency)
 
     post_action_redirect = project_details.project.get_absolute_url()
 
@@ -623,7 +623,7 @@ def project_opportunities_view(request, project_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     try:
         project_opportunities = project.projectopportunities
@@ -650,9 +650,9 @@ def project_opportunities_edit(request, project_opportunities_pk):
     project_opportunities = get_object_or_404(ProjectOpportunities, pk=project_opportunities_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_opportunities.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_opportunities.project.agency)
 
     if request.method == 'POST':
         form = ProjectOpportunitiesForm_edit(request.POST, instance=project_opportunities)
@@ -681,9 +681,9 @@ def project_opportunities_edit(request, project_opportunities_pk):
 def project_opportunities_create(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectOpportunitiesForm_create(request.POST, initial={'project': project})
@@ -713,9 +713,9 @@ def project_opportunities_delete(request, project_opportunities_pk):
     project_opportunities = get_object_or_404(ProjectOpportunities, pk=project_opportunities_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_opportunities.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_opportunities.project.agency)
 
     post_action_redirect = project_opportunities.project.get_absolute_url()
 
@@ -756,9 +756,9 @@ def project_file_list(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_VIEW])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_VIEW, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
 
     context = {
         'object_list': project.projectfile_set.all(),
@@ -779,9 +779,9 @@ def project_file_list(request, project_pk):
 def project_file_upload(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
         form = ProjectFileForm_create(data=request.POST, files=request.FILES, initial={'project': project})
@@ -811,9 +811,9 @@ def project_file_delete(request, project_file_pk):
     project_file = get_object_or_404(ProjectFile, pk=project_file_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_file.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_file.project.agency)
 
     post_action_redirect = reverse('project_file_list', args=[project_file.project.pk])
 
@@ -855,9 +855,9 @@ def project_file_download(request, project_file_pk):
     project_file = get_object_or_404(ProjectFile, pk=project_file_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_AGENCY_EDIT, request.user, project_file.project.agency)
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project_file.project.agency)
 
     filename = project_file.file.name                            
     wrapper = FileWrapper(project_file.file)
