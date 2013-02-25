@@ -13,7 +13,7 @@ from .links import (link_tools_profile_edit, link_tools_profile_delete, link_too
 from .models import ToolsProfile
 
 #Link.bind_links(['tools_profile_list'], [link_tools_profile_list], menu_name='secondary_menu')
-Link.bind_links([Agency], [link_agency_tools_profile_list])
+#Link.bind_links([Agency], [link_agency_tools_profile_list])
 
 Link.bind_links([ToolsProfile], [link_tools_profile_view, link_tools_profile_edit, link_tools_profile_delete])
 

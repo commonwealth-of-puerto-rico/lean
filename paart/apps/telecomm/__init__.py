@@ -13,7 +13,7 @@ from .links import (link_equipment_edit, link_equipment_delete, link_equipment_v
 from .models import Equipment
 
 #Link.bind_links(['equipment_list'], [link_equipment_list], menu_name='secondary_menu')
-Link.bind_links([Agency], [link_agency_equipment_list])
+#Link.bind_links([Agency], [link_agency_equipment_list])
 Link.bind_links([Equipment], [link_equipment_view, link_equipment_edit, link_equipment_delete])
 
 register_model_list_columns(Equipment, [
