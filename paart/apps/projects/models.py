@@ -241,7 +241,7 @@ class ProjectOpportunities(models.Model):
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
     explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'))
-    other_agencies = models.TextField(verbose_name=_('other agencies or involved agencies'))
+    other_agencies = models.ManyToManyField(Agency, verbose_name=_('other agencies or involved agencies'))
 
     def __unicode__(self):
         return ugettext(u'project opportunities')

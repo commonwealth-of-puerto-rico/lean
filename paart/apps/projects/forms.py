@@ -138,8 +138,10 @@ class ProjectOpportunitiesForm_edit(forms.ModelForm, ROFormMixin):
         #widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple}
 
     def __init__(self, *args, **kwargs):
-        super(ProjectOpportunitiesForm_edit, self).__init__(*args, **kwargs)
+        super(self.__class__, self).__init__(*args, **kwargs)
         #self.fields['opportunity'].help_text = ''
+        self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
+
 
 class ProjectOpportunitiesForm_view(DetailForm):
     class Meta:
@@ -147,9 +149,15 @@ class ProjectOpportunitiesForm_view(DetailForm):
 
 
 class ProjectOpportunitiesForm_create(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(self.__class__, self).__init__(*args, **kwargs)
+        #self.fields['opportunity'].help_text = ''
+        self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
+
     class Meta:
         exclude = ('project',)
         model = ProjectOpportunities
+        #widgets = {'other_agencies': forms.widgets.CheckboxSelect}
 
 
 ## Project files
