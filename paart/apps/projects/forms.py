@@ -83,17 +83,20 @@ class ProjectBudgetForm_edit(forms.ModelForm, ROFormMixin):
 
     class Meta:
         model = ProjectBudget
+        widgets = {'infrastructure': forms.widgets.RadioSelect}
 
 
 class ProjectBudgetForm_view(DetailForm):
     class Meta:
         model = ProjectBudget
+        widgets = {'infrastructure': forms.widgets.RadioSelect}
 
 
 class ProjectBudgetForm_create(forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectBudget
+        widgets = {'infrastructure': forms.widgets.RadioSelect}
 
 
 ## Details
@@ -157,7 +160,8 @@ class ProjectOpportunitiesForm_create(forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectOpportunities
-        #widgets = {'other_agencies': forms.widgets.CheckboxSelect}
+        widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple,
+            'sharing_benefit': forms.widgets.CheckboxSelectMultiple}
 
 
 ## Project files
