@@ -104,8 +104,8 @@ class ProjectDetailsForm_edit(forms.ModelForm, ROFormMixin):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['stage'].queryset = self.fields['stage'].queryset.active()
-        self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
-        self.fields['topic'].queryset = self.fields['topic'].queryset.active()
+        # self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
+        # self.fields['topic'].queryset = self.fields['topic'].queryset.active()
 
     class Meta:
         model = ProjectDetails
@@ -120,8 +120,8 @@ class ProjectDetailsForm_create(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['stage'].queryset = self.fields['stage'].queryset.active()
-        self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
-        self.fields['topic'].queryset = self.fields['topic'].queryset.active()
+        # self.fields['benefit'].queryset = self.fields['benefit'].queryset.active()
+        # self.fields['topic'].queryset = self.fields['topic'].queryset.active()
 
     class Meta:
         exclude = ('project',)

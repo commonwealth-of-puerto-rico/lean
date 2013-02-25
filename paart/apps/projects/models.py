@@ -215,12 +215,13 @@ class ProjectDetails(models.Model):
     # 3. Etapa del proyecto
     stage = models.ForeignKey(Stage, verbose_name=_(u'stage'))
     # 4. Beneficios de Implementacion
-    benefit = models.ForeignKey(Benefit, verbose_name=_(u'implementation benefit'))
+    # Remove Topic and Benefit fields as per Giancarlo's comments
+    # benefit = models.ForeignKey(Benefit, verbose_name=_(u'implementation benefit'))
     # 5. Otro beneficio
-    benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'), blank=True)
+    # benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'), blank=True)
     priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'))
-    topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
-    topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
+    # topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
+    # topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
 
     def __unicode__(self):
         return ugettext(u'project details')
