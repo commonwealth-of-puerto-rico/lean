@@ -115,11 +115,14 @@
 
 {% block web_theme_javascript %}
     <script type="text/javascript" src="{{ STATIC_URL }}packages/jquery.scrollview.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}packages/bootstrap/bootstrap-tooltip.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}packages/JqueryAsynchImageLoader.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}packages/fancybox_2_1_4/jquery.fancybox.pack.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
+            $('.tooltip').tooltip();
+
             {% if not disable_auto_focus %}
                 $("input:text:visible:not(#livesearch):not([readonly]):enabled:first").focus();
             {% endif %}
