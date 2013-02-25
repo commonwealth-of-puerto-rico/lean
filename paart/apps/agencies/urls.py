@@ -8,4 +8,6 @@ urlpatterns = patterns('agencies.views',
     url(r'^(?P<agency_pk>\d+)/delete/$', 'agency_delete', (), 'agency_delete'),
     url(r'^(?P<agency_pk>\d+)/details/$', 'agency_details', (), 'agency_details'),
     url(r'^(?P<agency_pk>\d+)/view/$', 'agency_view', (), 'agency_view'),
+
+    url(r'^(?P<agency_pk>\d+)/acl/list/$', 'agency_acl_list', (), 'agency_acl_list'),
 )

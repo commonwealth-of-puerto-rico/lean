@@ -9,6 +9,7 @@ from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
 from acls.models import AccessEntry
+from acls.views import acl_list_for
 from navigation.widgets import ButtonNavigationWidget
 from permissions.models import Permission
 
@@ -136,3 +137,14 @@ def agency_view(request, agency_pk):
         'form': form,
         'object': agency,
     }, context_instance=RequestContext(request))
+
+
+def agency_acl_list(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+    return acl_list_for(
+        request,
+        agency,
+        extra_context={
+            'object': agency,
+        }
+    )
