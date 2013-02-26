@@ -43,7 +43,7 @@ def get_theme(parser, token):
 
 class LoginRedirectNode(Node):
     def render(self, context):
-        context['LOGIN_REDIRECT_URL'] = getattr(settings, 'LOGIN_REDIRECT_URL', '/')
+        context['LOGIN_REDIRECT_URL'] = getattr(web_theme_settings, 'LOGIN_REDIRECT_URL', '/')
         return ''
 
 
