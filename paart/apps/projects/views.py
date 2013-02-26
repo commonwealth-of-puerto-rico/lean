@@ -921,7 +921,7 @@ def project_workflow_instance_history_list(request, workflow_instance_pk):
 
     context = {
         'object_list': workflow_instance.get_history().order_by('-datetime_created'),
-        'title': _(u'project workflow instance history'),
+        'title': _(u'actions for: %s') % workflow_instance,
         'project': workflow_instance.content_object,
         'hide_object': True,
         'agency': workflow_instance.content_object.agency,
