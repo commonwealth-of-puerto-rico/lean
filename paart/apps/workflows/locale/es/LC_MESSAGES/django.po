@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-26 02:43-0400\n"
-"PO-Revision-Date: 2013-02-26 02:47\n"
+"POT-Creation-Date: 2013-02-26 03:02-0400\n"
+"PO-Revision-Date: 2013-02-26 03:03\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,39 +19,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:14
+#: __init__.py:15
 msgid "type"
 msgstr "tipo"
 
-#: __init__.py:15
+#: __init__.py:16
 msgid "latest action"
 msgstr "ultima acción"
 
-#: __init__.py:16
+#: __init__.py:17
 msgid "lastest state"
 msgstr "ultimo estado"
 
-#: __init__.py:20
+#: __init__.py:21
 msgid "date and time"
 msgstr "fecha y hora"
 
-#: __init__.py:21
+#: __init__.py:22
 msgid "action"
 msgstr "acción"
 
-#: __init__.py:22 models.py:155
+#: __init__.py:23 models.py:155
 msgid "user"
 msgstr "usuario"
 
-#: __init__.py:23 models.py:158
+#: __init__.py:24 models.py:158
 msgid "assignee group"
 msgstr "grupo asignado"
 
-#: __init__.py:24 models.py:157
+#: __init__.py:25 models.py:157
 msgid "assignee user"
 msgstr "usuario asignado"
 
-#: __init__.py:25 models.py:156
+#: __init__.py:26 models.py:156
 msgid "comments"
 msgstr "comentarios"
 
@@ -101,11 +101,11 @@ msgstr "grupo asignado automáticamente"
 
 #: models.py:44
 msgid "allow runtime assignee user"
-msgstr ""
+msgstr "permitir asignar usuario durante ejecución"
 
 #: models.py:45
 msgid "allow runtime assignee group"
-msgstr ""
+msgstr "permitir asignar grupos durante ejecución"
 
 #: models.py:46
 msgid "required permission"

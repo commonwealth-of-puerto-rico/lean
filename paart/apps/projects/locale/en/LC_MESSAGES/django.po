@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-26 02:42-0400\n"
+"POT-Creation-Date: 2013-02-26 03:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -698,7 +698,8 @@ msgid "project workflow instances"
 msgstr ""
 
 #: views.py:924
-msgid "project workflow instance history"
+#, python-format
+msgid "submitted actions for: %s"
 msgstr ""
 
 #: views.py:962
