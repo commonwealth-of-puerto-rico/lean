@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:39-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: 2013-02-20 18:09\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:18 models.py:71
+#: __init__.py:21 models.py:71
 msgid "creation date and time"
 msgstr "fecha y hora de creación"
 
@@ -36,8 +36,9 @@ msgid "details"
 msgstr "detalles"
 
 #: links.py:15
-msgid "tools profile"
-msgstr "perfil de herramientas"
+#, fuzzy
+msgid "tools"
+msgstr "Herramientas"
 
 #: models.py:10 models.py:25 models.py:41 models.py:56
 msgid "label"
@@ -120,7 +121,8 @@ msgid "View tool_profiles"
 msgstr ""
 
 #: views.py:37
-msgid "tools profiles"
+#, fuzzy, python-format
+msgid "tools profiles of: %s"
 msgstr "perfiles de herramientas"
 
 #: views.py:57
@@ -146,3 +148,6 @@ msgstr ""
 #, python-format
 msgid "Are you sure you with to delete the tools_profile: %s?"
 msgstr ""
+
+#~ msgid "tools profile"
+#~ msgstr "perfil de herramientas"

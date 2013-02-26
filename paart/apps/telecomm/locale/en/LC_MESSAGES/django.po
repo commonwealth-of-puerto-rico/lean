@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:39-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:18
+#: __init__.py:20
 msgid "name"
 msgstr ""
 
@@ -33,7 +33,7 @@ msgstr ""
 msgid "view"
 msgstr ""
 
-#: links.py:15 views.py:37 views.py:99
+#: links.py:15 views.py:99
 msgid "equipment"
 msgstr ""
 
@@ -135,6 +135,11 @@ msgstr ""
 
 #: permissions.py:17
 msgid "View providers"
+msgstr ""
+
+#: views.py:37
+#, python-format
+msgid "equipment of: %s"
 msgstr ""
 
 #: views.py:57

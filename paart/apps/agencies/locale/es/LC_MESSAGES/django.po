@@ -2,36 +2,40 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:38-0400\n"
-"PO-Revision-Date: 2013-02-21 20:41\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
+"PO-Revision-Date: 2013-02-25 23:11\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:17 models.py:6
+#: __init__.py:23 models.py:9
 msgid "registration"
 msgstr "registro"
 
-#: __init__.py:18 models.py:7
+#: __init__.py:24 models.py:10
 msgid "name"
 msgstr "nombre"
+
+#: admin.py:11
+msgid "initial"
+msgstr "inicial"
 
 #: links.py:12
 msgid "all agencies"
 msgstr "toda las agencias"
 
-#: links.py:13 models.py:20 views.py:38
+#: links.py:13 models.py:25 views.py:39
 msgid "agencies"
 msgstr "agencias"
 
@@ -51,19 +55,27 @@ msgstr "formularios"
 msgid "view"
 msgstr "ver"
 
+#: links.py:19
+msgid "acls"
+msgstr "lca"
+
 #: models.py:8
+msgid "enabled"
+msgstr "habilitada"
+
+#: models.py:11
 msgid "director"
 msgstr "director"
 
-#: models.py:9
+#: models.py:12
 msgid "physical address"
 msgstr "dirección fisica"
 
-#: models.py:10
+#: models.py:13
 msgid "postal address"
 msgstr "dirección postal"
 
-#: models.py:19 views.py:93
+#: models.py:24 views.py:94
 msgid "agency"
 msgstr "agencia"
 
@@ -87,26 +99,26 @@ msgstr "Borrar agencias"
 msgid "View agencies"
 msgstr "Ver agencias"
 
-#: views.py:57
+#: views.py:58
 #, python-format
 msgid "Agency \"%s\" edited successfully."
-msgstr ""
+msgstr "Agencia \"%s\" editada exitosamente."
 
-#: views.py:85
+#: views.py:86
 #, python-format
 msgid "Agency: %s deleted successfully."
-msgstr ""
+msgstr "Agencia: %s borrada exitosamente."
 
-#: views.py:87
+#: views.py:88
 #, python-format
 msgid "Agency: %(agency)s delete error: %(error)s"
-msgstr ""
+msgstr "Error borrando agencia: %(agency)s, error: %(error)s"
 
-#: views.py:98
+#: views.py:99
 #, python-format
-msgid "Are you sure you with to delete the agency: %s?"
+msgid "Are you sure you wish to delete the agency: %s?"
 msgstr ""
 
-#: views.py:115
+#: views.py:116
 msgid "agency forms"
 msgstr "formulario de agencia"

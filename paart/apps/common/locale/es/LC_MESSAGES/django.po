@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:38-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: 2013-02-20 17:59\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/"
@@ -304,11 +304,6 @@ msgstr "Sí"
 msgid "No"
 msgstr "No"
 
-#: templates/generic_form_instance.html:37
-#: templates/generic_form_subtemplate.html:58
-msgid "required"
-msgstr "requerido"
-
 #: templates/generic_form_subtemplate.html:85
 #: templates/generic_list_horizontal_subtemplate.html:50
 #: templates/generic_list_horizontal_subtemplate.html:89
@@ -382,6 +377,9 @@ msgstr "Iniciar sesión"
 #: templates/password_change_form.html:5
 msgid "Password change"
 msgstr "Cambio de contraseña"
+
+#~ msgid "required"
+#~ msgstr "requerido"
 
 #~ msgid "form icon"
 #~ msgstr "emblema de la forma"

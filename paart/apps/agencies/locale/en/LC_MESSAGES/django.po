@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:38-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:17 models.py:6
+#: __init__.py:23 models.py:9
 msgid "registration"
 msgstr ""
 
-#: __init__.py:18 models.py:7
+#: __init__.py:24 models.py:10
 msgid "name"
+msgstr ""
+
+#: admin.py:11
+msgid "initial"
 msgstr ""
 
 #: links.py:12
 msgid "all agencies"
 msgstr ""
 
-#: links.py:13 models.py:20 views.py:38
+#: links.py:13 models.py:25 views.py:39
 msgid "agencies"
 msgstr ""
 
@@ -49,19 +53,27 @@ msgstr ""
 msgid "view"
 msgstr ""
 
+#: links.py:19
+msgid "acls"
+msgstr ""
+
 #: models.py:8
+msgid "enabled"
+msgstr ""
+
+#: models.py:11
 msgid "director"
 msgstr ""
 
-#: models.py:9
+#: models.py:12
 msgid "physical address"
 msgstr ""
 
-#: models.py:10
+#: models.py:13
 msgid "postal address"
 msgstr ""
 
-#: models.py:19 views.py:93
+#: models.py:24 views.py:94
 msgid "agency"
 msgstr ""
 
@@ -85,26 +97,26 @@ msgstr ""
 msgid "View agencies"
 msgstr ""
 
-#: views.py:57
+#: views.py:58
 #, python-format
 msgid "Agency \"%s\" edited successfully."
 msgstr ""
 
-#: views.py:85
+#: views.py:86
 #, python-format
 msgid "Agency: %s deleted successfully."
 msgstr ""
 
-#: views.py:87
+#: views.py:88
 #, python-format
 msgid "Agency: %(agency)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:98
+#: views.py:99
 #, python-format
-msgid "Are you sure you with to delete the agency: %s?"
+msgid "Are you sure you wish to delete the agency: %s?"
 msgstr ""
 
-#: views.py:115
+#: views.py:116
 msgid "agency forms"
 msgstr ""

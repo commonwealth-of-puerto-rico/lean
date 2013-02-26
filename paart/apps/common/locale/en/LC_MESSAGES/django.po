@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:38-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -288,11 +288,6 @@ msgstr ""
 
 #: templates/generic_confirm.html:60
 msgid "No"
-msgstr ""
-
-#: templates/generic_form_instance.html:37
-#: templates/generic_form_subtemplate.html:58
-msgid "required"
 msgstr ""
 
 #: templates/generic_form_subtemplate.html:85

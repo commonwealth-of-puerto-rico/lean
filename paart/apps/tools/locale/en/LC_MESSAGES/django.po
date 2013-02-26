@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-21 20:39-0400\n"
+"POT-Creation-Date: 2013-02-25 23:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:18 models.py:71
+#: __init__.py:21 models.py:71
 msgid "creation date and time"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgid "details"
 msgstr ""
 
 #: links.py:15
-msgid "tools profile"
+msgid "tools"
 msgstr ""
 
 #: models.py:10 models.py:25 models.py:41 models.py:56
@@ -118,7 +118,8 @@ msgid "View tool_profiles"
 msgstr ""
 
 #: views.py:37
-msgid "tools profiles"
+#, python-format
+msgid "tools profiles of: %s"
 msgstr ""
 
 #: views.py:57
