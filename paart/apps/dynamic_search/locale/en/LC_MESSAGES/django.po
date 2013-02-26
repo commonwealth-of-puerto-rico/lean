@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 23:13-0400\n"
+"POT-Creation-Date: 2013-02-26 01:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: forms.py:8
+#: forms.py:10
 msgid "Search terms"
+msgstr ""
+
+#: forms.py:17 forms.py:34
+msgid "Element"
 msgstr ""
 
 #: links.py:9
 msgid "search"
 msgstr ""
 
-#: links.py:10 views.py:81
+#: links.py:10 views.py:90
 msgid "advanced search"
 msgstr ""
 
@@ -65,20 +69,20 @@ msgstr ""
 msgid "Maximum number of search queries to remember per user."
 msgstr ""
 
-#: views.py:47
+#: views.py:50
 #, python-format
 msgid "results, (showing only %(shown_result_count)s out of %(result_count)s)"
 msgstr ""
 
-#: views.py:52
+#: views.py:55
 msgid "results"
 msgstr ""
 
-#: views.py:69
+#: views.py:72
 msgid "type"
 msgstr ""
 
-#: views.py:85 views.py:95 views.py:97 templatetags/search_tags.py:23
+#: views.py:94 views.py:103 views.py:105 templatetags/search_tags.py:23
 #: templatetags/search_tags.py:24
 msgid "Search"
 msgstr ""

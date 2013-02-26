@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 23:13-0400\n"
+"POT-Creation-Date: 2013-02-26 01:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,141 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:45
+#: __init__.py:46
 msgid "name"
 msgstr ""
 
-#: __init__.py:52 models.py:15 models.py:27 models.py:45 models.py:66
-#: models.py:81 models.py:99 models.py:117 models.py:135 models.py:155
-#: models.py:282
+#: __init__.py:53 __init__.py:67 models.py:15 models.py:27 models.py:45
+#: models.py:66 models.py:81 models.py:99 models.py:117 models.py:135
+#: models.py:153 models.py:173 models.py:300
 msgid "label"
 msgstr ""
 
-#: __init__.py:53 models.py:283
+#: __init__.py:54 models.py:301
 msgid "file"
 msgstr ""
 
-#: links.py:20 links.py:53 models.py:166
+#: __init__.py:68 models.py:172
+msgid "agency"
+msgstr ""
+
+#: __init__.py:70 models.py:21 models.py:191
+msgid "fiscal year"
+msgstr ""
+
+#: __init__.py:71 models.py:39 models.py:192
+msgid "purpose"
+msgstr ""
+
+#: __init__.py:72
+msgid "purpose other"
+msgstr ""
+
+#: __init__.py:73 models.py:57 models.py:194
+msgid "classification"
+msgstr ""
+
+#: __init__.py:74
+msgid "classification other"
+msgstr ""
+
+#: __init__.py:75 models.py:147
+msgid "department"
+msgstr ""
+
+#: __init__.py:76 models.py:198
+msgid "sponsor"
+msgstr ""
+
+#: __init__.py:77 models.py:201
+msgid "phone number"
+msgstr ""
+
+#: __init__.py:78
+msgid "goals"
+msgstr ""
+
+#: __init__.py:79
+msgid "needs"
+msgstr ""
+
+#: __init__.py:80 models.py:204
+msgid "expected results"
+msgstr ""
+
+#: __init__.py:81 models.py:205
+msgid "methodology"
+msgstr ""
+
+#: __init__.py:82 models.py:206
+msgid "milestones"
+msgstr ""
+
+#: __init__.py:84
+msgid "infrastructure"
+msgstr ""
+
+#: __init__.py:85
+msgid "requirements"
+msgstr ""
+
+#: __init__.py:86 models.py:225
+msgid "presumptions"
+msgstr ""
+
+#: __init__.py:87 models.py:226
+msgid "limitations"
+msgstr ""
+
+#: __init__.py:88 models.py:227
+msgid "risks"
+msgstr ""
+
+#: __init__.py:89
+msgid "director"
+msgstr ""
+
+#: __init__.py:91 models.py:249
+msgid "start period"
+msgstr ""
+
+#: __init__.py:92 models.py:251
+msgid "end period"
+msgstr ""
+
+#: __init__.py:93 models.py:75 models.py:253
+msgid "stage"
+msgstr ""
+
+#: __init__.py:94 models.py:165 models.py:259
+msgid "priority"
+msgstr ""
+
+#: __init__.py:96 models.py:278
+msgid "opportunity"
+msgstr ""
+
+#: __init__.py:97
+msgid "sharing benefit"
+msgstr ""
+
+#: __init__.py:98
+msgid "explanation"
+msgstr ""
+
+#: __init__.py:99
+msgid "other agencies"
+msgstr ""
+
+#: __init__.py:101
+msgid "project file label"
+msgstr ""
+
+#: __init__.py:102
+msgid "project file name"
+msgstr ""
+
+#: links.py:20 links.py:53 models.py:184
 msgid "projects"
 msgstr ""
 
@@ -103,57 +223,21 @@ msgstr ""
 msgid "Existing"
 msgstr ""
 
-#: literals.py:18
-msgid "Priority 1 (Very low)"
-msgstr ""
-
-#: literals.py:19
-msgid "Priority 2 (Low)"
-msgstr ""
-
-#: literals.py:20
-msgid "Priority 3 (Medium)"
-msgstr ""
-
-#: literals.py:21
-msgid "Priority 4 (High)"
-msgstr ""
-
-#: literals.py:22
-msgid "Priority 5 (Very high)"
-msgstr ""
-
-#: models.py:21 models.py:173
-msgid "fiscal year"
-msgstr ""
-
 #: models.py:22
 msgid "fiscal years"
 msgstr ""
 
 #: models.py:28 models.py:46 models.py:67 models.py:82 models.py:100
-#: models.py:118 models.py:136
+#: models.py:118 models.py:136 models.py:154
 msgid "enabled"
-msgstr ""
-
-#: models.py:39 models.py:174
-msgid "purpose"
 msgstr ""
 
 #: models.py:40
 msgid "purposes"
 msgstr ""
 
-#: models.py:57 models.py:176
-msgid "classification"
-msgstr ""
-
 #: models.py:58
 msgid "classifications"
-msgstr ""
-
-#: models.py:75 models.py:235
-msgid "stage"
 msgstr ""
 
 #: models.py:76
@@ -164,7 +248,7 @@ msgstr ""
 msgid "benefit"
 msgstr ""
 
-#: models.py:94 models.py:210
+#: models.py:94 models.py:228
 msgid "benefits"
 msgstr ""
 
@@ -184,220 +268,172 @@ msgstr ""
 msgid "oportunities"
 msgstr ""
 
-#: models.py:147 models.py:148
-msgid "department"
+#: models.py:148
+msgid "departments"
 msgstr ""
 
-#: models.py:153
+#: models.py:166
+msgid "priorities"
+msgstr ""
+
+#: models.py:171
 msgid "creation date and time"
 msgstr ""
 
-#: models.py:154
-msgid "agency"
-msgstr ""
-
-#: models.py:165 models.py:171 models.py:203 models.py:228 models.py:258
-#: models.py:281 views.py:116
+#: models.py:183 models.py:189 models.py:221 models.py:246 models.py:276
+#: models.py:299 views.py:116
 msgid "project"
 msgstr ""
 
-#: models.py:173
+#: models.py:191
 msgid "HELP_TEXT_PROYECTINFO_FISCAL_YEAR"
 msgstr ""
 
-#: models.py:174
+#: models.py:192
 msgid "HELP_TEXT_PROYECTINFO_PURPOSE"
 msgstr ""
 
-#: models.py:175
+#: models.py:193
 msgid "other purpose"
 msgstr ""
 
-#: models.py:175
+#: models.py:193
 msgid "HELP_TEXT_PROYECTINFO_PURPOSE_OTHER"
 msgstr ""
 
-#: models.py:176
+#: models.py:194
 msgid "HELP_TEXT_PROYECTINFO_CLASSIFICATION"
 msgstr ""
 
-#: models.py:177
+#: models.py:195
 msgid "other classification"
 msgstr ""
 
-#: models.py:177
+#: models.py:195
 msgid "HELP_TEXT_PROYECTINFO_CLASSIFICATION_OTHER"
 msgstr ""
 
-#: models.py:179
+#: models.py:197
 msgid "department/work unit"
 msgstr ""
 
-#: models.py:179
+#: models.py:197
 msgid "HELP_TEXT_PROYECTINFO_DEPARTMENT"
 msgstr ""
 
-#: models.py:180
-msgid "sponsor"
-msgstr ""
-
-#: models.py:183
-msgid "phone number"
-msgstr ""
-
-#: models.py:184
+#: models.py:202
 msgid "goals/objectives"
 msgstr ""
 
-#: models.py:184
+#: models.py:202
 msgid "HELP_TEXT_PROYECTINFO_GOALS"
 msgstr ""
 
-#: models.py:185
+#: models.py:203
 msgid "project needs"
 msgstr ""
 
-#: models.py:185
+#: models.py:203
 msgid "HELP_TEXT_PROYECTINFO_NEEDS"
 msgstr ""
 
-#: models.py:186
-msgid "expected results"
-msgstr ""
-
-#: models.py:186
+#: models.py:204
 msgid "HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS"
 msgstr ""
 
-#: models.py:187
-msgid "methodology"
-msgstr ""
-
-#: models.py:187
+#: models.py:205
 msgid "HELP_TEXT_PROYECTINFO_METHODOLOGY"
 msgstr ""
 
-#: models.py:188
-msgid "milestones"
-msgstr ""
-
-#: models.py:188
+#: models.py:206
 msgid "HELP_TEXT_PROYECTINFO_MILESTONES"
 msgstr ""
 
-#: models.py:191
+#: models.py:209
 msgid "project information"
 msgstr ""
 
-#: models.py:198 models.py:246 models.py:253
+#: models.py:216 models.py:264 models.py:271
 msgid "project details"
 msgstr ""
 
-#: models.py:199 models.py:254
+#: models.py:217 models.py:272
 msgid "projects details"
 msgstr ""
 
-#: models.py:205
+#: models.py:223
 msgid "infrastructure needs"
 msgstr ""
 
-#: models.py:206
+#: models.py:224
 msgid "project critical requirements"
 msgstr ""
 
-#: models.py:207
-msgid "presumptions"
-msgstr ""
-
-#: models.py:207
+#: models.py:225
 msgid "HELP_TEXT_PROYECTBUDGET_PRESUMPTIONS"
 msgstr ""
 
-#: models.py:208
-msgid "limitations"
-msgstr ""
-
-#: models.py:208
+#: models.py:226
 msgid "HELP_TEXT_PROYECTBUDGET_LIMITATIONS"
 msgstr ""
 
-#: models.py:209
-msgid "risks"
-msgstr ""
-
-#: models.py:209
+#: models.py:227
 msgid "HELP_TEXT_PROYECTBUDGET_RISKS"
 msgstr ""
 
-#: models.py:212
+#: models.py:230
 msgid "project director"
 msgstr ""
 
-#: models.py:216 models.py:223
+#: models.py:234 models.py:241
 msgid "project budget"
 msgstr ""
 
-#: models.py:224
+#: models.py:242
 msgid "projects budgets"
 msgstr ""
 
-#: models.py:231
-msgid "start period"
-msgstr ""
-
-#: models.py:231
+#: models.py:249
 msgid "HELP_TEXT_PROYECTDETAILS_START_PERIOD"
 msgstr ""
 
-#: models.py:233
-msgid "end period"
-msgstr ""
-
-#: models.py:233
+#: models.py:251
 msgid "HELP_TEXT_PROYECTDETAILS_END_PERIOD"
 msgstr ""
 
-#: models.py:235
+#: models.py:253
 msgid "HELP_TEXT_PROYECTDETAILS_STAGE"
 msgstr ""
 
-#: models.py:241
-msgid "priority"
-msgstr ""
-
-#: models.py:241
+#: models.py:259
 msgid "HELP_TEXT_PROYECTDETAILS_PRIORITY"
 msgstr ""
 
-#: models.py:260
-msgid "opportunity"
-msgstr ""
-
-#: models.py:261
+#: models.py:279
 msgid "sharing benefits"
 msgstr ""
 
-#: models.py:262
+#: models.py:280
 msgid "short explanation (50 words or less)"
 msgstr ""
 
-#: models.py:263
+#: models.py:281
 msgid "other agencies or involved agencies"
 msgstr ""
 
-#: models.py:266 models.py:273
+#: models.py:284 models.py:291
 msgid "project opportunities"
 msgstr ""
 
-#: models.py:274
+#: models.py:292
 msgid "projects opportunities"
 msgstr ""
 
-#: models.py:296
+#: models.py:314
 msgid "project file"
 msgstr ""
 
-#: models.py:297
+#: models.py:315
 msgid "projects files"
 msgstr ""
 
