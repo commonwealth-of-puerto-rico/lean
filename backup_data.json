@@ -1,0 +1,3391 @@
+[
+    {
+        "pk": 1, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 2, 
+            "holder_id": 1, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 25
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 2, 
+            "holder_id": 1, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 5
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 2, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 5
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 2, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 25
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 2, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 22
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 2, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 24
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "acls.accessentry", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 2, 
+            "object_id": 16, 
+            "content_type": 9, 
+            "permission": 29
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "acls.creatorsingleton", 
+        "fields": {
+            "lock_id": "1"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Administraci\u00f3n de Asuntos de Energ\u00e9ticos", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1433
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Administraci\u00f3n de Vivienda P\u00fablica", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1302
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Administraci\u00f3n de la Industria y el Deporte H\u00edpico", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1401
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Administraci\u00f3n de los Sistemas de Retiro de los Empleados del Gobierno PR", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1404
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Adminitraci\u00f3n de Reglamentos y Permisos", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1406
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Centro de Recaudaci\u00f3n de Ingresos Municipale", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1464
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Comisi\u00f3n Estatal de Elecciones", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1410
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Comisi\u00f3n Industrial de Puerto Rico", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1411
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Consejo de Desarrollo Ocupacional y Recursos Humanos", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1467
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Departamento de Agricultura", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1000
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Departamento de Educaci\u00f3n", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1201
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Departamento de Hacienda", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1031
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Junta de Calidad Ambiental", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1463
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Negociado de Auditor\u00eda Fiscal", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1035
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Negociado de la Loter\u00eda de Puerto Rico", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1039
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina de Asuntos de la Juventud", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1458
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina de Gerencia y Presupuesto", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1430
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina de \u00c9tica Gubernamental", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1452
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina del Comisionado de Instituciones Financieras", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1453
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina del Comisionado de Seguros", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1436
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina del Contralor de Puerto Rico", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 400
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina del Gobernador", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1437
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Oficina del Principal Ejecutivo de Informaci\u00f3n del Gobierno de PR", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1470
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Polic\u00eda de Puerto Rico", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1440
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "agencies.agency", 
+        "fields": {
+            "physical_address": "", 
+            "name": "Sistema de Retiro para Maestros", 
+            "postal_address": "", 
+            "enabled": true, 
+            "director": "", 
+            "registration": 1429
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "acls", 
+            "name": "acl_edit"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "acls", 
+            "name": "acl_view"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "acls_setup", 
+            "name": "acl_class_edit"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "acls_setup", 
+            "name": "acl_class_view"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "agencies", 
+            "name": "agency_create"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "agencies", 
+            "name": "agency_delete"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "agencies", 
+            "name": "agency_edit"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "agencies", 
+            "name": "agency_view"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "permission_grant"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "permission_revoke"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "role_create"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "role_delete"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "role_edit"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "permissions", 
+            "name": "role_view"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "projects", 
+            "name": "project_create"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "projects", 
+            "name": "project_delete"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "projects", 
+            "name": "project_edit"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "projects", 
+            "name": "project_submit"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "projects", 
+            "name": "project_view"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "equipment_create"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "equipment_delete"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "equipment_edit"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "equipment_view"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "provider_create"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "provider_delete"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "provider_edit"
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "telecomm", 
+            "name": "provider_view"
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tool_profile_create"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tool_profile_delete"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tool_profile_edit"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tool_profile_view"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "group_create"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "group_delete"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "group_edit"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "group_view"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "user_create"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "user_delete"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "user_edit"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "user_management", 
+            "name": "user_view"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 22
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 8
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 9
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 25
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 2
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 11
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 34
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 6
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 15
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 13
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 29
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 10
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 24
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 12
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 21
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 1
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 5
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 27
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 14
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 23
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 26
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 17
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 16
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 36
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 32
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 39
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 37
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 4
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 38
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 31
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 35
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 28
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 7
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 30
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 20
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 19
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 3
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 33
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "permissions.permissionholder", 
+        "fields": {
+            "holder_type": 24, 
+            "holder_id": 1, 
+            "permission": 18
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "permissions.role", 
+        "fields": {
+            "name": "employee_administracion-de-asuntos-de-energeticos ", 
+            "label": "Empleados Administraci\u00f3n de Asuntos de Energ\u00e9ticos "
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "permissions.role", 
+        "fields": {
+            "name": "managers_tig", 
+            "label": "Gerentes TIG"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "permissions.rolemember", 
+        "fields": {
+            "role": 2, 
+            "member_type": 3, 
+            "member_id": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2010-2011"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2011-2012"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2012-2013"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2013-2014"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2014-2015"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.fiscalyear", 
+        "fields": {
+            "label": "2015-2016"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compromiso Program\u00e1tico del Programa de Gobierno"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Consolidaci\u00f3n de ahorros"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Iniciativas"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Ley"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Normas"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Orden Ejecutiva"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Otros"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Pol\u00edticas de TIG"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Proyecto interagencial"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.purpose", 
+        "fields": {
+            "enabled": true, 
+            "label": "Reglamentaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Bases de Datos"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Desarrollo (Programacion)"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Infraestructura"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Manejo de Proyecto"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Mensajer\u00eda"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Otro"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Programa Federal"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Servidores"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Telecomunicaciones"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "projects.classification", 
+        "fields": {
+            "enabled": true, 
+            "label": "Web (Front End)"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "An\u00e1lisis y Dise\u00f1o"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Desarollo"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Implementaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Mantenimiento"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Planificaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Producci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.stage", 
+        "fields": {
+            "enabled": true, 
+            "label": "Pruebas"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.benefit", 
+        "fields": {
+            "enabled": true, 
+            "label": "Actualizar el Equipo"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.benefit", 
+        "fields": {
+            "enabled": true, 
+            "label": "Eliminar Procedimientos Manuales"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.benefit", 
+        "fields": {
+            "enabled": true, 
+            "label": "Generar Econom\u00edas"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.benefit", 
+        "fields": {
+            "enabled": true, 
+            "label": "Mejorar Servicios a la Clientela"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.benefit", 
+        "fields": {
+            "enabled": true, 
+            "label": "Otros"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.topic", 
+        "fields": {
+            "enabled": true, 
+            "label": "Desarrollo o Mejoras a las Pol\u00edticas de Compra y Arrendamiento"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.topic", 
+        "fields": {
+            "enabled": true, 
+            "label": "Infraestructura de Comunicaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.topic", 
+        "fields": {
+            "enabled": true, 
+            "label": "Reclutamiento y Retenci\u00f3n de Personal"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compartir Datos"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compartir Equipo (Hardware)"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compartir Oportunidades de Adiestramiento"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compartir Recursos Humanos"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.opportunity", 
+        "fields": {
+            "enabled": true, 
+            "label": "Compartir Recursos de Programaci\u00f3n"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Asuntos Legales"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Finanzas y Presupuesto"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Inform\u00e1tica"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Oficina Ejecutiva"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Recursos Humanos"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Servicios Administrativos"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.department", 
+        "fields": {
+            "enabled": true, 
+            "label": "Servicios Operacionales"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.priority", 
+        "fields": {
+            "enabled": true, 
+            "label": "Prioridad 1 (Muy baja)"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.priority", 
+        "fields": {
+            "enabled": true, 
+            "label": "Prioridad 2 (Baja)"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.priority", 
+        "fields": {
+            "enabled": true, 
+            "label": "Prioridad 3 (Media)"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.priority", 
+        "fields": {
+            "enabled": true, 
+            "label": "Prioridad 4 (Alta)"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.priority", 
+        "fields": {
+            "enabled": true, 
+            "label": "Prioridad 5 (Muy Alta)"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "AGILE"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "LEAN (Iterativo con validaciones)"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "Otro"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "RAD (Rapid Application Development)"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "SCRUM"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "projects.methodology", 
+        "fields": {
+            "enabled": true, 
+            "label": "Watefall"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "telecomm.provider", 
+        "fields": {
+            "label": "AT&T"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "telecomm.provider", 
+        "fields": {
+            "label": "MetroNet"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "telecomm.provider", 
+        "fields": {
+            "label": "PRTC"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "telecomm.provider", 
+        "fields": {
+            "label": "Sprint"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "telecomm.equipment", 
+        "fields": {
+            "intranet_connectivity": true, 
+            "wifi_costs": null, 
+            "agency": 16, 
+            "datetime_created": "2013-02-18T04:00:00Z", 
+            "label": "Router", 
+            "internet_provider": 1, 
+            "internet_connectivity": true, 
+            "internet_employees": false, 
+            "purpose": "qwe", 
+            "uses_wifi": false, 
+            "internet_costs": 3333, 
+            "uses_ogp_antenna": false, 
+            "wifi_provider": null
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Visual Studio"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.backup", 
+        "fields": {
+            "label": "NetBackup"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.firewall", 
+        "fields": {
+            "label": "EasyFW"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.antivirus", 
+        "fields": {
+            "label": "Symantec"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.toolsprofile", 
+        "fields": {
+            "development": [
+                1
+            ], 
+            "desktops": 3, 
+            "firewall": [
+                1
+            ], 
+            "notebooks": 3, 
+            "agency": 16, 
+            "datetime_created": "2013-02-18T04:00:00Z", 
+            "servers": 3, 
+            "antivirus": [
+                1
+            ], 
+            "backup": [
+                1
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowtype", 
+        "fields": {
+            "initial_action": 3, 
+            "initial_state": 1, 
+            "description": "", 
+            "label": "Evaluaci\u00f3n de proyectos"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "workflows.workflowtypestate", 
+        "fields": {
+            "label": "Aprobado", 
+            "description": "El proyecto es aceptado tal y como fue radicado.", 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "workflows.workflowtypestate", 
+        "fields": {
+            "label": "Objetado", 
+            "description": "El proyecto no es aceptado pero se permite editar o enmendar y volver a someter.", 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "workflows.workflowtypestate", 
+        "fields": {
+            "label": "Rechazado", 
+            "description": "El proyecto es rechazado y no puede volver a ser sometido.", 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowtypestate", 
+        "fields": {
+            "label": "Sin someter", 
+            "description": "El proyecto a sido creado pero la entrada de datos a un no ha sido completada y el proceso de evaluaci\u00f3n no ha comenzado.", 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "workflows.workflowtypestate", 
+        "fields": {
+            "label": "Sometido para evaluaci\u00f3n", 
+            "description": "Toda la informacion del proyecto ha sido entrada y ha sido sometido al TIG para evaluacion.", 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowtyperelation", 
+        "fields": {
+            "content_type": 17, 
+            "workflow_type": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowinstance", 
+        "fields": {
+            "workflow_type": 1, 
+            "content_type": 17, 
+            "datetime_created": "2013-02-21T07:13:09.615Z", 
+            "object_id": 3
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-21T07:21:54.652Z", 
+            "workflow_state": 3
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:15:38.140Z", 
+            "workflow_state": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:16:01.733Z", 
+            "workflow_state": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:16:16.607Z", 
+            "workflow_state": 3
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:17:46.225Z", 
+            "workflow_state": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:19:07.824Z", 
+            "workflow_state": 2
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T00:20:02.571Z", 
+            "workflow_state": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T15:58:32.367Z", 
+            "workflow_state": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "workflows.workflowinstancestate", 
+        "fields": {
+            "workflow_instance": 1, 
+            "datetime_created": "2013-02-22T20:57:51.114Z", 
+            "workflow_state": 2
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_accessentry", 
+            "name": "Can add access entry", 
+            "content_type": 18
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_accessentry", 
+            "name": "Can change access entry", 
+            "content_type": 18
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_accessentry", 
+            "name": "Can delete access entry", 
+            "content_type": 18
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_creatorsingleton", 
+            "name": "Can add creator", 
+            "content_type": 20
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_creatorsingleton", 
+            "name": "Can change creator", 
+            "content_type": 20
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_creatorsingleton", 
+            "name": "Can delete creator", 
+            "content_type": 20
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_defaultaccessentry", 
+            "name": "Can add default access entry", 
+            "content_type": 19
+        }
+    }, 
+    {
+        "pk": 56, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_defaultaccessentry", 
+            "name": "Can change default access entry", 
+            "content_type": 19
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_defaultaccessentry", 
+            "name": "Can delete default access entry", 
+            "content_type": 19
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_logentry", 
+            "name": "Can add log entry", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_logentry", 
+            "name": "Can change log entry", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_logentry", 
+            "name": "Can delete log entry", 
+            "content_type": 7
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_agency", 
+            "name": "Can add agency", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_agency", 
+            "name": "Can change agency", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_agency", 
+            "name": "Can delete agency", 
+            "content_type": 9
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_group", 
+            "name": "Can add group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_group", 
+            "name": "Can change group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_group", 
+            "name": "Can delete group", 
+            "content_type": 2
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_permission", 
+            "name": "Can add permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_permission", 
+            "name": "Can change permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_permission", 
+            "name": "Can delete permission", 
+            "content_type": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_user", 
+            "name": "Can add user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_user", 
+            "name": "Can change user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_user", 
+            "name": "Can delete user", 
+            "content_type": 3
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_anonymoususersingleton", 
+            "name": "Can add anonymous user", 
+            "content_type": 26
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_anonymoususersingleton", 
+            "name": "Can change anonymous user", 
+            "content_type": 26
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_anonymoususersingleton", 
+            "name": "Can delete anonymous user", 
+            "content_type": 26
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_autoadminsingleton", 
+            "name": "Can add auto admin properties", 
+            "content_type": 27
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_autoadminsingleton", 
+            "name": "Can change auto admin properties", 
+            "content_type": 27
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_autoadminsingleton", 
+            "name": "Can delete auto admin properties", 
+            "content_type": 27
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_contenttype", 
+            "name": "Can add content type", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_contenttype", 
+            "name": "Can change content type", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_contenttype", 
+            "name": "Can delete content type", 
+            "content_type": 4
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_recentsearch", 
+            "name": "Can add recent search", 
+            "content_type": 21
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_recentsearch", 
+            "name": "Can change recent search", 
+            "content_type": 21
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_recentsearch", 
+            "name": "Can delete recent search", 
+            "content_type": 21
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_permissionholder", 
+            "name": "Can add permission holder", 
+            "content_type": 23
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_permissionholder", 
+            "name": "Can change permission holder", 
+            "content_type": 23
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_permissionholder", 
+            "name": "Can delete permission holder", 
+            "content_type": 23
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_role", 
+            "name": "Can add role", 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_role", 
+            "name": "Can change role", 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_role", 
+            "name": "Can delete role", 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_rolemember", 
+            "name": "Can add role member", 
+            "content_type": 25
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_rolemember", 
+            "name": "Can change role member", 
+            "content_type": 25
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_rolemember", 
+            "name": "Can delete role member", 
+            "content_type": 25
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_storedpermission", 
+            "name": "Can add permission", 
+            "content_type": 22
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_storedpermission", 
+            "name": "Can change permission", 
+            "content_type": 22
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_storedpermission", 
+            "name": "Can delete permission", 
+            "content_type": 22
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_benefit", 
+            "name": "Can add benefit", 
+            "content_type": 14
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_benefit", 
+            "name": "Can change benefit", 
+            "content_type": 14
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_benefit", 
+            "name": "Can delete benefit", 
+            "content_type": 14
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_classification", 
+            "name": "Can add classification", 
+            "content_type": 12
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_classification", 
+            "name": "Can change classification", 
+            "content_type": 12
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_classification", 
+            "name": "Can delete classification", 
+            "content_type": 12
+        }
+    }, 
+    {
+        "pk": 139, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_department", 
+            "name": "Can add department", 
+            "content_type": 47
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_department", 
+            "name": "Can change department", 
+            "content_type": 47
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_department", 
+            "name": "Can delete department", 
+            "content_type": 47
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_fiscalyear", 
+            "name": "Can add fiscal year", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_fiscalyear", 
+            "name": "Can change fiscal year", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_fiscalyear", 
+            "name": "Can delete fiscal year", 
+            "content_type": 10
+        }
+    }, 
+    {
+        "pk": 145, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_methodology", 
+            "name": "Can add methodology", 
+            "content_type": 49
+        }
+    }, 
+    {
+        "pk": 146, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_methodology", 
+            "name": "Can change methodology", 
+            "content_type": 49
+        }
+    }, 
+    {
+        "pk": 147, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_methodology", 
+            "name": "Can delete methodology", 
+            "content_type": 49
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_opportunity", 
+            "name": "Can add oportunity", 
+            "content_type": 16
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_opportunity", 
+            "name": "Can change oportunity", 
+            "content_type": 16
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_opportunity", 
+            "name": "Can delete oportunity", 
+            "content_type": 16
+        }
+    }, 
+    {
+        "pk": 142, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_priority", 
+            "name": "Can add priority", 
+            "content_type": 48
+        }
+    }, 
+    {
+        "pk": 143, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_priority", 
+            "name": "Can change priority", 
+            "content_type": 48
+        }
+    }, 
+    {
+        "pk": 144, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_priority", 
+            "name": "Can delete priority", 
+            "content_type": 48
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_project", 
+            "name": "Can add project", 
+            "content_type": 17
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_project", 
+            "name": "Can change project", 
+            "content_type": 17
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_project", 
+            "name": "Can delete project", 
+            "content_type": 17
+        }
+    }, 
+    {
+        "pk": 106, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_projectbudget", 
+            "name": "Can add project budget", 
+            "content_type": 36
+        }
+    }, 
+    {
+        "pk": 107, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_projectbudget", 
+            "name": "Can change project budget", 
+            "content_type": 36
+        }
+    }, 
+    {
+        "pk": 108, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_projectbudget", 
+            "name": "Can delete project budget", 
+            "content_type": 36
+        }
+    }, 
+    {
+        "pk": 109, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_projectdetails", 
+            "name": "Can add project details", 
+            "content_type": 37
+        }
+    }, 
+    {
+        "pk": 110, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_projectdetails", 
+            "name": "Can change project details", 
+            "content_type": 37
+        }
+    }, 
+    {
+        "pk": 111, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_projectdetails", 
+            "name": "Can delete project details", 
+            "content_type": 37
+        }
+    }, 
+    {
+        "pk": 115, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_projectfile", 
+            "name": "Can add project file", 
+            "content_type": 39
+        }
+    }, 
+    {
+        "pk": 116, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_projectfile", 
+            "name": "Can change project file", 
+            "content_type": 39
+        }
+    }, 
+    {
+        "pk": 117, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_projectfile", 
+            "name": "Can delete project file", 
+            "content_type": 39
+        }
+    }, 
+    {
+        "pk": 103, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_projectinfo", 
+            "name": "Can add project details", 
+            "content_type": 35
+        }
+    }, 
+    {
+        "pk": 104, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_projectinfo", 
+            "name": "Can change project details", 
+            "content_type": 35
+        }
+    }, 
+    {
+        "pk": 105, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_projectinfo", 
+            "name": "Can delete project details", 
+            "content_type": 35
+        }
+    }, 
+    {
+        "pk": 112, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_projectopportunities", 
+            "name": "Can add project opportunities", 
+            "content_type": 38
+        }
+    }, 
+    {
+        "pk": 113, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_projectopportunities", 
+            "name": "Can change project opportunities", 
+            "content_type": 38
+        }
+    }, 
+    {
+        "pk": 114, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_projectopportunities", 
+            "name": "Can delete project opportunities", 
+            "content_type": 38
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_purpose", 
+            "name": "Can add purpose", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_purpose", 
+            "name": "Can change purpose", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_purpose", 
+            "name": "Can delete purpose", 
+            "content_type": 11
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_stage", 
+            "name": "Can add stage", 
+            "content_type": 13
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_stage", 
+            "name": "Can change stage", 
+            "content_type": 13
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_stage", 
+            "name": "Can delete stage", 
+            "content_type": 13
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_topic", 
+            "name": "Can add topic", 
+            "content_type": 15
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_topic", 
+            "name": "Can change topic", 
+            "content_type": 15
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_topic", 
+            "name": "Can delete topic", 
+            "content_type": 15
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_session", 
+            "name": "Can add session", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_session", 
+            "name": "Can change session", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_session", 
+            "name": "Can delete session", 
+            "content_type": 5
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_site", 
+            "name": "Can add site", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_site", 
+            "name": "Can change site", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_site", 
+            "name": "Can delete site", 
+            "content_type": 6
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_migrationhistory", 
+            "name": "Can add migration history", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_migrationhistory", 
+            "name": "Can change migration history", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_migrationhistory", 
+            "name": "Can delete migration history", 
+            "content_type": 8
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_equipment", 
+            "name": "Can add telecomm equipment", 
+            "content_type": 29
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_equipment", 
+            "name": "Can change telecomm equipment", 
+            "content_type": 29
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_equipment", 
+            "name": "Can delete telecomm equipment", 
+            "content_type": 29
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_provider", 
+            "name": "Can add provider", 
+            "content_type": 28
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_provider", 
+            "name": "Can change provider", 
+            "content_type": 28
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_provider", 
+            "name": "Can delete provider", 
+            "content_type": 28
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_antivirus", 
+            "name": "Can add antivirus tool", 
+            "content_type": 33
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_antivirus", 
+            "name": "Can change antivirus tool", 
+            "content_type": 33
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_antivirus", 
+            "name": "Can delete antivirus tool", 
+            "content_type": 33
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_backup", 
+            "name": "Can add backup tool", 
+            "content_type": 31
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_backup", 
+            "name": "Can change backup tool", 
+            "content_type": 31
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_backup", 
+            "name": "Can delete backup tool", 
+            "content_type": 31
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_development", 
+            "name": "Can add development tool", 
+            "content_type": 30
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_development", 
+            "name": "Can change development tool", 
+            "content_type": 30
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_development", 
+            "name": "Can delete development tool", 
+            "content_type": 30
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_firewall", 
+            "name": "Can add firewall tool", 
+            "content_type": 32
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_firewall", 
+            "name": "Can change firewall tool", 
+            "content_type": 32
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_firewall", 
+            "name": "Can delete firewall tool", 
+            "content_type": 32
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_toolsprofile", 
+            "name": "Can add tool profile", 
+            "content_type": 34
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_toolsprofile", 
+            "name": "Can change tool profile", 
+            "content_type": 34
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_toolsprofile", 
+            "name": "Can delete tool profile", 
+            "content_type": 34
+        }
+    }, 
+    {
+        "pk": 130, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowinstance", 
+            "name": "Can add workflow type state", 
+            "content_type": 44
+        }
+    }, 
+    {
+        "pk": 131, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowinstance", 
+            "name": "Can change workflow type state", 
+            "content_type": 44
+        }
+    }, 
+    {
+        "pk": 132, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowinstance", 
+            "name": "Can delete workflow type state", 
+            "content_type": 44
+        }
+    }, 
+    {
+        "pk": 133, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowinstancehistory", 
+            "name": "Can add workflow instance history", 
+            "content_type": 45
+        }
+    }, 
+    {
+        "pk": 134, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowinstancehistory", 
+            "name": "Can change workflow instance history", 
+            "content_type": 45
+        }
+    }, 
+    {
+        "pk": 135, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowinstancehistory", 
+            "name": "Can delete workflow instance history", 
+            "content_type": 45
+        }
+    }, 
+    {
+        "pk": 136, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowinstancestate", 
+            "name": "Can add workflow instance state", 
+            "content_type": 46
+        }
+    }, 
+    {
+        "pk": 137, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowinstancestate", 
+            "name": "Can change workflow instance state", 
+            "content_type": 46
+        }
+    }, 
+    {
+        "pk": 138, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowinstancestate", 
+            "name": "Can delete workflow instance state", 
+            "content_type": 46
+        }
+    }, 
+    {
+        "pk": 118, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowtype", 
+            "name": "Can add workflow type", 
+            "content_type": 40
+        }
+    }, 
+    {
+        "pk": 119, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowtype", 
+            "name": "Can change workflow type", 
+            "content_type": 40
+        }
+    }, 
+    {
+        "pk": 120, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowtype", 
+            "name": "Can delete workflow type", 
+            "content_type": 40
+        }
+    }, 
+    {
+        "pk": 121, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowtypeaction", 
+            "name": "Can add workflow type action", 
+            "content_type": 41
+        }
+    }, 
+    {
+        "pk": 122, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowtypeaction", 
+            "name": "Can change workflow type action", 
+            "content_type": 41
+        }
+    }, 
+    {
+        "pk": 123, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowtypeaction", 
+            "name": "Can delete workflow type action", 
+            "content_type": 41
+        }
+    }, 
+    {
+        "pk": 127, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowtyperelation", 
+            "name": "Can add workflow type relation", 
+            "content_type": 43
+        }
+    }, 
+    {
+        "pk": 128, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowtyperelation", 
+            "name": "Can change workflow type relation", 
+            "content_type": 43
+        }
+    }, 
+    {
+        "pk": 129, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowtyperelation", 
+            "name": "Can delete workflow type relation", 
+            "content_type": 43
+        }
+    }, 
+    {
+        "pk": 124, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_workflowtypestate", 
+            "name": "Can add workflow type state", 
+            "content_type": 42
+        }
+    }, 
+    {
+        "pk": 125, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_workflowtypestate", 
+            "name": "Can change workflow type state", 
+            "content_type": 42
+        }
+    }, 
+    {
+        "pk": 126, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_workflowtypestate", 
+            "name": "Can delete workflow type state", 
+            "content_type": 42
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.group", 
+        "fields": {
+            "name": "Gerentes TIG", 
+            "permissions": []
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-26T02:44:01.210Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$I9Cu5PpTNY9F$bvw/iSqpfLHoQDfhDbS3sk8gNDwc3hnpZy1qoHD+i6I=", 
+            "email": "admin@admin.com", 
+            "date_joined": "2013-02-13T15:33:23.113Z"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "test", 
+            "first_name": "test user", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2013-02-25T22:36:03.873Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$LmDZwOu68O9U$uVgtajS+xdwGKUO2d46FxASQ1SbiCakDZpzomOYz+TU=", 
+            "email": "", 
+            "date_joined": "2013-02-25T22:26:17Z"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-21T07:17:59.068Z", 
+            "assignee_group": null, 
+            "comments": "", 
+            "user": 1, 
+            "workflow_type_action": 3, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-21T07:18:14.269Z", 
+            "assignee_group": null, 
+            "comments": "", 
+            "user": 1, 
+            "workflow_type_action": 1, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T00:15:38.137Z", 
+            "assignee_group": null, 
+            "comments": "Favor de corregir la dirrecci\u00f3n.\r\n\r\nAtt Roberto Rosario", 
+            "user": 1, 
+            "workflow_type_action": 4, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T00:16:01.730Z", 
+            "assignee_group": null, 
+            "comments": "Sometido de nuevo", 
+            "user": 1, 
+            "workflow_type_action": 1, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T00:17:46.223Z", 
+            "assignee_group": null, 
+            "comments": "Objetado por segunda vez, corregir data de presupuesto", 
+            "user": 1, 
+            "workflow_type_action": 4, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T00:19:07.821Z", 
+            "assignee_group": null, 
+            "comments": "Se corrigio el presupuesto", 
+            "user": 1, 
+            "workflow_type_action": 1, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T15:58:32.364Z", 
+            "assignee_group": null, 
+            "comments": "", 
+            "user": 1, 
+            "workflow_type_action": 4, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "workflows.workflowinstancehistory", 
+        "fields": {
+            "assignee_user": null, 
+            "datetime_created": "2013-02-22T20:57:51.111Z", 
+            "assignee_group": null, 
+            "comments": "", 
+            "user": 1, 
+            "workflow_type_action": 1, 
+            "workflow_instance": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "workflows.workflowtypeaction", 
+        "fields": {
+            "allow_runtime_assignee_group": false, 
+            "description": "", 
+            "workflow_type": 1, 
+            "auto_assignee_group": null, 
+            "auto_assignee_user": null, 
+            "connections": [], 
+            "allow_runtime_assignee_user": false, 
+            "state": 3, 
+            "required_permission": null, 
+            "label": "Aprobar proyecto"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "workflows.workflowtypeaction", 
+        "fields": {
+            "allow_runtime_assignee_group": false, 
+            "description": "", 
+            "workflow_type": 1, 
+            "auto_assignee_group": null, 
+            "auto_assignee_user": null, 
+            "connections": [
+                1
+            ], 
+            "allow_runtime_assignee_user": false, 
+            "state": 1, 
+            "required_permission": null, 
+            "label": "Crear proyecto"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "workflows.workflowtypeaction", 
+        "fields": {
+            "allow_runtime_assignee_group": false, 
+            "description": "", 
+            "workflow_type": 1, 
+            "auto_assignee_group": null, 
+            "auto_assignee_user": null, 
+            "connections": [
+                1
+            ], 
+            "allow_runtime_assignee_user": false, 
+            "state": 1, 
+            "required_permission": null, 
+            "label": "Objetar proyecto"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "workflows.workflowtypeaction", 
+        "fields": {
+            "allow_runtime_assignee_group": false, 
+            "description": "", 
+            "workflow_type": 1, 
+            "auto_assignee_group": null, 
+            "auto_assignee_user": null, 
+            "connections": [], 
+            "allow_runtime_assignee_user": false, 
+            "state": 4, 
+            "required_permission": null, 
+            "label": "Rechazar proyecto"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "workflows.workflowtypeaction", 
+        "fields": {
+            "allow_runtime_assignee_group": false, 
+            "description": "", 
+            "workflow_type": 1, 
+            "auto_assignee_group": 1, 
+            "auto_assignee_user": null, 
+            "connections": [
+                2, 
+                4, 
+                5
+            ], 
+            "allow_runtime_assignee_user": false, 
+            "state": 2, 
+            "required_permission": null, 
+            "label": "Someter proyecto"
+        }
+    }
+]
