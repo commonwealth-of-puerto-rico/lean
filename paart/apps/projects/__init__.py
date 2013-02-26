@@ -6,6 +6,7 @@ from acls.api import class_permissions
 #from agencies.classes import AgencyElement
 from agencies.models import Agency
 from common.utils import encapsulate
+from dynamic_search.classes import SearchModel
 from navigation.api import register_top_menu, register_model_list_columns
 from navigation.classes import Link
 from workflows.models import WorkflowInstance
@@ -60,3 +61,42 @@ class_permissions(Agency, [
         PERMISSION_PROJECT_VIEW, PERMISSION_PROJECT_CREATE
     ]
 )
+
+project_search = SearchModel('projects', 'Project')
+
+project_search.add_model_field('label', label=_(u'label'))
+project_search.add_model_field('agency__name', label=_(u'agency'))
+
+project_search.add_model_field('projectinfo__fiscal_year__label', label=_(u'fiscal year'))
+project_search.add_model_field('projectinfo__purpose__label', label=_(u'purpose'))
+project_search.add_model_field('projectinfo__purpose_other', label=_(u'purpose other'))
+project_search.add_model_field('projectinfo__classification__label', label=_(u'classification'))
+project_search.add_model_field('projectinfo__classification_other', label=_(u'classification other'))
+project_search.add_model_field('projectinfo__department__label', label=_(u'department'))
+project_search.add_model_field('projectinfo__sponsor', label=_(u'sponsor'))
+project_search.add_model_field('projectinfo__phone_number', label=_(u'phone number'))
+project_search.add_model_field('projectinfo__goals', label=_(u'goals'))
+project_search.add_model_field('projectinfo__needs', label=_(u'needs'))
+project_search.add_model_field('projectinfo__expected_results', label=_(u'expected results'))
+project_search.add_model_field('projectinfo__methodology', label=_(u'methodology'))
+project_search.add_model_field('projectinfo__milestones', label=_(u'milestones'))
+
+project_search.add_model_field('projectbudget__infrastructure', label=_(u'infrastructure'))
+project_search.add_model_field('projectbudget__requirements', label=_(u'requirements'))
+project_search.add_model_field('projectbudget__presumptions', label=_(u'presumptions'))
+project_search.add_model_field('projectbudget__limitations', label=_(u'limitations'))
+project_search.add_model_field('projectbudget__risks', label=_(u'risks'))
+project_search.add_model_field('projectbudget__director', label=_(u'director'))
+
+project_search.add_model_field('projectdetails__start_period__label', label=_(u'start period'))
+project_search.add_model_field('projectdetails__end_period__label', label=_(u'end period'))
+project_search.add_model_field('projectdetails__stage__label', label=_(u'stage'))
+project_search.add_model_field('projectdetails__priority__label', label=_(u'priority'))
+
+project_search.add_model_field('projectopportunities__opportunity__label', label=_(u'opportunity'))
+project_search.add_model_field('projectopportunities__sharing_benefit__label', label=_(u'sharing benefit'))
+project_search.add_model_field('projectopportunities__explanation', label=_(u'explanation'))
+project_search.add_model_field('projectopportunities__other_agencies__name', label=_(u'other agencies'))
+
+project_search.add_model_field('projectfile__label', label=_(u'project file label'))
+project_search.add_model_field('projectfile__file', label=_(u'project file name'))
