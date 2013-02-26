@@ -78,7 +78,8 @@ project_search.add_model_field('projectinfo__phone_number', label=_(u'phone numb
 project_search.add_model_field('projectinfo__goals', label=_(u'goals'))
 project_search.add_model_field('projectinfo__needs', label=_(u'needs'))
 project_search.add_model_field('projectinfo__expected_results', label=_(u'expected results'))
-project_search.add_model_field('projectinfo__methodology', label=_(u'methodology'))
+project_search.add_model_field('projectinfo__methodology__label', label=_(u'methodology'))
+project_search.add_model_field('projectinfo__methodology_other', label=_(u'other methodology'))
 project_search.add_model_field('projectinfo__milestones', label=_(u'milestones'))
 
 project_search.add_model_field('projectbudget__infrastructure', label=_(u'infrastructure'))

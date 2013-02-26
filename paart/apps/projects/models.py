@@ -167,6 +167,24 @@ class Priority(models.Model):
         ordering = ['label']
 
 
+class Methodology(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
+
+    def __unicode__(self):
+        return self.label
+
+    def natural_key(self):
+        return (self.label,)
+
+    class Meta:
+        verbose_name = _(u'methodology')
+        verbose_name_plural = _(u'methodologies')
+        ordering = ['label']
+
+
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
@@ -202,7 +220,8 @@ class ProjectInfo(models.Model):
     goals = models.TextField(verbose_name=_(u'goals/objectives'), help_text=_(u'HELP_TEXT_PROYECTINFO_GOALS'))
     needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
     expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))
-    methodology = models.TextField(verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
+    methodology = models.ForeignKey(Methodology, verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
+    methodology_other = models.CharField(max_length=128, verbose_name=_(u'other methodology'), blank=True)
     milestones = models.TextField(verbose_name=_(u'milestones'), help_text=_(u'HELP_TEXT_PROYECTINFO_MILESTONES'))
 
     def __unicode__(self):
