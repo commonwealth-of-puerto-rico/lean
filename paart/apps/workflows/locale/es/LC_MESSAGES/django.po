@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-26 02:43-0400\n"
+"PO-Revision-Date: 2013-02-26 02:47\n"
+"Last-Translator:   <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+#: __init__.py:14
+msgid "type"
+msgstr "tipo"
+
+#: __init__.py:15
+msgid "latest action"
+msgstr "ultima acción"
+
+#: __init__.py:16
+msgid "lastest state"
+msgstr "ultimo estado"
+
+#: __init__.py:20
+msgid "date and time"
+msgstr "fecha y hora"
+
+#: __init__.py:21
+msgid "action"
+msgstr "acción"
+
+#: __init__.py:22 models.py:155
+msgid "user"
+msgstr "usuario"
+
+#: __init__.py:23 models.py:158
+msgid "assignee group"
+msgstr "grupo asignado"
+
+#: __init__.py:24 models.py:157
+msgid "assignee user"
+msgstr "usuario asignado"
+
+#: __init__.py:25 models.py:156
+msgid "comments"
+msgstr "comentarios"
+
+#: forms.py:11
+msgid "Action"
+msgstr "Acción"
+
+#: forms.py:12
+msgid "Comments"
+msgstr "Commentarios"
+
+#: models.py:16 models.py:38 models.py:67
+msgid "label"
+msgstr "etiqueta"
+
+#: models.py:17 models.py:39 models.py:68
+msgid "description"
+msgstr "descripción"
+
+#: models.py:18
+msgid "initial action"
+msgstr "acción inicial"
+
+#: models.py:31 models.py:37 models.py:66 models.py:86 models.py:102
+msgid "workflow type"
+msgstr "tipo de flujo de trabajo"
+
+#: models.py:32
+msgid "workflow types"
+msgstr "tipos de flujos de trabajo"
+
+#: models.py:40
+msgid "connections"
+msgstr "conecciones"
+
+#: models.py:41
+msgid "state"
+msgstr "estado"
+
+#: models.py:42
+msgid "auto assignee user"
+msgstr "usuario asignado automáticamente"
+
+#: models.py:43
+msgid "auto assignee group"
+msgstr "grupo asignado automáticamente"
+
+#: models.py:44
+msgid "allow runtime assignee user"
+msgstr ""
+
+#: models.py:45
+msgid "allow runtime assignee group"
+msgstr ""
+
+#: models.py:46
+msgid "required permission"
+msgstr "permiso requerido"
+
+#: models.py:46
+msgid ""
+"Will be checked globally or in relation to the workflow instance's content "
+"object."
+msgstr ""
+
+#: models.py:59 models.py:154
+msgid "workflow type action"
+msgstr "acción de tipo de flujo de trabajo"
+
+#: models.py:60
+msgid "workflow types actions"
+msgstr "acciones de tipos de flujos de trabajo"
+
+#: models.py:78 models.py:181
+msgid "workflow type state"
+msgstr "estado de tipo de flujo de trabajo"
+
+#: models.py:79
+msgid "workflow types states"
+msgstr "estados de tipos de flujos de trabajo"
+
+#: models.py:89
+msgid "workflow type relation"
+msgstr "relación de tipo de flujo de trabajo"
+
+#: models.py:90
+msgid "workflow types relation"
+msgstr "relación de tipos de flujos de trabajo"
+
+#: models.py:98 models.py:152 models.py:180
+msgid "creation date and time"
+msgstr "fecha y hora de creación"
+
+#: models.py:147 models.py:153 models.py:179
+msgid "workflow instance"
+msgstr "instancia de flujo de trabajo"
+
+#: models.py:148
+msgid "workflow instances"
+msgstr "instancias de flujos de trabajo"
+
+#: models.py:173 models.py:174
+msgid "workflow instance history"
+msgstr "historia de instancia de flujo de trabajo"
+
+#: models.py:187
+msgid "workflow instance state"
+msgstr "estados de instancia de flujo de trabajo"
+
+#: models.py:188
+msgid "workflow instance states"
+msgstr "estados de instancia de flujo de trabajo"

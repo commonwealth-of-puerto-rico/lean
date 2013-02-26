@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-26 02:43-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:14
+msgid "type"
+msgstr ""
+
+#: __init__.py:15
+msgid "latest action"
+msgstr ""
+
+#: __init__.py:16
+msgid "lastest state"
+msgstr ""
+
+#: __init__.py:20
+msgid "date and time"
+msgstr ""
+
+#: __init__.py:21
+msgid "action"
+msgstr ""
+
+#: __init__.py:22 models.py:155
+msgid "user"
+msgstr ""
+
+#: __init__.py:23 models.py:158
+msgid "assignee group"
+msgstr ""
+
+#: __init__.py:24 models.py:157
+msgid "assignee user"
+msgstr ""
+
+#: __init__.py:25 models.py:156
+msgid "comments"
+msgstr ""
+
+#: forms.py:11
+msgid "Action"
+msgstr ""
+
+#: forms.py:12
+msgid "Comments"
+msgstr ""
+
+#: models.py:16 models.py:38 models.py:67
+msgid "label"
+msgstr ""
+
+#: models.py:17 models.py:39 models.py:68
+msgid "description"
+msgstr ""
+
+#: models.py:18
+msgid "initial action"
+msgstr ""
+
+#: models.py:31 models.py:37 models.py:66 models.py:86 models.py:102
+msgid "workflow type"
+msgstr ""
+
+#: models.py:32
+msgid "workflow types"
+msgstr ""
+
+#: models.py:40
+msgid "connections"
+msgstr ""
+
+#: models.py:41
+msgid "state"
+msgstr ""
+
+#: models.py:42
+msgid "auto assignee user"
+msgstr ""
+
+#: models.py:43
+msgid "auto assignee group"
+msgstr ""
+
+#: models.py:44
+msgid "allow runtime assignee user"
+msgstr ""
+
+#: models.py:45
+msgid "allow runtime assignee group"
+msgstr ""
+
+#: models.py:46
+msgid "required permission"
+msgstr ""
+
+#: models.py:46
+msgid ""
+"Will be checked globally or in relation to the workflow instance's content "
+"object."
+msgstr ""
+
+#: models.py:59 models.py:154
+msgid "workflow type action"
+msgstr ""
+
+#: models.py:60
+msgid "workflow types actions"
+msgstr ""
+
+#: models.py:78 models.py:181
+msgid "workflow type state"
+msgstr ""
+
+#: models.py:79
+msgid "workflow types states"
+msgstr ""
+
+#: models.py:89
+msgid "workflow type relation"
+msgstr ""
+
+#: models.py:90
+msgid "workflow types relation"
+msgstr ""
+
+#: models.py:98 models.py:152 models.py:180
+msgid "creation date and time"
+msgstr ""
+
+#: models.py:147 models.py:153 models.py:179
+msgid "workflow instance"
+msgstr ""
+
+#: models.py:148
+msgid "workflow instances"
+msgstr ""
+
+#: models.py:173 models.py:174
+msgid "workflow instance history"
+msgstr ""
+
+#: models.py:187
+msgid "workflow instance state"
+msgstr ""
+
+#: models.py:188
+msgid "workflow instance states"
+msgstr ""
