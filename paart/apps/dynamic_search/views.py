@@ -33,15 +33,17 @@ def results(request, extra_context=None):
         # Only do search if there is user input, otherwise just render
         # the template with the extra_context
 
+        search_model = SearchModel.get(request.GET['search_model'])
+    
         if 'q' in request.GET:
             # Simple query
             logger.debug('simple search')
             query_string = request.GET.get('q', u'').strip()
-            model_list, flat_list, shown_result_count, result_count, elapsed_time = document_search.simple_search(query_string)
+            model_list, flat_list, shown_result_count, result_count, elapsed_time = search_model.simple_search(query_string)
         else:
             # Advanced search
             logger.debug('advanced search')
-            model_list, flat_list, shown_result_count, result_count, elapsed_time = document_search.advanced_search(request.GET)
+            model_list, flat_list, shown_result_count, result_count, elapsed_time = search_model.advanced_search(request.GET)
 
         if shown_result_count != result_count:
             title = _(u'results, (showing only %(shown_result_count)s out of %(result_count)s)') % {
@@ -88,27 +90,23 @@ def search(request, advanced=False):
             context_instance=RequestContext(request)
         )
     else:
-        if request.GET.get('source') != 'sidebar':
-            # Don't include a form a top of the results if the search
-            # was originated from the sidebar search form
-            extra_context = {
-                'submit_label': _(u'Search'),
-                'submit_icon': icon_search,
-                'form_title': _(u'Search'),
-                'form_hide_required_text': True,
-            }
-            if ('q' in request.GET) and request.GET['q'].strip():
-                query_string = request.GET['q']
-                form = SearchForm(initial={'q': query_string})
-                extra_context.update({'form': form})
-                return results(request, extra_context=extra_context)
-            else:
-                form = SearchForm()
-                extra_context.update({'form': form})
-                return results(request, extra_context=extra_context)
+        # Don't include a form a top of the results if the search
+        # was originated from the sidebar search form
+        extra_context = {
+            'submit_label': _(u'Search'),
+            'submit_icon': icon_search,
+            'form_title': _(u'Search'),
+            'form_hide_required_text': True,
+        }
+        if ('q' in request.GET) and request.GET['q'].strip():
+            query_string = request.GET['q']
+            form = SearchForm(initial={'q': query_string, 'search_model': request.GET['search_model']})
+            extra_context.update({'form': form})
+            return results(request, extra_context=extra_context)
         else:
-            # Already has a form with data, go to results
-            return results(request)
+            form = SearchForm()
+            extra_context.update({'form': form})
+            return results(request, extra_context=extra_context)
 
 
 def search_again(request):

@@ -16,8 +16,11 @@ class SearchModel(object):
     registry = {}
 
     @classmethod
-    def get_all(cls):
-        return cls.registry.values()
+    def get_all(cls, as_choices=False):
+        if as_choices:
+            return cls.registry.items()
+        else:
+            return cls.registry.values()
 
     @classmethod
     def get(cls, full_name):
@@ -29,7 +32,11 @@ class SearchModel(object):
         self.search_fields = {}
         self.model = get_model(app_label, model_name)
         self.label = label or self.model._meta.verbose_name
+        self.id = '%s.%s' % (app_label, model_name)
         self.__class__.registry[self.get_full_name()] = self
+
+    def __unicode__(self):
+        return unicode(self.model._meta.verbose_name)
 
     def get_full_name(self):
         return '%s.%s' % (self.app_label, self.model_name)
