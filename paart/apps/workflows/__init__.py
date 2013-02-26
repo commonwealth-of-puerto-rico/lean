@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
+from common.utils import encapsulate
 from navigation.api import register_model_list_columns
 
 from .models import WorkflowInstance, WorkflowInstanceHistory, WorkflowTypeRelation
@@ -19,9 +20,9 @@ register_model_list_columns(WorkflowInstance, [
 register_model_list_columns(WorkflowInstanceHistory, [
     {'name': _(u'date and time'), 'attribute': 'datetime_created'},
     {'name': _(u'action'), 'attribute': 'workflow_type_action'},
-    {'name': _(u'user'), 'attribute': 'user'},
-    {'name': _(u'assignee group'), 'attribute': 'assignee_group'},
-    {'name': _(u'assignee user'), 'attribute': 'assignee_user'},
+    {'name': _(u'user'), 'attribute': encapsulate(lambda x: x.user or '')},
+    {'name': _(u'assignee group'), 'attribute': encapsulate(lambda x: x.assignee_group or '')},
+    {'name': _(u'assignee user'), 'attribute': encapsulate(lambda x: x.assignee_user or '')},
     {'name': _(u'comments'), 'attribute': 'comments'},
 ])
 
