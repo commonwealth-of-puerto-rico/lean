@@ -5,3 +5,4 @@ local_settings.py
 settings_local.py
 /venv/
 paart.sqlite
+/site_media/
