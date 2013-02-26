@@ -3,7 +3,7 @@ from __future__ import absolute_import
 import urlparse
 import urllib
 
-from datetime import datetime
+from django.utils.timezone import now
 
 from django.db import models
 from django.utils.translation import ugettext as _
@@ -46,7 +46,7 @@ class RecentSearch(models.Model):
         return u'%s (%s)' % (display_string, self.hits)
 
     def save(self, *args, **kwargs):
-        self.datetime_created = datetime.now()
+        self.datetime_created = now()
         super(RecentSearch, self).save(*args, **kwargs)
 
     def url(self):
