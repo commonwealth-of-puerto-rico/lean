@@ -36,7 +36,7 @@ class SearchModel(object):
         self.__class__.registry[self.get_full_name()] = self
 
     def __unicode__(self):
-        return unicode(self.model._meta.verbose_name)
+        return unicode(self.model._meta.verbose_name.title())
 
     def get_full_name(self):
         return '%s.%s' % (self.app_label, self.model_name)
