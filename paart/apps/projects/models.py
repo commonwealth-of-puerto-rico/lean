@@ -170,22 +170,22 @@ class Project(models.Model):
 class ProjectInfo(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Informacion general - Paso 1  ##
-    fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'), help_text=_(u'FISCAL_YEAR'))
-    purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'), help_text=_(u'PURPOSE'))
-    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'PURPOSE_OTHER'))
-    classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'CLASSIFICATION'))
-    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'CLASSIFICATION_OTHER'))
+    fiscal_year = models.ForeignKey(FiscalYear, related_name='fiscal_year', verbose_name=_(u'fiscal year'), help_text=_(u'HELP_TEXT_PROYECTINFO_FISCAL_YEAR'))
+    purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'), help_text=_(u'HELP_TEXT_PROYECTINFO_PURPOSE'))
+    purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_PURPOSE_OTHER'))
+    classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION'))
+    classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION_OTHER'))
     #department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
-    department = models.ForeignKey(Department, verbose_name=_(u'department/work unit'))
+    department = models.ForeignKey(Department, verbose_name=_(u'department/work unit'), help_text=_(u'HELP_TEXT_PROYECTINFO_DEPARTMENT'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
     # Remove email of sponsor as per Giancarlo's recommendations
     # email = models.EmailField(verbose_name=_(u'email'))
     phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
-    goals = models.TextField(verbose_name=_(u'goals/objectives'))
-    needs = models.TextField(verbose_name=_(u'project needs'))
-    expected_results = models.TextField(verbose_name=_('expected results'))
-    methodology = models.TextField(verbose_name=_('methodology'))
-    milestones = models.TextField(verbose_name=_(u'milestones'))
+    goals = models.TextField(verbose_name=_(u'goals/objectives'), help_text=_(u'HELP_TEXT_PROYECTINFO_GOALS'))
+    needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
+    expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))
+    methodology = models.TextField(verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
+    milestones = models.TextField(verbose_name=_(u'milestones'), help_text=_(u'HELP_TEXT_PROYECTINFO_MILESTONES'))
 
     def __unicode__(self):
         return ugettext(u'project information')
@@ -204,9 +204,9 @@ class ProjectBudget(models.Model):
     ## Presupuesto - Paso 2 ##
     infrastructure = models.CharField(max_length=1, choices=INFRASTRUCTURE_CHOICES, verbose_name=_(u'infrastructure needs'))
     requirements = models.TextField(verbose_name=_(u'project critical requirements'))
-    presumptions = models.TextField(verbose_name=_(u'presumptions'))
-    limitations = models.TextField(verbose_name=_(u'limitations'))
-    risks = models.TextField(verbose_name=_(u'risks'))
+    presumptions = models.TextField(verbose_name=_(u'presumptions'), help_text=_(u'HELP_TEXT_PROYECTBUDGET_PRESUMPTIONS'))
+    limitations = models.TextField(verbose_name=_(u'limitations'), help_text=_(u'HELP_TEXT_PROYECTBUDGET_LIMITATIONS'))
+    risks = models.TextField(verbose_name=_(u'risks'), help_text=_(u'HELP_TEXT_PROYECTBUDGET_RISKS'))
     benefits = models.TextField(verbose_name=_(u'benefits'))
     # TODO: Adquisition
     director = models.TextField(verbose_name=_(u'project director'))
@@ -228,17 +228,17 @@ class ProjectDetails(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
     ## Detalle del Proyecto - Paso 3 ##
     # 1. Fecha de comienzo
-    start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'))
+    start_period = models.ForeignKey(FiscalYear, related_name='start_period', verbose_name=_(u'start period'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_START_PERIOD'))
     # 2. Fecha de terminacion
-    end_period = models.ForeignKey(FiscalYear, related_name='end_period', verbose_name=_(u'end period'))
+    end_period = models.ForeignKey(FiscalYear, related_name='end_period', verbose_name=_(u'end period'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_END_PERIOD'))
     # 3. Etapa del proyecto
-    stage = models.ForeignKey(Stage, verbose_name=_(u'stage'))
+    stage = models.ForeignKey(Stage, verbose_name=_(u'stage'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_STAGE'))
     # 4. Beneficios de Implementacion
     # Remove Topic and Benefit fields as per Giancarlo's comments
     # benefit = models.ForeignKey(Benefit, verbose_name=_(u'implementation benefit'))
     # 5. Otro beneficio
     # benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'), blank=True)
-    priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'))
+    priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_PRIORITY'))
     # topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
     # topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
 
