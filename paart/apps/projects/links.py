@@ -46,7 +46,7 @@ link_project_file_upload = Link(text=_(u'upload'), view='project_file_upload', a
 link_project_file_delete = Link(text=_(u'delete'), view='project_file_delete', args='resolved_object.pk', icon=icon_project_file_delete)
 link_project_file_download = Link(text=_(u'download'), view='project_file_download', args='resolved_object.pk', icon=icon_project_file_download)
 
-link_project_workflow_instance_list = Link(text=_(u'workflows'), view='project_workflow_instance_list', args='resolved_object.pk', icon=icon_project_workflow_instance_list, permissions=[PERMISSION_AGENCY_VIEW])
+link_project_workflow_instance_list = Link(text=_(u'workflows'), view='project_workflow_instance_list', args='resolved_object.pk', icon=icon_project_workflow_instance_list, permissions=[PERMISSION_AGENCY_VIEW], children_view_regex=['.*workflow'])
 link_project_workflow_instance_history_list = Link(text=_(u'history'), view='project_workflow_instance_history_list', args='resolved_object.pk', icon=icon_project_workflow_instance_history)#, permissions=[PERMISSION_AGENCY_VIEW])
 link_project_workflow_instance_action_submit = Link(text=_(u'submit action'), view='project_workflow_instance_action_submit', args='resolved_object.pk', icon=icon_project_workflow_instance_action_submit)#, permissions=[PERMISSION_AGENCY_VIEW])
 
