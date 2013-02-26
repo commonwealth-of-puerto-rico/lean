@@ -8,7 +8,7 @@ from django.utils.translation import ugettext
 from agencies.models import Agency
 from common.managers import OmitDisabledManager
 
-from .literals import INFRASTRUCTURE_CHOICES, PRIORITY_CHOICES
+from .literals import INFRASTRUCTURE_CHOICES
 
 
 class FiscalYear(models.Model):
@@ -145,9 +145,27 @@ class Department(models.Model):
 
     class Meta:
         verbose_name = _(u'department')
-        verbose_name_plural = _(u'department')
+        verbose_name_plural = _(u'departments')
         ordering = ['label']
-        
+
+
+class Priority(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
+
+    def __unicode__(self):
+        return self.label
+
+    def natural_key(self):
+        return (self.label,)
+
+    class Meta:
+        verbose_name = _(u'priority')
+        verbose_name_plural = _(u'priorities')
+        ordering = ['label']
+
 
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
@@ -238,7 +256,7 @@ class ProjectDetails(models.Model):
     # benefit = models.ForeignKey(Benefit, verbose_name=_(u'implementation benefit'))
     # 5. Otro beneficio
     # benefit_other = models.CharField(max_length=128, verbose_name=_(u'other benefit'), blank=True)
-    priority = models.PositiveIntegerField(choices=PRIORITY_CHOICES, verbose_name=_(u'priority'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_PRIORITY'))
+    priority = models.ForeignKey(Priority, verbose_name=_(u'priority'), help_text=_(u'HELP_TEXT_PROYECTDETAILS_PRIORITY'))
     # topic = models.ForeignKey(Topic, verbose_name=_(u'topic'))
     # topic_other = models.CharField(max_length=128, verbose_name=_(u'other topic'), blank=True)
 
