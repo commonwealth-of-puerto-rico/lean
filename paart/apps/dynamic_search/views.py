@@ -11,16 +11,17 @@ from django.core.urlresolvers import reverse
 
 from .settings import SHOW_OBJECT_TYPE
 from .settings import LIMIT
-from .forms import SearchForm, AdvancedSearchForm
+from .forms import AdvancedSearchForm, SearchForm, SearchModelForm
 from .icons import icon_advanced_search, icon_search
 from .models import RecentSearch
 from .classes import SearchModel
 
 logger = logging.getLogger(__name__)
-#project_search = SearchModel.get('projects.Project')
 
 
 def results(request, extra_context=None):
+    search_model_label = request.GET.get('search_model', None)
+
     context = {
         'query_string': request.GET,
         #'hide_header': True,
@@ -33,7 +34,7 @@ def results(request, extra_context=None):
         # Only do search if there is user input, otherwise just render
         # the template with the extra_context
 
-        search_model = SearchModel.get(request.GET['search_model'])
+        search_model = SearchModel.get(search_model_label)
     
         if 'q' in request.GET:
             # Simple query
@@ -75,8 +76,14 @@ def results(request, extra_context=None):
 
 
 def search(request, advanced=False):
+    search_model_label = request.GET.get('search_model', None)
+
     if advanced:
-        form = AdvancedSearchForm(data=request.GET, search_model=project_search)
+        if not search_model_label:
+            form = SearchModelForm()
+        else:
+            form = AdvancedSearchForm(data=request.GET, search_model=SearchModel.get(search_model_label))
+            
         return render_to_response('generic_form.html',
             {
                 'form': form,
@@ -100,7 +107,7 @@ def search(request, advanced=False):
         }
         if ('q' in request.GET) and request.GET['q'].strip():
             query_string = request.GET['q']
-            form = SearchForm(initial={'q': query_string, 'search_model': request.GET['search_model']})
+            form = SearchForm(initial={'q': query_string, 'search_model': search_model_label})
             extra_context.update({'form': form})
             return results(request, extra_context=extra_context)
         else:

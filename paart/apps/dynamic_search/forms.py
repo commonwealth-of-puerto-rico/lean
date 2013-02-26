@@ -28,3 +28,8 @@ class AdvancedSearchForm(forms.Form):
                 label=label,
                 required=False
             )
+
+
+class SearchModelForm(forms.Form):
+    search_model = forms.MultipleChoiceField(label=_(u'Element'), widget=forms.widgets.RadioSelect(),
+        initial=SearchModel.get_all(as_choices=True)[0][0], choices=SearchModel.get_all(as_choices=True))
