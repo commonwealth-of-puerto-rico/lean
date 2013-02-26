@@ -15,7 +15,6 @@ from .managers import WorkflowInstanceManager
 class WorkflowType(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'))
     description = models.TextField(verbose_name=_(u'description'), blank=True)
-    initial_state = models.ForeignKey('WorkflowTypeState', verbose_name=_(u'initial state'), blank=True, null=True)
     initial_action = models.ForeignKey('WorkflowTypeAction', verbose_name=_(u'initial action'), blank=True, null=True)
 
     def __unicode__(self):
@@ -136,6 +135,14 @@ class WorkflowInstance(models.Model):
     #def get_absolute_url(self):
     #    return ('project_file_list', [self.project.pk])
 
+    def save(self, *args, **kwargs):
+        created = not self.pk
+        super(WorkflowInstance, self).save(*args, **kwargs)
+        if created:
+            if self.workflow_type.initial_action:
+                WorkflowInstanceHistory.objects.create(workflow_instance=self,
+                    workflow_type_action=self.workflow_type.initial_action)
+
     class Meta:
         verbose_name = _(u'workflow instance')
         verbose_name_plural = _(u'workflow instances')
@@ -145,7 +152,7 @@ class WorkflowInstanceHistory(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     workflow_instance = models.ForeignKey(WorkflowInstance, verbose_name=_(u'workflow instance'))
     workflow_type_action = models.ForeignKey(WorkflowTypeAction, verbose_name=_(u'workflow type action'))
-    user = models.ForeignKey(User, related_name='user', verbose_name=_(u'user'))
+    user = models.ForeignKey(User, related_name='user', verbose_name=_(u'user'), blank=True, null=True)
     comments = models.TextField(verbose_name=_(u'comments'), blank=True)
     assignee_user = models.ForeignKey(User, verbose_name=_(u'assignee user'), blank=True, null=True)
     assignee_group = models.ForeignKey(Group, verbose_name=_(u'assignee group'), blank=True, null=True)

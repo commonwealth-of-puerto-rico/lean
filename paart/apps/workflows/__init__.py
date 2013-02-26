@@ -1,10 +1,13 @@
 from __future__ import absolute_import
 
+from django.contrib.contenttypes.models import ContentType
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
 from navigation.api import register_model_list_columns
 
-from .models import WorkflowInstance, WorkflowInstanceHistory
+from .models import WorkflowInstance, WorkflowInstanceHistory, WorkflowTypeRelation
 
 
 register_model_list_columns(WorkflowInstance, [
@@ -21,3 +24,11 @@ register_model_list_columns(WorkflowInstanceHistory, [
     {'name': _(u'assignee user'), 'attribute': 'assignee_user'},
     {'name': _(u'comments'), 'attribute': 'comments'},
 ])
+
+@receiver(post_save, dispatch_uid='launch_workflow_on_create')
+def launch_workflow_on_create(sender, **kwargs):
+    if kwargs['created']:
+        content_type = ContentType.objects.get_for_model(kwargs['instance'])
+        for relation in WorkflowTypeRelation.objects.filter(content_type=content_type):
+            workflow_instance = WorkflowInstance.objects.create(content_object=kwargs['instance'],
+                workflow_type=relation.workflow_type)

@@ -14,7 +14,7 @@ class WorkflowTypeStateInline(admin.StackedInline):
 class WorkflowTypeAdmin(admin.ModelAdmin):
     model = WorkflowType
     inlines = (WorkflowTypeStateInline,)
-    list_display = ('label', 'initial_state', 'initial_action')
+    list_display = ('label', 'initial_action')
 
 
 class WorkflowTypeActionAdmin(admin.ModelAdmin):
