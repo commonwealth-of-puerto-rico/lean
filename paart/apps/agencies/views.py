@@ -96,7 +96,7 @@ def agency_delete(request, agency_pk):
         'previous': previous,
         'next': next,
         'object': agency,
-        'title': _(u'Are you sure you with to delete the agency: %s?') % agency,
+        'title': _(u'Are you sure you wish to delete the agency: %s?') % agency,
         'form_icon': icon_agency_delete,
     }
 
