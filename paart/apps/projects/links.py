@@ -27,21 +27,21 @@ link_project_create = Link(text=_(u'add project'), view='project_create', args='
 
 link_project_info_edit = Link(text=_(u'edit'), view='project_info_edit', args='resolved_object.pk', icon=icon_project_info_edit)
 link_project_info_delete = Link(text=_(u'delete'), view='project_info_delete', args='resolved_object.pk', icon=icon_project_info_delete)
-link_project_info_view = Link(text=_(u'information'), view='project_info_view', args='resolved_object.pk', icon=icon_project_info_view)
+link_project_info_view = Link(text=_(u'information'), view='project_info_view', args='resolved_object.pk', icon=icon_project_info_view, children_view_regex=['project_info'])
 
 link_project_budget_edit = Link(text=_(u'edit'), view='project_budget_edit', args='resolved_object.pk', icon=icon_project_budget_edit)
 link_project_budget_delete = Link(text=_(u'delete'), view='project_budget_delete', args='resolved_object.pk', icon=icon_project_budget_delete)
-link_project_budget_view = Link(text=_(u'budget'), view='project_budget_view', args='resolved_object.pk', icon=icon_project_budget_view)
+link_project_budget_view = Link(text=_(u'budget'), view='project_budget_view', args='resolved_object.pk', icon=icon_project_budget_view, children_view_regex=['project_budget'])
 
 link_project_details_edit = Link(text=_(u'edit'), view='project_details_edit', args='resolved_object.pk', icon=icon_project_details_edit)
 link_project_details_delete = Link(text=_(u'delete'), view='project_details_delete', args='resolved_object.pk', icon=icon_project_details_delete)
-link_project_details_view = Link(text=_(u'details'), view='project_details_view', args='resolved_object.pk', icon=icon_project_details_view)
+link_project_details_view = Link(text=_(u'details'), view='project_details_view', args='resolved_object.pk', icon=icon_project_details_view, children_view_regex=['project_details'])
 
 link_project_opportunities_edit = Link(text=_(u'edit'), view='project_opportunities_edit', args='resolved_object.pk', icon=icon_project_opportunities_edit)
 link_project_opportunities_delete = Link(text=_(u'delete'), view='project_opportunities_delete', args='resolved_object.pk', icon=icon_project_opportunities_delete)
-link_project_opportunities_view = Link(text=_(u'opportunities'), view='project_opportunities_view', args='resolved_object.pk', icon=icon_project_opportunities_view)
+link_project_opportunities_view = Link(text=_(u'opportunities'), view='project_opportunities_view', args='resolved_object.pk', icon=icon_project_opportunities_view, children_view_regex=['project_opportunities'])
 
-link_project_file_list = Link(text=_(u'files'), view='project_file_list', args='resolved_object.pk', icon=icon_project_file_list)
+link_project_file_list = Link(text=_(u'files'), view='project_file_list', args='resolved_object.pk', icon=icon_project_file_list, children_view_regex=['project_file'])
 link_project_file_upload = Link(text=_(u'upload'), view='project_file_upload', args='resolved_object.pk', icon=icon_project_file_upload)
 link_project_file_delete = Link(text=_(u'delete'), view='project_file_delete', args='resolved_object.pk', icon=icon_project_file_delete)
 link_project_file_download = Link(text=_(u'download'), view='project_file_download', args='resolved_object.pk', icon=icon_project_file_download)
