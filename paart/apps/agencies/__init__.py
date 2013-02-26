@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from acls.api import class_permissions
 from acls.permissions import ACLS_EDIT_ACL, ACLS_VIEW_ACL
 from common.utils import encapsulate
+from dynamic_search.classes import SearchModel
 from navigation.api import register_top_menu, register_model_list_columns
 from navigation.classes import Link
 
@@ -35,3 +36,11 @@ class_permissions(Agency, [
     ACLS_VIEW_ACL, ACLS_EDIT_ACL,
     ]
 )
+
+agency_search = SearchModel('agencies', 'Agency')
+
+agency_search.add_model_field('registration', label=_(u'Registration'))
+agency_search.add_model_field('name', label=_(u'Name'))
+agency_search.add_model_field('director', label=_(u'Director'))
+agency_search.add_model_field('physical_address', label=_(u'Physical address'))
+agency_search.add_model_field('postal_address', label=_(u'Postal address'))
