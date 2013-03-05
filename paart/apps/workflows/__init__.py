@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 from django.contrib.contenttypes.models import ContentType
+from django.db import transaction, DatabaseError
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
@@ -28,8 +29,24 @@ register_model_list_columns(WorkflowInstanceHistory, [
 
 @receiver(post_save, dispatch_uid='launch_workflow_on_create')
 def launch_workflow_on_create(sender, **kwargs):
-    if kwargs['created']:
-        content_type = ContentType.objects.get_for_model(kwargs['instance'])
-        for relation in WorkflowTypeRelation.objects.filter(content_type=content_type):
-            workflow_instance = WorkflowInstance.objects.create(content_object=kwargs['instance'],
-                workflow_type=relation.workflow_type)
+    if kwargs['created'] and not kwargs['raw']:
+        with transaction.commit_on_success():
+            try:
+                content_type = ContentType.objects.get_for_model(kwargs['instance'])
+                for relation in WorkflowTypeRelation.objects.filter(content_type=content_type):
+                    workflow_instance = WorkflowInstance.objects.create(content_object=kwargs['instance'],
+                        workflow_type=relation.workflow_type)
+            except DatabaseError as database_error:
+                try:
+                    ContentType.objects.get(model='workflowtyperelation')
+                except ContentType.DoesNotExist:
+                    # Most probable running during syncdb phase,
+                    # so ignore the exception
+                    pass
+                except DatabaseError:
+                    # ContentType model DB table doesn't exists
+                    raise database_error
+                else:
+                    # The ContentType model exists, there is something wrong with the DB
+                    transaction.rollback()
+                    raise database_error
