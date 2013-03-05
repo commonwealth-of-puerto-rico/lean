@@ -1096,6 +1096,38 @@
         }
     }, 
     {
+        "pk": 41, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tools_profile_create"
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tools_profile_delete"
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tools_profile_edit"
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "permissions.storedpermission", 
+        "fields": {
+            "namespace": "tools", 
+            "name": "tools_profile_view"
+        }
+    }, 
+    {
         "pk": 17, 
         "model": "permissions.storedpermission", 
         "fields": {
@@ -2279,36 +2311,157 @@
         }
     }, 
     {
-        "pk": 1, 
-        "model": "telecomm.equipment", 
+        "pk": 5, 
+        "model": "tools.database", 
         "fields": {
-            "intranet_connectivity": true, 
-            "wifi_costs": null, 
-            "agency": 16, 
-            "datetime_created": "2013-02-18T04:00:00Z", 
-            "label": "Router4", 
-            "internet_provider": 1, 
-            "internet_connectivity": true, 
-            "internet_employees": false, 
-            "purpose": "qwe", 
-            "uses_wifi": false, 
-            "internet_costs": 3333, 
-            "uses_ogp_antenna": false, 
-            "wifi_provider": null
+            "label": "IMB DB2"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "tools.database", 
+        "fields": {
+            "label": "MS SQL Server 2000"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.database", 
+        "fields": {
+            "label": "MS SQL Server 2005"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tools.database", 
+        "fields": {
+            "label": "MySQL"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.database", 
+        "fields": {
+            "label": "ORACLE Database"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "tools.database", 
+        "fields": {
+            "label": "Sybase SQL"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Bea/Web Logia"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "ORACLE JDeveloper"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Visual Studio .net"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Visual Studio 2002"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Visual Studio 2003"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "Visual Studio 2005"
         }
     }, 
     {
         "pk": 1, 
         "model": "tools.development", 
         "fields": {
-            "label": "Visual Studio"
+            "label": "Visual Studio 6.0"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "tools.development", 
+        "fields": {
+            "label": "WebSphere"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "tools.backup", 
+        "fields": {
+            "label": "BakBone Software"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tools.backup", 
+        "fields": {
+            "label": "Computer Associates"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.backup", 
+        "fields": {
+            "label": "Veritas Enterprise"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.backup", 
+        "fields": {
+            "label": "Veritas Netbackup"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tools.email", 
+        "fields": {
+            "label": "Lotus Notes"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.email", 
+        "fields": {
+            "label": "MS Exchange 2000"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.email", 
+        "fields": {
+            "label": "MS Exchange 2003"
         }
     }, 
     {
         "pk": 1, 
-        "model": "tools.backup", 
+        "model": "tools.email", 
         "fields": {
-            "label": "NetBackup"
+            "label": "MS Exchange 5.5"
         }
     }, 
     {
@@ -2319,10 +2472,59 @@
         }
     }, 
     {
+        "pk": 4, 
+        "model": "tools.firewall", 
+        "fields": {
+            "label": "Squid"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.firewall", 
+        "fields": {
+            "label": "Surf Control"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.firewall", 
+        "fields": {
+            "label": "Web Sense"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "tools.antivirus", 
+        "fields": {
+            "label": "BitDefender"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "tools.antivirus", 
+        "fields": {
+            "label": "McAfee"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "tools.antivirus", 
+        "fields": {
+            "label": "Panda"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "tools.antivirus", 
         "fields": {
             "label": "Symantec"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "tools.antivirus", 
+        "fields": {
+            "label": "Trend Micro"
         }
     }, 
     {
@@ -4394,11 +4596,29 @@
         }
     }, 
     {
+        "pk": 160, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_antivirus", 
+            "name": "Can add antivirus tool", 
+            "content_type": 41
+        }
+    }, 
+    {
         "pk": 121, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_workflowtypeaction", 
             "name": "Can add workflow type action", 
+            "content_type": 41
+        }
+    }, 
+    {
+        "pk": 161, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_antivirus", 
+            "name": "Can change antivirus tool", 
             "content_type": 41
         }
     }, 
@@ -4412,6 +4632,15 @@
         }
     }, 
     {
+        "pk": 162, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_antivirus", 
+            "name": "Can delete antivirus tool", 
+            "content_type": 41
+        }
+    }, 
+    {
         "pk": 123, 
         "model": "auth.permission", 
         "fields": {
@@ -4421,11 +4650,29 @@
         }
     }, 
     {
+        "pk": 154, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_backup", 
+            "name": "Can add backup tool", 
+            "content_type": 39
+        }
+    }, 
+    {
         "pk": 115, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_projectfile", 
             "name": "Can add project file", 
+            "content_type": 39
+        }
+    }, 
+    {
+        "pk": 155, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_backup", 
+            "name": "Can change backup tool", 
             "content_type": 39
         }
     }, 
@@ -4439,6 +4686,15 @@
         }
     }, 
     {
+        "pk": 156, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_backup", 
+            "name": "Can delete backup tool", 
+            "content_type": 39
+        }
+    }, 
+    {
         "pk": 117, 
         "model": "auth.permission", 
         "fields": {
@@ -4448,11 +4704,56 @@
         }
     }, 
     {
+        "pk": 148, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_database", 
+            "name": "Can add database tool", 
+            "content_type": 50
+        }
+    }, 
+    {
+        "pk": 149, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_database", 
+            "name": "Can change database tool", 
+            "content_type": 50
+        }
+    }, 
+    {
+        "pk": 150, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_database", 
+            "name": "Can delete database tool", 
+            "content_type": 50
+        }
+    }, 
+    {
+        "pk": 151, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_development", 
+            "name": "Can add development tool", 
+            "content_type": 38
+        }
+    }, 
+    {
         "pk": 112, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_projectopportunities", 
             "name": "Can add project opportunities", 
+            "content_type": 38
+        }
+    }, 
+    {
+        "pk": 152, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_development", 
+            "name": "Can change development tool", 
             "content_type": 38
         }
     }, 
@@ -4466,6 +4767,15 @@
         }
     }, 
     {
+        "pk": 153, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_development", 
+            "name": "Can delete development tool", 
+            "content_type": 38
+        }
+    }, 
+    {
         "pk": 114, 
         "model": "auth.permission", 
         "fields": {
@@ -4475,11 +4785,56 @@
         }
     }, 
     {
+        "pk": 166, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_email", 
+            "name": "Can add email tool", 
+            "content_type": 51
+        }
+    }, 
+    {
+        "pk": 167, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_email", 
+            "name": "Can change email tool", 
+            "content_type": 51
+        }
+    }, 
+    {
+        "pk": 168, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_email", 
+            "name": "Can delete email tool", 
+            "content_type": 51
+        }
+    }, 
+    {
+        "pk": 157, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_firewall", 
+            "name": "Can add firewall tool", 
+            "content_type": 40
+        }
+    }, 
+    {
         "pk": 118, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_workflowtype", 
             "name": "Can add workflow type", 
+            "content_type": 40
+        }
+    }, 
+    {
+        "pk": 158, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_firewall", 
+            "name": "Can change firewall tool", 
             "content_type": 40
         }
     }, 
@@ -4493,12 +4848,30 @@
         }
     }, 
     {
+        "pk": 159, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_firewall", 
+            "name": "Can delete firewall tool", 
+            "content_type": 40
+        }
+    }, 
+    {
         "pk": 120, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_workflowtype", 
             "name": "Can delete workflow type", 
             "content_type": 40
+        }
+    }, 
+    {
+        "pk": 163, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_toolsprofile", 
+            "name": "Can add tool profile", 
+            "content_type": 42
         }
     }, 
     {
@@ -4511,11 +4884,29 @@
         }
     }, 
     {
+        "pk": 164, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_toolsprofile", 
+            "name": "Can change tool profile", 
+            "content_type": 42
+        }
+    }, 
+    {
         "pk": 125, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_workflowtypestate", 
             "name": "Can change workflow type state", 
+            "content_type": 42
+        }
+    }, 
+    {
+        "pk": 165, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_toolsprofile", 
+            "name": "Can delete tool profile", 
             "content_type": 42
         }
     }, 
@@ -4735,7 +5126,7 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2013-03-05T09:16:06.394Z", 
+            "last_login": "2013-03-05T22:49:20.704Z", 
             "groups": [], 
             "user_permissions": [], 
             "password": "pbkdf2_sha256$10000$I9Cu5PpTNY9F$bvw/iSqpfLHoQDfhDbS3sk8gNDwc3hnpZy1qoHD+i6I=", 
