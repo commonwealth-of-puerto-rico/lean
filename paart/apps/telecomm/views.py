@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from agencies.models import Agency
 from permissions.models import Permission
 
-from .forms import EquipmentForm, EquipmentForm_detail
+from .forms import EquipmentForm, EquipmentForm_detail, EquipmentForm_create
 from .icons import icon_equipment_delete
 from .models import Equipment
 from .permissions import (PERMISSION_EQUIPMENT_VIEW, PERMISSION_EQUIPMENT_EDIT,
@@ -87,7 +87,7 @@ def equipment_delete(request, equipment_pk):
 
     if request.method == 'POST':
         try:
-            folder.delete()
+            equipment.delete()
             messages.success(request, _(u'Equipment: %s deleted successfully.') % equipment)
         except Exception, e:
             messages.error(request, _(u'Equipment: %(equipment)s delete error: %(error)s') % {
@@ -100,7 +100,7 @@ def equipment_delete(request, equipment_pk):
         'delete_view': True,
         'previous': previous,
         'next': next,
-        'title': _(u'Are you sure you with to delete the equipment: %s?') % equipment,
+        'title': _(u'Are you sure you wish to delete the equipment: %s?') % equipment,
         'form_icon': icon_equipment_delete,
         'equipment': equipment,
         'agency': equipment.agency,
@@ -132,4 +132,30 @@ def equipment_view(request, equipment_pk):
             {'object': 'agency'},
             {'object': 'equipment'},
         ],
+    }, context_instance=RequestContext(request))
+
+
+def equipment_create(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+
+    #try:
+    #    Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_EDIT])
+    #except PermissionDenied:
+    #    AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_EDIT, request.user, document)
+
+    if request.method == 'POST':
+        form = EquipmentForm_create(request.POST)
+        if form.is_valid():
+            equipment = form.save(commit=False)
+            equipment.agency = agency
+            equipment.save()
+            messages.success(request, _(u'Equipment "%s" added successfully.') % equipment)
+            return HttpResponseRedirect(reverse('agency_equipment_list', args=[agency.pk]))
+    else:
+        form = EquipmentForm_create()
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'title': _(u'Add equipment to agency: %s') % agency,
+        'object': agency,
     }, context_instance=RequestContext(request))

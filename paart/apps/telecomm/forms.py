@@ -9,7 +9,7 @@ from .models import Equipment
 
 class EquipmentForm(forms.ModelForm, ROFormMixin):
     readonly_fields = ('agency',)
-    
+
     class Meta:
         model = Equipment
 
@@ -17,3 +17,9 @@ class EquipmentForm(forms.ModelForm, ROFormMixin):
 class EquipmentForm_detail(DetailForm):
     class Meta:
         model = Equipment
+
+
+class EquipmentForm_create(forms.ModelForm):
+    class Meta:
+        model = Equipment
+        exclude = ('agency',)
