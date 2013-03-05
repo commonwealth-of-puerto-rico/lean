@@ -18,7 +18,7 @@ from .permissions import PERMISSION_AGENCY_VIEW, PERMISSION_AGENCY_EDIT
 
 Link.bind_links([Agency, 'agency_list'], [link_agency_list], menu_name='secondary_menu')
 #Link.bind_links([Agency], [link_agency_details, link_agency_view, link_agency_edit, link_agency_delete])
-Link.bind_links([Agency], [link_agency_acl_details, link_agency_view, link_agency_edit])#, link_agency_delete])
+Link.bind_links([Agency], [link_agency_acl_details])#, link_agency_view, link_agency_edit])#, link_agency_delete])
 
 register_model_list_columns(Agency, [
     {'name': _(u'registration'), 'attribute': 'registration'},
