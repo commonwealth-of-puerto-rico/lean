@@ -41,8 +41,8 @@ link_project_opportunities_edit = Link(text=_(u'edit'), view='project_opportunit
 link_project_opportunities_delete = Link(text=_(u'delete'), view='project_opportunities_delete', args='resolved_object.pk', icon=icon_project_opportunities_delete)
 link_project_opportunities_view = Link(text=_(u'opportunities'), view='project_opportunities_view', args='resolved_object.pk', icon=icon_project_opportunities_view, children_view_regex=['project_opportunities'])
 
-link_project_file_list = Link(text=_(u'files'), view='project_file_list', args='resolved_object.pk', icon=icon_project_file_list, children_view_regex=['project_file'])
-link_project_file_upload = Link(text=_(u'upload'), view='project_file_upload', args='resolved_object.pk', icon=icon_project_file_upload)
+link_project_file_list = Link(text=_(u'files'), view='project_file_list', args='project.pk', icon=icon_project_file_list, children_view_regex=['project_file'])
+link_project_file_upload = Link(text=_(u'upload'), view='project_file_upload', args='project.pk', icon=icon_project_file_upload)
 link_project_file_delete = Link(text=_(u'delete'), view='project_file_delete', args='resolved_object.pk', icon=icon_project_file_delete)
 link_project_file_download = Link(text=_(u'download'), view='project_file_download', args='resolved_object.pk', icon=icon_project_file_download)
 
