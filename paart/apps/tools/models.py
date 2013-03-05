@@ -6,6 +6,22 @@ from django.utils.translation import ugettext
 from agencies.models import Agency
 
 
+class Database(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    #TODO: add enabled
+
+    def __unicode__(self):
+        return self.label
+
+    def natural_key(self):
+        return (self.label,)
+
+    class Meta:
+        verbose_name = _(u'database tool')
+        verbose_name_plural = _(u'database tools')
+        ordering = ['label']
+
+
 class Development(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
 
@@ -70,6 +86,7 @@ class Antivirus(models.Model):
 class ToolsProfile(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
+    database = models.ManyToManyField(Database, verbose_name=_(u'database tools'), blank=True, null=True)
     development = models.ManyToManyField(Development, verbose_name=_(u'development tools'), blank=True, null=True)
     backup = models.ManyToManyField(Backup, verbose_name=_(u'backup tools'), blank=True, null=True)
     firewall = models.ManyToManyField(Firewall, verbose_name=_(u'firewall tools'), blank=True, null=True)
