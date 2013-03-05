@@ -23,13 +23,13 @@ class Provider(models.Model):
 class Equipment(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
-    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    label = models.CharField(max_length=128, verbose_name=_(u'label'))
     intranet_connectivity = models.BooleanField(verbose_name=_(u'intranet connectivity?'))
     # TODO: is purpose a dropdown?
     purpose = models.CharField(max_length=128, verbose_name=_(u'purpose'))
     internet_connectivity = models.BooleanField(verbose_name=_(u'internet connectivity?'))
     internet_provider = models.ForeignKey(Provider, related_name='internet_provider', verbose_name=_(u'internet provider'), blank=True, null=True)
-    internet_costs = models.PositiveIntegerField(verbose_name=_(u'internet costs'), blank=True)
+    internet_costs = models.PositiveIntegerField(verbose_name=_(u'internet costs'), blank=True, null=True)
     uses_ogp_antenna = models.BooleanField(verbose_name=_(u'uses OGP antenna?'))
     uses_wifi = models.BooleanField(verbose_name=_(u'uses WIFI?'))
     wifi_provider = models.ForeignKey(Provider, related_name='wifi_provider', verbose_name=_(u'WIFI provider'), blank=True, null=True)
@@ -50,3 +50,4 @@ class Equipment(models.Model):
         verbose_name = _(u'telecomm equipment')
         verbose_name_plural = _(u'telecomm equipment')
         ordering = ['label']
+        unique_together = ['agency', 'label']
