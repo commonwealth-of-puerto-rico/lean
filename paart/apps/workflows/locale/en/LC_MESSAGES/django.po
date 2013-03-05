@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-26 03:02-0400\n"
+"POT-Creation-Date: 2013-03-05 03:50-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:15
+#: __init__.py:16
 msgid "type"
 msgstr ""
 
-#: __init__.py:16
+#: __init__.py:17
 msgid "latest action"
 msgstr ""
 
-#: __init__.py:17
+#: __init__.py:18
 msgid "lastest state"
 msgstr ""
 
-#: __init__.py:21
+#: __init__.py:22
 msgid "date and time"
 msgstr ""
 
-#: __init__.py:22
+#: __init__.py:23
 msgid "action"
 msgstr ""
 
-#: __init__.py:23 models.py:155
+#: __init__.py:24 models.py:155
 msgid "user"
 msgstr ""
 
-#: __init__.py:24 models.py:158
+#: __init__.py:25 models.py:158
 msgid "assignee group"
 msgstr ""
 
-#: __init__.py:25 models.py:157
+#: __init__.py:26 models.py:157
 msgid "assignee user"
 msgstr ""
 
-#: __init__.py:26 models.py:156
+#: __init__.py:27 models.py:156
 msgid "comments"
 msgstr ""
 

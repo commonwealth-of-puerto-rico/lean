@@ -2,40 +2,44 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-26 03:02-0400\n"
-"PO-Revision-Date: 2013-02-20 18:08\n"
+"POT-Creation-Date: 2013-03-05 03:50-0400\n"
+"PO-Revision-Date: 2013-03-05 03:52\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:20
+#: __init__.py:21
 msgid "name"
 msgstr "nombre"
 
 #: links.py:12
+msgid "add equipment"
+msgstr "agregar equipo"
+
+#: links.py:13
 msgid "edit"
 msgstr "editar"
 
-#: links.py:13
+#: links.py:14
 msgid "delete"
 msgstr "borrar"
 
-#: links.py:14
+#: links.py:15
 msgid "view"
 msgstr "ver"
 
-#: links.py:15 views.py:99
+#: links.py:16 views.py:99
 msgid "equipment"
 msgstr "equipo"
 
@@ -140,9 +144,9 @@ msgid "View providers"
 msgstr "Ver proveedores"
 
 #: views.py:37
-#, fuzzy, python-format
+#, python-format
 msgid "equipment of: %s"
-msgstr "equipo"
+msgstr "equipo de: %s"
 
 #: views.py:57
 #, python-format
@@ -152,7 +156,7 @@ msgstr "Equipo \"%s\" editados exitosamente."
 #: views.py:91
 #, python-format
 msgid "Equipment: %s deleted successfully."
-msgstr ""
+msgstr "Equipo: %s eliminado exitosamente."
 
 #: views.py:93
 #, python-format
@@ -161,8 +165,18 @@ msgstr ""
 
 #: views.py:103
 #, python-format
-msgid "Are you sure you with to delete the equipment: %s?"
-msgstr ""
+msgid "Are you sure you wish to delete the equipment: %s?"
+msgstr "¿Esta seguro que desea eliminar el equipo: %s?"
+
+#: views.py:152
+#, python-format
+msgid "Equipment \"%s\" added successfully."
+msgstr "Equipo \"%s\" agregado exitosamente."
+
+#: views.py:159
+#, python-format
+msgid "Add equipment to agency: %s"
+msgstr "Agregar equipo a la agencia: %s"
 
 #~ msgid "details"
 #~ msgstr "detalles"

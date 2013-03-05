@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-26 03:02-0400\n"
+"POT-Creation-Date: 2013-03-05 03:50-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:20
+#: __init__.py:21
 msgid "name"
 msgstr ""
 
 #: links.py:12
-msgid "edit"
+msgid "add equipment"
 msgstr ""
 
 #: links.py:13
-msgid "delete"
+msgid "edit"
 msgstr ""
 
 #: links.py:14
+msgid "delete"
+msgstr ""
+
+#: links.py:15
 msgid "view"
 msgstr ""
 
-#: links.py:15 views.py:99
+#: links.py:16 views.py:99
 msgid "equipment"
 msgstr ""
 
@@ -159,5 +163,15 @@ msgstr ""
 
 #: views.py:103
 #, python-format
-msgid "Are you sure you with to delete the equipment: %s?"
+msgid "Are you sure you wish to delete the equipment: %s?"
+msgstr ""
+
+#: views.py:152
+#, python-format
+msgid "Equipment \"%s\" added successfully."
+msgstr ""
+
+#: views.py:159
+#, python-format
+msgid "Add equipment to agency: %s"
 msgstr ""
