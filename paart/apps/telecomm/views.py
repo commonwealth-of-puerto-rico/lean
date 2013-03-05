@@ -8,14 +8,15 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
+from acls.models import AccessEntry
 from agencies.models import Agency
 from permissions.models import Permission
 
 from .forms import EquipmentForm, EquipmentForm_detail, EquipmentForm_create
 from .icons import icon_equipment_delete
 from .models import Equipment
-from .permissions import (PERMISSION_EQUIPMENT_VIEW, PERMISSION_EQUIPMENT_EDIT,
-    PERMISSION_EQUIPMENT_DELETE)
+from .permissions import (PERMISSION_EQUIPMENT_CREATE, PERMISSION_EQUIPMENT_VIEW,
+    PERMISSION_EQUIPMENT_EDIT, PERMISSION_EQUIPMENT_DELETE)
 
 
 def agency_equipment_list(request, agency_pk):
@@ -28,7 +29,7 @@ def agency_equipment_list(request, agency_pk):
         # If user doesn't have global permission, get a list of document
         # for which he/she does hace access use it to filter the
         # provided object_list
-        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_EQUIPMENT_VIEW, request.user, pre_object_list)
+        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_EQUIPMENT_VIEW, request.user, pre_object_list, related='agency')
     else:
         final_object_list = pre_object_list
 
@@ -48,7 +49,7 @@ def equipment_edit(request, equipment_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_EDIT, request.user, document)
+        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_EDIT, request.user, equipment.agency)
 
     if request.method == 'POST':
         form = EquipmentForm(request.POST, instance=equipment)
@@ -78,7 +79,7 @@ def equipment_delete(request, equipment_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_DELETE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_DELETE, request.user, folder)
+        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_DELETE, request.user, equipment.agency)
 
     post_action_redirect = reverse('agency_equipment_list', args=[equipment.agency.pk])
 
@@ -120,7 +121,7 @@ def equipment_view(request, equipment_pk):
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_VIEW, request.user, equipment)
+        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_VIEW, request.user, equipment.agency)
 
     form = EquipmentForm_detail(instance=equipment)
 
@@ -138,10 +139,10 @@ def equipment_view(request, equipment_pk):
 def equipment_create(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
 
-    #try:
-    #    Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_EDIT])
-    #except PermissionDenied:
-    #    AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_EDIT, request.user, document)
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_EQUIPMENT_CREATE])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_EQUIPMENT_CREATE, request.user, agency)
 
     if request.method == 'POST':
         form = EquipmentForm_create(request.POST)
