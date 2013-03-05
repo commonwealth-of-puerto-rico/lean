@@ -8,10 +8,11 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
+from acls.models import AccessEntry
 from agencies.models import Agency
 from permissions.models import Permission
 
-from .forms import ToolsProfileForm, ToolsProfileForm_detail
+from .forms import ToolsProfileForm_create, ToolsProfileForm_edit, ToolsProfileForm_detail
 from .icons import icon_tools_profile_delete
 from .models import ToolsProfile
 from .permissions import (PERMISSION_TOOL_PROFILE_VIEW, PERMISSION_TOOL_PROFILE_EDIT,
@@ -51,14 +52,14 @@ def tools_profile_edit(request, tools_profile_pk):
         AccessEntry.objects.check_access(PERMISSION_TOOL_PROFILE_EDIT, request.user, document)
 
     if request.method == 'POST':
-        form = ToolsProfileForm(request.POST, instance=tools_profile)
+        form = ToolsProfileForm_edit(request.POST, instance=tools_profile)
         if form.is_valid():
             form.save()
             messages.success(request, _(u'ToolsProfile "%s" edited successfully.') % tools_profile)
 
             return HttpResponseRedirect(tools_profile.get_absolute_url())
     else:
-        form = ToolsProfileForm(instance=tools_profile)
+        form = ToolsProfileForm_edit(instance=tools_profile)
 
     return render_to_response('generic_form.html', {
         'form': form,
@@ -87,7 +88,7 @@ def tools_profile_delete(request, tools_profile_pk):
 
     if request.method == 'POST':
         try:
-            folder.delete()
+            tools_profile.delete()
             messages.success(request, _(u'ToolsProfile: %s deleted successfully.') % tools_profile)
         except Exception, e:
             messages.error(request, _(u'ToolsProfile: %(tools_profile)s delete error: %(error)s') % {
