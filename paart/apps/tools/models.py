@@ -52,6 +52,21 @@ class Backup(models.Model):
         ordering = ['label']
 
 
+class Email(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    #TODO: add enabled
+
+    def __unicode__(self):
+        return self.label
+
+    def natural_key(self):
+        return (self.label,)
+
+    class Meta:
+        verbose_name = _(u'email tool')
+        verbose_name_plural = _(u'email tools')
+        ordering = ['label']
+
 
 class Firewall(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
@@ -86,11 +101,12 @@ class Antivirus(models.Model):
 class ToolsProfile(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
+    antivirus = models.ManyToManyField(Antivirus, verbose_name=_(u'antivirus tools'), blank=True, null=True)
+    backup = models.ManyToManyField(Backup, verbose_name=_(u'backup tools'), blank=True, null=True)
     database = models.ManyToManyField(Database, verbose_name=_(u'database tools'), blank=True, null=True)
     development = models.ManyToManyField(Development, verbose_name=_(u'development tools'), blank=True, null=True)
-    backup = models.ManyToManyField(Backup, verbose_name=_(u'backup tools'), blank=True, null=True)
+    email = models.ManyToManyField(Email, verbose_name=_(u'email tools'), blank=True, null=True)
     firewall = models.ManyToManyField(Firewall, verbose_name=_(u'firewall tools'), blank=True, null=True)
-    antivirus = models.ManyToManyField(Antivirus, verbose_name=_(u'antivirus tools'), blank=True, null=True)
     notebooks = models.PositiveIntegerField(verbose_name=_(u'notebooks'), blank=True, null=True)
     desktops = models.PositiveIntegerField(verbose_name=_(u'desktops'), blank=True, null=True)
     servers = models.PositiveIntegerField(verbose_name=_(u'servers'), blank=True, null=True)
