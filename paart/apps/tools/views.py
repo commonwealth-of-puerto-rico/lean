@@ -38,6 +38,7 @@ def agency_tools_profile_list(request, agency_pk):
         'title': _(u'tools profiles of: %s') % agency,
         'hide_object': True,
         'object': agency,
+        'agency': agency,
     }
 
     return render_to_response('generic_list.html', context,
@@ -128,6 +129,7 @@ def tools_profile_view(request, tools_profile_pk):
     return render_to_response('generic_detail.html', {
         'form': form,
         'tools_profile': tools_profile,
+        'object': tools_profile,
         'agency': tools_profile.agency,
         'navigation_object_list': [
             {'object': 'agency'},
@@ -158,6 +160,9 @@ def tools_profile_create(request, agency_pk):
 
     return render_to_response('generic_form.html', {
         'form': form,
-        'object': agency,
+        'agency': agency,
+        'navigation_object_list': [
+            {'object': 'agency'},
+        ],
         'title': _(u'Add tools profile for agency: %s') % agency,
     }, context_instance=RequestContext(request))
