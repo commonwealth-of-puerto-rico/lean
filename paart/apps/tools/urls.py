@@ -7,4 +7,5 @@ urlpatterns = patterns('tools.views',
     url(r'^(?P<tools_profile_pk>\d+)/edit/$', 'tools_profile_edit', (), 'tools_profile_edit'),
     url(r'^(?P<tools_profile_pk>\d+)/delete/$', 'tools_profile_delete', (), 'tools_profile_delete'),
     url(r'^(?P<tools_profile_pk>\d+)/$', 'tools_profile_view', (), 'tools_profile_view'),
+    url(r'^agency/(?P<agency_pk>\d+)/create/$', 'tools_profile_create', (), 'tools_profile_create'),
 )

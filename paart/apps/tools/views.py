@@ -15,8 +15,8 @@ from permissions.models import Permission
 from .forms import ToolsProfileForm_create, ToolsProfileForm_edit, ToolsProfileForm_detail
 from .icons import icon_tools_profile_delete
 from .models import ToolsProfile
-from .permissions import (PERMISSION_TOOL_PROFILE_VIEW, PERMISSION_TOOL_PROFILE_EDIT,
-    PERMISSION_TOOL_PROFILE_DELETE)
+from .permissions import (PERMISSION_TOOLS_PROFILE_CREATE, PERMISSION_TOOLS_PROFILE_DELETE,
+    PERMISSION_TOOLS_PROFILE_EDIT, PERMISSION_TOOLS_PROFILE_VIEW)
 
 
 def agency_tools_profile_list(request, agency_pk):
@@ -24,12 +24,12 @@ def agency_tools_profile_list(request, agency_pk):
     pre_object_list = agency.toolsprofile_set.all()
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOL_PROFILE_VIEW])
+        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_VIEW])
     except PermissionDenied:
         # If user doesn't have global permission, get a list of document
         # for which he/she does hace access use it to filter the
         # provided object_list
-        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_TOOL_PROFILE_VIEW, request.user, pre_object_list)
+        final_object_list = AccessEntry.objects.filter_objects_by_access(PERMISSION_TOOLS_PROFILE_VIEW, request.user, pre_object_list, related='agency')
     else:
         final_object_list = pre_object_list
 
@@ -47,9 +47,9 @@ def agency_tools_profile_list(request, agency_pk):
 def tools_profile_edit(request, tools_profile_pk):
     tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOL_PROFILE_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOL_PROFILE_EDIT, request.user, document)
+        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_EDIT, request.user, document)
 
     if request.method == 'POST':
         form = ToolsProfileForm_edit(request.POST, instance=tools_profile)
@@ -77,9 +77,9 @@ def tools_profile_delete(request, tools_profile_pk):
     tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOL_PROFILE_DELETE])
+        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_DELETE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOL_PROFILE_DELETE, request.user, folder)
+        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_DELETE, request.user, folder)
 
     post_action_redirect = reverse('agency_tools_profile_list', args=[tools_profile.agency.pk])
 
@@ -119,9 +119,9 @@ def tools_profile_view(request, tools_profile_pk):
     tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOL_PROFILE_VIEW])
+        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOL_PROFILE_VIEW, request.user, tools_profile)
+        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_VIEW, request.user, tools_profile)
 
     form = ToolsProfileForm_detail(instance=tools_profile)
 
@@ -133,4 +133,31 @@ def tools_profile_view(request, tools_profile_pk):
             {'object': 'agency'},
             {'object': 'tools_profile'},
         ],
+    }, context_instance=RequestContext(request))
+
+
+def tools_profile_create(request, agency_pk):
+    agency = get_object_or_404(Agency, pk=agency_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_CREATE])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_CREATE, request.user, agency)
+
+    if request.method == 'POST':
+        form = ToolsProfileForm_create(request.POST)
+        if form.is_valid():
+            tools_profile = form.save(commit=False)
+            tools_profile.agency = agency
+            tools_profile.save()
+            messages.success(request, _(u'ToolsProfile "%s" edited successfully.') % tools_profile)
+
+            return HttpResponseRedirect(reverse('agency_tools_profile_list', args=[agency.pk]))
+    else:
+        form = ToolsProfileForm_create()
+
+    return render_to_response('generic_form.html', {
+        'form': form,
+        'object': agency,
+        'title': _(u'Add tools profile for agency: %s') % agency,
     }, context_instance=RequestContext(request))
