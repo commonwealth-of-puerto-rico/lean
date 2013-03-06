@@ -217,7 +217,7 @@ class ProjectInfo(models.Model):
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
     # Remove email of sponsor as per Giancarlo's recommendations
     # email = models.EmailField(verbose_name=_(u'email'))
-    phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
+    # phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
     goals = models.TextField(verbose_name=_(u'goals/objectives'), help_text=_(u'HELP_TEXT_PROYECTINFO_GOALS'))
     needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
     expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))

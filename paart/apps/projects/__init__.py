@@ -74,7 +74,6 @@ project_search.add_model_field('projectinfo__classification__label', label=_(u'c
 project_search.add_model_field('projectinfo__classification_other', label=_(u'classification other'))
 project_search.add_model_field('projectinfo__department__label', label=_(u'department'))
 project_search.add_model_field('projectinfo__sponsor', label=_(u'sponsor'))
-project_search.add_model_field('projectinfo__phone_number', label=_(u'phone number'))
 project_search.add_model_field('projectinfo__goals', label=_(u'goals'))
 project_search.add_model_field('projectinfo__needs', label=_(u'needs'))
 project_search.add_model_field('projectinfo__expected_results', label=_(u'expected results'))
