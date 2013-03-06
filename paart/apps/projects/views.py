@@ -164,12 +164,17 @@ def project_create(request, agency_pk):
     if request.method == 'POST':
         form = ProjectForm_create(data=request.POST, initial={'agency': agency})
         if form.is_valid():
-            project = form.save(commit=False)
-            project.agency=agency
-            project.save()
-            messages.success(request, _(u'Project "%s" saved successfully.') % project)
+            try:
+                project = form.save(commit=False)
+                project.agency=agency
+                project.save()
+                messages.success(request, _(u'Project "%s" saved successfully.') % project)
 
-            return HttpResponseRedirect(project.get_absolute_url())
+                return HttpResponseRedirect(reverse('project_info_view', args=[project.pk]))
+            except Exception as exception:
+                messages.error(request, _(u'Unable to create project "%(project)s"; error: %(error)s.') % {
+                    'project': project, 'error': exception}
+                )
     else:
         form = ProjectForm_create(initial={'agency': agency})
 
