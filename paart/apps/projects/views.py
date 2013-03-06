@@ -286,6 +286,7 @@ def project_info_create(request, project_pk):
             project_info = form.save(commit=False)
             project_info.project = project
             project_info.save()
+            form.save_m2m()
             messages.success(request, _(u'Details for project "%s" saved successfully.') % project)
 
             return HttpResponseRedirect(project_info.get_absolute_url())
