@@ -230,6 +230,9 @@ class ProjectInfo(models.Model):
     purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_PURPOSE_OTHER'))
     classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION'))
     classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION_OTHER'))
+    methodology = models.ForeignKey(Methodology, verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
+    methodology_other = models.CharField(max_length=128, verbose_name=_(u'other methodology'), blank=True)
+    goals = models.ManyToManyField(Goal, verbose_name=_(u'goals'))
     # REMOVED: department = models.CharField(max_length=128, verbose_name=_(u'department/work unit'))
     department = models.ForeignKey(Department, verbose_name=_(u'department/work unit'), help_text=_(u'HELP_TEXT_PROYECTINFO_DEPARTMENT'))
     sponsor = models.CharField(max_length=64, verbose_name=_(u'sponsor'))
@@ -237,11 +240,8 @@ class ProjectInfo(models.Model):
     # REMOVED: email = models.EmailField(verbose_name=_(u'email'))
     # REMOVED: phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
     # REMOVED: goals = models.TextField(verbose_name=_(u'goals/objectives'), help_text=_(u'HELP_TEXT_PROYECTINFO_GOALS'))
-    goals = models.ManyToManyField(Goal, verbose_name=_(u'goals'))
     # REMOVED: needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
     expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))
-    methodology = models.ForeignKey(Methodology, verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
-    methodology_other = models.CharField(max_length=128, verbose_name=_(u'other methodology'), blank=True)
     milestones = models.TextField(verbose_name=_(u'milestones'), help_text=_(u'HELP_TEXT_PROYECTINFO_MILESTONES'))
 
     def __unicode__(self):
