@@ -686,16 +686,17 @@ def project_opportunities_create(request, project_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
-        form = ProjectOpportunitiesForm_create(request.POST, initial={'project': project})
+        form = ProjectOpportunitiesForm_create(request.POST)
         if form.is_valid():
             project_opportunities = form.save(commit=False)
             project_opportunities.project = project
             project_opportunities.save()
+            form.save_m2m()
             messages.success(request, _(u'Opportunities for project "%s" saved successfully.') % project)
 
             return HttpResponseRedirect(project_opportunities.get_absolute_url())
     else:
-        form = ProjectOpportunitiesForm_create(initial={'project': project})
+        form = ProjectOpportunitiesForm_create()
 
     return render_to_response('generic_form.html', {
         'form': form,

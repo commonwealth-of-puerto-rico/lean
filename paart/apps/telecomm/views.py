@@ -38,6 +38,7 @@ def agency_equipment_list(request, agency_pk):
         'title': _(u'equipment of: %s') % agency,
         'hide_object': True,
         'object': agency,
+        'agency': agency,
     }
 
     return render_to_response('generic_list.html', context,
@@ -159,4 +160,5 @@ def equipment_create(request, agency_pk):
         'form': form,
         'title': _(u'Add equipment to agency: %s') % agency,
         'object': agency,
+        'agency': agency,
     }, context_instance=RequestContext(request))

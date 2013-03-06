@@ -152,6 +152,7 @@ def tools_profile_create(request, agency_pk):
             tools_profile = form.save(commit=False)
             tools_profile.agency = agency
             tools_profile.save()
+            form.save_m2m()
             messages.success(request, _(u'ToolsProfile "%s" edited successfully.') % tools_profile)
 
             return HttpResponseRedirect(reverse('agency_tools_profile_list', args=[agency.pk]))

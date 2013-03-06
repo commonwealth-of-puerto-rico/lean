@@ -2,12 +2,12 @@ from __future__ import absolute_import
 
 from django import forms
 
-from common.forms import DetailForm, ROFormMixin
+from common.forms import DetailForm, ROFormMixin, Select2FormMixin
 
 from .models import Equipment
 
 
-class EquipmentForm(forms.ModelForm, ROFormMixin):
+class EquipmentForm(Select2FormMixin, forms.ModelForm, ROFormMixin):
     readonly_fields = ('agency',)
 
     class Meta:
@@ -19,7 +19,7 @@ class EquipmentForm_detail(DetailForm):
         model = Equipment
 
 
-class EquipmentForm_create(forms.ModelForm):
+class EquipmentForm_create(Select2FormMixin, forms.ModelForm):
     class Meta:
         model = Equipment
         exclude = ('agency',)

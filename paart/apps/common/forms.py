@@ -196,10 +196,11 @@ class Select2FormMixin(forms.ModelForm):
         super(Select2FormMixin, self).__init__(*args, **kwargs)    
         for name, field in self.fields.items():
             if isinstance(field.widget, SelectMultiple):
-                old_dict = field.widget.__dict__.copy()
+                old_dict = field.widget.__dict__
                 field.widget = django_select2.widgets.Select2MultipleWidget(select2_options={'width': '400px'})
-                field.widget.__dict__.update(old_dict)              
+                field.widget.__dict__.update(old_dict)
+                field.help_text = ''
             elif isinstance(field.widget, Select):
-                old_dict = field.widget.__dict__.copy()
+                old_dict = field.widget.__dict__
                 field.widget = django_select2.widgets.Select2Widget(select2_options={'width': '400px'})
                 field.widget.__dict__.update(old_dict)
