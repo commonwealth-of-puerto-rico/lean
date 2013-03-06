@@ -188,7 +188,7 @@ class Methodology(models.Model):
 class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
-    label = models.CharField(max_length=128, verbose_name=_(u'label'))
+    label = models.CharField(max_length=128, verbose_name=_(u'name'))
 
     def __unicode__(self):
         return self.label
