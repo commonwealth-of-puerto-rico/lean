@@ -5,3 +5,4 @@ django-compressor==1.2
 cssmin==0.1.4
 django-pagination==1.0.7
 sh==1.08
+Django-Select2==3.3.0

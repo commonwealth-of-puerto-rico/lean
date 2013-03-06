@@ -4,7 +4,7 @@ import datetime
 
 from django import forms
 
-from common.forms import DetailForm, ROFormMixin
+from common.forms import DetailForm, ROFormMixin, Select2FormMixin
 
 from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
     ProjectOpportunities, ProjectFile)
@@ -28,7 +28,7 @@ class ProjectForm_view(DetailForm):
         model = Project
 
 
-class ProjectInfoForm_edit(forms.ModelForm, ROFormMixin):
+class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
     def __init__(self, *args, **kwargs):
@@ -37,6 +37,7 @@ class ProjectInfoForm_edit(forms.ModelForm, ROFormMixin):
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
         self.fields['department'].queryset = self.fields['department'].queryset.active()
         self.fields['methodology'].queryset = self.fields['methodology'].queryset.active()
+
 
     class Meta:
         model = ProjectInfo
@@ -47,7 +48,7 @@ class ProjectInfoForm_view(DetailForm):
         model = ProjectInfo
 
 
-class ProjectInfoForm_create(forms.ModelForm):
+class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
@@ -97,7 +98,7 @@ class ProjectBudgetForm_create(forms.ModelForm):
 
 ## Details
 
-class ProjectDetailsForm_edit(forms.ModelForm, ROFormMixin):
+class ProjectDetailsForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
     def __init__(self, *args, **kwargs):
@@ -116,7 +117,7 @@ class ProjectDetailsForm_view(DetailForm):
         model = ProjectDetails
 
 
-class ProjectDetailsForm_create(forms.ModelForm):
+class ProjectDetailsForm_create(Select2FormMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['stage'].queryset = self.fields['stage'].queryset.active()
@@ -128,24 +129,17 @@ class ProjectDetailsForm_create(forms.ModelForm):
         exclude = ('project',)
         model = ProjectDetails
 
-
 ## Opportunities
 
-class ProjectOpportunitiesForm_edit(forms.ModelForm, ROFormMixin):
+class ProjectOpportunitiesForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
-        self.fields['other_agencies'].help_text = ''
-        self.fields['opportunity'].help_text = ''
-        self.fields['sharing_benefit'].help_text = ''
         self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
 
     class Meta:
         model = ProjectOpportunities
-        widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple,
-            'sharing_benefit': forms.widgets.CheckboxSelectMultiple,
-            'other_agencies': forms.widgets.CheckboxSelectMultiple}
 
 
 class ProjectOpportunitiesForm_view(DetailForm):
@@ -153,20 +147,14 @@ class ProjectOpportunitiesForm_view(DetailForm):
         model = ProjectOpportunities
 
 
-class ProjectOpportunitiesForm_create(forms.ModelForm):
+class ProjectOpportunitiesForm_create(Select2FormMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(self.__class__, self).__init__(*args, **kwargs)
-        self.fields['other_agencies'].help_text = ''
-        self.fields['opportunity'].help_text = ''
-        self.fields['sharing_benefit'].help_text = ''
         self.fields['other_agencies'].queryset = self.fields['other_agencies'].queryset.active()
 
     class Meta:
         exclude = ('project',)
         model = ProjectOpportunities
-        widgets = {'opportunity': forms.widgets.CheckboxSelectMultiple,
-            'sharing_benefit': forms.widgets.CheckboxSelectMultiple,
-            'other_agencies': forms.widgets.CheckboxSelectMultiple}
 
 
 ## Project files

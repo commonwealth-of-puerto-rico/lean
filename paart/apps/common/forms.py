@@ -3,12 +3,15 @@ from __future__ import absolute_import
 import os
 
 from django import forms
-from django.utils.translation import ugettext_lazy as _
-from django.db import models
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate
 from django.conf import settings
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
+from django.db import models
+from django.forms.widgets import Select, SelectMultiple
+from django.utils.translation import ugettext_lazy as _
+
+import django_select2
 
 from .utils import return_attrib
 from .widgets import (DetailSelectMultiple, PlainWidget, TextAreaDiv,
@@ -186,3 +189,17 @@ class ROFormMixin(forms.BaseForm):
                     self.fields[field].widget.attrs['readonly'] = True
                     self.fields[field].widget.attrs['disabled'] = True
                     setattr(self, 'clean_' + field, _get_cleaner(self, field))
+
+
+class Select2FormMixin(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(Select2FormMixin, self).__init__(*args, **kwargs)    
+        for name, field in self.fields.items():
+            if isinstance(field.widget, SelectMultiple):
+                old_dict = field.widget.__dict__.copy()
+                field.widget = django_select2.widgets.Select2MultipleWidget(select2_options={'width': '400px'})
+                field.widget.__dict__.update(old_dict)              
+            elif isinstance(field.widget, Select):
+                old_dict = field.widget.__dict__.copy()
+                field.widget = django_select2.widgets.Select2Widget(select2_options={'width': '400px'})
+                field.widget.__dict__.update(old_dict)

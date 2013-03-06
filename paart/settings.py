@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'south',
     'compressor',
     'pagination',
+    'django_select2',
     # Mayan apps
     'common',
     'permissions',
