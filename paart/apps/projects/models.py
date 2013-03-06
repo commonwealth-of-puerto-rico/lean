@@ -238,7 +238,7 @@ class ProjectInfo(models.Model):
     # REMOVED: phone_number = models.CharField(max_length=32, verbose_name=_(u'phone number'))
     # REMOVED: goals = models.TextField(verbose_name=_(u'goals/objectives'), help_text=_(u'HELP_TEXT_PROYECTINFO_GOALS'))
     goals = models.ManyToManyField(Goal, verbose_name=_(u'goals'))
-    needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
+    # REMOVED: needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
     expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))
     methodology = models.ForeignKey(Methodology, verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
     methodology_other = models.CharField(max_length=128, verbose_name=_(u'other methodology'), blank=True)
