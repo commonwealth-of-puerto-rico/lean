@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
@@ -214,6 +215,24 @@ class Project(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('project_view', [self.pk])
+
+    def get_completion(self):
+        total = 26
+        count = 0
+        for model in [self, 'projectinfo', 'projectbudget', 'projectdetails', 'projectopportunities']:
+            if model == self:
+                opts = model._meta
+            else:
+                try:
+                    opts = getattr(self, model)._meta
+                except ObjectDoesNotExist as e:
+                    pass
+                else:
+                    for f in sorted(opts.fields + opts.many_to_many):
+                        count += 1
+                        print '%s: %s' % (f.name, f)
+
+        return str(100 * float(count) / float(total))[0:5]
 
     class Meta:
         verbose_name = _(u'project')

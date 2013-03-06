@@ -11,6 +11,7 @@ from navigation.api import register_top_menu, register_model_list_columns
 from navigation.classes import Link
 from workflows.models import WorkflowInstance
 
+
 from .links import (link_projects, link_project_edit, link_project_view,
     link_project_delete, link_project_create, link_agency_project_list,
     link_project_info_view, link_project_info_edit, link_project_info_delete,
@@ -41,9 +42,11 @@ Link.bind_links([ProjectFile, 'project_file_upload', 'project_file_list'], [link
 Link.bind_links([ProjectFile], [link_project_file_download, link_project_file_delete])
 
 Link.bind_links([WorkflowInstance], [link_project_workflow_instance_history_list, link_project_workflow_instance_action_submit])
+#p = ProgressBar()
 
 register_model_list_columns(Project, [
     {'name': _(u'name'), 'attribute': 'label'},
+    {'name': _(u'completion (%)'), 'attribute': encapsulate(lambda x: x.get_completion())},
 #    {'name': _(u'fiscal year'), 'attribute': 'fiscal_year'},
 #    {'name': _(u'purpose'), 'attribute': 'purpose'},
 #    {'name': _(u'classification'), 'attribute': 'classification'},
