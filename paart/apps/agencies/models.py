@@ -6,7 +6,8 @@ from common.managers import OmitDisabledManager
 
 class Agency(models.Model):
     enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
-    registration = models.PositiveIntegerField(verbose_name=_(u'registration'), unique=True)
+    registration = models.PositiveIntegerField(verbose_name=_(u'registration'), unique=True, blank=True, null=True)
+    prifas = models.PositiveIntegerField(verbose_name=_(u'PRIFAS number'), unique=True, blank=True, null=True)
     name = models.CharField(max_length=128, verbose_name=_(u'name'), unique=True)
     director = models.CharField(max_length=128, verbose_name=_(u'director'), blank=True)
     physical_address = models.TextField(verbose_name=_(u'physical address'), blank=True)

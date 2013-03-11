@@ -21,7 +21,7 @@ Link.bind_links([Agency, 'agency_list'], [link_agency_list], menu_name='secondar
 Link.bind_links([Agency], [link_agency_acl_details])#, link_agency_view, link_agency_edit])#, link_agency_delete])
 
 register_model_list_columns(Agency, [
-    {'name': _(u'registration'), 'attribute': 'registration'},
+    #{'name': _(u'registration'), 'attribute': 'registration'},
     {'name': _(u'name'), 'attribute': 'name'},
 ])
 
@@ -39,6 +39,7 @@ class_permissions(Agency, [
 
 agency_search = SearchModel('agencies', 'Agency')
 
+agency_search.add_model_field('prifas', label=_(u'Prifas number'))
 agency_search.add_model_field('registration', label=_(u'Registration'))
 agency_search.add_model_field('name', label=_(u'Name'))
 agency_search.add_model_field('director', label=_(u'Director'))

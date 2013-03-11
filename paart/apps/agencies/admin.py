@@ -30,8 +30,8 @@ class InitialListFilter(SimpleListFilter):
 
 class AgencyAdmin(admin.ModelAdmin):
     model = Agency
-    list_display = ('registration', 'name', 'enabled')
-    list_display_links = ('registration', 'name')
+    list_display = ('prifas', 'registration', 'name', 'enabled')
+    list_display_links = ('prifas', 'registration', 'name')
     list_filter = (InitialListFilter, )
 
 admin.site.register(Agency, AgencyAdmin)
