@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
+    # Mayan apps
     (r'^', include('main.urls')),
     (r'^common/', include('common.urls')),
     (r'^project_setup/', include('project_setup.urls')),
@@ -22,6 +23,7 @@ urlpatterns = patterns('',
     (r'^projects/', include('projects.urls')),
     (r'^telecomm/', include('telecomm.urls')),
     (r'^tools/', include('tools.urls')),
+    (r'^api/', include('api.urls')),
 )
 
 if settings.DEVELOPMENT:

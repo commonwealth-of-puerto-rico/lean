@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'compressor',
     'pagination',
     'django_select2',
+    'rest_framework',
     # Mayan apps
     'common',
     'permissions',
@@ -169,6 +170,7 @@ INSTALLED_APPS = (
     'telecomm',
     'tools',
     'workflows',
+    'api',
 )
 
 # A sample logging configuration. The only tangible logging
