@@ -14,6 +14,8 @@ from telecomm.permissions import (PERMISSION_EQUIPMENT_CREATE,
 from tools.permissions import (PERMISSION_TOOLS_PROFILE_CREATE,
     PERMISSION_TOOLS_PROFILE_EDIT, PERMISSION_TOOLS_PROFILE_DELETE,
     PERMISSION_TOOLS_PROFILE_VIEW)
+from telecomm.permissions import (PERMISSION_CIRCUIT_CREATE, PERMISSION_CIRCUIT_DELETE,
+    PERMISSION_CIRCUIT_EDIT, PERMISSION_CIRCUIT_VIEW, PERMISSION_EQUIPMENT_CREATE,
 
 GROUP_NAME = 'lean'
 
@@ -55,16 +57,25 @@ class Command(BaseCommand):
                 else:
                     AccessEntry.objects.grant(PERMISSION_AGENCY_VIEW.stored_permission, group, agency)
 
+                    # Project
                     AccessEntry.objects.grant(PERMISSION_PROJECT_CREATE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_PROJECT_EDIT.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_PROJECT_DELETE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_PROJECT_VIEW.stored_permission, group, agency)
 
+                    # Equipment
                     AccessEntry.objects.grant(PERMISSION_EQUIPMENT_CREATE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_EQUIPMENT_EDIT.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_EQUIPMENT_DELETE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_EQUIPMENT_VIEW.stored_permission, group, agency)
 
+                    # Circuit
+                    AccessEntry.objects.grant(PERMISSION_CIRCUIT_CREATE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_CIRCUIT_EDIT.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_CIRCUIT_DELETE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_CIRCUIT_VIEW.stored_permission, group, agency)
+
+                    # Tools profile
                     AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_CREATE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_EDIT.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_DELETE.stored_permission, group, agency)
