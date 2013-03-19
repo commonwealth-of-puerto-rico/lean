@@ -34,7 +34,7 @@ register_model_list_columns(Circuit, [
     {'name': _(u'purpose'), 'attribute': 'purpose'},
     {'name': _(u'provider'), 'attribute': 'provider'},
     {'name': _(u'technology'), 'attribute': 'technology'},
-    {'name': _(u'bandwidth'), 'attribute': 'bandwidth'},
+    {'name': _(u'bandwidth'), 'attribute': encapsulate(lambda x: x.get_bandwidth_display())},
 ])
 
 #AgencyElement(link_agency_equipment_list)

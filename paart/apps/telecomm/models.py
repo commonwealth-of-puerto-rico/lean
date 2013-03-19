@@ -84,12 +84,15 @@ class Circuit(models.Model):
     def __unicode__(self):
         return self.purpose
 
+    def get_bandwidth_display(self):
+        return u'%d mbits' % self.bandwidth
+
     #def natural_key(self):
     #    return (self.agency, self.purpose,)
 
-    #@models.permalink
-    #def get_absolute_url(self):
-    #    return ('equipment_view', [self.pk])
+    @models.permalink
+    def get_absolute_url(self):
+        return ('circuit_view', [self.pk])
 
     class Meta:
         verbose_name = _(u'telecomm circuit')
