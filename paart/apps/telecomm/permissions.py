@@ -6,6 +6,11 @@ from permissions.models import PermissionNamespace, Permission
 
 namespace = PermissionNamespace('telecomm', _(u'Telecomm'))
 
+PERMISSION_CIRCUIT_CREATE = Permission.objects.register(namespace, 'circuit_create', _(u'Create circuits'))
+PERMISSION_CIRCUIT_EDIT = Permission.objects.register(namespace, 'circuit_edit', _(u'Edit circuits'))
+PERMISSION_CIRCUIT_DELETE = Permission.objects.register(namespace, 'circuit_delete', _(u'Delete circuits'))
+PERMISSION_CIRCUIT_VIEW = Permission.objects.register(namespace, 'circuit_view', _(u'View circuits'))
+
 PERMISSION_EQUIPMENT_CREATE = Permission.objects.register(namespace, 'equipment_create', _(u'Create equipments'))
 PERMISSION_EQUIPMENT_EDIT = Permission.objects.register(namespace, 'equipment_edit', _(u'Edit equipments'))
 PERMISSION_EQUIPMENT_DELETE = Permission.objects.register(namespace, 'equipment_delete', _(u'Delete equipments'))

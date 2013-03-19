@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from django.contrib import admin
 
-from .models import Provider, Equipment
+from .models import Provider, Equipment, Circuit, Technology
 
 
 class ProviderAdmin(admin.ModelAdmin):
@@ -17,3 +17,5 @@ class EquipmentAdmin(admin.ModelAdmin):
 
 admin.site.register(Provider, ProviderAdmin)
 admin.site.register(Equipment, EquipmentAdmin)
+admin.site.register(Circuit)
+admin.site.register(Technology)
