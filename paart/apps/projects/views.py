@@ -54,6 +54,7 @@ def agency_project_list(request, agency_pk):
         'title': _(u'projects of: %s') % agency,
         'hide_object': True,
         'object': agency,
+        'agency': agency,
     }
 
     return render_to_response('generic_list.html', context,
@@ -181,6 +182,7 @@ def project_create(request, agency_pk):
     return render_to_response('generic_form.html', {
         'form': form,
         'object': agency,
+        'agency': agency,
         'title': _(u'create project for agency: %s') % agency,
     }, context_instance=RequestContext(request))
 
@@ -866,7 +868,7 @@ def project_file_download(request, project_file_pk):
     except PermissionDenied:
         AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project_file.project.agency)
 
-    filename = project_file.file.name                            
+    filename = project_file.file.name
     wrapper = FileWrapper(project_file.file)
     mime_type, encoding = mimetypes.guess_type(filename)
     if mime_type is None:
