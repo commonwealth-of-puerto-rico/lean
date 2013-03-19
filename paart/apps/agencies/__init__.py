@@ -37,11 +37,11 @@ class_permissions(Agency, [
     ]
 )
 
-agency_search = SearchModel('agencies', 'Agency')
+#agency_search = SearchModel('agencies', 'Agency')
 
-agency_search.add_model_field('prifas', label=_(u'Prifas number'))
-agency_search.add_model_field('registration', label=_(u'Registration'))
-agency_search.add_model_field('name', label=_(u'Name'))
-agency_search.add_model_field('director', label=_(u'Director'))
-agency_search.add_model_field('physical_address', label=_(u'Physical address'))
-agency_search.add_model_field('postal_address', label=_(u'Postal address'))
+#agency_search.add_model_field('prifas', label=_(u'Prifas number'))
+#agency_search.add_model_field('registration', label=_(u'Registration'))
+#agency_search.add_model_field('name', label=_(u'Name'))
+#agency_search.add_model_field('director', label=_(u'Director'))
+#agency_search.add_model_field('physical_address', label=_(u'Physical address'))
+#agency_search.add_model_field('postal_address', label=_(u'Postal address'))
