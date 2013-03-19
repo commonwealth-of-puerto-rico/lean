@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 03:49-0400\n"
+"POT-Creation-Date: 2013-03-19 18:13-0400\n"
 "PO-Revision-Date: 2013-02-26 01:30\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/"
@@ -20,15 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: forms.py:98
+#: forms.py:101
 msgid "Selection"
 msgstr "Selección"
 
-#: forms.py:130
+#: forms.py:133
 msgid "Email"
 msgstr "E-mail"
 
-#: forms.py:141
+#: forms.py:144
 msgid ""
 "Please enter a correct email and password. Note that the password fields is "
 "case-sensitive."
@@ -37,7 +37,7 @@ msgstr ""
 "correctas.  Tenga en cuenta que los campos de contraseña distingue entre "
 "mayúsculas y minúsculas."
 
-#: forms.py:143
+#: forms.py:146
 msgid "This account is inactive."
 msgstr "Esta cuenta está inactiva."
 

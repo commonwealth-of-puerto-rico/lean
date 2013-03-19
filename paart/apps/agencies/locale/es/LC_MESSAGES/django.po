@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 03:49-0400\n"
+"POT-Creation-Date: 2013-03-19 18:13-0400\n"
 "PO-Revision-Date: 2013-02-26 01:31\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,33 +19,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:24 models.py:9
-msgid "registration"
-msgstr "registro"
-
-#: __init__.py:25 models.py:10
+#: __init__.py:25 models.py:11
 msgid "name"
 msgstr "nombre"
-
-#: __init__.py:42
-msgid "Registration"
-msgstr "Registro"
-
-#: __init__.py:43
-msgid "Name"
-msgstr "Nombre"
-
-#: __init__.py:44
-msgid "Director"
-msgstr "Director"
-
-#: __init__.py:45
-msgid "Physical address"
-msgstr "Dirección fisica"
-
-#: __init__.py:46
-msgid "Postal address"
-msgstr "Dirección postal"
 
 #: admin.py:11
 msgid "initial"
@@ -55,7 +31,7 @@ msgstr "inicial"
 msgid "all agencies"
 msgstr "toda las agencias"
 
-#: links.py:13 models.py:25 views.py:39
+#: links.py:13 models.py:26 views.py:39
 msgid "agencies"
 msgstr "agencias"
 
@@ -83,19 +59,27 @@ msgstr "lca"
 msgid "enabled"
 msgstr "habilitada"
 
-#: models.py:11
+#: models.py:9
+msgid "registration"
+msgstr "registro"
+
+#: models.py:10
+msgid "PRIFAS number"
+msgstr ""
+
+#: models.py:12
 msgid "director"
 msgstr "director"
 
-#: models.py:12
+#: models.py:13
 msgid "physical address"
 msgstr "dirección fisica"
 
-#: models.py:13
+#: models.py:14
 msgid "postal address"
 msgstr "dirección postal"
 
-#: models.py:24 views.py:94
+#: models.py:25 views.py:94
 msgid "agency"
 msgstr "agencia"
 
@@ -142,3 +126,18 @@ msgstr "¿Esta seguro que desea borrar la agencia: %s?"
 #: views.py:116
 msgid "agency forms"
 msgstr "formulario de agencia"
+
+#~ msgid "Registration"
+#~ msgstr "Registro"
+
+#~ msgid "Name"
+#~ msgstr "Nombre"
+
+#~ msgid "Director"
+#~ msgstr "Director"
+
+#~ msgid "Physical address"
+#~ msgstr "Dirección fisica"
+
+#~ msgid "Postal address"
+#~ msgstr "Dirección postal"

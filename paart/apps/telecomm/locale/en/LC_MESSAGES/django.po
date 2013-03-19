@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 03:50-0400\n"
+"POT-Creation-Date: 2013-03-19 18:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,92 +17,140 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:21
+#: __init__.py:30
 msgid "name"
 msgstr ""
 
-#: links.py:12
-msgid "add equipment"
+#: __init__.py:34 models.py:44 models.py:75
+msgid "purpose"
 msgstr ""
 
-#: links.py:13
-msgid "edit"
+#: __init__.py:35 models.py:18 models.py:74
+msgid "provider"
 msgstr ""
 
-#: links.py:14
-msgid "delete"
+#: __init__.py:36 models.py:33 models.py:76
+msgid "technology"
+msgstr ""
+
+#: __init__.py:37
+msgid "bandwidth"
 msgstr ""
 
 #: links.py:15
+msgid "add equipment"
+msgstr ""
+
+#: links.py:16 links.py:22
+msgid "edit"
+msgstr ""
+
+#: links.py:17 links.py:23
+msgid "delete"
+msgstr ""
+
+#: links.py:18 links.py:24
 msgid "view"
 msgstr ""
 
-#: links.py:16 views.py:99
+#: links.py:19 views.py:103
 msgid "equipment"
 msgstr ""
 
-#: models.py:9 models.py:26
-msgid "label"
+#: links.py:21
+msgid "add circuit"
 msgstr ""
 
-#: models.py:18
-msgid "provider"
+#: links.py:25
+msgid "circuits"
+msgstr ""
+
+#: models.py:9 models.py:24 models.py:41
+msgid "label"
 msgstr ""
 
 #: models.py:19
 msgid "providers"
 msgstr ""
 
-#: models.py:24
+#: models.py:34
+msgid "technologies"
+msgstr ""
+
+#: models.py:39 models.py:72
 msgid "creation date and time"
 msgstr ""
 
-#: models.py:25
+#: models.py:40 models.py:73
 msgid "agency"
 msgstr ""
 
-#: models.py:27
+#: models.py:42
 msgid "intranet connectivity?"
 msgstr ""
 
-#: models.py:29
-msgid "purpose"
-msgstr ""
-
-#: models.py:30
+#: models.py:45
 msgid "internet connectivity?"
 msgstr ""
 
-#: models.py:31
+#: models.py:46
 msgid "internet provider"
 msgstr ""
 
-#: models.py:32
+#: models.py:47
 msgid "internet costs"
 msgstr ""
 
-#: models.py:33
+#: models.py:48
 msgid "uses OGP antenna?"
 msgstr ""
 
-#: models.py:34
+#: models.py:49
 msgid "uses WIFI?"
 msgstr ""
 
-#: models.py:35
+#: models.py:50
 msgid "WIFI provider"
 msgstr ""
 
-#: models.py:36
+#: models.py:51
 msgid "WIFI costs"
 msgstr ""
 
-#: models.py:37
+#: models.py:52
 msgid "internet employees?"
 msgstr ""
 
-#: models.py:50 models.py:51
+#: models.py:65 models.py:66
 msgid "telecomm equipment"
+msgstr ""
+
+#: models.py:77
+msgid "bandwidth (in megabits)"
+msgstr ""
+
+#: models.py:78
+msgid "unit cost"
+msgstr ""
+
+#: models.py:79
+msgid "units"
+msgstr ""
+
+#: models.py:80
+msgid "installation cost"
+msgstr ""
+
+#: models.py:81
+msgid "contract start date"
+msgstr ""
+
+#: models.py:82
+msgid "contract end date"
+msgstr ""
+
+#: models.py:95 models.py:96
+msgid "telecomm circuit"
 msgstr ""
 
 #: permissions.py:7
@@ -110,68 +158,123 @@ msgid "Telecomm"
 msgstr ""
 
 #: permissions.py:9
-msgid "Create equipments"
+msgid "Create circuits"
 msgstr ""
 
 #: permissions.py:10
-msgid "Edit equipments"
+msgid "Edit circuits"
 msgstr ""
 
 #: permissions.py:11
-msgid "Delete equipments"
+msgid "Delete circuits"
 msgstr ""
 
 #: permissions.py:12
-msgid "View equipments"
+msgid "View circuits"
 msgstr ""
 
 #: permissions.py:14
-msgid "Create providers"
+msgid "Create equipments"
 msgstr ""
 
 #: permissions.py:15
-msgid "Edit providers"
+msgid "Edit equipments"
 msgstr ""
 
 #: permissions.py:16
-msgid "Delete providers"
+msgid "Delete equipments"
 msgstr ""
 
 #: permissions.py:17
+msgid "View equipments"
+msgstr ""
+
+#: permissions.py:19
+msgid "Create providers"
+msgstr ""
+
+#: permissions.py:20
+msgid "Edit providers"
+msgstr ""
+
+#: permissions.py:21
+msgid "Delete providers"
+msgstr ""
+
+#: permissions.py:22
 msgid "View providers"
 msgstr ""
 
-#: views.py:37
+#: views.py:40
 #, python-format
 msgid "equipment of: %s"
 msgstr ""
 
-#: views.py:57
+#: views.py:61
 #, python-format
 msgid "Equipment \"%s\" edited successfully."
 msgstr ""
 
-#: views.py:91
+#: views.py:95
 #, python-format
 msgid "Equipment: %s deleted successfully."
 msgstr ""
 
-#: views.py:93
+#: views.py:97
 #, python-format
 msgid "Equipment: %(equipment)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:103
+#: views.py:107
 #, python-format
 msgid "Are you sure you wish to delete the equipment: %s?"
 msgstr ""
 
-#: views.py:152
+#: views.py:156
 #, python-format
 msgid "Equipment \"%s\" added successfully."
 msgstr ""
 
-#: views.py:159
+#: views.py:163
 #, python-format
 msgid "Add equipment to agency: %s"
+msgstr ""
+
+#: views.py:187
+#, python-format
+msgid "circuit of: %s"
+msgstr ""
+
+#: views.py:208
+#, python-format
+msgid "Circuit \"%s\" edited successfully."
+msgstr ""
+
+#: views.py:242
+#, python-format
+msgid "Circuit: %s deleted successfully."
+msgstr ""
+
+#: views.py:244
+#, python-format
+msgid "Circuit: %(circuit)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:250
+msgid "circuit"
+msgstr ""
+
+#: views.py:254
+#, python-format
+msgid "Are you sure you wish to delete the circuit: %s?"
+msgstr ""
+
+#: views.py:303
+#, python-format
+msgid "Circuit \"%s\" added successfully."
+msgstr ""
+
+#: views.py:310
+#, python-format
+msgid "Add circuit to agency: %s"
 msgstr ""

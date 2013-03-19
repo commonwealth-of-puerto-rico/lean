@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 03:50-0400\n"
-"PO-Revision-Date: 2013-03-05 03:52\n"
+"POT-Creation-Date: 2013-03-19 18:13-0400\n"
+"PO-Revision-Date: 2013-03-19 18:16\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,164 +19,267 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:21
+#: __init__.py:30
 msgid "name"
 msgstr "nombre"
 
-#: links.py:12
+#: __init__.py:34 models.py:44 models.py:75
+msgid "purpose"
+msgstr "proposito"
+
+#: __init__.py:35 models.py:18 models.py:74
+msgid "provider"
+msgstr "proveedor"
+
+#: __init__.py:36 models.py:33 models.py:76
+msgid "technology"
+msgstr "tecnología"
+
+#: __init__.py:37
+msgid "bandwidth"
+msgstr "ancho de banda"
+
+#: links.py:15
 msgid "add equipment"
 msgstr "agregar equipo"
 
-#: links.py:13
+#: links.py:16 links.py:22
 msgid "edit"
 msgstr "editar"
 
-#: links.py:14
+#: links.py:17 links.py:23
 msgid "delete"
 msgstr "borrar"
 
-#: links.py:15
+#: links.py:18 links.py:24
 msgid "view"
 msgstr "ver"
 
-#: links.py:16 views.py:99
+#: links.py:19 views.py:103
 msgid "equipment"
 msgstr "equipo"
 
-#: models.py:9 models.py:26
+#: links.py:21
+msgid "add circuit"
+msgstr "agregar circuito"
+
+#: links.py:25
+msgid "circuits"
+msgstr "circuitos"
+
+#: models.py:9 models.py:24 models.py:41
 msgid "label"
 msgstr "etiqueta"
-
-#: models.py:18
-msgid "provider"
-msgstr "proveedor"
 
 #: models.py:19
 msgid "providers"
 msgstr "proveedores"
 
-#: models.py:24
+#: models.py:34
+msgid "technologies"
+msgstr "tecnologias"
+
+#: models.py:39 models.py:72
 msgid "creation date and time"
 msgstr "fecha y hora de creación"
 
-#: models.py:25
+#: models.py:40 models.py:73
 msgid "agency"
 msgstr "agencia"
 
-#: models.py:27
+#: models.py:42
 msgid "intranet connectivity?"
 msgstr "¿Conectividad de intranet?"
 
-#: models.py:29
-msgid "purpose"
-msgstr "proposito"
-
-#: models.py:30
+#: models.py:45
 msgid "internet connectivity?"
 msgstr "¿Conectividad de Internet?"
 
-#: models.py:31
+#: models.py:46
 msgid "internet provider"
 msgstr "proveedor de internet"
 
-#: models.py:32
+#: models.py:47
 msgid "internet costs"
 msgstr "costos de internet"
 
-#: models.py:33
+#: models.py:48
 msgid "uses OGP antenna?"
 msgstr "¿Usa antena de OGP?"
 
-#: models.py:34
+#: models.py:49
 msgid "uses WIFI?"
 msgstr "¿Usa WIFI?"
 
-#: models.py:35
+#: models.py:50
 msgid "WIFI provider"
 msgstr "proveedor de WIFI"
 
-#: models.py:36
+#: models.py:51
 msgid "WIFI costs"
 msgstr "costos de WIFI"
 
-#: models.py:37
+#: models.py:52
 msgid "internet employees?"
 msgstr "¿Empleados con Internet?"
 
-#: models.py:50 models.py:51
+#: models.py:65 models.py:66
 msgid "telecomm equipment"
 msgstr "equipo de telecomunicaciones"
+
+#: models.py:77
+msgid "bandwidth (in megabits)"
+msgstr "ancho de banda (en megabits)"
+
+#: models.py:78
+msgid "unit cost"
+msgstr "costo por unidad"
+
+#: models.py:79
+msgid "units"
+msgstr "unidades"
+
+#: models.py:80
+msgid "installation cost"
+msgstr "costo de instalación"
+
+#: models.py:81
+msgid "contract start date"
+msgstr "fecha que comenzo el contrato"
+
+#: models.py:82
+msgid "contract end date"
+msgstr "fecha que termina el contrato"
+
+#: models.py:95 models.py:96
+msgid "telecomm circuit"
+msgstr "circuito de telecomunicaciones"
 
 #: permissions.py:7
 msgid "Telecomm"
 msgstr "Telecomunicaciones"
 
 #: permissions.py:9
+msgid "Create circuits"
+msgstr "Crear circuitos"
+
+#: permissions.py:10
+msgid "Edit circuits"
+msgstr "Editar circuitos"
+
+#: permissions.py:11
+msgid "Delete circuits"
+msgstr "Borrar circuitos"
+
+#: permissions.py:12
+msgid "View circuits"
+msgstr "Ver circuitos"
+
+#: permissions.py:14
 msgid "Create equipments"
 msgstr "Crear equipos"
 
-#: permissions.py:10
+#: permissions.py:15
 msgid "Edit equipments"
 msgstr "Editar equipos"
 
-#: permissions.py:11
+#: permissions.py:16
 msgid "Delete equipments"
 msgstr "Borrar equipos"
 
-#: permissions.py:12
+#: permissions.py:17
 msgid "View equipments"
 msgstr "Ver equipos"
 
-#: permissions.py:14
+#: permissions.py:19
 msgid "Create providers"
 msgstr "Crear proveedores"
 
-#: permissions.py:15
+#: permissions.py:20
 msgid "Edit providers"
 msgstr "Editar proveedores"
 
-#: permissions.py:16
+#: permissions.py:21
 msgid "Delete providers"
 msgstr "Borrar proveedores"
 
-#: permissions.py:17
+#: permissions.py:22
 msgid "View providers"
 msgstr "Ver proveedores"
 
-#: views.py:37
+#: views.py:40
 #, python-format
 msgid "equipment of: %s"
 msgstr "equipo de: %s"
 
-#: views.py:57
+#: views.py:61
 #, python-format
 msgid "Equipment \"%s\" edited successfully."
 msgstr "Equipo \"%s\" editados exitosamente."
 
-#: views.py:91
+#: views.py:95
 #, python-format
 msgid "Equipment: %s deleted successfully."
 msgstr "Equipo: %s eliminado exitosamente."
 
-#: views.py:93
+#: views.py:97
 #, python-format
 msgid "Equipment: %(equipment)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:103
+#: views.py:107
 #, python-format
 msgid "Are you sure you wish to delete the equipment: %s?"
 msgstr "¿Esta seguro que desea eliminar el equipo: %s?"
 
-#: views.py:152
+#: views.py:156
 #, python-format
 msgid "Equipment \"%s\" added successfully."
 msgstr "Equipo \"%s\" agregado exitosamente."
 
-#: views.py:159
+#: views.py:163
 #, python-format
 msgid "Add equipment to agency: %s"
 msgstr "Agregar equipo a la agencia: %s"
+
+#: views.py:187
+#, python-format
+msgid "circuit of: %s"
+msgstr "circuito de: %s"
+
+#: views.py:208
+#, python-format
+msgid "Circuit \"%s\" edited successfully."
+msgstr "Circuito \"%s\" editado exitosamente."
+
+#: views.py:242
+#, python-format
+msgid "Circuit: %s deleted successfully."
+msgstr "Circuito: %s eliminado exitosamente."
+
+#: views.py:244
+#, python-format
+msgid "Circuit: %(circuit)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:250
+msgid "circuit"
+msgstr "circuito"
+
+#: views.py:254
+#, python-format
+msgid "Are you sure you wish to delete the circuit: %s?"
+msgstr "¿Esta seguro que desea eliminar el circuito: %s?"
+
+#: views.py:303
+#, python-format
+msgid "Circuit \"%s\" added successfully."
+msgstr "Circuito \"%s\" agregado exitosamente."
+
+#: views.py:310
+#, python-format
+msgid "Add circuit to agency: %s"
+msgstr "Agregar circuito a la agencia: %s"
 
 #~ msgid "details"
 #~ msgstr "detalles"
