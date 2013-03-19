@@ -169,6 +169,7 @@ INSTALLED_APPS = (
     'projects',
     'telecomm',
     'tools',
+    'infrastructure',
     'workflows',
     'api',
 )
