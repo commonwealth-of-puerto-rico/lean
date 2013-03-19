@@ -16,7 +16,7 @@ from .permissions import (PERMISSION_EQUIPMENT_CREATE, PERMISSION_EQUIPMENT_DELE
     PERMISSION_EQUIPMENT_EDIT, PERMISSION_EQUIPMENT_VIEW)
 
 #Link.bind_links(['equipment_list'], [link_equipment_list], menu_name='secondary_menu')
-Link.bind_links(['agency_equipment_list', 'equipment_create', Equipment], [link_equipment_create], menu_name='sidebar')
+Link.bind_links(['agency_equipment_list', 'equipment_create', Equipment], [link_equipment_create], menu_name='secondary_menu')
 Link.bind_links([Agency], [link_agency_equipment_list])
 Link.bind_links([Equipment], [link_equipment_view, link_equipment_edit, link_equipment_delete])
 

@@ -15,7 +15,7 @@ from .models import ToolsProfile
 from .permissions import (PERMISSION_TOOLS_PROFILE_CREATE, PERMISSION_TOOLS_PROFILE_DELETE,
     PERMISSION_TOOLS_PROFILE_EDIT, PERMISSION_TOOLS_PROFILE_VIEW)
 
-Link.bind_links([ToolsProfile, 'agency_tools_profile_list', 'tools_profile_create'], [link_tools_profile_create], menu_name='sidebar')
+Link.bind_links([ToolsProfile, 'agency_tools_profile_list', 'tools_profile_create'], [link_tools_profile_create], menu_name='secondary_menu')
 Link.bind_links([Agency], [link_agency_tools_profile_list])
 
 Link.bind_links([ToolsProfile], [link_tools_profile_view, link_tools_profile_edit, link_tools_profile_delete])
