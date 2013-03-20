@@ -6,7 +6,7 @@ from django import forms
 
 from common.forms import DetailForm, ROFormMixin, Select2FormMixin
 
-from .models import (Project)#, ProjectInfo, ProjectBudget, ProjectFile)
+from .models import (Project, ProjectFile)#, ProjectInfo, ProjectBudget, ProjectFile)
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
@@ -128,7 +128,7 @@ class ProjectDetailsForm_create(Select2FormMixin, forms.ModelForm):
     class Meta:
         exclude = ('project',)
         model = ProjectDetails
-
+'''
 ## Project files
 
 class ProjectFileForm_create(forms.ModelForm):
@@ -136,4 +136,3 @@ class ProjectFileForm_create(forms.ModelForm):
         exclude = ('project',)
         #widgets = {'project': forms.widgets.HiddenInput}
         model = ProjectFile
-'''

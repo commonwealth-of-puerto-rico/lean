@@ -15,13 +15,13 @@ from .icons import (icon_projects, icon_project_edit, icon_project_delete,
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
     PERMISSION_PROJECT_VIEW)
 
-link_projects = Link(text=_(u'projects'), view='project_list', icon=icon_projects)
+link_projects = Link(text=_(u'projects'), view='infrastructure_project_list', icon=icon_projects)
 
-link_project_edit = Link(text=_(u'edit'), view='project_edit', args='resolved_object.pk', icon=icon_project_edit)
-link_project_delete = Link(text=_(u'delete'), view='project_delete', args='resolved_object.pk', icon=icon_project_delete)
-link_project_view = Link(text=_(u'view'), view='project_view', args='resolved_object.pk', icon=icon_project_view)
-link_project_view_basic = Link(text=_(u'basic'), view='project_view', args='resolved_object.pk', icon=icon_project_view)
-link_project_create = Link(text=_(u'add project'), view='project_create', args='agency.pk', icon=icon_project_create)
+link_project_edit = Link(text=_(u'edit'), view='infrastructure_project_edit', args='resolved_object.pk', icon=icon_project_edit)
+link_project_delete = Link(text=_(u'delete'), view='infrastructure_project_delete', args='resolved_object.pk', icon=icon_project_delete)
+link_project_view = Link(text=_(u'view'), view='infrastructure_project_view', args='resolved_object.pk', icon=icon_project_view)
+link_project_view_basic = Link(text=_(u'basic'), view='infrastructure_project_view', args='resolved_object.pk', icon=icon_project_view)
+link_project_create = Link(text=_(u'add project'), view='infrastructure_project_create', args='agency.pk', icon=icon_project_create)
 
 link_project_info_edit = Link(text=_(u'edit'), view='project_info_edit', args='resolved_object.pk', icon=icon_project_info_edit)
 link_project_info_delete = Link(text=_(u'delete'), view='project_info_delete', args='resolved_object.pk', icon=icon_project_info_delete)
@@ -35,9 +35,9 @@ link_project_details_edit = Link(text=_(u'edit'), view='project_details_edit', a
 link_project_details_delete = Link(text=_(u'delete'), view='project_details_delete', args='resolved_object.pk', icon=icon_project_details_delete)
 link_project_details_view = Link(text=_(u'details'), view='project_details_view', args='resolved_object.pk', icon=icon_project_details_view, children_view_regex=['project_details'])
 
-link_project_file_list = Link(text=_(u'files'), view='project_file_list', args='project.pk', icon=icon_project_file_list, children_view_regex=['project_file'])
-link_project_file_upload = Link(text=_(u'upload'), view='project_file_upload', args='project.pk', icon=icon_project_file_upload)
-link_project_file_delete = Link(text=_(u'delete'), view='project_file_delete', args='resolved_object.pk', icon=icon_project_file_delete)
-link_project_file_download = Link(text=_(u'download'), view='project_file_download', args='resolved_object.pk', icon=icon_project_file_download)
+link_project_file_list = Link(text=_(u'files'), view='infrastructure_project_file_list', args='project.pk', icon=icon_project_file_list, children_view_regex=['project_file'])
+link_project_file_upload = Link(text=_(u'upload file'), view='infrastructure_project_file_upload', args='project.pk', icon=icon_project_file_upload)
+link_project_file_delete = Link(text=_(u'delete'), view='infrastructure_project_file_delete', args='resolved_object.pk', icon=icon_project_file_delete)
+link_project_file_download = Link(text=_(u'download'), view='infrastructure_project_file_download', args='resolved_object.pk', icon=icon_project_file_download)
 
-link_agency_project_list = Link(text=_(u'projects'), view='agency_project_list', args='resolved_object.pk', icon=icon_agency_projects)
+link_agency_project_list = Link(text=_(u'infrastructure'), view='agency_infrastructure_project_list', args='resolved_object.pk', icon=icon_agency_projects)

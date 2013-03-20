@@ -5,9 +5,9 @@ import optparse
 
 import sh
 
-APP_LIST = ('acls', 'agencies', 'common', 'dynamic_search', 'main', 'navigation',
-    'permissions', 'projects', 'project_setup', 'project_tools', 'smart_settings',
-    'telecomm', 'tools', 'user_management', 'web_theme', 'workflows')
+APP_LIST = ('acls', 'agencies', 'common', 'dynamic_search', 'infrastructure',
+    'main', 'navigation', 'permissions', 'projects', 'project_setup', 'project_tools',
+    'smart_settings', 'telecomm', 'tools', 'user_management', 'web_theme', 'workflows')
 LANGUAGE_LIST = ('en', 'es')
 
 makemessages = sh.Command('django-admin.py')

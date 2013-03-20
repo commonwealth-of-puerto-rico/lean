@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 
 from agencies.models import Agency
 from common.managers import OmitDisabledManager
@@ -86,9 +87,9 @@ class ProjectFile(models.Model):
     def get_base_filename(self):
         return self.file.name.split('/')[1]
 
-    #@models.permalink
-    #def get_absolute_url(self):
-    #    return ('project_file_list', [self.project.pk])
+    @models.permalink
+    def get_absolute_url(self):
+        return ('infrastructure_project_file_list', [self.project.pk])
 
     class Meta:
         verbose_name = _(u'project file')
