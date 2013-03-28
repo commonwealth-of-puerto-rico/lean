@@ -208,6 +208,7 @@ class Project(models.Model):
     datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     label = models.CharField(max_length=128, verbose_name=_(u'name'))
+    description = models.TextField(verbose_name=_(u'description'), blank=True)
 
     def __unicode__(self):
         return self.label
@@ -230,7 +231,6 @@ class Project(models.Model):
                 else:
                     for f in sorted(opts.fields + opts.many_to_many):
                         count += 1
-                        print '%s: %s' % (f.name, f)
 
         return str(100 * float(count) / float(total))[0:5]
 
