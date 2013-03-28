@@ -23,7 +23,8 @@ urlpatterns = patterns('',
     (r'^projects/', include('projects.urls')),
     (r'^telecomm/', include('telecomm.urls')),
     (r'^infrastructure/', include('infrastructure.urls')),
-    (r'^tools/', include('tools.urls')),
+    #(r'^tools/', include('tools.urls')),
+    (r'^software/', include('software.urls')),
     (r'^api/', include('api.urls')),
 )
 
