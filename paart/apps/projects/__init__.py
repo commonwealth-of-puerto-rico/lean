@@ -37,7 +37,7 @@ Link.bind_links([ProjectInfo], [link_project_info_edit, link_project_info_delete
 Link.bind_links([ProjectBudget], [link_project_budget_edit, link_project_budget_delete])
 Link.bind_links([ProjectDetails], [link_project_details_edit, link_project_details_delete])
 Link.bind_links([ProjectOpportunities], [link_project_opportunities_edit, link_project_opportunities_delete])
-Link.bind_links([ProjectFile, 'project_file_upload', 'project_file_list'], [link_project_file_upload], menu_name='sidebar')
+Link.bind_links([ProjectFile, 'project_file_upload', 'project_file_list'], [link_project_file_upload], menu_name='secondary_menu')
 Link.bind_links([ProjectFile], [link_project_file_download, link_project_file_delete])
 
 Link.bind_links([WorkflowInstance], [link_project_workflow_instance_history_list, link_project_workflow_instance_action_submit])
