@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:26-0400\n"
-"PO-Revision-Date: 2013-02-26 03:02\n"
+"POT-Creation-Date: 2013-04-03 17:38-0400\n"
+"PO-Revision-Date: 2013-04-03 17:42\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
@@ -25,15 +25,15 @@ msgstr "nombre"
 
 #: __init__.py:48
 msgid "completion (%)"
-msgstr ""
+msgstr "completado (%)"
 
 #: __init__.py:55 __init__.py:69 models.py:16 models.py:28 models.py:46
 #: models.py:67 models.py:82 models.py:100 models.py:118 models.py:136
-#: models.py:154 models.py:172 models.py:190 models.py:358
+#: models.py:154 models.py:172 models.py:190 models.py:359
 msgid "label"
 msgstr "etiqueta"
 
-#: __init__.py:56 models.py:359
+#: __init__.py:56 models.py:360
 msgid "file"
 msgstr "anejo"
 
@@ -49,27 +49,19 @@ msgstr "año fiscal"
 msgid "purpose"
 msgstr "proposito"
 
-#: __init__.py:74
-msgid "purpose other"
-msgstr "otro proposito"
-
 #: __init__.py:75 models.py:58 models.py:250
 msgid "classification"
 msgstr "clasificación"
-
-#: __init__.py:76
-msgid "classification other"
-msgstr "otra clasificación"
 
 #: __init__.py:77 models.py:148
 msgid "department"
 msgstr "departamento"
 
-#: __init__.py:78 models.py:257
+#: __init__.py:78 models.py:258
 msgid "sponsor"
 msgstr "auspiciador"
 
-#: __init__.py:79 models.py:203 models.py:254
+#: __init__.py:79 models.py:203 models.py:255
 msgid "goals"
 msgstr "metas"
 
@@ -77,19 +69,15 @@ msgstr "metas"
 msgid "needs"
 msgstr "necesidades"
 
-#: __init__.py:81 models.py:263
+#: __init__.py:81 models.py:264
 msgid "expected results"
 msgstr "resultados esperados"
 
-#: __init__.py:82 models.py:184 models.py:252
+#: __init__.py:82 models.py:184 models.py:253
 msgid "methodology"
 msgstr "metodologia"
 
-#: __init__.py:83 models.py:253
-msgid "other methodology"
-msgstr "otra metodologia"
-
-#: __init__.py:84 models.py:264
+#: __init__.py:84 models.py:265
 msgid "milestones"
 msgstr "Hitos"
 
@@ -101,15 +89,15 @@ msgstr "infraestructura"
 msgid "requirements"
 msgstr "requerimientos"
 
-#: __init__.py:88 models.py:283
+#: __init__.py:88 models.py:284
 msgid "presumptions"
 msgstr "presunciones"
 
-#: __init__.py:89 models.py:284
+#: __init__.py:89 models.py:285
 msgid "limitations"
 msgstr "limitaciones"
 
-#: __init__.py:90 models.py:285
+#: __init__.py:90 models.py:286
 msgid "risks"
 msgstr "riesgos"
 
@@ -117,23 +105,23 @@ msgstr "riesgos"
 msgid "director"
 msgstr "director"
 
-#: __init__.py:93 models.py:307
+#: __init__.py:93 models.py:308
 msgid "start period"
 msgstr "Fecha de comienzo"
 
-#: __init__.py:94 models.py:309
+#: __init__.py:94 models.py:310
 msgid "end period"
 msgstr "Fecha de terminación"
 
-#: __init__.py:95 models.py:76 models.py:311
+#: __init__.py:95 models.py:76 models.py:312
 msgid "stage"
 msgstr "etapa"
 
-#: __init__.py:96 models.py:166 models.py:317
+#: __init__.py:96 models.py:166 models.py:318
 msgid "priority"
 msgstr "prioridad"
 
-#: __init__.py:98 models.py:336
+#: __init__.py:98 models.py:338
 msgid "opportunity"
 msgstr "oportunidad"
 
@@ -202,8 +190,8 @@ msgid "files"
 msgstr "anejos"
 
 #: links.py:45
-msgid "upload"
-msgstr "subir"
+msgid "upload file"
+msgstr "subir archivo"
 
 #: links.py:47
 msgid "download"
@@ -254,7 +242,7 @@ msgstr "etapas"
 msgid "benefit"
 msgstr "beneficio"
 
-#: models.py:95 models.py:286
+#: models.py:95 models.py:287
 msgid "benefits"
 msgstr "beneficios"
 
@@ -287,16 +275,19 @@ msgid "methodologies"
 msgstr "metodologias"
 
 #: models.py:202
-#, fuzzy
 msgid "goal"
-msgstr "metas"
+msgstr "meta"
 
 #: models.py:208
 msgid "creation date and time"
 msgstr "fecha y hora de creación"
 
-#: models.py:238 models.py:245 models.py:279 models.py:304 models.py:334
-#: models.py:357 views.py:117
+#: models.py:211
+msgid "description"
+msgstr "descripción"
+
+#: models.py:238 models.py:245 models.py:280 models.py:305 models.py:335
+#: models.py:358 views.py:117
 msgid "project"
 msgstr "proyecto"
 
@@ -311,143 +302,133 @@ msgstr ""
 "proyecto.  Cual es la necesidad de la agencia versus el resultado esperado "
 "al finalizar el proyecto."
 
-#: models.py:249
-msgid "other purpose"
-msgstr "otro proposito"
-
-#: models.py:249
-msgid "HELP_TEXT_PROYECTINFO_PURPOSE_OTHER"
-msgstr "Especique otro proposito breve que no aparezca en la lisa."
-
 #: models.py:250
 msgid "HELP_TEXT_PROYECTINFO_CLASSIFICATION"
 msgstr "La clase de proyecto, ¿como se categoriza?"
 
 #: models.py:251
-msgid "other classification"
-msgstr "otra clasificación"
+msgid "secondary classification"
+msgstr "clasificación secundaria"
 
 #: models.py:251
-msgid "HELP_TEXT_PROYECTINFO_CLASSIFICATION_OTHER"
-msgstr ""
-"Debes especificar lo mas breve posible la otra clasificación que no aparece "
-"en la lista."
+msgid "HELP_TEXT_PROYECTINFO_CLASSIFICATION_SECONDARY"
+msgstr "Clasificación secundaria, si aplica."
 
-#: models.py:252
+#: models.py:253
 msgid "HELP_TEXT_PROYECTINFO_METHODOLOGY"
 msgstr ""
 "Forma o estrategia que se seguira para desarrollar con éxito el proyecto."
 
-#: models.py:256
+#: models.py:257
 msgid "department/work unit"
 msgstr "departamento/unidad de trabajo"
 
-#: models.py:256
+#: models.py:257
 msgid "HELP_TEXT_PROYECTINFO_DEPARTMENT"
 msgstr "Departamento de la agencia a la cual pertenece el proyecto."
 
-#: models.py:263
+#: models.py:264
 msgid "HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS"
 msgstr ""
 "Resultado que se desea del proyecto o alcance del proyecto debe indicar que "
 "es lo que el proyecto tiene como finalidad crear."
 
-#: models.py:264
+#: models.py:265
 msgid "HELP_TEXT_PROYECTINFO_MILESTONES"
 msgstr ""
 "Identifique los eventos significativos que marcan el progreso del proyecto."
 
-#: models.py:267
+#: models.py:268
 msgid "project information"
 msgstr "información del proyecto"
 
-#: models.py:274 models.py:322 models.py:329
+#: models.py:275 models.py:323 models.py:330
 msgid "project details"
 msgstr "detalles de proyecto"
 
-#: models.py:275 models.py:330
+#: models.py:276 models.py:331
 msgid "projects details"
 msgstr "detalles de proyectos"
 
-#: models.py:281
+#: models.py:282
 msgid "infrastructure needs"
 msgstr "necesidades de infraestructura"
 
-#: models.py:282
+#: models.py:283
 msgid "project critical requirements"
 msgstr "requerimientos criticos del proyecto"
 
-#: models.py:283
+#: models.py:284
 msgid "HELP_TEXT_PROYECTBUDGET_PRESUMPTIONS"
 msgstr ""
 "Condiciones o situaciones que el proyecto asume sean ciertas o existan y en "
 "las cuales depende el exito del proyecto."
 
-#: models.py:284
+#: models.py:285
 msgid "HELP_TEXT_PROYECTBUDGET_LIMITATIONS"
 msgstr ""
 "Situaciones o problemas que el proyecto no podrá corregir, remediar o "
 "mejorar."
 
-#: models.py:285
+#: models.py:286
 msgid "HELP_TEXT_PROYECTBUDGET_RISKS"
 msgstr ""
 "Situaciones fuera del control del proyecto y que podrian impedir la "
 "culminación del mismo."
 
-#: models.py:288
+#: models.py:289
 msgid "project director"
 msgstr "director de proyecto"
 
-#: models.py:292 models.py:299
+#: models.py:293 models.py:300
 msgid "project budget"
 msgstr "presupuesto de proyecto"
 
-#: models.py:300
+#: models.py:301
 msgid "projects budgets"
 msgstr "presupuesto de proyectos"
 
-#: models.py:307
+#: models.py:308
 msgid "HELP_TEXT_PROYECTDETAILS_START_PERIOD"
 msgstr "Fecha en la cual comienza o comenzó el proyecto."
 
-#: models.py:309
+#: models.py:310
 msgid "HELP_TEXT_PROYECTDETAILS_END_PERIOD"
 msgstr "Fecha en la cuál se espera terminar el proyecto."
 
-#: models.py:311
+#: models.py:312
 msgid "HELP_TEXT_PROYECTDETAILS_STAGE"
 msgstr "Estapa en la cual se encuentra el proyecto."
 
-#: models.py:317
+#: models.py:318
 msgid "HELP_TEXT_PROYECTDETAILS_PRIORITY"
 msgstr "¿Cuan importante es este proyecto para la agencia?"
 
-#: models.py:337
+#: models.py:336
+msgid "other involved agencies"
+msgstr "agencias envueltas"
+
+#: models.py:339
 msgid "sharing benefits"
 msgstr "beneficios al compartir"
 
-#: models.py:338
+#: models.py:340
 msgid "short explanation (50 words or less)"
 msgstr "explicación corta (50 palabras o menos)"
 
-#: models.py:339
-msgid "other agencies or involved agencies"
-msgstr "otras agencia o agencias envueltas"
-
-#: models.py:342 models.py:349
+#: models.py:343 models.py:350
 msgid "project opportunities"
 msgstr "oportunidades de proyecto"
 
-#: models.py:350
+#: models.py:351
 msgid "projects opportunities"
 msgstr "oportunidades de proyectos"
 
-#: models.py:372
+#: models.py:373
 msgid "project file"
 msgstr "anejo de proyecto"
 
-#: models.py:373
+#: models.py:374
 msgid "projects files"
 msgstr "anejos de proyectos"
 
@@ -740,6 +721,21 @@ msgstr ""
 msgid "Next step"
 msgstr ""
 
+#~ msgid "purpose other"
+#~ msgstr "otro proposito"
+
+#~ msgid "classification other"
+#~ msgstr "otra clasificación"
+
+#~ msgid "other methodology"
+#~ msgstr "otra metodologia"
+
+#~ msgid "other purpose"
+#~ msgstr "otro proposito"
+
+#~ msgid "HELP_TEXT_PROYECTINFO_PURPOSE_OTHER"
+#~ msgstr "Especique otro proposito breve que no aparezca en la lisa."
+
 #~ msgid "phone number"
 #~ msgstr "número de teléfono"
 
@@ -792,18 +788,18 @@ msgstr ""
 #~ msgid "PURPOSE"
 #~ msgstr ""
 #~ "El propósito es describir la razón por la cual la Agencia inicia este "
-#~ "proyecto.  Cual es la necesidad de la agencia versus el resultado "
-#~ "esperado al finalizar el proyecto."
+#~ "proyecto.  Cual es la necesidad de la agencia versus el resultado esperado "
+#~ "al finalizar el proyecto."
 
 #~ msgid "PURPOSE_OTHER"
 #~ msgstr ""
-#~ "Debes especificar lo más breve posible el otro propósito que no aparece "
-#~ "en la lista."
+#~ "Debes especificar lo más breve posible el otro propósito que no aparece en "
+#~ "la lista."
 
 #~ msgid "CLASSIFICATION"
 #~ msgstr ""
-#~ "La clasificación es para especificar la clase de proyecto y donde "
-#~ "pertenece el proyecto."
+#~ "La clasificación es para especificar la clase de proyecto y donde pertenece "
+#~ "el proyecto."
 
 #~ msgid "email"
 #~ msgstr "email"

@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:26-0400\n"
-"PO-Revision-Date: 2013-03-19 18:16\n"
+"POT-Creation-Date: 2013-04-03 17:38-0400\n"
+"PO-Revision-Date: 2013-04-03 17:40\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
@@ -31,7 +31,7 @@ msgstr "proposito"
 msgid "provider"
 msgstr "proveedor"
 
-#: __init__.py:36 models.py:33 models.py:76
+#: __init__.py:36 models.py:33 models.py:77
 msgid "technology"
 msgstr "tecnología"
 
@@ -127,31 +127,46 @@ msgstr "¿Empleados con Internet?"
 msgid "telecomm equipment"
 msgstr "equipo de telecomunicaciones"
 
-#: models.py:77
+#: models.py:75
+msgid "HELP_TEXT_PURPOSE"
+msgstr ""
+"¿Que tipo de uso se le esta dando a este circuito?  Ejemplos: Internet, "
+"infraestructura, voz sobre IP."
+
+#: models.py:76
+msgid "identifier"
+msgstr "identificador"
+
+#: models.py:76
+msgid "HELP_TEXT_IDENTIFIER"
+msgstr ""
+"Alguna nomeclatura agencia o del proveedor que identifica este circuito."
+
+#: models.py:78
 msgid "bandwidth (in megabits)"
 msgstr "ancho de banda (en megabits)"
 
-#: models.py:78
+#: models.py:79
 msgid "unit cost"
 msgstr "costo por unidad"
 
-#: models.py:79
+#: models.py:80
 msgid "units"
 msgstr "unidades"
 
-#: models.py:80
+#: models.py:81
 msgid "installation cost"
 msgstr "costo de instalación"
 
-#: models.py:81
+#: models.py:82
 msgid "contract start date"
 msgstr "fecha que comenzo el contrato"
 
-#: models.py:82
+#: models.py:83
 msgid "contract end date"
 msgstr "fecha que termina el contrato"
 
-#: models.py:98 models.py:99
+#: models.py:99 models.py:100
 msgid "telecomm circuit"
 msgstr "circuito de telecomunicaciones"
 
