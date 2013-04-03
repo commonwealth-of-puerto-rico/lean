@@ -35,6 +35,7 @@ class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+        self.fields['classification_secondary'].queryset = self.fields['classification_secondary'].queryset.active()
         self.fields['department'].queryset = self.fields['department'].queryset.active()
         self.fields['methodology'].queryset = self.fields['methodology'].queryset.active()
         self.fields['goals'].queryset = self.fields['goals'].queryset.active()
@@ -53,6 +54,7 @@ class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
+        self.fields['classification_secondary'].queryset = self.fields['classification_secondary'].queryset.active()
         self.fields['department'].queryset = self.fields['department'].queryset.active()
         self.fields['methodology'].queryset = self.fields['methodology'].queryset.active()
         self.fields['goals'].queryset = self.fields['goals'].queryset.active()
@@ -61,7 +63,7 @@ class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
         init_year = datetime.datetime.now().year
         if datetime.datetime.now().month < 7:
             init_year -= 1
-        
+
         try:
             # do a lookup for the fiscal year label
             fiscal_year = self.fields['fiscal_year'].queryset.get(label='%s-%s' % (init_year + 1, init_year + 2))

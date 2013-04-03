@@ -248,6 +248,7 @@ class ProjectInfo(models.Model):
     purpose = models.ForeignKey(Purpose, verbose_name=_(u'purpose'), help_text=_(u'HELP_TEXT_PROYECTINFO_PURPOSE'))
     #purpose_other = models.CharField(max_length=128, verbose_name=_(u'other purpose'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_PURPOSE_OTHER'))
     classification = models.ForeignKey(Classification, verbose_name=_(u'classification'), help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION'))
+    classification_secondary = models.ForeignKey(Classification, related_name='secondary_classification', verbose_name=_(u'secondary classification'), help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION_SECONDARY'), null=True, blank=True)
     #classification_other = models.CharField(max_length=128, verbose_name=_(u'other classification'), blank=True, help_text=_(u'HELP_TEXT_PROYECTINFO_CLASSIFICATION_OTHER'))
     methodology = models.ForeignKey(Methodology, verbose_name=_('methodology'), help_text=_(u'HELP_TEXT_PROYECTINFO_METHODOLOGY'))
     #methodology_other = models.CharField(max_length=128, verbose_name=_(u'other methodology'), blank=True)
@@ -332,7 +333,7 @@ class ProjectDetails(models.Model):
 
 class ProjectOpportunities(models.Model):
     project = models.OneToOneField(Project, verbose_name=_(u'project'))
-    other_agencies = models.ManyToManyField(Agency, verbose_name=_('other agencies or involved agencies'), null=True, blank=True)
+    other_agencies = models.ManyToManyField(Agency, verbose_name=_('other involved agencies'), null=True, blank=True)
     ## Oportunidades interagenciales - Paso 4
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
