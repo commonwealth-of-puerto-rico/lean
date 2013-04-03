@@ -75,9 +75,9 @@ class Circuit(models.Model):
     purpose = models.CharField(max_length=128, verbose_name=_(u'purpose'))
     technology = models.ForeignKey(Technology, related_name='circuit_technology', verbose_name=_(u'technology'))
     bandwidth = models.PositiveIntegerField(max_length=128, verbose_name=_(u'bandwidth (in megabits)'), blank=True, null=True)
-    unit_cost = models.PositiveIntegerField(verbose_name=_(u'unit cost'))
+    unit_cost = models.PositiveIntegerField(verbose_name=_(u'unit cost'), blank=True, null=True)
     units = models.PositiveIntegerField(default=1, verbose_name=_(u'units'))
-    installation_cost = models.PositiveIntegerField(verbose_name=_(u'installation cost'))
+    installation_cost = models.PositiveIntegerField(verbose_name=_(u'installation cost'), blank=True, null=True)
     contract_start_date = models.DateField(verbose_name=_(u'contract start date'), null=True, blank=True)
     contract_end_date = models.DateField(verbose_name=_(u'contract end date'), null=True, blank=True)
 
