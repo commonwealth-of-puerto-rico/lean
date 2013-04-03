@@ -45,7 +45,7 @@ Link.bind_links([WorkflowInstance], [link_project_workflow_instance_history_list
 
 register_model_list_columns(Project, [
     {'name': _(u'name'), 'attribute': 'label'},
-    {'name': _(u'completion (%)'), 'attribute': encapsulate(lambda x: x.get_completion())},
+#    {'name': _(u'completion (%)'), 'attribute': encapsulate(lambda x: x.get_completion())},
 #    {'name': _(u'fiscal year'), 'attribute': 'fiscal_year'},
 #    {'name': _(u'purpose'), 'attribute': 'purpose'},
 #    {'name': _(u'classification'), 'attribute': 'classification'},
