@@ -26,15 +26,15 @@ class EquipmentForm_create(Select2FormMixin, forms.ModelForm):
 
 
 class CircuitForm(Select2FormMixin, forms.ModelForm, ROFormMixin):
-    readonly_fields = ('agency',)
-
     class Meta:
         model = Circuit
+        exclude = ('agency',)
 
 
 class CircuitForm_detail(DetailForm):
     class Meta:
         model = Circuit
+        exclude = ('agency',)
 
 
 class CircuitForm_create(Select2FormMixin, forms.ModelForm):
