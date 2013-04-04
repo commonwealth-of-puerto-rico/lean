@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-04 12:31-0400\n"
+"PO-Revision-Date: 2013-04-04 12:32\n"
+"Last-Translator:   <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
+
+#: __init__.py:24
+msgid "name"
+msgstr "nombre"
+
+#: __init__.py:25 models.py:18 models.py:28
+msgid "data type"
+msgstr "tipo de dato"
+
+#: __init__.py:26 models.py:27
+msgid "description"
+msgstr "descripción"
+
+#: links.py:12
+msgid "add data"
+msgstr "agregar data"
+
+#: links.py:13
+msgid "edit"
+msgstr "editar"
+
+#: links.py:14
+msgid "delete"
+msgstr "borrar"
+
+#: links.py:15
+msgid "view"
+msgstr "ver"
+
+#: links.py:16 views.py:101
+msgid "data"
+msgstr "data"
+
+#: models.py:9 models.py:26
+msgid "label"
+msgstr "etiqueta"
+
+#: models.py:19
+msgid "data types"
+msgstr "tipos de datos"
+
+#: models.py:24
+msgid "creation date and time"
+msgstr "fecha y hora de creación"
+
+#: models.py:25
+msgid "agency"
+msgstr "agencia"
+
+#: models.py:38 models.py:39
+msgid "agency data"
+msgstr "data agencial"
+
+#: permissions.py:7
+msgid "Data"
+msgstr "Data"
+
+#: permissions.py:9
+msgid "Create agency data"
+msgstr ""
+
+#: permissions.py:10
+msgid "Edit agency data"
+msgstr ""
+
+#: permissions.py:11
+msgid "Delete agency data"
+msgstr ""
+
+#: permissions.py:12
+msgid "View agency data"
+msgstr ""
+
+#: views.py:38
+#, python-format
+msgid "data of: %s"
+msgstr "data de: %s"
+
+#: views.py:59
+#, python-format
+msgid "Agency data \"%s\" edited successfully."
+msgstr "Data agencial \"%s\" editada exitosamente."
+
+#: views.py:93
+#, python-format
+msgid "Agency data: %s deleted successfully."
+msgstr "Data agencial: %s eliminada exitosamente."
+
+#: views.py:95
+#, python-format
+msgid "Agency data: %(data)s delete error: %(error)s"
+msgstr ""
+
+#: views.py:105
+#, python-format
+msgid "Are you sure you wish to delete the data: %s?"
+msgstr "¿Esta seguro que desea eliminar la data: %s?"
+
+#: views.py:154
+#, fuzzy, python-format
+msgid "Agency data \"%s\" added successfully."
+msgstr "Equipo \"%s\" agregado exitosamente."
+
+#: views.py:161
+#, python-format
+msgid "Add data to agency: %s"
+msgstr "Agregar data de la agencia: %s"
+
+#~ msgid "purpose"
+#~ msgstr "proposito"
+
+#~ msgid "provider"
+#~ msgstr "proveedor"
+
+#~ msgid "technology"
+#~ msgstr "tecnología"
+
+#~ msgid "bandwidth"
+#~ msgstr "ancho de banda"
+
+#~ msgid "add equipment"
+#~ msgstr "agregar equipo"
+
+#~ msgid "equipment"
+#~ msgstr "equipo"
+
+#~ msgid "add circuit"
+#~ msgstr "agregar circuito"
+
+#~ msgid "circuits"
+#~ msgstr "circuitos"
+
+#~ msgid "providers"
+#~ msgstr "proveedores"
+
+#~ msgid "technologies"
+#~ msgstr "tecnologias"
+
+#~ msgid "intranet connectivity?"
+#~ msgstr "¿Conectividad de intranet?"
+
+#~ msgid "internet connectivity?"
+#~ msgstr "¿Conectividad de Internet?"
+
+#~ msgid "internet provider"
+#~ msgstr "proveedor de internet"
+
+#~ msgid "internet costs"
+#~ msgstr "costos de internet"
+
+#~ msgid "uses OGP antenna?"
+#~ msgstr "¿Usa antena de OGP?"
+
+#~ msgid "uses WIFI?"
+#~ msgstr "¿Usa WIFI?"
+
+#~ msgid "WIFI provider"
+#~ msgstr "proveedor de WIFI"
+
+#~ msgid "WIFI costs"
+#~ msgstr "costos de WIFI"
+
+#~ msgid "internet employees?"
+#~ msgstr "¿Empleados con Internet?"
+
+#~ msgid "telecomm equipment"
+#~ msgstr "equipo de telecomunicaciones"
+
+#~ msgid "HELP_TEXT_PURPOSE"
+#~ msgstr ""
+#~ "¿Que tipo de uso se le esta dando a este circuito?  Ejemplos: Internet, "
+#~ "infraestructura, voz sobre IP."
+
+#~ msgid "identifier"
+#~ msgstr "identificador"
+
+#~ msgid "HELP_TEXT_IDENTIFIER"
+#~ msgstr ""
+#~ "Alguna nomeclatura agencia o del proveedor que identifica este circuito."
+
+#~ msgid "bandwidth (in megabits)"
+#~ msgstr "ancho de banda (en megabits)"
+
+#~ msgid "unit cost"
+#~ msgstr "costo por unidad"
+
+#~ msgid "units"
+#~ msgstr "unidades"
+
+#~ msgid "installation cost"
+#~ msgstr "costo de instalación"
+
+#~ msgid "contract start date"
+#~ msgstr "fecha que comenzo el contrato"
+
+#~ msgid "contract end date"
+#~ msgstr "fecha que termina el contrato"
+
+#~ msgid "telecomm circuit"
+#~ msgstr "circuito de telecomunicaciones"
+
+#~ msgid "Telecomm"
+#~ msgstr "Telecomunicaciones"
+
+#~ msgid "Create circuits"
+#~ msgstr "Crear circuitos"
+
+#~ msgid "Edit circuits"
+#~ msgstr "Editar circuitos"
+
+#~ msgid "Delete circuits"
+#~ msgstr "Borrar circuitos"
+
+#~ msgid "View circuits"
+#~ msgstr "Ver circuitos"
+
+#~ msgid "Create equipments"
+#~ msgstr "Crear equipos"
+
+#~ msgid "Edit equipments"
+#~ msgstr "Editar equipos"
+
+#~ msgid "Delete equipments"
+#~ msgstr "Borrar equipos"
+
+#~ msgid "View equipments"
+#~ msgstr "Ver equipos"
+
+#~ msgid "Create providers"
+#~ msgstr "Crear proveedores"
+
+#~ msgid "Edit providers"
+#~ msgstr "Editar proveedores"
+
+#~ msgid "Delete providers"
+#~ msgstr "Borrar proveedores"
+
+#~ msgid "View providers"
+#~ msgstr "Ver proveedores"
+
+#~ msgid "equipment of: %s"
+#~ msgstr "equipo de: %s"
+
+#~ msgid "Are you sure you wish to delete the equipment: %s?"
+#~ msgstr "¿Esta seguro que desea eliminar el equipo: %s?"
+
+#~ msgid "Add equipment to agency: %s"
+#~ msgstr "Agregar equipo a la agencia: %s"
+
+#~ msgid "Circuit \"%s\" edited successfully."
+#~ msgstr "Circuito \"%s\" editado exitosamente."
+
+#~ msgid "Circuit: %s deleted successfully."
+#~ msgstr "Circuito: %s eliminado exitosamente."
+
+#~ msgid "circuit"
+#~ msgstr "circuito"
+
+#~ msgid "Circuit \"%s\" added successfully."
+#~ msgstr "Circuito \"%s\" agregado exitosamente."
+
+#~ msgid "details"
+#~ msgstr "detalles"

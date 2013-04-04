@@ -170,7 +170,8 @@ INSTALLED_APPS = (
     'telecomm',
     #'tools',
     'software',
-    'infrastructure',
+    #'infrastructure',
+    'data',
     'workflows',
     'api',
 )

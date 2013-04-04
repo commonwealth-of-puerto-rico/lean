@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 17:38-0400\n"
+"POT-Creation-Date: 2013-04-04 12:31-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,6 @@ msgstr ""
 
 #: __init__.py:47 models.py:210
 msgid "name"
-msgstr ""
-
-#: __init__.py:48
-msgid "completion (%)"
 msgstr ""
 
 #: __init__.py:55 __init__.py:69 models.py:16 models.py:28 models.py:46

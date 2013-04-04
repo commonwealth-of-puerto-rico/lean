@@ -5,7 +5,7 @@ import optparse
 
 import sh
 
-APP_LIST = ('acls', 'agencies', 'common', 'dynamic_search', 'infrastructure',
+APP_LIST = ('acls', 'agencies', 'common', 'data', 'dynamic_search', 'infrastructure',
     'main', 'navigation', 'permissions', 'projects', 'project_setup', 'project_tools',
     'smart_settings', 'telecomm', 'tools', 'user_management', 'web_theme', 'workflows')
 LANGUAGE_LIST = ('en', 'es')

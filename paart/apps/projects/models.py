@@ -337,7 +337,7 @@ class ProjectOpportunities(models.Model):
     ## Oportunidades interagenciales - Paso 4
     opportunity = models.ManyToManyField(Opportunity, verbose_name=_(u'opportunity'))
     sharing_benefit = models.ManyToManyField(Benefit, related_name='sharing_benefit', verbose_name=_(u'sharing benefits'))
-    explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'))
+    explanation = models.TextField(verbose_name=_('short explanation (50 words or less)'), blank=True)
 
     def __unicode__(self):
         return ugettext(u'project opportunities')
