@@ -8,10 +8,9 @@ from .models import AgencySoftware
 
 
 class AgencySoftwareForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
-    readonly_fields = ('agency',)
-
     class Meta:
         model = AgencySoftware
+        exclude = ('agency',)
 
 
 class AgencySoftwareForm_detail(DetailForm):

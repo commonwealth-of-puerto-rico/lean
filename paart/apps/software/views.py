@@ -12,8 +12,8 @@ from acls.models import AccessEntry
 from agencies.models import Agency
 from permissions.models import Permission
 
-#from .forms import ToolsProfileForm_create, ToolsProfileForm_edit, ToolsProfileForm_detail
-#from .icons import icon_tools_profile_delete
+from .forms import AgencySoftwareForm_create, AgencySoftwareForm_edit, AgencySoftwareForm_detail
+from .icons import icon_agency_software_delete
 from .models import AgencySoftware
 from .permissions import (PERMISSION_AGENCY_SOFTWARE_CREATE, PERMISSION_AGENCY_SOFTWARE_DELETE,
     PERMISSION_AGENCY_SOFTWARE_EDIT, PERMISSION_AGENCY_SOFTWARE_VIEW)
@@ -44,71 +44,71 @@ def agency_software_list(request, agency_pk):
     return render_to_response('generic_list.html', context,
         context_instance=RequestContext(request))
 
-'''
-def tools_profile_edit(request, tools_profile_pk):
-    tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
+
+def agency_software_edit(request, agency_software_pk):
+    agency_software = get_object_or_404(AgencySoftware, pk=agency_software_pk)
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_EDIT])
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_SOFTWARE_EDIT])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_EDIT, request.user, document)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_SOFTWARE_EDIT, request.user, document)
 
     if request.method == 'POST':
-        form = ToolsProfileForm_edit(request.POST, instance=tools_profile)
+        form = AgencySoftwareForm_edit(request.POST, instance=agency_software)
         if form.is_valid():
             form.save()
-            messages.success(request, _(u'ToolsProfile "%s" edited successfully.') % tools_profile)
+            messages.success(request, _(u'AgencySoftware "%s" edited successfully.') % agency_software)
 
-            return HttpResponseRedirect(tools_profile.get_absolute_url())
+            return HttpResponseRedirect(agency_software.get_absolute_url())
     else:
-        form = ToolsProfileForm_edit(instance=tools_profile)
+        form = AgencySoftwareForm_edit(instance=agency_software)
 
     return render_to_response('generic_form.html', {
         'form': form,
-        'tools_profile': tools_profile,
-        'object': tools_profile,
-        'agency': tools_profile.agency,
+        'agency_software': agency_software,
+        'object': agency_software,
+        'agency': agency_software.agency,
         'navigation_object_list': [
             {'object': 'agency'},
-            {'object': 'tools_profile'},
+            {'object': 'agency_software'},
         ],
     }, context_instance=RequestContext(request))
 
 
-def tools_profile_delete(request, tools_profile_pk):
-    tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
+def agency_software_delete(request, agency_software_pk):
+    agency_software = get_object_or_404(AgencySoftware, pk=agency_software_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_DELETE])
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_SOFTWARE_DELETE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_DELETE, request.user, folder)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_SOFTWARE_DELETE, request.user, folder)
 
-    post_action_redirect = reverse('agency_tools_profile_list', args=[tools_profile.agency.pk])
+    post_action_redirect = reverse('agency_software_list', args=[agency_software.agency.pk])
 
     previous = request.POST.get('previous', request.GET.get('previous', request.META.get('HTTP_REFERER', '/')))
     next = request.POST.get('next', request.GET.get('next', post_action_redirect if post_action_redirect else request.META.get('HTTP_REFERER', '/')))
 
     if request.method == 'POST':
         try:
-            tools_profile.delete()
-            messages.success(request, _(u'ToolsProfile: %s deleted successfully.') % tools_profile)
+            agency_software.delete()
+            messages.success(request, _(u'Agency software: %s deleted successfully.') % agency_software)
         except Exception, e:
-            messages.error(request, _(u'ToolsProfile: %(tools_profile)s delete error: %(error)s') % {
-                'tools_profile': tools_profile, 'error': e})
+            messages.error(request, _(u'Agency software: %(agency_software)s delete error: %(error)s') % {
+                'agency_software': agency_software, 'error': e})
 
         return HttpResponseRedirect(next)
 
     context = {
-        'object_name': _(u'tools_profile'),
+        'object_name': _(u'agency_software'),
         'delete_view': True,
         'previous': previous,
         'next': next,
-        'title': _(u'Are you sure you with to delete the tools_profile: %s?') % tools_profile,
-        'form_icon': icon_tools_profile_delete,
-        'tools_profile': tools_profile,
-        'agency': tools_profile.agency,
+        'title': _(u'Are you sure you with to delete the agency software: %s?') % agency_software,
+        'form_icon': icon_agency_software_delete,
+        'agency_software': agency_software,
+        'agency': agency_software.agency,
         'navigation_object_list': [
             {'object': 'agency'},
-            {'object': 'tools_profile'},
+            {'object': 'agency_software'},
         ],
     }
 
@@ -116,48 +116,48 @@ def tools_profile_delete(request, tools_profile_pk):
         context_instance=RequestContext(request))
 
 
-def tools_profile_view(request, tools_profile_pk):
-    tools_profile = get_object_or_404(ToolsProfile, pk=tools_profile_pk)
+def agency_software_view(request, agency_software_pk):
+    agency_software = get_object_or_404(AgencySoftware, pk=agency_software_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_VIEW])
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_SOFTWARE_VIEW])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_VIEW, request.user, tools_profile)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_SOFTWARE_VIEW, request.user, agency_software)
 
-    form = ToolsProfileForm_detail(instance=tools_profile)
+    form = AgencySoftwareForm_detail(instance=agency_software)
 
     return render_to_response('generic_detail.html', {
         'form': form,
-        'tools_profile': tools_profile,
-        'object': tools_profile,
-        'agency': tools_profile.agency,
+        'agency_software': agency_software,
+        'object': agency_software,
+        'agency': agency_software.agency,
         'navigation_object_list': [
             {'object': 'agency'},
-            {'object': 'tools_profile'},
+            {'object': 'agency_software'},
         ],
     }, context_instance=RequestContext(request))
 
 
-def tools_profile_create(request, agency_pk):
+def agency_software_create(request, agency_pk):
     agency = get_object_or_404(Agency, pk=agency_pk)
 
     try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_TOOLS_PROFILE_CREATE])
+        Permission.objects.check_permissions(request.user, [PERMISSION_AGENCY_SOFTWARE_CREATE])
     except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_TOOLS_PROFILE_CREATE, request.user, agency)
+        AccessEntry.objects.check_access(PERMISSION_AGENCY_SOFTWARE_CREATE, request.user, agency)
 
     if request.method == 'POST':
-        form = ToolsProfileForm_create(request.POST)
+        form = AgencySoftwareForm_create(request.POST)
         if form.is_valid():
-            tools_profile = form.save(commit=False)
-            tools_profile.agency = agency
-            tools_profile.save()
+            agency_software = form.save(commit=False)
+            agency_software.agency = agency
+            agency_software.save()
             form.save_m2m()
-            messages.success(request, _(u'ToolsProfile "%s" edited successfully.') % tools_profile)
+            messages.success(request, _(u'Agency software "%s" edited successfully.') % agency_software)
 
-            return HttpResponseRedirect(reverse('agency_tools_profile_list', args=[agency.pk]))
+            return HttpResponseRedirect(reverse('agency_software_list', args=[agency.pk]))
     else:
-        form = ToolsProfileForm_create()
+        form = AgencySoftwareForm_create()
 
     return render_to_response('generic_form.html', {
         'form': form,
@@ -165,6 +165,5 @@ def tools_profile_create(request, agency_pk):
         'navigation_object_list': [
             {'object': 'agency'},
         ],
-        'title': _(u'Add tools profile for agency: %s') % agency,
+        'title': _(u'Add software for agency: %s') % agency,
     }, context_instance=RequestContext(request))
-'''

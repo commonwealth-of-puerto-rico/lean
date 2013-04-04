@@ -27,7 +27,7 @@ class Software(models.Model):
     # TODO: Add enabled field
 
     def __unicode__(self):
-        return self.label
+        return u'%s - %s' % (self.software_type, self.label)
 
     def natural_key(self):
         return (self.label,)
@@ -35,13 +35,13 @@ class Software(models.Model):
     class Meta:
         verbose_name = _(u'software')
         verbose_name_plural = _(u'software')
-        ordering = ['label']
+        ordering = ['software_type', 'label']
 
 
 class AgencySoftware(models.Model):
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     software = models.ForeignKey(Software, verbose_name=_(u'software'))
-    amount = models.PositiveIntegerField(verbose_name=_(u'amount'), null=True, blank=True)
+    amount = models.PositiveIntegerField(verbose_name=_(u'amount'), help_text=_(u'HELP_TEXT_SOFTWARE_AGENCYSOFTWARE_AMOUNT'), null=True, blank=True)
 
     def __unicode__(self):
         return unicode(self.software)
@@ -49,11 +49,12 @@ class AgencySoftware(models.Model):
     def natural_key(self):
         return (self.datetime_created,)
 
-    #@models.permalink
-    #def get_absolute_url(self):
-    #    return ('tool_profile_view', [self.pk])
+    @models.permalink
+    def get_absolute_url(self):
+        return ('agency_software_view', [self.pk])
 
     class Meta:
         verbose_name = _(u'agency software')
         verbose_name_plural = _(u'agencies software')
         ordering = ['software']
+        unique_together = ['agency', 'software']
