@@ -7,15 +7,19 @@ from django.core.management.base import BaseCommand, CommandError
 from acls.models import AccessEntry
 from agencies.models import Agency
 from agencies.permissions import PERMISSION_AGENCY_VIEW
+from data.permissions import (PERMISSION_DATA_CREATE, PERMISSION_DATA_EDIT,
+    PERMISSION_DATA_DELETE, PERMISSION_DATA_VIEW)
 from projects.permissions import (PERMISSION_PROJECT_CREATE,
     PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE, PERMISSION_PROJECT_VIEW)
+from software.permissions import (PERMISSION_AGENCY_SOFTWARE_CREATE, PERMISSION_AGENCY_SOFTWARE_EDIT,
+    PERMISSION_AGENCY_SOFTWARE_DELETE, PERMISSION_AGENCY_SOFTWARE_VIEW)
 from telecomm.permissions import (PERMISSION_EQUIPMENT_CREATE,
     PERMISSION_EQUIPMENT_EDIT, PERMISSION_EQUIPMENT_DELETE, PERMISSION_EQUIPMENT_VIEW)
+from telecomm.permissions import (PERMISSION_CIRCUIT_CREATE, PERMISSION_CIRCUIT_DELETE,
+    PERMISSION_CIRCUIT_EDIT, PERMISSION_CIRCUIT_VIEW, PERMISSION_EQUIPMENT_CREATE)
 from tools.permissions import (PERMISSION_TOOLS_PROFILE_CREATE,
     PERMISSION_TOOLS_PROFILE_EDIT, PERMISSION_TOOLS_PROFILE_DELETE,
     PERMISSION_TOOLS_PROFILE_VIEW)
-from telecomm.permissions import (PERMISSION_CIRCUIT_CREATE, PERMISSION_CIRCUIT_DELETE,
-    PERMISSION_CIRCUIT_EDIT, PERMISSION_CIRCUIT_VIEW, PERMISSION_EQUIPMENT_CREATE)
 
 GROUP_NAME = 'lean'
 
@@ -75,12 +79,17 @@ class Command(BaseCommand):
                     AccessEntry.objects.grant(PERMISSION_CIRCUIT_DELETE.stored_permission, group, agency)
                     AccessEntry.objects.grant(PERMISSION_CIRCUIT_VIEW.stored_permission, group, agency)
 
-                    # Tools profile
-                    AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_CREATE.stored_permission, group, agency)
-                    AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_EDIT.stored_permission, group, agency)
-                    AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_DELETE.stored_permission, group, agency)
-                    AccessEntry.objects.grant(PERMISSION_TOOLS_PROFILE_VIEW.stored_permission, group, agency)
+                    # Software
+                    AccessEntry.objects.grant(PERMISSION_AGENCY_SOFTWARE_CREATE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_AGENCY_SOFTWARE_EDIT.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_AGENCY_SOFTWARE_DELETE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_AGENCY_SOFTWARE_VIEW.stored_permission, group, agency)
 
+                    # Data set
+                    AccessEntry.objects.grant(PERMISSION_DATA_CREATE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_DATA_EDIT.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_DATA_DELETE.stored_permission, group, agency)
+                    AccessEntry.objects.grant(PERMISSION_DATA_VIEW.stored_permission, group, agency)
             print 'Done.'
 
     def group_name_formater(self, prifas):
