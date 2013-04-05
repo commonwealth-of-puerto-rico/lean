@@ -2,30 +2,38 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:26-0400\n"
-"PO-Revision-Date: 2013-03-19 18:18\n"
+"POT-Creation-Date: 2013-04-04 20:12-0400\n"
+"PO-Revision-Date: 2013-04-04 20:16\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.8\n"
 
-#: __init__.py:24 models.py:102
-msgid "creation date and time"
-msgstr "fecha y hora de creación"
+#: __init__.py:23
+msgid "type"
+msgstr "tipo"
+
+#: __init__.py:24 models.py:10 models.py:26
+msgid "label"
+msgstr "etiqueta"
+
+#: __init__.py:25 models.py:44
+msgid "amount"
+msgstr "cantidad"
 
 #: links.py:12
-msgid "add tool profile"
-msgstr "agregar perfil de herramienta"
+msgid "add software"
+msgstr "agregar software"
 
 #: links.py:13
 msgid "delete"
@@ -39,137 +47,161 @@ msgstr "editar"
 msgid "details"
 msgstr "detalles"
 
-#: links.py:16
-msgid "tools"
-msgstr "herramientas"
+#: links.py:16 models.py:36 models.py:37 models.py:43
+msgid "software"
+msgstr ""
 
-#: models.py:10 models.py:26 models.py:41 models.py:56 models.py:72
-#: models.py:87
-msgid "label"
-msgstr "etiqueta"
+#: models.py:19 models.py:25
+msgid "software type"
+msgstr "tipo de software"
 
 #: models.py:20
-msgid "database tool"
-msgstr "herramienta de base de datos"
+msgid "software types"
+msgstr "tipos de software"
 
-#: models.py:21 models.py:106
-msgid "database tools"
-msgstr "herramientas de bases de datos"
-
-#: models.py:35
-msgid "development tool"
-msgstr "herramienta de desarrollo"
-
-#: models.py:36 models.py:107
-msgid "development tools"
-msgstr "herramientas de desarrollo"
-
-#: models.py:50
-msgid "backup tool"
-msgstr "herramienta de resguardo"
-
-#: models.py:51 models.py:105
-msgid "backup tools"
-msgstr "herramientas de resguardo"
-
-#: models.py:66
-msgid "email tool"
-msgstr "herramienta de email"
-
-#: models.py:67 models.py:108
-msgid "email tools"
-msgstr "herramientas de email"
-
-#: models.py:81
-msgid "firewall tool"
-msgstr "herramienta de firewall"
-
-#: models.py:82 models.py:109
-msgid "firewall tools"
-msgstr "herramientas de firewall"
-
-#: models.py:96
-msgid "antivirus tool"
-msgstr "herramienta de antivirus"
-
-#: models.py:97 models.py:104
-msgid "antivirus tools"
-msgstr "herramientas de antivirus"
-
-#: models.py:103
+#: models.py:42
 msgid "agency"
 msgstr "agencia"
 
-#: models.py:110
-msgid "notebooks"
-msgstr ""
+#: models.py:44
+msgid "HELP_TEXT_SOFTWARE_AGENCYSOFTWARE_AMOUNT"
+msgstr "Cantidad de licencias que posee"
 
-#: models.py:111
-msgid "desktops"
-msgstr ""
+#: models.py:57
+msgid "agency software"
+msgstr "software de la agencia"
 
-#: models.py:112
-msgid "servers"
-msgstr "servidores"
-
-#: models.py:125
-msgid "tool profile"
-msgstr "perfil de herramienta"
-
-#: models.py:126
-msgid "tool profiles"
-msgstr "perfiles de herramienta"
+#: models.py:58
+msgid "agencies software"
+msgstr "software de las agencias"
 
 #: permissions.py:7
-msgid "Tools"
-msgstr "Herramientas"
+msgid "Software"
+msgstr "Software"
 
 #: permissions.py:9
-msgid "Create tools profiles"
-msgstr "Crear perfil de herramientas"
+msgid "Create agency software"
+msgstr ""
 
 #: permissions.py:10
-msgid "Edit tools profiles"
-msgstr "Editar perfil de herramientas"
+msgid "Edit agency software"
+msgstr ""
 
 #: permissions.py:11
-msgid "Delete tools profiles"
-msgstr "Borrar perfil de herramientas"
+msgid "Delete agency software"
+msgstr ""
 
 #: permissions.py:12
-msgid "View tools profiles"
-msgstr "Ver perfil de herramientas"
+msgid "View agency software"
+msgstr ""
 
 #: views.py:38
 #, python-format
-msgid "tools profiles of: %s"
-msgstr "perfiles de herramientas de: %s"
+msgid "software products of: %s"
+msgstr "productos de software de: %s"
 
-#: views.py:59 views.py:156
+#: views.py:59
 #, python-format
-msgid "ToolsProfile \"%s\" edited successfully."
-msgstr ""
+msgid "AgencySoftware \"%s\" edited successfully."
+msgstr "Software de agencia \"%s\" editado exitosamente."
 
 #: views.py:93
 #, python-format
-msgid "ToolsProfile: %s deleted successfully."
-msgstr ""
+msgid "Agency software: %s deleted successfully."
+msgstr "Software de agencia: %s borrado exitosamente."
 
 #: views.py:95
 #, python-format
-msgid "ToolsProfile: %(tools_profile)s delete error: %(error)s"
+msgid "Agency software: %(agency_software)s delete error: %(error)s"
 msgstr ""
 
 #: views.py:101
-msgid "tools_profile"
+msgid "agency_software"
 msgstr ""
 
 #: views.py:105
 #, python-format
-msgid "Are you sure you with to delete the tools_profile: %s?"
+msgid "Are you sure you with to delete the agency software: %s?"
 msgstr ""
+
+#: views.py:156
+#, python-format
+msgid "Agency software \"%s\" edited successfully."
+msgstr "Software de agencia \"%s\" editados correctamente."
 
 #: views.py:168
 #, python-format
-msgid "Add tools profile for agency: %s"
-msgstr "Agregar perfiles de herramientas para agencia: %s"
+msgid "Add software for agency: %s"
+msgstr "Agregar software para agencia: %s"
+
+#~ msgid "creation date and time"
+#~ msgstr "fecha y hora de creación"
+
+#~ msgid "add tool profile"
+#~ msgstr "agregar perfil de herramienta"
+
+#~ msgid "tools"
+#~ msgstr "herramientas"
+
+#~ msgid "database tool"
+#~ msgstr "herramienta de base de datos"
+
+#~ msgid "database tools"
+#~ msgstr "herramientas de bases de datos"
+
+#~ msgid "development tool"
+#~ msgstr "herramienta de desarrollo"
+
+#~ msgid "development tools"
+#~ msgstr "herramientas de desarrollo"
+
+#~ msgid "backup tool"
+#~ msgstr "herramienta de resguardo"
+
+#~ msgid "backup tools"
+#~ msgstr "herramientas de resguardo"
+
+#~ msgid "email tool"
+#~ msgstr "herramienta de email"
+
+#~ msgid "email tools"
+#~ msgstr "herramientas de email"
+
+#~ msgid "firewall tool"
+#~ msgstr "herramienta de firewall"
+
+#~ msgid "firewall tools"
+#~ msgstr "herramientas de firewall"
+
+#~ msgid "antivirus tool"
+#~ msgstr "herramienta de antivirus"
+
+#~ msgid "antivirus tools"
+#~ msgstr "herramientas de antivirus"
+
+#~ msgid "servers"
+#~ msgstr "servidores"
+
+#~ msgid "tool profile"
+#~ msgstr "perfil de herramienta"
+
+#~ msgid "tool profiles"
+#~ msgstr "perfiles de herramienta"
+
+#~ msgid "Tools"
+#~ msgstr "Herramientas"
+
+#~ msgid "Create tools profiles"
+#~ msgstr "Crear perfil de herramientas"
+
+#~ msgid "Edit tools profiles"
+#~ msgstr "Editar perfil de herramientas"
+
+#~ msgid "Delete tools profiles"
+#~ msgstr "Borrar perfil de herramientas"
+
+#~ msgid "View tools profiles"
+#~ msgstr "Ver perfil de herramientas"
+
+#~ msgid "tools profiles of: %s"
+#~ msgstr "perfiles de herramientas de: %s"

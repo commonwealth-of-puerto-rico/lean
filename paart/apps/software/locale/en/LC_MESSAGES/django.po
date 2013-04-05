@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 20:26-0400\n"
+"POT-Creation-Date: 2013-04-04 20:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:24 models.py:102
-msgid "creation date and time"
+#: __init__.py:23
+msgid "type"
+msgstr ""
+
+#: __init__.py:24 models.py:10 models.py:26
+msgid "label"
+msgstr ""
+
+#: __init__.py:25 models.py:44
+msgid "amount"
 msgstr ""
 
 #: links.py:12
-msgid "add tool profile"
+msgid "add software"
 msgstr ""
 
 #: links.py:13
@@ -37,137 +45,89 @@ msgstr ""
 msgid "details"
 msgstr ""
 
-#: links.py:16
-msgid "tools"
+#: links.py:16 models.py:36 models.py:37 models.py:43
+msgid "software"
 msgstr ""
 
-#: models.py:10 models.py:26 models.py:41 models.py:56 models.py:72
-#: models.py:87
-msgid "label"
+#: models.py:19 models.py:25
+msgid "software type"
 msgstr ""
 
 #: models.py:20
-msgid "database tool"
+msgid "software types"
 msgstr ""
 
-#: models.py:21 models.py:106
-msgid "database tools"
-msgstr ""
-
-#: models.py:35
-msgid "development tool"
-msgstr ""
-
-#: models.py:36 models.py:107
-msgid "development tools"
-msgstr ""
-
-#: models.py:50
-msgid "backup tool"
-msgstr ""
-
-#: models.py:51 models.py:105
-msgid "backup tools"
-msgstr ""
-
-#: models.py:66
-msgid "email tool"
-msgstr ""
-
-#: models.py:67 models.py:108
-msgid "email tools"
-msgstr ""
-
-#: models.py:81
-msgid "firewall tool"
-msgstr ""
-
-#: models.py:82 models.py:109
-msgid "firewall tools"
-msgstr ""
-
-#: models.py:96
-msgid "antivirus tool"
-msgstr ""
-
-#: models.py:97 models.py:104
-msgid "antivirus tools"
-msgstr ""
-
-#: models.py:103
+#: models.py:42
 msgid "agency"
 msgstr ""
 
-#: models.py:110
-msgid "notebooks"
+#: models.py:44
+msgid "HELP_TEXT_SOFTWARE_AGENCYSOFTWARE_AMOUNT"
 msgstr ""
 
-#: models.py:111
-msgid "desktops"
+#: models.py:57
+msgid "agency software"
 msgstr ""
 
-#: models.py:112
-msgid "servers"
-msgstr ""
-
-#: models.py:125
-msgid "tool profile"
-msgstr ""
-
-#: models.py:126
-msgid "tool profiles"
+#: models.py:58
+msgid "agencies software"
 msgstr ""
 
 #: permissions.py:7
-msgid "Tools"
+msgid "Software"
 msgstr ""
 
 #: permissions.py:9
-msgid "Create tools profiles"
+msgid "Create agency software"
 msgstr ""
 
 #: permissions.py:10
-msgid "Edit tools profiles"
+msgid "Edit agency software"
 msgstr ""
 
 #: permissions.py:11
-msgid "Delete tools profiles"
+msgid "Delete agency software"
 msgstr ""
 
 #: permissions.py:12
-msgid "View tools profiles"
+msgid "View agency software"
 msgstr ""
 
 #: views.py:38
 #, python-format
-msgid "tools profiles of: %s"
+msgid "software products of: %s"
 msgstr ""
 
-#: views.py:59 views.py:156
+#: views.py:59
 #, python-format
-msgid "ToolsProfile \"%s\" edited successfully."
+msgid "AgencySoftware \"%s\" edited successfully."
 msgstr ""
 
 #: views.py:93
 #, python-format
-msgid "ToolsProfile: %s deleted successfully."
+msgid "Agency software: %s deleted successfully."
 msgstr ""
 
 #: views.py:95
 #, python-format
-msgid "ToolsProfile: %(tools_profile)s delete error: %(error)s"
+msgid "Agency software: %(agency_software)s delete error: %(error)s"
 msgstr ""
 
 #: views.py:101
-msgid "tools_profile"
+msgid "agency_software"
 msgstr ""
 
 #: views.py:105
 #, python-format
-msgid "Are you sure you with to delete the tools_profile: %s?"
+msgid "Are you sure you with to delete the agency software: %s?"
+msgstr ""
+
+#: views.py:156
+#, python-format
+msgid "Agency software \"%s\" edited successfully."
 msgstr ""
 
 #: views.py:168
 #, python-format
-msgid "Add tools profile for agency: %s"
+msgid "Add software for agency: %s"
 msgstr ""
