@@ -27,6 +27,9 @@ urlpatterns = patterns('',
     (r'^data/', include('data.urls')),
     (r'^software/', include('software.urls')),
     (r'^api/', include('api.urls')),
+    
+    # Reports
+    (r'^htsql/', include('htsql_django.urls')),
 )
 
 if settings.DEVELOPMENT:
