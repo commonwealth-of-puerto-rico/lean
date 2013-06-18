@@ -172,6 +172,7 @@ class IconSet(IconSetBase):
         PLUGIN: 'plugin.png',
         PRINTER: 'printer.png',
         PRINTER_EMPTY: 'printer_empty.png',
+        PAGE_PRINTER: ['page.png','printer.png'], 
         QUESTION: 'question.png',
         RADIOACTIVITY: 'radioactivity.png',
         RAINBOW: 'rainbow.png',

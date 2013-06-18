@@ -176,6 +176,7 @@ INSTALLED_APPS = (
     'api',
     #reports
     'htsql_django',
+    'reports',
 )
 
 # A sample logging configuration. The only tangible logging

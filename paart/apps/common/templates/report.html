@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<head>
+	<title> {{ agency }} - {{ project }} </title>
+</head>
+<body>
+<p>{{ agency }} - {{ project }}</p>
+<div class="reporte">
+<table border='1'>
+<tr>
+<td>Descripción</td>
+<td>Año Fiscal</td>
+<td>Proposito</td> 
+<td>Clasificacíon</td>
+<td>Clasificación Secundaria</td> 
+<td>Metodología</td>
+<td>Departamento</td>
+<tr>
+<td> {{ description }} </td> 
+<td> {{ fiscal_year }} </td>
+<td> {{ purpose }} </td>
+<td> {{ classification }} </td>
+<td> {{ classification_secondary }} </td>
+<td> {{ methodology }} </td>
+<td> {{ department }} </td>
+</tr>
+</table>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){	
+    $('.reporte').hide().before('<a href="#" id="toggle-reporte" class="button">Detalles</a>');
+	$('a#toggle-reporte').click(function() {
+		$('.reporte').slideToggle(1000);
+		return false;
+	});
+});
+</script>
+</body>
+</html>
