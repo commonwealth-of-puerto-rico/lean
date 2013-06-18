@@ -1,9 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <head>
-	<title> {{ agency }} - {{ project }} </title>
+	<title> {{ project.agency.name }} - {{ project }} </title>
 </head>
 <body>
-<p>{{ agency }} - {{ project }}</p>
+<p>{{ project.agency.name }} - {{ project }}</p>
 <div class="reporte">
 <table border='1'>
 <tr>
@@ -17,11 +17,11 @@
 <tr>
 <td> {{ project.description }} </td> 
 <td> {{ project.projectinfo.fiscal_year }} </td>
-<td> {{ purpose }} </td>
-<td> {{ classification }} </td>
-<td> {{ classification_secondary }} </td>
-<td> {{ methodology }} </td>
-<td> {{ department }} </td>
+<td> {{ project.projectinfo.purpose }} </td>
+<td> {{ project.projectinfo.classification }} </td>
+<td> {{ project.projectinfo.classification_secondary }} </td>
+<td> {{ project.projectinfo.methodology }} </td>
+<td> {{ project.projectinfo.department }} </td>
 </tr>
 </table>
 </div>
