@@ -5,7 +5,10 @@ import logging
 from django.conf import settings
 from django.contrib.auth.models import User, Group
 
-import ldap
+try:
+    import ldap
+except ImportError:
+    pass
 
 from rest_framework import generics
 from rest_framework import renderers
