@@ -175,7 +175,6 @@ INSTALLED_APPS = (
     'workflows',
     'api',
     #reports
-    'htsql_django',
     'reports',
 )
 
