@@ -988,15 +988,7 @@ def project_report_view(request, project_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
         
     return render_to_response('report.html',{
-                                            'agency': project.agency.name, 
-                                            'project' : project.label,
-                                            'description' : project.description, 
-                                            'fiscal_year' : project.projectinfo.fiscal_year.label,
-                                            'purpose' : project.projectinfo.purpose.label,
-                                            'classification' : project.projectinfo.classification.label,
-                                            'classification_secondary' : project.projectinfo.classification_secondary.label,
-                                            'methodology' : project.projectinfo.methodology.label,
-                                            'department' : project.projectinfo.department.label,
+                                            'project' : project,
                                             })
 
     
