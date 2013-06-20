@@ -2,40 +2,163 @@
 <head>
     <title> {{ project.agency.name }} - {{ project }} </title>
 </head>
-<body>
-<p>{{ project.agency.name }} - {{ project }}</p>
-<table border='1'>
-<tr>
-<th>Descripción</th>
-<th>Año Fiscal</th>
-<th>Proposito</th>
-<th>Clasificacíon</th>
-<th>Clasificación Secundaria</th>
-<th>Metodología</th>
-<th>Metas</th>
-<th>Departamento</th>
-<th>Auspiciador</th>
-<th>Resultados esperados</th>
-<th>Logros</th>
-<tr>
-<td> {{ project.description|default:"No data" }} </td>
-<td> {{ project.projectinfo.fiscal_year|default:"No data" }} </td>
-<td> {{ project.projectinfo.purpose|default:"No data" }} </td>
-<td> {{ project.projectinfo.classification|default:"No data" }} </td>
-<td> {{ project.projectinfo.classification_secondary|default:"No data" }} </td>
-<td> {{ project.projectinfo.methodology|default:"No data" }} </td>
-<td> 
-{% for goal in project.projectinfo.goals.all %}
-    <ul>
-    <li>  {{ goal|default:"No data" }}  </li>
-    </ul>
-{% endfor %}
-</td>
-<td> {{ project.projectinfo.department|default:"No data" }} </td>
-<td> {{ project.projectinfo.sponsor|default:"No data" }} </td>
-<td> {{ project.projectinfo.expected_results|default:"No data" }} </td>
-<td> {{ project.projectinfo.milestones|default:"No data" }} </td>
-</tr>
-</table>
-</body>
+    <body>
+        <h1> Agencia: {{ project.agency.name }} </h1>
+        <h2> Proyecto: {{ project }} </h2>
+        
+        <table border='1' width="100%">
+            <col width="20%">
+            <col width="80%">
+            <tr><b><i>Información general del proyecto</i></b></tr>
+            <tr>
+                <th>Descripción</th> 
+                <td> {{ project.description|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Año Fiscal</th> 
+                <td> {{ project.projectinfo.fiscal_year|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Proposito</th>
+                <td> {{ project.projectinfo.purpose|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Clasificacíon</th>
+                <td> {{ project.projectinfo.classification|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Clasificación Secundaria</th>
+                <td> {{ project.projectinfo.classification_secondary|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Metodología</th>
+                <td> {{ project.projectinfo.methodology|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Metas</th>
+                <td> 
+                    {% for goal in project.projectinfo.goals.all %}
+                        <ul>
+                        <li>  {{ goal|default:"No data" }}  </li>
+                        </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Departamento</th>
+                <td> {{ project.projectinfo.department|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Auspiciador</th>
+                <td> {{ project.projectinfo.sponsor|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Resultados esperados</th>
+                <td> {{ project.projectinfo.expected_results|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Logros</th>
+                <td> {{ project.projectinfo.milestones|default:"No data" }} </td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border='1' width="100%">
+            <col width="20%">
+            <col width="80%">
+            <tr><b><i>Presupuesto del proyecto</i></b></tr>
+            <tr>
+                <th>Infraestructura</th>
+                <td> {{project.projectbudget.infrastructure|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Requerimientos</th>
+                <td> {{project.projectbudget.requirements|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Presución</th>
+                <td> {{project.projectbudget.presumptions|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Limitaciones</th>
+                <td> {{project.projectbudget.limitations|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Riesgos</th>
+                <td> {{project.projectbudget.risks|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Beneficios</th>
+                <td> {{project.projectbudget.benefits|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Director(a)</th>
+                <td> {{project.projectbudget.director|default:"No data" }} </td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border='1' width="100%">
+            <col width="20%">
+            <col width="80%">
+            <tr><b><i>Detalles del proyecto</i></b></tr>
+            <tr>
+                <th>Inicio de periodo</th>
+                <td> {{project.projectdetails.start_period|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Final de periodo</th>
+                <td> {{project.projectdetails.end_period|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Etapa</th>
+                <td> {{project.projectdetails.stage|default:"No data" }} </td>
+            </tr>
+            <tr>
+                <th>Prioridad</th>
+                <td> {{project.projectdetails.priority|default:"No data" }} </td>
+            </tr>
+        </table>
+        <br>
+            
+        <table border='1' width="100%">
+                <col width="20%">
+                <col width="80%">
+                <tr><b><i>Oportunidades del proyecto</i></b></tr>
+                <tr>
+                    <th>Otras agencias involucradas</th>
+                    <td> 
+                        {% for agencia in project.projectopportunities.other_agencies.all %}
+                            <ul>
+                            <li>  {{ agencia|default:"No data" }}  </li>
+                            </ul>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Oportunidad</th>
+                    <td> 
+                        {% for opportunity in project.projectopportunities.opportunity.all %}
+                            <ul>
+                            <li>  {{ opportunity|default:"No data" }}  </li>
+                            </ul>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Beneficios a compartir</th>
+                    <td> 
+                        {% for benefit in project.projectopportunities.sharing_benefit.all %}
+                            <ul>
+                            <li>  {{ benefit|default:"No data" }}  </li>
+                            </ul>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Explicación corta</th>
+                    <td> {{project.projectopportunities.explanation|default:"No data" }} </td>
+                </tr>
+        </table>
+    </body>
 </html>
