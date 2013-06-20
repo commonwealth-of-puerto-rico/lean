@@ -16,12 +16,12 @@
 <td>Departamento</td>
 <tr>
 <td> {{ project.description|default:"No data" }} </td>
-<td> {{ project.projectinfo.fiscal_year }} </td>
-<td> {{ project.projectinfo.purpose }} </td>
-<td> {{ project.projectinfo.classification }} </td>
-<td> {{ project.projectinfo.classification_secondary }} </td>
-<td> {{ project.projectinfo.methodology }} </td>
-<td> {{ project.projectinfo.department }} </td>
+<td> {{ project.projectinfo.fiscal_year|default:"No data" }} </td>
+<td> {{ project.projectinfo.purpose|default:"No data" }} </td>
+<td> {{ project.projectinfo.classification|default:"No data" }} </td>
+<td> {{ project.projectinfo.classification_secondary|default:"No data" }} </td>
+<td> {{ project.projectinfo.methodology|default:"No data" }} </td>
+<td> {{ project.projectinfo.department|default:"No data" }} </td>
 </tr>
 </table>
 </div>
