@@ -27,6 +27,9 @@ urlpatterns = patterns('',
     (r'^data/', include('data.urls')),
     (r'^software/', include('software.urls')),
     (r'^api/', include('api.urls')),
+    
+    # Reports
+    (r'^reports/', include('reports.urls')),
 )   
 
 if settings.DEVELOPMENT:
