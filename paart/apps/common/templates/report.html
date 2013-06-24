@@ -36,12 +36,16 @@
             </tr>
             <tr>
                 <th>Metas</th>
-                <td> 
-                    {% for goal in project.projectinfo.goals.all %}
-                        <ul>
-                        <li>  {{ goal|default:"No data" }}  </li>
-                        </ul>
-                    {% endfor %}
+                <td>
+                    {% if project.projectinfo.goals.all %}
+                        {% for goal in project.projectinfo.goals.all %}
+                            <ul>
+                            <li>  {{ goal|default:"No data" }}  </li>
+                            </ul>
+                        {% endfor %}
+                    {% else %}
+                        No data
+                    {% endif %}
                 </td>
             </tr>
             <tr>
@@ -69,31 +73,31 @@
             <tr><b><i>Presupuesto del proyecto</i></b></tr>
             <tr>
                 <th>Infraestructura</th>
-                <td> {{project.projectbudget.infrastructure|default:"No data" }} </td>
+                <td> {{  project.projectbudget.get_infrastructure_display|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Requerimientos</th>
-                <td> {{project.projectbudget.requirements|default:"No data" }} </td>
+                <td> {{  project.projectbudget.requirements|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Presución</th>
-                <td> {{project.projectbudget.presumptions|default:"No data" }} </td>
+                <td> {{  project.projectbudget.presumptions|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Limitaciones</th>
-                <td> {{project.projectbudget.limitations|default:"No data" }} </td>
+                <td> {{  project.projectbudget.limitations|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Riesgos</th>
-                <td> {{project.projectbudget.risks|default:"No data" }} </td>
+                <td> {{  project.projectbudget.risks|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Beneficios</th>
-                <td> {{project.projectbudget.benefits|default:"No data" }} </td>
+                <td> {{  project.projectbudget.benefits|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Director(a)</th>
-                <td> {{project.projectbudget.director|default:"No data" }} </td>
+                <td> {{  project.projectbudget.director|default:"No data" }} </td>
             </tr>
         </table>
         <br>
@@ -104,19 +108,19 @@
             <tr><b><i>Detalles del proyecto</i></b></tr>
             <tr>
                 <th>Inicio de periodo</th>
-                <td> {{project.projectdetails.start_period|default:"No data" }} </td>
+                <td> {{  project.projectdetails.start_period|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Final de periodo</th>
-                <td> {{project.projectdetails.end_period|default:"No data" }} </td>
+                <td> {{  project.projectdetails.end_period|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Etapa</th>
-                <td> {{project.projectdetails.stage|default:"No data" }} </td>
+                <td> {{  project.projectdetails.stage|default:"No data" }} </td>
             </tr>
             <tr>
                 <th>Prioridad</th>
-                <td> {{project.projectdetails.priority|default:"No data" }} </td>
+                <td> {{  project.projectdetails.priority|default:"No data" }} </td>
             </tr>
         </table>
         <br>
@@ -127,38 +131,72 @@
                 <tr><b><i>Oportunidades del proyecto</i></b></tr>
                 <tr>
                     <th>Otras agencias involucradas</th>
-                    <td> 
-                        {% for agencia in project.projectopportunities.other_agencies.all %}
-                            <ul>
-                            <li>  {{ agencia|default:"No data" }}  </li>
-                            </ul>
-                        {% endfor %}
+                    <td>
+                        {% if project.projectopportunities.other_agencies and project.projectopportunities.other_agencies.strip %}
+                            {% for agencia in project.projectopportunities.other_agencies.all %}
+                                <ul>
+                                <li>  {{ agencia|default:"No data" }}  </li>
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            No data
+                        {% endif %}
                     </td>
                 </tr>
                 <tr>
                     <th>Oportunidad</th>
                     <td> 
-                        {% for opportunity in project.projectopportunities.opportunity.all %}
-                            <ul>
-                            <li>  {{ opportunity|default:"No data" }}  </li>
-                            </ul>
-                        {% endfor %}
+                        {% if project.projectopportunities.opportunity %}
+                            {% for opportunity in project.projectopportunities.opportunity.all %}
+                                <ul>
+                                <li>  {{ opportunity|default:"No data" }}  </li>
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            No Data
+                        {% endif %}
                     </td>
                 </tr>
                 <tr>
                     <th>Beneficios a compartir</th>
-                    <td> 
-                        {% for benefit in project.projectopportunities.sharing_benefit.all %}
-                            <ul>
-                            <li>  {{ benefit|default:"No data" }}  </li>
-                            </ul>
-                        {% endfor %}
+                    <td>
+                        {% if project.projectopportunities.sharing_benefit %}
+                            {% for benefit in project.projectopportunities.sharing_benefit.all %}
+                                <ul>
+                                <li>  {{ benefit|default:"No data" }}  </li>
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            No data
+                        {% endif %}
                     </td>
                 </tr>
                 <tr>
                     <th>Explicación corta</th>
-                    <td> {{project.projectopportunities.explanation|default:"No data" }} </td>
+                    <td> {{  project.projectopportunities.explanation|default:"No data" }} </td>
                 </tr>
         </table>
+        <br>
+
+        <table border='1' width="100%">
+                <col width="20%">
+                <col width="80%">
+                <tr><b><i>Anejos del proyecto</i></b></tr>
+                <tr>
+                    <th>Anejos</th>
+                    <td>
+                        {% if project.projectfile_set.all %}
+                            {% for file in project.projectfile_set.all %}
+                                <ul>
+                                <li>  {{ file|default:"No data" }}  </li>
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            No data
+                        {% endif %}
+                    </td>
+                </tr>
+        </table>
+        
     </body>
 </html>
