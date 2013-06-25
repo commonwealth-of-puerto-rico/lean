@@ -16,12 +16,17 @@ from permissions.models import Permission
 
 from .permissions import (PERMISSION_PROJECT_VIEW)
 
+from .forms import SelectAgencyForm
+
 def project_reports_view(request):
     
     try:
         Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
     except PermissionDenied:
         AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
+        
+    form = SelectAgencyForm()
     
-    response = HttpResponse('Test')
-    return response
+    return render_to_response('project_report.html', {
+        'form': form,
+    }, context_instance=RequestContext(request))
