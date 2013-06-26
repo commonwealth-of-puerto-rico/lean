@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Reports - Agency Search</title>
+</head>
+<body>
+    <form action="agency-busqueda-report/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+{% if agencies %}
+    <ul>
+        {% for agency in agencies %}
+        <li>{{ agency.name }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>

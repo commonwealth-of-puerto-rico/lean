@@ -12,21 +12,31 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
+from agencies.models import Agency
+
 from permissions.models import Permission
 
 from .permissions import (PERMISSION_PROJECT_VIEW)
 
-from .forms import SelectAgencyForm
+from .forms import AgencySearchForm
 
-def project_reports_view(request):
     
-    try:
-        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
-    except PermissionDenied:
-        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
-        
-    form = SelectAgencyForm()
+def agency_search_form(request):
+    return render_to_response('agency_search.html', context_instance=RequestContext(request))
     
-    return render_to_response('project_report.html', {
-        'form': form,
-    }, context_instance=RequestContext(request))
+def agency_busqueda_report(request):
+    
+    form = AgencySearchForm()
+    
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        agencies = Agency.objects.filter(name__icontains=q)
+            
+        return render_to_response('agency_search.html', {
+            'form': form,
+            'agencies': agencies,
+            'query': q
+        }, context_instance=RequestContext(request))
+    
+    else:
+        return HttpResponse('Please submit a search.')
