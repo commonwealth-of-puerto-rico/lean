@@ -3,16 +3,27 @@
     <title>Reports - Agency Search</title>
 </head>
 <body>
-    <form action="agency-busqueda-report/" method="get">
+    <form action="agency-search-report/" method="get">
         <input type="text" name="q">
         <input type="submit" value="Search">
     </form>
-{% if agencies %}
-    <ul>
-        {% for agency in agencies %}
-        <li>{{ agency.name }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
+{% regroup projects by agency as project_by_agency %}
+<ul>
+    {% for agency in project_by_agency %}
+        <li>
+            {{ agency.grouper }}
+            <ul>
+                {% for item in agency.list %}
+                    <li> {{  item.label  }} </li>
+                        <ul>
+                            <li> {{  item.description|default:"No data" }} </li>
+                        </ul>
+                {% endfor %}
+            </ul>
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+</script>
 </body>
 </html>
