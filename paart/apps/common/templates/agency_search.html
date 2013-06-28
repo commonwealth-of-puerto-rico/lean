@@ -81,6 +81,112 @@
                                                 <th>Logros</th>
                                                 <td> {{ item.projectinfo.milestones|default:"No data" }} </td>
                                             </tr>
+                                            <tr>
+                                                <th>Infraestructura</th>
+                                                <td> {{  item.projectbudget.get_infrastructure_display|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Requerimientos</th>
+                                                <td> {{  item.projectbudget.requirements|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Presución</th>
+                                                <td> {{  item.projectbudget.presumptions|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Limitaciones</th>
+                                                <td> {{  item.projectbudget.limitations|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Riesgos</th>
+                                                <td> {{  item.projectbudget.risks|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Beneficios</th>
+                                                <td> {{  item.projectbudget.benefits|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Director(a)</th>
+                                                <td> {{  item.projectbudget.director|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Inicio de periodo</th>
+                                                <td> {{  item.projectdetails.start_period|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Final de periodo</th>
+                                                <td> {{  item.projectdetails.end_period|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Etapa</th>
+                                                <td> {{  item.projectdetails.stage|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Prioridad</th>
+                                                <td> {{  item.projectdetails.priority|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Otras agencias involucradas</th>
+                                                <td>
+                                                    {% if item.projectopportunities.other_agencies %}
+                                                        {% for oagencia in item.projectopportunities.other_agencies.all %}
+                                                            <ul>
+                                                            <li>  {{ oagencia|default:"No data" }}  </li>
+                                                            </ul>
+                                                        {% empty %}
+                                                            No data
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        No data
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Oportunidad</th>
+                                                <td> 
+                                                    {% if item.projectopportunities.opportunity %}
+                                                        {% for opportunity in item.projectopportunities.opportunity.all %}
+                                                            <ul>
+                                                            <li>  {{ opportunity|default:"No data" }}  </li>
+                                                            </ul>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        No Data
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Beneficios a compartir</th>
+                                                <td>
+                                                    {% if item.projectopportunities.sharing_benefit %}
+                                                        {% for benefit in item.projectopportunities.sharing_benefit.all %}
+                                                            <ul>
+                                                            <li>  {{ benefit|default:"No data" }}  </li>
+                                                            </ul>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        No data
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Explicación corta</th>
+                                                <td> {{  item.projectopportunities.explanation|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                            <th>Anejos</th>
+                                            <td>
+                                                {% if item.projectfile_set.all %}
+                                                    {% for file in item.projectfile_set.all %}
+                                                        <ul>
+                                                        <li>  {{ file|default:"No anejos" }}  </li>
+                                                        </ul>
+                                                    {% endfor %}
+                                                {% else %}
+                                                    No anejos
+                                                {% endif %}
+                                            </td>
+                                        </tr>
                                         </table>
                                     </div>
                                 </li>
@@ -94,7 +200,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){	
-            $('.descDiv').hide().before('<a href="#" class="toggle-link">Información general del proyecto</a>');
+            $('.descDiv').hide().before('<a href="#" class="toggle-link">Detalles del proyecto</a>');
             $('a.toggle-link').click(function() {
                 $(this).next('.descDiv').slideToggle(50);
                 return false;

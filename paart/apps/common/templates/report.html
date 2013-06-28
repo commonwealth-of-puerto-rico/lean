@@ -132,11 +132,13 @@
                 <tr>
                     <th>Otras agencias involucradas</th>
                     <td>
-                        {% if project.projectopportunities.other_agencies and project.projectopportunities.other_agencies.strip %}
+                        {% if project.projectopportunities.other_agencies %}
                             {% for agencia in project.projectopportunities.other_agencies.all %}
                                 <ul>
                                 <li>  {{ agencia|default:"No data" }}  </li>
                                 </ul>
+                            {% empty %}
+                                No data
                             {% endfor %}
                         {% else %}
                             No data
