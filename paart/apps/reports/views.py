@@ -19,24 +19,31 @@ from permissions.models import Permission
 from .permissions import (PERMISSION_PROJECT_VIEW)
 
 from .forms import AgencySearchForm
-
-    
-def agency_search_form(request):
-    return render_to_response('agency_search.html', context_instance=RequestContext(request))
     
 def agency_search_report(request):
     
+    error = False
+    title = 'Agency project search'
     form = AgencySearchForm()
     
-    if 'q' in request.GET and request.GET['q']:
-        q = request.GET['q']
-        projects = Project.objects.filter(agency__name__icontains=q).order_by('agency__name')
-            
-        return render_to_response('agency_search.html', {
-            'form': form,
-            'projects': projects,
-            'query': q
-        }, context_instance=RequestContext(request))
+    context = {
+                'form': form,
+                'title': title,
+                'error': error
+    }
     
-    else:
-        return HttpResponse('Please submit a search.')
+    if 'q' in request.GET:
+        q = request.GET['q']
+
+        if not q:
+            context['error'] = True
+        else:
+            context['q'] = q           
+            context['projects'] = Project.objects.filter(agency__name__icontains=q).order_by('agency__name')
+            context['title'] = title + ' for ' + q
+            
+            if not context['projects']:
+                context['message'] = 'No results'
+    
+    return render_to_response('agency_search.html', context, context_instance=RequestContext(request))
+

@@ -1,29 +1,105 @@
 <html>
 <head>
-    <title>Reports - Agency Search</title>
+    <title> {{ title }} </title>
 </head>
 <body>
-    <form action="agency-search-report/" method="get">
+    <form action="" method="get">
         <input type="text" name="q">
         <input type="submit" value="Search">
     </form>
-{% regroup projects by agency as project_by_agency %}
-<ul>
-    {% for agency in project_by_agency %}
-        <li>
-            {{ agency.grouper }}
-            <ul>
-                {% for item in agency.list %}
-                    <li> {{  item.label  }} </li>
-                        <ul>
-                            <li> {{  item.description|default:"No data" }} </li>
-                        </ul>
-                {% endfor %}
-            </ul>
-        </li>
-        <br>
-    {% endfor %}
-</ul>
-</script>
+    {% if error %}
+        <p style="color: red;"> Invalid search </p>
+    {% endif %}
+    {% if message %}
+        <p><b> {{  message  }} </b></p>
+    {% endif %}
+    {% regroup projects by agency as project_by_agency %}
+    <ul>
+        {% for agency in project_by_agency %}
+            <li>
+                {{ agency.grouper }}
+                <ul>
+                    {% for item in agency.list %}
+                        <li> {{  item.label  }} </li>
+                            <ul>
+                                <li>
+                                    <div class='descDiv'>
+                                        <table border='1' width="100%">
+                                            <col width="20%">
+                                            <col width="80%">
+                                            <tr>
+                                                <th>Descripción</th> 
+                                                <td> {{ item.description|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Año Fiscal</th> 
+                                                <td> {{ item.projectinfo.fiscal_year|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Proposito</th>
+                                                <td> {{ item.projectinfo.purpose|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Clasificacíon</th>
+                                                <td> {{ item.projectinfo.classification|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Clasificación Secundaria</th>
+                                                <td> {{ item.projectinfo.classification_secondary|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Metodología</th>
+                                                <td> {{ item.projectinfo.methodology|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Metas</th>
+                                                <td>
+                                                    {% if item.projectinfo.goals.all %}
+                                                        {% for goal in item.projectinfo.goals.all %}
+                                                            <ul>
+                                                            <li>  {{ goal|default:"No data" }}  </li>
+                                                            </ul>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        No data
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Departamento</th>
+                                                <td> {{ item.projectinfo.department|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Auspiciador</th>
+                                                <td> {{ item.projectinfo.sponsor|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Resultados esperados</th>
+                                                <td> {{ item.projectinfo.expected_results|default:"No data" }} </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Logros</th>
+                                                <td> {{ item.projectinfo.milestones|default:"No data" }} </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                    {% endfor %}
+                </ul>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){	
+            $('.descDiv').hide().before('<a href="#" class="toggle-link">Información general del proyecto</a>');
+            $('a.toggle-link').click(function() {
+                $(this).next('.descDiv').slideToggle(50);
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>
