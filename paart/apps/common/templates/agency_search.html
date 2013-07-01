@@ -27,166 +27,33 @@
                                         <table border='1' width="100%">
                                             <col width="20%">
                                             <col width="80%">
-                                            <tr>
-                                                <th>Descripción</th> 
-                                                <td> {{ item.description|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Año Fiscal</th> 
-                                                <td> {{ item.projectinfo.fiscal_year|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Proposito</th>
-                                                <td> {{ item.projectinfo.purpose|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Clasificacíon</th>
-                                                <td> {{ item.projectinfo.classification|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Clasificación Secundaria</th>
-                                                <td> {{ item.projectinfo.classification_secondary|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Metodología</th>
-                                                <td> {{ item.projectinfo.methodology|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Metas</th>
-                                                <td>
-                                                    {% if item.projectinfo.goals.all %}
-                                                        {% for goal in item.projectinfo.goals.all %}
-                                                            <ul>
-                                                            <li>  {{ goal|default:"No data" }}  </li>
-                                                            </ul>
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        No data
-                                                    {% endif %}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Departamento</th>
-                                                <td> {{ item.projectinfo.department|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Auspiciador</th>
-                                                <td> {{ item.projectinfo.sponsor|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Resultados esperados</th>
-                                                <td> {{ item.projectinfo.expected_results|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Logros</th>
-                                                <td> {{ item.projectinfo.milestones|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Infraestructura</th>
-                                                <td> {{  item.projectbudget.get_infrastructure_display|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Requerimientos</th>
-                                                <td> {{  item.projectbudget.requirements|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Presución</th>
-                                                <td> {{  item.projectbudget.presumptions|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Limitaciones</th>
-                                                <td> {{  item.projectbudget.limitations|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Riesgos</th>
-                                                <td> {{  item.projectbudget.risks|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Beneficios</th>
-                                                <td> {{  item.projectbudget.benefits|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Director(a)</th>
-                                                <td> {{  item.projectbudget.director|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Inicio de periodo</th>
-                                                <td> {{  item.projectdetails.start_period|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Final de periodo</th>
-                                                <td> {{  item.projectdetails.end_period|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Etapa</th>
-                                                <td> {{  item.projectdetails.stage|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Prioridad</th>
-                                                <td> {{  item.projectdetails.priority|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Otras agencias involucradas</th>
-                                                <td>
-                                                    {% if item.projectopportunities.other_agencies %}
-                                                        {% for oagencia in item.projectopportunities.other_agencies.all %}
-                                                            <ul>
-                                                            <li>  {{ oagencia|default:"No data" }}  </li>
-                                                            </ul>
-                                                        {% empty %}
-                                                            No data
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        No data
-                                                    {% endif %}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Oportunidad</th>
-                                                <td> 
-                                                    {% if item.projectopportunities.opportunity %}
-                                                        {% for opportunity in item.projectopportunities.opportunity.all %}
-                                                            <ul>
-                                                            <li>  {{ opportunity|default:"No data" }}  </li>
-                                                            </ul>
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        No Data
-                                                    {% endif %}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Beneficios a compartir</th>
-                                                <td>
-                                                    {% if item.projectopportunities.sharing_benefit %}
-                                                        {% for benefit in item.projectopportunities.sharing_benefit.all %}
-                                                            <ul>
-                                                            <li>  {{ benefit|default:"No data" }}  </li>
-                                                            </ul>
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        No data
-                                                    {% endif %}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Explicación corta</th>
-                                                <td> {{  item.projectopportunities.explanation|default:"No data" }} </td>
-                                            </tr>
-                                            <tr>
-                                            <th>Anejos</th>
-                                            <td>
-                                                {% if item.projectfile_set.all %}
-                                                    {% for file in item.projectfile_set.all %}
-                                                        <ul>
-                                                        <li>  {{ file|default:"No anejos" }}  </li>
-                                                        </ul>
-                                                    {% endfor %}
-                                                {% else %}
-                                                    No anejos
-                                                {% endif %}
-                                            </td>
-                                        </tr>
+                                            {% include 'agency_result_row.html' with desc='Descripción' content=item.description  %}
+                                            {% include 'agency_result_row.html' with desc='Año Fiscal' content=item.projectinfo.fiscal_year  %}
+                                            {% include 'agency_result_row.html' with desc='Proposito' content=item.projectinfo.purpose  %}
+                                            {% include 'agency_result_row.html' with desc='Clasificacíon' content=item.projectinfo.classification %}
+                                            {% include 'agency_result_row.html' with desc='Clasificación Secundaria' content=item.projectinfo.classification_secondary %}
+                                            {% include 'agency_result_row.html' with desc='Metodología' content=item.projectinfo.methodology %}
+                                            {% include 'agency_result_list.html' with desc='Metas' content=item.projectinfo.goals.all %}
+                                            {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.departmen %}
+                                            {% include 'agency_result_row.html' with desc='Auspiciador' content=item.projectinfo.sponsor %}
+                                            {% include 'agency_result_row.html' with desc='Resultados esperados' content=item.projectinfo.expected_results %}
+                                            {% include 'agency_result_row.html' with desc='Logros' content=item.projectinfo.milestones %}
+                                            {% include 'agency_result_row.html' with desc='Infraestructura' content=item.projectbudget.get_infrastructure_display %}
+                                            {% include 'agency_result_row.html' with desc='Requerimientos' content=item.projectbudget.requirements %}
+                                            {% include 'agency_result_row.html' with desc='Presución' content=item.projectbudget.presumptions %}
+                                            {% include 'agency_result_row.html' with desc='Limitaciones' content=item.projectbudget.limitations %}
+                                            {% include 'agency_result_row.html' with desc='Riesgos' content=item.projectbudget.risks %}
+                                            {% include 'agency_result_row.html' with desc='Beneficios' content=item.projectbudget.benefits %}
+                                            {% include 'agency_result_row.html' with desc='Director(a)' content=item.projectbudget.director %}
+                                            {% include 'agency_result_row.html' with desc='Inicio de periodo' content=item.projectdetails.start_period %}
+                                            {% include 'agency_result_row.html' with desc='Final de periodo' content=item.projectdetails.end_period %}
+                                            {% include 'agency_result_row.html' with desc='Etapa' content=item.projectdetails.stage %}
+                                            {% include 'agency_result_row.html' with desc='Prioridad' content=item.projectdetails.priority %}
+                                            {% include 'agency_result_list.html' with desc='Otras agencias involucradas' content=item.projectopportunities.other_agencies.all %}
+                                            {% include 'agency_result_list.html' with desc='Oportunidad' content=item.projectopportunities.opportunity.all %}
+                                            {% include 'agency_result_list.html' with desc='Beneficios a compartir' content=item.projectopportunities.sharing_benefit.all %}
+                                            {% include 'agency_result_row.html' with desc='Explicación corta' content=item.projectopportunities.explanation %}
+                                            {% include 'agency_result_list.html' with desc='Anejos' content=item.projectfile_set.all %}
                                         </table>
                                     </div>
                                 </li>

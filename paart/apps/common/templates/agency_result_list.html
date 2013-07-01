@@ -1,0 +1,16 @@
+<tr>
+    <th> {{ desc }} </th>
+    <td>
+        {% if content %}
+            {% for item in content %}
+                <ul>
+                <li>  {{ item|default:"No data" }}  </li>
+                </ul>
+            {% empty %}
+                No data
+            {% endfor %}
+        {% else %}
+            No data
+        {% endif %}
+    </td>
+</tr>
