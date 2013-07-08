@@ -4,12 +4,9 @@
 </head>
 <body>
     <form action="" method="get">
-        {{ agency_search_form }}
+        {{ agency_search_form.as_p }}
         <input type="submit" value="Search">
     </form>
-    {% if error %}
-        <p style="color: red;"> Invalid search </p>
-    {% endif %}
     {% if message %}
         <p><b> {{  message  }} </b></p>
     {% endif %}
@@ -34,7 +31,7 @@
                                             {% include 'agency_result_row.html' with desc='Clasificación Secundaria' content=item.projectinfo.classification_secondary %}
                                             {% include 'agency_result_row.html' with desc='Metodología' content=item.projectinfo.methodology %}
                                             {% include 'agency_result_list.html' with desc='Metas' content=item.projectinfo.goals.all %}
-                                            {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.departmen %}
+                                            {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.department %}
                                             {% include 'agency_result_row.html' with desc='Auspiciador' content=item.projectinfo.sponsor %}
                                             {% include 'agency_result_row.html' with desc='Resultados esperados' content=item.projectinfo.expected_results %}
                                             {% include 'agency_result_row.html' with desc='Logros' content=item.projectinfo.milestones %}
