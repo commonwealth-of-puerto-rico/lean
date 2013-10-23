@@ -6,3 +6,4 @@ settings_local.py
 /venv/
 paart.sqlite
 /site_media/
+.idea/

@@ -1,69 +1,72 @@
-<html>
-<head>
-    <title> {{ title }} </title>
-</head>
-<body>
-    <form action="" method="get">
-        {{ agency_search_form.as_p }}
-        <input type="submit" value="Search">
-    </form>
-    {% if message %}
-        <p><b> {{  message  }} </b></p>
-    {% endif %}
-    {% regroup results by agency as project_by_agency %}
-    <ul>
-        {% for agency in project_by_agency %}
-            <li>
-                {{ agency.grouper }}
-                <ul>
-                    {% for item in agency.list %}
-                        <li> {{  item.label  }} </li>
-                            <ul>
-                                <li>
-                                    <div class='descDiv'>
-                                        <table border='1' width="100%">
-                                            <col width="20%">
-                                            <col width="80%">
-                                            {% include 'agency_result_row.html' with desc='Descripción' content=item.description  %}
-                                            {% include 'agency_result_row.html' with desc='Año Fiscal' content=item.projectinfo.fiscal_year  %}
-                                            {% include 'agency_result_row.html' with desc='Proposito' content=item.projectinfo.purpose  %}
-                                            {% include 'agency_result_row.html' with desc='Clasificacíon' content=item.projectinfo.classification %}
-                                            {% include 'agency_result_row.html' with desc='Clasificación Secundaria' content=item.projectinfo.classification_secondary %}
-                                            {% include 'agency_result_row.html' with desc='Metodología' content=item.projectinfo.methodology %}
-                                            {% include 'agency_result_list.html' with desc='Metas' content=item.projectinfo.goals.all %}
-                                            {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.department %}
-                                            {% include 'agency_result_row.html' with desc='Auspiciador' content=item.projectinfo.sponsor %}
-                                            {% include 'agency_result_row.html' with desc='Resultados esperados' content=item.projectinfo.expected_results %}
-                                            {% include 'agency_result_row.html' with desc='Logros' content=item.projectinfo.milestones %}
-                                            {% include 'agency_result_row.html' with desc='Infraestructura' content=item.projectbudget.get_infrastructure_display %}
-                                            {% include 'agency_result_row.html' with desc='Requerimientos' content=item.projectbudget.requirements %}
-                                            {% include 'agency_result_row.html' with desc='Presución' content=item.projectbudget.presumptions %}
-                                            {% include 'agency_result_row.html' with desc='Limitaciones' content=item.projectbudget.limitations %}
-                                            {% include 'agency_result_row.html' with desc='Riesgos' content=item.projectbudget.risks %}
-                                            {% include 'agency_result_row.html' with desc='Beneficios' content=item.projectbudget.benefits %}
-                                            {% include 'agency_result_row.html' with desc='Director(a)' content=item.projectbudget.director %}
-                                            {% include 'agency_result_row.html' with desc='Inicio de periodo' content=item.projectdetails.start_period %}
-                                            {% include 'agency_result_row.html' with desc='Final de periodo' content=item.projectdetails.end_period %}
-                                            {% include 'agency_result_row.html' with desc='Etapa' content=item.projectdetails.stage %}
-                                            {% include 'agency_result_row.html' with desc='Prioridad' content=item.projectdetails.priority %}
-                                            {% include 'agency_result_list.html' with desc='Otras agencias involucradas' content=item.projectopportunities.other_agencies.all %}
-                                            {% include 'agency_result_list.html' with desc='Oportunidad' content=item.projectopportunities.opportunity.all %}
-                                            {% include 'agency_result_list.html' with desc='Beneficios a compartir' content=item.projectopportunities.sharing_benefit.all %}
-                                            {% include 'agency_result_row.html' with desc='Explicación corta' content=item.projectopportunities.explanation %}
-                                            {% include 'agency_result_list.html' with desc='Anejos' content=item.projectfile_set.all %}
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
-                    {% endfor %}
-                </ul>
-            </li>
-            <br>
-        {% endfor %}
-    </ul>
+{% extends "base.html" %}
+{% load project_tags %}
+{% load i18n %}
+{% block content %}
+    <div class="content tc" style="text-align: left; margin-left: 10px;">
+        <form action="" method="get">
+            {{ agency_search_form.as_p }}
+            <input type="submit" value="Search">
+        </form>
+        <br/>
+        {% if message %}
+            <p><b> {{  message  }} </b></p>
+        {% endif %}
+        {% regroup results by agency as project_by_agency %}
+        <ul>
+            {% for agency in project_by_agency %}
+                <li>
+                    <h4> Agencia: {{ agency.grouper }} </h4>
+                    <ul>
+                        {% for item in agency.list %}
+                            <li> <b>Proyecto:</b> {{  item.label  }} </li>
+                                <ul>
+                                    <li>
+                                        <div class='descDiv'>
+                                            <table border='1' width="100%">
+                                                <col width="20%">
+                                                <col width="80%">
+                                                {% include 'agency_result_row.html' with desc='Descripción' content=item.description  %}
+                                                {% include 'agency_result_row.html' with desc='Año Fiscal' content=item.projectinfo.fiscal_year  %}
+                                                {% include 'agency_result_row.html' with desc='Proposito' content=item.projectinfo.purpose  %}
+                                                {% include 'agency_result_row.html' with desc='Clasificacíon' content=item.projectinfo.classification %}
+                                                {% include 'agency_result_row.html' with desc='Clasificación Secundaria' content=item.projectinfo.classification_secondary %}
+                                                {% include 'agency_result_row.html' with desc='Metodología' content=item.projectinfo.methodology %}
+                                                {% include 'agency_result_list.html' with desc='Metas' content=item.projectinfo.goals.all %}
+                                                {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.department %}
+                                                {% include 'agency_result_row.html' with desc='Auspiciador' content=item.projectinfo.sponsor %}
+                                                {% include 'agency_result_row.html' with desc='Resultados esperados' content=item.projectinfo.expected_results %}
+                                                {% include 'agency_result_row.html' with desc='Logros' content=item.projectinfo.milestones %}
+                                                {% include 'agency_result_row.html' with desc='Infraestructura' content=item.projectbudget.get_infrastructure_display %}
+                                                {% include 'agency_result_row.html' with desc='Requerimientos' content=item.projectbudget.requirements %}
+                                                {% include 'agency_result_row.html' with desc='Presución' content=item.projectbudget.presumptions %}
+                                                {% include 'agency_result_row.html' with desc='Limitaciones' content=item.projectbudget.limitations %}
+                                                {% include 'agency_result_row.html' with desc='Riesgos' content=item.projectbudget.risks %}
+                                                {% include 'agency_result_row.html' with desc='Beneficios' content=item.projectbudget.benefits %}
+                                                {% include 'agency_result_row.html' with desc='Director(a)' content=item.projectbudget.director %}
+                                                {% include 'agency_result_row.html' with desc='Inicio de periodo' content=item.projectdetails.start_period %}
+                                                {% include 'agency_result_row.html' with desc='Final de periodo' content=item.projectdetails.end_period %}
+                                                {% include 'agency_result_row.html' with desc='Etapa' content=item.projectdetails.stage %}
+                                                {% include 'agency_result_row.html' with desc='Prioridad' content=item.projectdetails.priority %}
+                                                {% include 'agency_result_list.html' with desc='Otras agencias involucradas' content=item.projectopportunities.other_agencies.all %}
+                                                {% include 'agency_result_list.html' with desc='Oportunidad' content=item.projectopportunities.opportunity.all %}
+                                                {% include 'agency_result_list.html' with desc='Beneficios a compartir' content=item.projectopportunities.sharing_benefit.all %}
+                                                {% include 'agency_result_row.html' with desc='Explicación corta' content=item.projectopportunities.explanation %}
+                                                {% include 'agency_result_list.html' with desc='Anejos' content=item.projectfile_set.all %}
+                                            </table>
+                                        </div>
+                                    </li>
+                                <br>
+                                </ul>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <br/>
+            {% endfor %}
+        </ul>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $(document).ready(function(){	
+        $(document).ready(function(){
             $('.descDiv').hide().before('<a href="#" class="toggle-link">Detalles del proyecto</a>');
             $('a.toggle-link').click(function() {
                 $(this).next('.descDiv').slideToggle(50);
@@ -71,5 +74,7 @@
             });
         });
     </script>
-</body>
-</html>
+{% endblock %}
+
+
+
