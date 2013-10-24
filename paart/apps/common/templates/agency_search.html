@@ -5,7 +5,7 @@
     <div class="content tc" style="text-align: left; margin-left: 10px;">
         <form action="" method="get">
             {{ agency_search_form.as_p }}
-            <input type="submit" value="Search">
+            <input type="submit" value={% blocktrans %}Search{% endblocktrans %}>
         </form>
         <br/>
         {% if message %}
@@ -15,43 +15,43 @@
         <ul>
             {% for agency in project_by_agency %}
                 <li>
-                    <h4> Agencia: {{ agency.grouper }} </h4>
+                    <h4> {% blocktrans %}Agency:{% endblocktrans %} {{ agency.grouper }} </h4>
                     <ul>
                         {% for item in agency.list %}
-                            <li> <b>Proyecto:</b> {{  item.label  }} </li>
+                            <li> <b>{% blocktrans %}Project:{% endblocktrans %}</b> {{  item.label  }} </li>
                                 <ul>
                                     <li>
                                         <div class='descDiv'>
                                             <table border='1' width="100%">
                                                 <col width="20%">
                                                 <col width="80%">
-                                                {% include 'agency_result_row.html' with desc='Descripción' content=item.description  %}
-                                                {% include 'agency_result_row.html' with desc='Año Fiscal' content=item.projectinfo.fiscal_year  %}
-                                                {% include 'agency_result_row.html' with desc='Proposito' content=item.projectinfo.purpose  %}
-                                                {% include 'agency_result_row.html' with desc='Clasificacíon' content=item.projectinfo.classification %}
-                                                {% include 'agency_result_row.html' with desc='Clasificación Secundaria' content=item.projectinfo.classification_secondary %}
-                                                {% include 'agency_result_row.html' with desc='Metodología' content=item.projectinfo.methodology %}
-                                                {% include 'agency_result_list.html' with desc='Metas' content=item.projectinfo.goals.all %}
-                                                {% include 'agency_result_row.html' with desc='Departamento' content=item.projectinfo.department %}
-                                                {% include 'agency_result_row.html' with desc='Auspiciador' content=item.projectinfo.sponsor %}
-                                                {% include 'agency_result_row.html' with desc='Resultados esperados' content=item.projectinfo.expected_results %}
-                                                {% include 'agency_result_row.html' with desc='Logros' content=item.projectinfo.milestones %}
-                                                {% include 'agency_result_row.html' with desc='Infraestructura' content=item.projectbudget.get_infrastructure_display %}
-                                                {% include 'agency_result_row.html' with desc='Requerimientos' content=item.projectbudget.requirements %}
-                                                {% include 'agency_result_row.html' with desc='Presución' content=item.projectbudget.presumptions %}
-                                                {% include 'agency_result_row.html' with desc='Limitaciones' content=item.projectbudget.limitations %}
-                                                {% include 'agency_result_row.html' with desc='Riesgos' content=item.projectbudget.risks %}
-                                                {% include 'agency_result_row.html' with desc='Beneficios' content=item.projectbudget.benefits %}
-                                                {% include 'agency_result_row.html' with desc='Director(a)' content=item.projectbudget.director %}
-                                                {% include 'agency_result_row.html' with desc='Inicio de periodo' content=item.projectdetails.start_period %}
-                                                {% include 'agency_result_row.html' with desc='Final de periodo' content=item.projectdetails.end_period %}
-                                                {% include 'agency_result_row.html' with desc='Etapa' content=item.projectdetails.stage %}
-                                                {% include 'agency_result_row.html' with desc='Prioridad' content=item.projectdetails.priority %}
-                                                {% include 'agency_result_list.html' with desc='Otras agencias involucradas' content=item.projectopportunities.other_agencies.all %}
-                                                {% include 'agency_result_list.html' with desc='Oportunidad' content=item.projectopportunities.opportunity.all %}
-                                                {% include 'agency_result_list.html' with desc='Beneficios a compartir' content=item.projectopportunities.sharing_benefit.all %}
-                                                {% include 'agency_result_row.html' with desc='Explicación corta' content=item.projectopportunities.explanation %}
-                                                {% include 'agency_result_list.html' with desc='Anejos' content=item.projectfile_set.all %}
+                                                {% include 'agency_result_row.html' with desc=_('Description') content=item.description  %}
+                                                {% include 'agency_result_row.html' with desc=_('Fiscal Year') content=item.projectinfo.fiscal_year  %}
+                                                {% include 'agency_result_row.html' with desc=_('Purpose') content=item.projectinfo.purpose  %}
+                                                {% include 'agency_result_row.html' with desc=_('Classification') content=item.projectinfo.classification %}
+                                                {% include 'agency_result_row.html' with desc=_('Secondary Classification') content=item.projectinfo.classification_secondary %}
+                                                {% include 'agency_result_row.html' with desc=_('Methodology') content=item.projectinfo.methodology %}
+                                                {% include 'agency_result_list.html' with desc=_('Goals') content=item.projectinfo.goals.all %}
+                                                {% include 'agency_result_row.html' with desc=_('Department') content=item.projectinfo.department %}
+                                                {% include 'agency_result_row.html' with desc=_('Sponsor') content=item.projectinfo.sponsor %}
+                                                {% include 'agency_result_row.html' with desc=_('Expected Results') content=item.projectinfo.expected_results %}
+                                                {% include 'agency_result_row.html' with desc=_('Milestones') content=item.projectinfo.milestones %}
+                                                {% include 'agency_result_row.html' with desc=_('Infrastructure') content=item.projectbudget.get_infrastructure_display %}
+                                                {% include 'agency_result_row.html' with desc=_('Requirements') content=item.projectbudget.requirements %}
+                                                {% include 'agency_result_row.html' with desc=_('Presumptions') content=item.projectbudget.presumptions %}
+                                                {% include 'agency_result_row.html' with desc=_('Limitations') content=item.projectbudget.limitations %}
+                                                {% include 'agency_result_row.html' with desc=_('Risks') content=item.projectbudget.risks %}
+                                                {% include 'agency_result_row.html' with desc=_('Benefits') content=item.projectbudget.benefits %}
+                                                {% include 'agency_result_row.html' with desc=_('Director') content=item.projectbudget.director %}
+                                                {% include 'agency_result_row.html' with desc=_('Start Period') content=item.projectdetails.start_period %}
+                                                {% include 'agency_result_row.html' with desc=_('End Period') content=item.projectdetails.end_period %}
+                                                {% include 'agency_result_row.html' with desc=_('Stage') content=item.projectdetails.stage %}
+                                                {% include 'agency_result_row.html' with desc=_('Priority') content=item.projectdetails.priority %}
+                                                {% include 'agency_result_list.html' with desc=_('Other agencies involed') content=item.projectopportunities.other_agencies.all %}
+                                                {% include 'agency_result_list.html' with desc=_('Opportunity') content=item.projectopportunities.opportunity.all %}
+                                                {% include 'agency_result_list.html' with desc=_('Sharing Benefits') content=item.projectopportunities.sharing_benefit.all %}
+                                                {% include 'agency_result_row.html' with desc=_('Explanation') content=item.projectopportunities.explanation %}
+                                                {% include 'agency_result_list.html' with desc=_('Attachment') content=item.projectfile_set.all %}
                                             </table>
                                         </div>
                                     </li>
@@ -67,7 +67,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.descDiv').hide().before('<a href="#" class="toggle-link">Detalles del proyecto</a>');
+            $('.descDiv').hide().before('<a href="#" class="toggle-link">{% blocktrans %}Details{% endblocktrans %}</a>');
             $('a.toggle-link').click(function() {
                 $(this).next('.descDiv').slideToggle(50);
                 return false;

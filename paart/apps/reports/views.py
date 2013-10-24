@@ -12,7 +12,7 @@ from django.core.urlresolvers import reverse, resolve
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, string_concat
 
 from projects.models import Project, ProjectInfo, Agency
 
@@ -59,12 +59,13 @@ def agency_search_report(request):
             context['results'] = search_results[:100]
 
             if not context['results']:
-                context['message'] = 'No results'
+                context['message'] = _(u'No results')
             else:
                 if len(search_results) <= 100:
-                    context['message'] = str(len(context['results'])) + ' resultados '
+                    context['message'] = string_concat(str(len(context['results'])), ' ', _(u'results'))
                 else:
-                    context['message'] = 'Presentando ' + str(len(context['results'])) + ' de ' + str(len(search_results)) + ' resultados, favor de utilizar un filtro.'                    
+                    context['message'] = string_concat(_(u'Presenting'), ' ', str(len(context['results'])), _(u'of'),
+                                                       str(len(search_results)), ' ', _(u'results, please use a filter'))
 
         context['agency_search_form'] = form
     else:

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-04 20:12-0400\n"
+"POT-Creation-Date: 2013-10-24 13:05-0400\n"
 "PO-Revision-Date: 2013-04-03 17:42\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,69 +141,73 @@ msgstr "etiqueda de anejo de proyecto"
 msgid "project file name"
 msgstr "nombre de anejo de proyecto"
 
-#: links.py:20 links.py:53 models.py:239
+#: links.py:21 links.py:54 models.py:239
 msgid "projects"
 msgstr "proyectos"
 
-#: links.py:22 links.py:28 links.py:32 links.py:36 links.py:40
+#: links.py:23 links.py:29 links.py:33 links.py:37 links.py:41
 msgid "edit"
 msgstr "editar"
 
-#: links.py:23 links.py:29 links.py:33 links.py:37 links.py:41 links.py:46
+#: links.py:24 links.py:30 links.py:34 links.py:38 links.py:42 links.py:47
 msgid "delete"
 msgstr "borrar"
 
-#: links.py:24
+#: links.py:25
 msgid "view"
 msgstr "ver"
 
-#: links.py:25
+#: links.py:26
 msgid "basic"
 msgstr "básico"
 
-#: links.py:26
+#: links.py:27
 msgid "add project"
 msgstr "agregar proyecto"
 
-#: links.py:30
+#: links.py:31
 msgid "information"
 msgstr "información"
 
-#: links.py:34
+#: links.py:35
 msgid "budget"
 msgstr "presupuesto"
 
-#: links.py:38
+#: links.py:39
 msgid "details"
 msgstr "detalles"
 
-#: links.py:42
+#: links.py:43
 msgid "opportunities"
 msgstr "oportunidades"
 
-#: links.py:44
+#: links.py:45
 msgid "files"
 msgstr "anejos"
 
-#: links.py:45
+#: links.py:46
 msgid "upload file"
 msgstr "subir archivo"
 
-#: links.py:47
+#: links.py:48
 msgid "download"
 msgstr "descargar"
 
-#: links.py:49
+#: links.py:50
 msgid "workflows"
 msgstr "flujos de trabajo"
 
-#: links.py:50
+#: links.py:51
 msgid "history"
 msgstr "historia"
 
-#: links.py:51
+#: links.py:52
 msgid "submit action"
 msgstr "someter acción"
+
+#: links.py:57
+msgid "report"
+msgstr "reporte"
 
 #: literals.py:7
 msgid "New"
@@ -283,7 +287,7 @@ msgid "description"
 msgstr "descripción"
 
 #: models.py:238 models.py:245 models.py:280 models.py:305 models.py:335
-#: models.py:358 views.py:117
+#: models.py:358 views.py:118
 msgid "project"
 msgstr "proyecto"
 
@@ -452,247 +456,247 @@ msgstr "Ver proyectos"
 msgid "Submit projects"
 msgstr "Someter proyectos"
 
-#: views.py:54
+#: views.py:55
 #, python-format
 msgid "projects of: %s"
 msgstr "proyectos de: %s"
 
-#: views.py:75
+#: views.py:76
 #, python-format
 msgid "Project \"%s\" edited successfully."
 msgstr "Proyecto \"%s\" edited exitosamente."
 
-#: views.py:84
+#: views.py:85
 #, python-format
 msgid "edit project: %s"
 msgstr "editar proyecto: %s"
 
-#: views.py:109
+#: views.py:110
 #, python-format
 msgid "Project: %s deleted successfully."
 msgstr "Proyecto: %s borrado exitosamente."
 
-#: views.py:111
+#: views.py:112
 #, python-format
 msgid "Project: %(project)s delete error: %(error)s"
 msgstr "Error al borrar proyecto: %(project)s; error: %(error)s"
 
-#: views.py:121
+#: views.py:122
 #, python-format
 msgid "Are you sure you wish to delete the project: %s?"
 msgstr "¿Esta seguro que desea borrar el proyecto: %s?"
 
-#: views.py:149
+#: views.py:150
 #, python-format
 msgid "project: %s"
 msgstr "proyecto: %s"
 
-#: views.py:172
+#: views.py:173
 #, python-format
 msgid "Project \"%s\" saved successfully."
 msgstr "Proyecto \"%s\" grabado exitosamente."
 
-#: views.py:176
+#: views.py:177
 #, fuzzy, python-format
 msgid "Unable to create project \"%(project)s\"; error: %(error)s."
 msgstr ""
 "Error borrando información para proyecto: %(project)s, error: %(error)s"
 
-#: views.py:186
+#: views.py:187
 #, python-format
 msgid "create project for agency: %s"
 msgstr "crear proyecto para agencia: %s"
 
-#: views.py:237
+#: views.py:238
 #, python-format
 msgid "information for project: %s"
 msgstr "información para proyecto: %s"
 
-#: views.py:258
+#: views.py:259
 #, python-format
 msgid "Information for project \"%s\" edited successfully."
 msgstr "Información para proyecto \"%s\" editada exitosamente."
 
-#: views.py:269
+#: views.py:270
 #, python-format
 msgid "edit information for project: %s"
 msgstr "editar información para proyecto: %s"
 
-#: views.py:292 views.py:428 views.py:565 views.py:961
+#: views.py:293 views.py:429 views.py:566 views.py:962
 #, python-format
 msgid "Details for project \"%s\" saved successfully."
 msgstr "Detalles para proyecto \"%s\" grabados exitosamente."
 
-#: views.py:302
+#: views.py:303
 #, python-format
 msgid "enter information for project: %s"
 msgstr "entre información para proyecto: %s"
 
-#: views.py:326
+#: views.py:327
 #, python-format
 msgid "Information for project: %s, deleted successfully."
 msgstr "Información para proyecto: %s, borrada exitosamente."
 
-#: views.py:328
+#: views.py:329
 #, python-format
 msgid "Information for project: %(project)s delete error: %(error)s"
 msgstr ""
 "Error borrando información para proyecto: %(project)s, error: %(error)s"
 
-#: views.py:337
+#: views.py:338
 #, python-format
 msgid "Are you sure you wish to delete the information for project: %s?"
 msgstr "¿Esta seguro que desea borrar la información del proyecto: %s?"
 
-#: views.py:374
+#: views.py:375
 #, python-format
 msgid "budget for project: %s"
 msgstr "presupuesto para proyecto: %s"
 
-#: views.py:395
+#: views.py:396
 #, python-format
 msgid "Budget for project \"%s\" edited successfully."
 msgstr "Presupuesto para proyecto \"%s\" editado exitosamente."
 
-#: views.py:406
+#: views.py:407
 #, python-format
 msgid "edit budget for project: %s"
 msgstr "editar presupuesto para proyecto: %s"
 
-#: views.py:438
+#: views.py:439
 #, python-format
 msgid "enter budget for project: %s"
 msgstr "entre presupuesto para proyecto: %s"
 
-#: views.py:462
+#: views.py:463
 #, python-format
 msgid "Budget for project: %s, deleted successfully."
 msgstr "Presupuesto para proyecto: %s, borrado exitosamente."
 
-#: views.py:464
+#: views.py:465
 #, python-format
 msgid "Budget for project: %(project)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:473
+#: views.py:474
 #, python-format
 msgid "Are you sure you wish to delete the budget for project: %s?"
 msgstr "¿Esta seguro que desea borrar el presupuesto del proyecto: %s?"
 
-#: views.py:511
+#: views.py:512
 #, python-format
 msgid "details for project: %s"
 msgstr "detalles para proyecto: %s"
 
-#: views.py:532
+#: views.py:533
 #, python-format
 msgid "Details for project \"%s\" edited successfully."
 msgstr "Detalles para proyecto \"%s\" editados exitosamente."
 
-#: views.py:543
+#: views.py:544
 #, python-format
 msgid "edit details for project: %s"
 msgstr "editar detalles para proyecto: %s"
 
-#: views.py:575
+#: views.py:576
 #, python-format
 msgid "enter details for project: %s"
 msgstr "entre detalles para proyecto: %s"
 
-#: views.py:599
+#: views.py:600
 #, python-format
 msgid "Details for project: %s, deleted successfully."
 msgstr "Detalles para proyecto: %s, borrados exitosamente."
 
-#: views.py:601
+#: views.py:602
 #, python-format
 msgid "Details for project: %(project)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:610
+#: views.py:611
 #, python-format
 msgid "Are you sure you wish to delete the details for project: %s?"
 msgstr "¿Esta seguro que desea borrar los detalles del proyecto: %s?"
 
-#: views.py:648
+#: views.py:649
 #, python-format
 msgid "opportunities for project: %s"
 msgstr "oportunidades para proyecto: %s"
 
-#: views.py:669
+#: views.py:670
 #, python-format
 msgid "Opportunities for project \"%s\" edited successfully."
 msgstr "Oportunidades para proyecto \"%s\" editadas existosamente."
 
-#: views.py:680
+#: views.py:681
 #, python-format
 msgid "edit opportunities for project: %s"
 msgstr "editar oportunidades para proyecto: %s"
 
-#: views.py:703
+#: views.py:704
 #, python-format
 msgid "Opportunities for project \"%s\" saved successfully."
 msgstr "Oportunidades para proyecto \"%s\" grabadas exitosamente."
 
-#: views.py:713
+#: views.py:714
 #, python-format
 msgid "enter opportunities for project: %s"
 msgstr "entre oportunidades para proyecto: %s"
 
-#: views.py:737
+#: views.py:738
 #, python-format
 msgid "Opportunities for project: %s, deleted successfully."
 msgstr "Oportunidades para proyecto: %s, borradas exitosamente."
 
-#: views.py:739
+#: views.py:740
 #, python-format
 msgid "Opportunities for project: %(project)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:748
+#: views.py:749
 #, python-format
 msgid "Are you sure you wish to delete the opportunities for project: %s?"
 msgstr "¿Esta seguro que desea borrar la oportunidades del proyecto: %s?"
 
-#: views.py:774
+#: views.py:775
 msgid "project files"
 msgstr "anejos de proyecto"
 
-#: views.py:801
+#: views.py:802
 #, python-format
 msgid "File for project \"%s\" uploaded successfully."
 msgstr "Anejo para proyecto \"%s\" subido exitosamente."
 
-#: views.py:811
+#: views.py:812
 #, python-format
 msgid "upload file for project: %s"
 msgstr "subir anejo para proyecto: %s"
 
-#: views.py:836
+#: views.py:837
 #, python-format
 msgid "Project file: %s, deleted successfully."
 msgstr "Anejo de proyecto: %s borrado exitosamente."
 
-#: views.py:838
+#: views.py:839
 #, python-format
 msgid "Project file: %(project)s delete error: %(error)s"
 msgstr ""
 
-#: views.py:847
+#: views.py:848
 #, python-format
 msgid "Are you sure you wish to delete the project file: %s?"
 msgstr "¿Esta seguro que desea borrar el anejo del proyecto: %s?"
 
-#: views.py:909
+#: views.py:910
 msgid "project workflow instances"
 msgstr "instancia de flujos de trabajo de proyecto"
 
-#: views.py:933
+#: views.py:934
 #, python-format
 msgid "submitted actions for: %s"
 msgstr "acciones realizadas para: %s"
 
-#: views.py:971
+#: views.py:972
 #, python-format
 msgid "submit action for workflow instance for: %s"
 msgstr "someter acción para instancia de flujo de trabajo para: %s"

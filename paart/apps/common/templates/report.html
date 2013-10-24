@@ -1,41 +1,43 @@
+{% load i18n %}
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <head>
     <title> {{ project.agency.name }} - {{ project }} </title>
 </head>
     <body>
-        <h1> Agencia: {{ project.agency.name }} </h1>
-        <h2> Proyecto: {{ project }} </h2>
-        
+        <h1> {% blocktrans %}Agency:{% endblocktrans %} {{ project.agency.name }} </h1>
+        <h2> {% blocktrans %}Project:{% endblocktrans %} {{ project }} </h2>
+
         <table border='1' width="100%">
             <col width="20%">
             <col width="80%">
-            <tr><b><i>Información general del proyecto</i></b></tr>
+            <tr><b><i>{% blocktrans %}General Information{% endblocktrans %}</i></b></tr>
             <tr>
-                <th>Descripción</th> 
+                <th>{% blocktrans %}Description{% endblocktrans %}</th>
                 <td> {{ project.description|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Año Fiscal</th> 
+                <th>{% blocktrans %}Fiscal Year{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.fiscal_year|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Proposito</th>
+                <th>{% blocktrans %}Purpose{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.purpose|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Clasificacíon</th>
+                <th>{% blocktrans %}Classification{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.classification|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Clasificación Secundaria</th>
+                <th>{% blocktrans %}Secondary Classification{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.classification_secondary|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Metodología</th>
+                <th>{% blocktrans %}Methodology{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.methodology|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Metas</th>
+                <th>{% blocktrans %}Goals{% endblocktrans %}</th>
                 <td>
                     {% if project.projectinfo.goals.all %}
                         {% for goal in project.projectinfo.goals.all %}
@@ -49,88 +51,88 @@
                 </td>
             </tr>
             <tr>
-                <th>Departamento</th>
+                <th>{% blocktrans %}Department{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.department|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Auspiciador</th>
+                <th>{% blocktrans %}Sponsor{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.sponsor|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Resultados esperados</th>
+                <th>{% blocktrans %}Expected Results{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.expected_results|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Logros</th>
+                <th>{% blocktrans %}Milestones{% endblocktrans %}</th>
                 <td> {{ project.projectinfo.milestones|default:"No data" }} </td>
             </tr>
         </table>
         <br>
-        
+
         <table border='1' width="100%">
             <col width="20%">
             <col width="80%">
-            <tr><b><i>Presupuesto del proyecto</i></b></tr>
+            <tr><b><i>{% blocktrans %}Project Budget{% endblocktrans %}</i></b></tr>
             <tr>
-                <th>Infraestructura</th>
+                <th>{% blocktrans %}Infrastructure{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.get_infrastructure_display|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Requerimientos</th>
+                <th>{% blocktrans %}Requirements{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.requirements|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Presución</th>
+                <th>{% blocktrans %}Presumptions{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.presumptions|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Limitaciones</th>
+                <th>{% blocktrans %}Limitations{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.limitations|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Riesgos</th>
+                <th>{% blocktrans %}Risks{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.risks|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Beneficios</th>
+                <th>{% blocktrans %}Benefits{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.benefits|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Director(a)</th>
+                <th>{% blocktrans %}Director{% endblocktrans %}</th>
                 <td> {{  project.projectbudget.director|default:"No data" }} </td>
             </tr>
         </table>
         <br>
-        
+
         <table border='1' width="100%">
             <col width="20%">
             <col width="80%">
-            <tr><b><i>Detalles del proyecto</i></b></tr>
+            <tr><b><i>{% blocktrans %}Project Details{% endblocktrans %}</i></b></tr>
             <tr>
-                <th>Inicio de periodo</th>
+                <th>{% blocktrans %}Start Period{% endblocktrans %}</th>
                 <td> {{  project.projectdetails.start_period|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Final de periodo</th>
+                <th>{% blocktrans %}End Period{% endblocktrans %}</th>
                 <td> {{  project.projectdetails.end_period|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Etapa</th>
+                <th>{% blocktrans %}Stage{% endblocktrans %}</th>
                 <td> {{  project.projectdetails.stage|default:"No data" }} </td>
             </tr>
             <tr>
-                <th>Prioridad</th>
+                <th>{% blocktrans %}Priority{% endblocktrans %}</th>
                 <td> {{  project.projectdetails.priority|default:"No data" }} </td>
             </tr>
         </table>
         <br>
-            
+
         <table border='1' width="100%">
                 <col width="20%">
                 <col width="80%">
-                <tr><b><i>Oportunidades del proyecto</i></b></tr>
+                <tr><b><i>{% blocktrans %}Project Opportunities{% endblocktrans %}</i></b></tr>
                 <tr>
-                    <th>Otras agencias involucradas</th>
+                    <th>{% blocktrans %}Other involved agencies{% endblocktrans %}</th>
                     <td>
                         {% if project.projectopportunities.other_agencies %}
                             {% for agencia in project.projectopportunities.other_agencies.all %}
@@ -146,8 +148,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Oportunidad</th>
-                    <td> 
+                    <th>{% blocktrans %}Opportunities{% endblocktrans %}</th>
+                    <td>
                         {% if project.projectopportunities.opportunity %}
                             {% for opportunity in project.projectopportunities.opportunity.all %}
                                 <ul>
@@ -160,7 +162,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Beneficios a compartir</th>
+                    <th>{% blocktrans %}Benefits to share{% endblocktrans %}</th>
                     <td>
                         {% if project.projectopportunities.sharing_benefit %}
                             {% for benefit in project.projectopportunities.sharing_benefit.all %}
@@ -174,7 +176,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Explicación corta</th>
+                    <th>{% blocktrans %}Explanation{% endblocktrans %}</th>
                     <td> {{  project.projectopportunities.explanation|default:"No data" }} </td>
                 </tr>
         </table>
@@ -183,9 +185,9 @@
         <table border='1' width="100%">
                 <col width="20%">
                 <col width="80%">
-                <tr><b><i>Anejos del proyecto</i></b></tr>
+                <tr><b><i>{% blocktrans %}Project Attachments{% endblocktrans %}</i></b></tr>
                 <tr>
-                    <th>Anejos</th>
+                    <th>{% blocktrans %}Attachments{% endblocktrans %}</th>
                     <td>
                         {% if project.projectfile_set.all %}
                             {% for file in project.projectfile_set.all %}
@@ -199,6 +201,6 @@
                     </td>
                 </tr>
         </table>
-        
+
     </body>
 </html>
