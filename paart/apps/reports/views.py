@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 
@@ -21,13 +21,13 @@ from permissions.models import Permission
 from .permissions import (PERMISSION_PROJECT_VIEW)
 
 from .forms import AgencySearchForm
-    
+
 def agency_search_report(request):
     title = 'Búsqueda de proyectos por agencia'
     search_results = None
     kwargs = {}
     context = {}
-    
+
     if request.GET:
         form = AgencySearchForm(data=request.GET)
         if form.is_valid():
@@ -36,16 +36,16 @@ def agency_search_report(request):
 
             if 'fiscal_year' in request.GET and request.GET['fiscal_year']:
                 kwargs['projectinfo__fiscal_year'] = request.GET['fiscal_year']
-                
+
             if 'purpose' in request.GET and request.GET['purpose']:
                 kwargs['projectinfo__purpose'] = request.GET['purpose']
-                
+
             if 'classification' in request.GET and request.GET['classification']:
                 kwargs['projectinfo__classification'] = request.GET['classification']
-                
+
             if 'secondary_classification' in request.GET and request.GET['secondary_classification']:
                 kwargs['projectinfo__classification_secondary'] = request.GET['secondary_classification']
-                
+
             if 'methodology' in request.GET and request.GET['methodology']:
                 kwargs['projectinfo__methodology'] = request.GET['methodology']
 
@@ -54,8 +54,8 @@ def agency_search_report(request):
 
             if 'department' in request.GET and request.GET['department']:
                 kwargs['projectinfo__department'] = request.GET['department']
-                
-            search_results = Project.objects.filter(**kwargs).order_by('agency__name')               
+
+            search_results = Project.objects.filter(**kwargs).order_by('agency__name')
             context['results'] = search_results[:100]
 
             if not context['results']:
@@ -64,8 +64,7 @@ def agency_search_report(request):
                 if len(search_results) <= 100:
                     context['message'] = string_concat(str(len(context['results'])), ' ', _(u'results'))
                 else:
-                    context['message'] = string_concat(_(u'Presenting'), ' ', str(len(context['results'])), _(u'of'),
-                                                       str(len(search_results)), ' ', _(u'results, please use a filter'))
+                    context['message'] = string_concat(_(u'Presenting'), ' ', str(len(context['results'])), ' ', _(u'of'), ' ', str(len(search_results)), ' ', _(u'results, please use a filter'))
 
         context['agency_search_form'] = form
     else:
