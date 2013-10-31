@@ -11,21 +11,23 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
-    readonly_fields = ('agency',)
+    readonly_fields = ('agency', )
 
     class Meta:
+        exclude = ('datetime_created',)
         model = Project
 
 
 class ProjectForm_create(forms.ModelForm):
     class Meta:
-        exclude = ('agency',)
+        exclude = ('agency', 'datetime_created',)
         model = Project
 
 
 class ProjectForm_view(DetailForm):
     class Meta:
         model = Project
+        fields = ('agency', 'label', 'datetime_created', 'description', )
 
 
 class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
