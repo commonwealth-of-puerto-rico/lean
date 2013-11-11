@@ -253,14 +253,14 @@ def project_info_edit(request, project_info_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_info.project.agency)
 
     if request.method == 'POST':
-        form = ProjectInfoForm_edit(request.POST, instance=project_info)
+        form = ProjectInfoForm_edit(request.POST, instance=project_info, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, _(u'Information for project "%s" edited successfully.') % project_info.project)
 
             return HttpResponseRedirect(project_info.get_absolute_url())
     else:
-        form = ProjectInfoForm_edit(instance=project_info)
+        form = ProjectInfoForm_edit(instance=project_info, user=request.user)
 
     return render_to_response('generic_form.html', {
         'form': form,
@@ -284,7 +284,7 @@ def project_info_create(request, project_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
-        form = ProjectInfoForm_create(request.POST, initial={'project': project})
+        form = ProjectInfoForm_create(request.POST, initial={'project': project}, user=request.user)
         if form.is_valid():
             project_info = form.save(commit=False)
             project_info.project = project
@@ -294,7 +294,7 @@ def project_info_create(request, project_pk):
 
             return HttpResponseRedirect(project_info.get_absolute_url())
     else:
-        form = ProjectInfoForm_create(initial={'project': project})
+        form = ProjectInfoForm_create(initial={'project': project}, user=request.user)
 
     return render_to_response('generic_form.html', {
         'form': form,
