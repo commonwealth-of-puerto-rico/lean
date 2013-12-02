@@ -74,6 +74,7 @@ class ProjectProjectInfoAdmin(admin.ModelAdmin):
 
 class StateAdmin(admin.ModelAdmin):
     model = State
+    list_display = ('label', 'enabled')
 
 
 admin.site.register(FiscalYear, FiscalYearAdmin)

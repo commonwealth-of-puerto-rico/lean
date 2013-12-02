@@ -49,6 +49,8 @@ class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
         if not user.is_staff:
             self.fields['state'].widget.attrs['readonly'] = True
             self.fields['state_note'].widget.attrs['readonly'] = True
+        else:
+            self.fields['state'].queryset = self.fields['state'].queryset.active()
 
     class Meta:
         model = ProjectInfo

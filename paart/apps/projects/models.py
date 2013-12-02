@@ -206,6 +206,9 @@ class Goal(models.Model):
 
 class State(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
