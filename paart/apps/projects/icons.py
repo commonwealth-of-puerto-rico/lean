@@ -4,7 +4,7 @@ from icons.literals import (ARROW_RIGHT, PAGE, PAGE_ADD, PAGE_EDIT, PAGE_DELETE,
     BUILDING_PAGE, WAND, BUILDING, INFO_RHOMBUS, INFO_RHOMBUS_EDIT, INFO_RHOMBUS_DELETE,
     MONEY, MONEY_EDIT, MONEY_DELETE, MEASURE, MEASURE_EDIT, MEASURE_DELETE,
     THUMB_UP, THUMB_UP_EDIT, THUMB_UP_DELETE, DISK, DISK_DELETE, DISK_ARROW_UP,
-    DISK_ARROW_DOWN, COG)
+    DISK_ARROW_DOWN, COG, PAGE_PRINTER)
 from icons import Icon
 
 icon_projects = Icon(PAGE)
@@ -37,6 +37,8 @@ icon_project_file_download = Icon(DISK_ARROW_DOWN)
 icon_project_workflow_instance_list = Icon(COG)
 icon_project_workflow_instance_history = Icon(COG)
 icon_project_workflow_instance_action_submit = Icon(COG)
+
+icon_project_reports_view = Icon(PAGE_PRINTER)
 
 icon_agency_projects = Icon(PAGE)
 icon_project_create_wizard = Icon(WAND)

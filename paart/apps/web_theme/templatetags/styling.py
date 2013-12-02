@@ -20,6 +20,10 @@ class StylingNode(Node):
                 # Don't overwrite any existing CSS class, append
                 css_class = field.widget.attrs.get('class', u'text_field')
                 field.widget.attrs['class'] = u' '.join([css_class, 'text_field'])
+            elif isinstance(field.widget, forms.widgets.DateTimeInput):
+               # Don't overwrite any existing CSS class, append
+                css_class = field.widget.attrs.get('class', u'text_field')
+                field.widget.attrs['class'] = u' '.join([css_class, 'text_field'])
             elif isinstance(field.widget, forms.widgets.Textarea):
                 # Don't overwrite any existing CSS class, append
                 css_class = field.widget.attrs.get('class', u'text_area')

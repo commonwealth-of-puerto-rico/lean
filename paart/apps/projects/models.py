@@ -204,8 +204,19 @@ class Goal(models.Model):
         ordering = ['label']
 
 
+class State(models.Model):
+    label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+
+    def __unicode__(self):
+        return self.label
+
+    class Meta:
+        verbose_name = _(u'state')
+        ordering = ['label']
+
+
 class Project(models.Model):
-    datetime_created = models.DateTimeField(editable=False, verbose_name=_(u'creation date and time'), default=lambda: now())
+    datetime_created = models.DateTimeField(verbose_name=_(u'creation date and time'), default=lambda: now())
     agency = models.ForeignKey(Agency, verbose_name=_(u'agency'))
     label = models.CharField(max_length=128, verbose_name=_(u'name'))
     description = models.TextField(verbose_name=_(u'description'), blank=True)
@@ -238,7 +249,7 @@ class Project(models.Model):
         verbose_name = _(u'project')
         verbose_name_plural = _(u'projects')
         ordering = ['label']
-        unique_together = ['agency', 'label']
+        unique_together = ['agency', 'label', ]
 
 
 class ProjectInfo(models.Model):
@@ -263,6 +274,19 @@ class ProjectInfo(models.Model):
     # REMOVED: needs = models.TextField(verbose_name=_(u'project needs'), help_text=_(u'HELP_TEXT_PROYECTINFO_NEEDS'))
     expected_results = models.TextField(verbose_name=_('expected results'), help_text=_(u'HELP_TEXT_PROYECTINFO_EXPECTED_RESULTS'))
     milestones = models.TextField(verbose_name=_(u'milestones'), help_text=_(u'HELP_TEXT_PROYECTINFO_MILESTONES'))
+    state = models.ForeignKey(State, verbose_name=_(u'state'), help_text=_(u'HELP_TEXT_PROJECTINFO_STATE'), null=True, blank=True)
+    state_note = models.TextField(verbose_name=_(u'project history'), null=True, blank=True)
+
+    def save(self):
+        super(ProjectInfo, self).save()
+        if not self.state:
+            try:
+                project_state = State.objects.get(label='Incomplete')
+            except ObjectDoesNotExist:
+                self.state = 'N/A'
+            else:
+                self.state = project_state
+            self.save()
 
     def __unicode__(self):
         return ugettext(u'project information')

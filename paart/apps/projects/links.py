@@ -13,7 +13,8 @@ from .icons import (icon_projects, icon_project_edit, icon_project_delete,
     icon_project_opportunities_edit, icon_project_opportunities_view, icon_project_opportunities_delete,
     icon_project_file_list, icon_project_file_upload, icon_project_file_delete,
     icon_project_file_download, icon_project_workflow_instance_list,
-    icon_project_workflow_instance_history, icon_project_workflow_instance_action_submit)
+    icon_project_workflow_instance_history, icon_project_workflow_instance_action_submit,
+    icon_project_reports_view)
 from .permissions import (PERMISSION_PROJECT_EDIT, PERMISSION_PROJECT_DELETE,
     PERMISSION_PROJECT_VIEW)
 
@@ -52,3 +53,5 @@ link_project_workflow_instance_action_submit = Link(text=_(u'submit action'), vi
 
 link_agency_project_list = Link(text=_(u'projects'), view='agency_project_list', args='resolved_object.pk', icon=icon_agency_projects)
 #link_project_create_wizard = Link(text=_(u'create project'), view='project_create_wizard', args='resolved_object.pk', icon=icon_project_create_wizard)
+
+link_project_reports_view = Link(text=_(u'report'), view='project_report_view', args='resolved_object.pk', icon=icon_project_reports_view)

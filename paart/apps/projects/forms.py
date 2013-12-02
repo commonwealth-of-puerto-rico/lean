@@ -4,6 +4,9 @@ import datetime
 
 from django import forms
 
+from django.utils.translation import ugettext_lazy as _
+
+
 from common.forms import DetailForm, ROFormMixin, Select2FormMixin
 
 from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
@@ -11,27 +14,30 @@ from .models import (Project, ProjectInfo, ProjectBudget, ProjectDetails,
 
 
 class ProjectForm_edit(forms.ModelForm, ROFormMixin):
-    readonly_fields = ('agency',)
+    readonly_fields = ('agency', )
 
     class Meta:
+        exclude = ('datetime_created',)
         model = Project
 
 
 class ProjectForm_create(forms.ModelForm):
     class Meta:
-        exclude = ('agency',)
+        exclude = ('agency', 'datetime_created',)
         model = Project
 
 
 class ProjectForm_view(DetailForm):
     class Meta:
         model = Project
+        fields = ('agency', 'label', 'datetime_created', 'description', )
 
 
 class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
     readonly_fields = ('project',)
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
@@ -40,17 +46,24 @@ class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
         self.fields['methodology'].queryset = self.fields['methodology'].queryset.active()
         self.fields['goals'].queryset = self.fields['goals'].queryset.active()
 
+        if not user.is_staff:
+            self.fields['state'].widget.attrs['readonly'] = True
+            self.fields['state_note'].widget.attrs['readonly'] = True
+
     class Meta:
         model = ProjectInfo
 
 
 class ProjectInfoForm_view(DetailForm):
+    readonly_fields = ('state', 'state_note')
+
     class Meta:
         model = ProjectInfo
 
 
 class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super(self.__class__, self).__init__(*args, **kwargs)
         self.fields['purpose'].queryset = self.fields['purpose'].queryset.active()
         self.fields['classification'].queryset = self.fields['classification'].queryset.active()
@@ -72,8 +85,21 @@ class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
         else:
             self.fields['fiscal_year'].initial = fiscal_year
 
+        # Project Initial State
+        try:
+            project_state = self.fields['state'].queryset.get(label='Incomplete')
+        except self.fields['state'].queryset.model.DoesNotExist:
+            self.fields['state'].initial = 'N/A'
+        else:
+            self.fields['state'].initial = project_state
+
+        if not user.is_staff:
+            self.fields['state'].widget.attrs['readonly'] = True
+            del self.fields['state_note']
+
     class Meta:
-        exclude = ('project',)
+        exclude = ('project', )
+
         model = ProjectInfo
 
 ## Budget

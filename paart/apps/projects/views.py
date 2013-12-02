@@ -19,6 +19,7 @@ from permissions.models import Permission
 from workflows.forms import WorkflowActionSubmitForm
 from workflows.models import WorkflowInstance
 
+
 from .forms import (ProjectForm_edit, ProjectForm_view, ProjectForm_create,
     ProjectInfoForm_view, ProjectInfoForm_edit, ProjectInfoForm_create,
     ProjectBudgetForm_view, ProjectBudgetForm_edit, ProjectBudgetForm_create,
@@ -252,14 +253,14 @@ def project_info_edit(request, project_info_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project_info.project.agency)
 
     if request.method == 'POST':
-        form = ProjectInfoForm_edit(request.POST, instance=project_info)
+        form = ProjectInfoForm_edit(request.POST, instance=project_info, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, _(u'Information for project "%s" edited successfully.') % project_info.project)
 
             return HttpResponseRedirect(project_info.get_absolute_url())
     else:
-        form = ProjectInfoForm_edit(instance=project_info)
+        form = ProjectInfoForm_edit(instance=project_info, user=request.user)
 
     return render_to_response('generic_form.html', {
         'form': form,
@@ -283,7 +284,7 @@ def project_info_create(request, project_pk):
         AccessEntry.objects.check_access(PERMISSION_PROJECT_EDIT, request.user, project.agency)
 
     if request.method == 'POST':
-        form = ProjectInfoForm_create(request.POST, initial={'project': project})
+        form = ProjectInfoForm_create(request.POST, initial={'project': project}, user=request.user)
         if form.is_valid():
             project_info = form.save(commit=False)
             project_info.project = project
@@ -293,7 +294,7 @@ def project_info_create(request, project_pk):
 
             return HttpResponseRedirect(project_info.get_absolute_url())
     else:
-        form = ProjectInfoForm_create(initial={'project': project})
+        form = ProjectInfoForm_create(initial={'project': project}, user=request.user)
 
     return render_to_response('generic_form.html', {
         'form': form,
@@ -976,3 +977,18 @@ def project_workflow_instance_action_submit(request, workflow_instance_pk):
             {'object': 'workflow_instance'},
         ],
     }, context_instance=RequestContext(request))
+
+### Reports
+def project_report_view(request, project_pk):
+    project = get_object_or_404(Project, pk=project_pk)
+
+    try:
+        Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+    except PermissionDenied:
+        AccessEntry.objects.check_access(PERMISSION_PROJECT_VIEW, request.user, project.agency)
+        
+    return render_to_response('report.html',{
+                                            'project' : project,
+                                            })
+
+    

@@ -174,6 +174,8 @@ INSTALLED_APPS = (
     'data',
     'workflows',
     'api',
+    #reports
+    'reports',
 )
 
 # A sample logging configuration. The only tangible logging

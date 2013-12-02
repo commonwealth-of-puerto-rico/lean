@@ -3,7 +3,7 @@ from __future__ import absolute_import
 from django.contrib import admin
 
 from .models import (Goal, FiscalYear, Purpose, Classification, Stage, Benefit,
-    Topic, Opportunity, Department, Priority, Methodology, Project, ProjectInfo)
+    Topic, Opportunity, Department, Priority, Methodology, Project, ProjectInfo, State)
 
 
 class FiscalYearAdmin(admin.ModelAdmin):
@@ -72,6 +72,10 @@ class ProjectProjectInfoAdmin(admin.ModelAdmin):
     #filter_horizontal = ('opportunity', 'sharing_benefit')
 
 
+class StateAdmin(admin.ModelAdmin):
+    model = State
+
+
 admin.site.register(FiscalYear, FiscalYearAdmin)
 admin.site.register(Purpose, PurposeAdmin)
 admin.site.register(Classification, ClassificationAdmin)
@@ -83,5 +87,6 @@ admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Priority, PriorityAdmin)
 admin.site.register(Goal, GoalAdmin)
 admin.site.register(Methodology, MethodologyAdmin)
+admin.site.register(State, StateAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectInfo, ProjectProjectInfoAdmin)
