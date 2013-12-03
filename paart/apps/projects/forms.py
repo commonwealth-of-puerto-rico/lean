@@ -89,9 +89,9 @@ class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
 
         # Project Initial State
         try:
-            project_state = self.fields['state'].queryset.get(label='Incomplete')
+            project_state = self.fields['state'].queryset.get(default=True)
         except self.fields['state'].queryset.model.DoesNotExist:
-            self.fields['state'].initial = 'N/A'
+            pass
         else:
             self.fields['state'].initial = project_state
 
