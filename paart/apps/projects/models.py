@@ -206,9 +206,24 @@ class Goal(models.Model):
 
 class State(models.Model):
     label = models.CharField(max_length=128, verbose_name=_(u'label'), unique=True)
+    enabled = models.BooleanField(verbose_name=_(u'enabled'), default=True)
+    default = models.BooleanField(verbose_name=_(u'default'), default=False)
+
+    objects = OmitDisabledManager()
 
     def __unicode__(self):
         return self.label
+
+    def save(self):
+        if self.default:
+            try:
+                last_default = State.objects.get(default=True)
+                if self != last_default:
+                    last_default.default = False
+                    last_default.save()
+            except State.DoesNotExist:
+                pass
+        super(State, self).save()
 
     class Meta:
         verbose_name = _(u'state')
@@ -281,9 +296,9 @@ class ProjectInfo(models.Model):
         super(ProjectInfo, self).save()
         if not self.state:
             try:
-                project_state = State.objects.get(label='Incomplete')
+                project_state = State.objects.get(default=True)
             except ObjectDoesNotExist:
-                self.state = 'N/A'
+                pass
             else:
                 self.state = project_state
             self.save()

@@ -49,6 +49,8 @@ class ProjectInfoForm_edit(Select2FormMixin, forms.ModelForm, ROFormMixin):
         if not user.is_staff:
             self.fields['state'].widget.attrs['readonly'] = True
             self.fields['state_note'].widget.attrs['readonly'] = True
+        else:
+            self.fields['state'].queryset = self.fields['state'].queryset.active()
 
     class Meta:
         model = ProjectInfo
@@ -87,9 +89,9 @@ class ProjectInfoForm_create(Select2FormMixin, forms.ModelForm):
 
         # Project Initial State
         try:
-            project_state = self.fields['state'].queryset.get(label='Incomplete')
+            project_state = self.fields['state'].queryset.get(default=True)
         except self.fields['state'].queryset.model.DoesNotExist:
-            self.fields['state'].initial = 'N/A'
+            pass
         else:
             self.fields['state'].initial = project_state
 
