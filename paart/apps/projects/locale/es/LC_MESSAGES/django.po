@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-03 11:56-0400\n"
+"POT-Creation-Date: 2013-12-10 16:03-0400\n"
 "PO-Revision-Date: 2013-04-03 17:42\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -349,15 +349,11 @@ msgstr ""
 
 #: models.py:292
 msgid "HELP_TEXT_PROJECTINFO_STATE"
-msgstr ""
-"El propósito es describir la razón por la cual la agencia inicia este "
-"proyecto.  Cual es la necesidad de la agencia versus el resultado esperado "
-"al finalizar el proyecto."
+msgstr "El estado del proyecto"
 
 #: models.py:293
-#, fuzzy
 msgid "project history"
-msgstr "director de proyecto"
+msgstr "historia del proyecto"
 
 #: models.py:307
 msgid "project information"
