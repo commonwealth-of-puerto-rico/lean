@@ -11,6 +11,8 @@
         {% if message %}
             <p><b> {{  message  }} </b></p>
         {% endif %}
+        <p id="expand"></p>
+        <br/>
         {% regroup results by agency as project_by_agency %}
         <ul>
             {% for agency in project_by_agency %}
@@ -74,6 +76,15 @@
                 $(this).next('.descDiv').slideToggle(50);
                 return false;
             });
+            if ($('.descDiv').length){
+                $('#expand').append('<a href="#">{% blocktrans %}Expand All{% endblocktrans %}</a>').click(function(){
+                    $('.descDiv').each(function(){
+                        $(this).slideToggle(0);
+                    });
+                    return false;
+                });
+
+            }
         });
     </script>
 {% endblock %}

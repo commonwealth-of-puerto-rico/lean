@@ -4,6 +4,6 @@
 local_settings.py
 settings_local.py
 /venv/
-paart.sqlite
+*.sqlite
 /site_media/
 .idea/
