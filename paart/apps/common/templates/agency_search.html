@@ -8,10 +8,6 @@
             <input type="submit" value={% blocktrans %}Search{% endblocktrans %}>
         </form>
         <br/>
-        {% if message %}
-            <p><b> {{  message  }} </b></p>
-        {% endif %}
-        <p id="expand"></p>
         <br/>
         {% regroup results by agency as project_by_agency %}
         <ul>
@@ -67,10 +63,31 @@
                 <br/>
             {% endfor %}
         </ul>
+        <span class="step-links">
+            {% if results.has_previous %}
+                <a href="?page={{ results.previous_page_number }}">{% blocktrans %}previous{% endblocktrans %}</a>
+            {% endif %}
+
+            {% if results %}
+                <span class="current">
+                    {% blocktrans %}Page{% endblocktrans %} {{ results.number }} {% blocktrans %}of{% endblocktrans %} {{ results.paginator.num_pages }}
+                </span>
+            {% endif %}
+
+            {% if results.has_next %}
+                <a href="?page={{ results.next_page_number }}">{% blocktrans %}next{% endblocktrans %}</a>
+            {% endif %}
+        </span>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            $('.datepicker').datepicker({
+              changeMonth: true,
+              changeYear: true,
+              setDate: new Date()
+            });
             $('.descDiv').hide().before('<a href="#" class="toggle-link">{% blocktrans %}Details{% endblocktrans %}</a>');
             $('a.toggle-link').click(function() {
                 $(this).next('.descDiv').slideToggle(50);

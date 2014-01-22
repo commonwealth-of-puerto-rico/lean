@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mayan EDMS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-30 12:38-0400\n"
+"POT-Creation-Date: 2014-01-22 17:02-0400\n"
 "PO-Revision-Date: 2013-02-26 01:30\n"
 "Last-Translator:   <admin@admin.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/mayan-edms/"
@@ -249,127 +249,143 @@ msgstr "Lo sentimos, pero la página solicitada no pudo ser encontrada."
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/agency_search.html:20 templates/report.html:8
+#: templates/agency_search.html:16 templates/report.html:8
 msgid "Agency:"
 msgstr "Agencia:"
 
-#: templates/agency_search.html:23 templates/report.html:9
+#: templates/agency_search.html:19 templates/report.html:9
 msgid "Project:"
 msgstr "Proyecto:"
 
-#: templates/agency_search.html:30 templates/report.html:16
+#: templates/agency_search.html:26 templates/report.html:16
 msgid "Description"
 msgstr "Descripción"
 
-#: templates/agency_search.html:31 templates/report.html:20
+#: templates/agency_search.html:27 templates/report.html:20
 msgid "Fiscal Year"
 msgstr "Año Fiscal"
 
-#: templates/agency_search.html:32 templates/report.html:24
+#: templates/agency_search.html:28 templates/report.html:24
 msgid "Purpose"
 msgstr "Proposito"
 
-#: templates/agency_search.html:33 templates/report.html:28
+#: templates/agency_search.html:29 templates/report.html:28
 msgid "Classification"
 msgstr "Clasificacíon"
 
-#: templates/agency_search.html:34 templates/report.html:32
+#: templates/agency_search.html:30 templates/report.html:32
 msgid "Secondary Classification"
 msgstr "Clasificación Secundaria"
 
-#: templates/agency_search.html:35 templates/report.html:36
+#: templates/agency_search.html:31 templates/report.html:36
 msgid "Methodology"
 msgstr "Metodología"
 
-#: templates/agency_search.html:36 templates/report.html:40
+#: templates/agency_search.html:32 templates/report.html:40
 msgid "Goals"
 msgstr "Metas"
 
-#: templates/agency_search.html:37 templates/report.html:54
+#: templates/agency_search.html:33 templates/report.html:54
 msgid "Department"
 msgstr "Departamento"
 
-#: templates/agency_search.html:38 templates/report.html:58
+#: templates/agency_search.html:34 templates/report.html:58
 msgid "Sponsor"
 msgstr "Auspiciador"
 
-#: templates/agency_search.html:39 templates/report.html:62
+#: templates/agency_search.html:35 templates/report.html:62
 msgid "Expected Results"
 msgstr "Resultados esperados"
 
-#: templates/agency_search.html:40 templates/report.html:66
+#: templates/agency_search.html:36 templates/report.html:66
 msgid "Milestones"
 msgstr "Logros"
 
-#: templates/agency_search.html:41 templates/report.html:77
+#: templates/agency_search.html:37 templates/report.html:77
 msgid "Infrastructure"
 msgstr "Infraestructura"
 
-#: templates/agency_search.html:42 templates/report.html:81
+#: templates/agency_search.html:38 templates/report.html:81
 msgid "Requirements"
 msgstr "Requerimientos"
 
-#: templates/agency_search.html:43 templates/report.html:85
+#: templates/agency_search.html:39 templates/report.html:85
 msgid "Presumptions"
 msgstr "Presución"
 
-#: templates/agency_search.html:44 templates/report.html:89
+#: templates/agency_search.html:40 templates/report.html:89
 msgid "Limitations"
 msgstr "Limitaciones"
 
-#: templates/agency_search.html:45 templates/report.html:93
+#: templates/agency_search.html:41 templates/report.html:93
 msgid "Risks"
 msgstr "Riesgos"
 
-#: templates/agency_search.html:46 templates/report.html:97
+#: templates/agency_search.html:42 templates/report.html:97
 msgid "Benefits"
 msgstr "Beneficios"
 
-#: templates/agency_search.html:47 templates/report.html:101
+#: templates/agency_search.html:43 templates/report.html:101
 msgid "Director"
 msgstr "Director(a)"
 
-#: templates/agency_search.html:48 templates/report.html:112
+#: templates/agency_search.html:44 templates/report.html:112
 msgid "Start Period"
 msgstr "Inicio de periodo"
 
-#: templates/agency_search.html:49 templates/report.html:116
+#: templates/agency_search.html:45 templates/report.html:116
 msgid "End Period"
 msgstr "Final de periodo"
 
-#: templates/agency_search.html:50 templates/report.html:120
+#: templates/agency_search.html:46 templates/report.html:120
 msgid "Stage"
 msgstr "Etapa"
 
-#: templates/agency_search.html:51 templates/report.html:124
+#: templates/agency_search.html:47 templates/report.html:124
 msgid "Priority"
 msgstr "Prioridad"
 
-#: templates/agency_search.html:52
+#: templates/agency_search.html:48
 msgid "Other agencies involed"
 msgstr "Otras agencias involucradas"
 
-#: templates/agency_search.html:53
+#: templates/agency_search.html:49
 msgid "Opportunity"
 msgstr "Oportunidad"
 
-#: templates/agency_search.html:54
+#: templates/agency_search.html:50
 msgid "Sharing Benefits"
 msgstr "Beneficios a compartir"
 
-#: templates/agency_search.html:55 templates/report.html:179
+#: templates/agency_search.html:51 templates/report.html:179
 msgid "Explanation"
 msgstr "Explicación corta"
 
-#: templates/agency_search.html:56
+#: templates/agency_search.html:52
 msgid "Attachment"
 msgstr "Anejos"
 
-#: templates/agency_search.html:74
+#: templates/agency_search.html:68
+msgid "previous"
+msgstr "anterior"
+
+#: templates/agency_search.html:73
+msgid "Page"
+msgstr "Página"
+
+#: templates/agency_search.html:73
+msgid "of"
+msgstr "de"
+
+#: templates/agency_search.html:78
+msgid "next"
+msgstr "próximo"
+
+#: templates/agency_search.html:91
 msgid "Details"
 msgstr "Detalles"
 
-#: templates/agency_search.html:80
+#: templates/agency_search.html:97
 msgid "Expand All"
 msgstr "Expandir todos"
 
