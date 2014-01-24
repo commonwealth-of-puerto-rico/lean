@@ -55,10 +55,15 @@ def agency_software_edit(request, agency_software_pk):
     if request.method == 'POST':
         form = AgencySoftwareForm_edit(request.POST, instance=agency_software)
         if form.is_valid():
-            form.save()
-            messages.success(request, _(u'AgencySoftware "%s" edited successfully.') % agency_software)
+            try:
+                form.save()
+                messages.success(request, _(u'AgencySoftware "%s" edited successfully.') % agency_software)
 
-            return HttpResponseRedirect(agency_software.get_absolute_url())
+                return HttpResponseRedirect(agency_software.get_absolute_url())
+            except Exception, e:
+                messages.error(request, _(u'Agency software: %(agency_software)s edit error: %(error)s') % {
+                    'agency_software': agency_software, 'error': e})
+
     else:
         form = AgencySoftwareForm_edit(instance=agency_software)
 
@@ -149,13 +154,17 @@ def agency_software_create(request, agency_pk):
     if request.method == 'POST':
         form = AgencySoftwareForm_create(request.POST)
         if form.is_valid():
-            agency_software = form.save(commit=False)
-            agency_software.agency = agency
-            agency_software.save()
-            form.save_m2m()
-            messages.success(request, _(u'Agency software "%s" edited successfully.') % agency_software)
+            try:
+                agency_software = form.save(commit=False)
+                agency_software.agency = agency
+                agency_software.save()
+                form.save_m2m()
+                messages.success(request, _(u'Agency software "%s" edited successfully.') % agency_software)
 
-            return HttpResponseRedirect(reverse('agency_software_list', args=[agency.pk]))
+                return HttpResponseRedirect(reverse('agency_software_list', args=[agency.pk]))
+            except Exception, e:
+                messages.error(request, _(u'Agency software: %(agency_software)s creation error: %(error)s') % {
+                    'agency_software': agency_software, 'error': e})
     else:
         form = AgencySoftwareForm_create()
 
