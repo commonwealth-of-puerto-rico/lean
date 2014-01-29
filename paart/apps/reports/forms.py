@@ -20,5 +20,5 @@ class AgencySearchForm(forms.Form):
     methodology = forms.ModelChoiceField(required=False, queryset=Methodology.objects.all(), label=_('Methodology'))
     department = forms.ModelChoiceField(required=False, queryset=Department.objects.all(), label=_('Department'))
     goal = forms.ModelChoiceField(required=False, queryset=Goal.objects.all(), label=_('Goals'))
-    date_from = forms.DateField(required=False, widget=forms.TextInput(attrs={'class': 'datepicker'}), label=_('Date From'))
-    date_to = forms.DateField(required=False, widget=forms.TextInput(attrs={'class': 'datepicker'}), label=_('Date to'))
+    date_from = forms.DateField(required=False, input_formats=['%m/%d/%Y'],  widget=forms.TextInput(attrs={'class': 'datepicker'}), label=_('Date From'))
+    date_to = forms.DateField(required=False, input_formats=['%m/%d/%Y'], widget=forms.TextInput(attrs={'class': 'datepicker'}), label=_('Date to'))
