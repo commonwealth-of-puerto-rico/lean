@@ -8,6 +8,10 @@
             <input type="submit" value={% blocktrans %}Search{% endblocktrans %}>
         </form>
         <br/>
+        {% if message %}
+            <p><b> {{ message }} </b></p>
+        {% endif %}
+        <p id="expand"></p>
         <br/>
         {% regroup results by agency as project_by_agency %}
         <ul>
