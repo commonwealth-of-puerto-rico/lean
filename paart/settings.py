@@ -157,7 +157,7 @@ INSTALLED_APPS = (
     'navigation',
     'acls',
     'icons',
-    'dynamic_search',
+    #'dynamic_search',
     'project_tools',
     'project_setup',
     'smart_settings',

@@ -13,4 +13,4 @@ Link.bind_links(['results'], [search_again], menu_name='sidebar')
 
 register_sidebar_template(['search', 'search_advanced', 'results'], 'recent_searches.html')
 
-register_top_menu('search', link=search)
+#register_top_menu('search', link=search)
