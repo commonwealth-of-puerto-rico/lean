@@ -8,12 +8,15 @@ import pytz
 from django.conf import global_settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.utils.translation import ugettext_lazy as _, string_concat
+from django.utils.translation import ugettext_lazy as _
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.exceptions import PermissionDenied
 
 from projects.models import Project, ProjectInfo, Agency
 
+from acls.models import AccessEntry
 from permissions.models import Permission
+from .permissions import PERMISSION_PROJECT_VIEW
 
 from .forms import AgencySearchForm
 
@@ -61,7 +64,17 @@ def agency_search_report(request):
                 date_to = datetime.datetime.strptime(request.GET['date_to'], '%m/%d/%Y')
                 kwargs['datetime_created__lte'] = date_to.replace(tzinfo=localtz)
 
-            search_results = Project.objects.filter(**kwargs).order_by('agency__name')
+            try:
+                Permission.objects.check_permissions(request.user, [PERMISSION_PROJECT_VIEW])
+            except PermissionDenied:
+                # If user doesn't have global permission, get a list of document
+                # for which he/she does have access use it to filter the
+                # provided object_list
+                search_results = AccessEntry.objects.filter_objects_by_access(PERMISSION_PROJECT_VIEW, request.user,
+                                                                              Project.objects.filter(**kwargs).order_by('agency__name'),
+                                                                              related='agency')
+            else:
+                search_results = Project.objects.filter(**kwargs).order_by('agency__name')
 
             if not search_results:
                 context['message'] = _(u'No results')
