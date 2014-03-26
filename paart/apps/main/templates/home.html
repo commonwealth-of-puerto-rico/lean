@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load project_tags %}
 {% load i18n %}
+{% block messages %}
+    <h3><a href="https://docs.google.com/forms/d/19Rws0hWY-ZQSIALoRi6tTYOwOU5xGtXXo-5MYOKZPis/viewform" style="color: blue">
+        ¡Atención! Favor de llenar el inventario de servicios en línea
+    </a>
+    </h3>
+{%  endblock %}
 {% block content %}
     <div class="content tc">
         <h1>{% project_name %}</h1>
